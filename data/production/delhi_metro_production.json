@@ -9346,6 +9346,41 @@
       "platformDirections": {
         "rapid_metro": "Platform 1 / 2 (Rapid metro Line)"
       }
+    },
+    {
+      "id": "del_lajpat_nagar",
+      "name": "Lajpat Nagar",
+      "hindiName": "लाजपत नगर",
+      "lineIds": [
+        "violet",
+        "pink"
+      ],
+      "isInterchange": true,
+      "latitude": 28.5708,
+      "longitude": 77.2373,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "1",
+          "landmark": "Central Market",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "2",
+          "landmark": "Feroze Gandhi Road",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "violet": "Towards Kashmere Gate / Raja Nahar Singh",
+        "pink": "Towards Majlis Park / Shiv Vihar"
+      }
     }
   ]
 }

@@ -4868,5 +4868,24 @@ class DelhiFullDataset {
         'rapid_metro': 'Platform 1 / 2 (Rapid metro Line)',
       },
     ),
+    const Station(
+      id: 'del_lajpat_nagar',
+      cityId: 'delhi_ncr',
+      name: 'Lajpat Nagar',
+      hindiName: 'लाजपत नगर',
+      lineIds: ['violet', 'pink'],
+      isInterchange: true,
+      latitude: 28.5708,
+      longitude: 77.2373,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: '1', landmark: 'Central Market', hasWheelchairAccess: true),
+        StationGate(gateNumber: '2', landmark: 'Feroze Gandhi Road', hasWheelchairAccess: true),
+      ],
+      platformDirections: {
+        'violet': 'Towards Kashmere Gate / Raja Nahar Singh',
+        'pink': 'Towards Majlis Park / Shiv Vihar',
+      },
+    ),
   ];
 }

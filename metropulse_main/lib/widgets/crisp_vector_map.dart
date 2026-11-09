@@ -46,8 +46,8 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   late AnimationController _animationController;
   Animation<Matrix4>? _animation;
 
-  static const double _canvasWidth = 3800.0;
-  static const double _canvasHeight = 3000.0;
+  static const double _canvasWidth = 4500.0;
+  static const double _canvasHeight = 3450.0;
 
   // City-specific SVG assets
   static const Map<String, String> _citySvgAssets = {
@@ -184,7 +184,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   Offset _getCityCenterHub(String cityId) {
     switch (cityId) {
       case 'delhi_ncr':
-        return const Offset(1450, 1200); // Rajiv Chowk
+        return const Offset(1600, 1280); // Rajiv Chowk
       case 'mumbai':
         return const Offset(1500, 1300); // Andheri Hub
       case 'bengaluru':
