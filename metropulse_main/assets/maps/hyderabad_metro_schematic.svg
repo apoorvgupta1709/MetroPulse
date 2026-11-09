@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2600" width="100%" height="100%">
+<rect width="3200" height="2600" fill="#FFFFFF"/>
+<!-- Water Body -->
+<path d="M 600 2000 C 1200 1900, 1800 1900, 2600 1950 L 3200 2000" fill="none" stroke="#E0F2FE" stroke-width="36"/><text x="1400" y="1960" font-family="sans-serif" font-size="14" font-weight="800" fill="#7DD3FC" letter-spacing="6">MUSI RIVER</text>
+<!-- LINES -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M 550 650 L 800 850 L 1050 1050 L 1400 1300 L 1600 1450 L 1800 1600 L 2000 1750 L 2200 1900 L 2450 2050 L 2700 2200 L 2950 2350" fill="none" stroke="#DC2626" stroke-width="10"/>
+  <path d="M 500 1850 L 750 1700 L 950 1550 L 1150 1420 L 1400 1300 L 1700 1200 L 2000 1100 L 2250 1100 L 2600 1100 L 2900 1100" fill="none" stroke="#2563EB" stroke-width="10"/>
+  <path d="M 2000 1100 L 2000 1300 L 2000 1500 L 2000 1700 L 2200 1900" fill="none" stroke="#16A34A" stroke-width="10"/>
+</g>
+<!-- STATIONS -->
+<g id="stations-layer">
+  <circle cx="550" cy="650" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="564" y="644" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">మియాపూర్</text>
+  <text x="564" y="654" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Miyapur</text>
+  <circle cx="800" cy="850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="814" y="844" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">కేపీహెచ్‌బీ కాలనీ</text>
+  <text x="814" y="854" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">KPHB Colony</text>
+  <circle cx="1050" cy="1050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1064" y="1044" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">కూకట్‌పల్లి</text>
+  <text x="1064" y="1054" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Kukatpally</text>
+  <circle cx="1400" cy="1300" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1400" cy="1300" r="5" fill="#0F172A"/>
+  <text x="1414" y="1294" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">అమీర్‌పేట్</text>
+  <text x="1414" y="1307" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">Ameerpet Interchange</text>
+  <circle cx="1600" cy="1450" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1444" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">పంజాగుట్ట</text>
+  <text x="1614" y="1454" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Punjagutta</text>
+  <circle cx="1800" cy="1600" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1814" y="1594" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ఖైరతాబాద్</text>
+  <text x="1814" y="1604" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Khairatabad</text>
+  <circle cx="2000" cy="1750" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2014" y="1744" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">నాంపల్లి</text>
+  <text x="2014" y="1754" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Nampally Railway Stn</text>
+  <circle cx="2200" cy="1900" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2200" cy="1900" r="5" fill="#0F172A"/>
+  <text x="2214" y="1894" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">ఎంజీబీఎస్</text>
+  <text x="2214" y="1907" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">MGBS (Imlibun)</text>
+  <circle cx="2450" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2464" y="2044" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">మలక్‌పేట్</text>
+  <text x="2464" y="2054" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Malakpet</text>
+  <circle cx="2700" cy="2200" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2686" y="2194" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">దిల్‌సుఖ్‌నగర్</text>
+  <text x="2686" y="2204" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Dilsukhnagar</text>
+  <circle cx="2950" cy="2350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2936" y="2344" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ఎల్.బీ. నగర్</text>
+  <text x="2936" y="2354" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">L.B. Nagar</text>
+  <circle cx="500" cy="1850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="514" y="1844" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">రాయదుర్గం</text>
+  <text x="514" y="1854" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Raidurg (Mindspace)</text>
+  <circle cx="750" cy="1700" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="764" y="1694" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">హైటెక్ సిటీ</text>
+  <text x="764" y="1704" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">HITEC City</text>
+  <circle cx="950" cy="1550" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="964" y="1544" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">దుర్గం చెరువు</text>
+  <text x="964" y="1554" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Durgam Cheruvu</text>
+  <circle cx="1150" cy="1420" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1164" y="1414" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">మాదాపూర్</text>
+  <text x="1164" y="1424" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Madhapur</text>
+  <circle cx="1700" cy="1200" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1714" y="1194" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">బేగంపేట్</text>
+  <text x="1714" y="1204" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Begumpet</text>
+  <circle cx="2000" cy="1100" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2000" cy="1100" r="5" fill="#0F172A"/>
+  <text x="2014" y="1094" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">పరేడ్ గ్రౌండ్</text>
+  <text x="2014" y="1107" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">Parade Ground</text>
+  <circle cx="2250" cy="1100" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2264" y="1094" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">సికింద్రాబాద్ ఈస్ట్</text>
+  <text x="2264" y="1104" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Secunderabad East</text>
+  <circle cx="2600" cy="1100" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2586" y="1094" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">హబ్సిగూడ</text>
+  <text x="2586" y="1104" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Habsiguda</text>
+  <circle cx="2900" cy="1100" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2886" y="1094" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">నాగోల్</text>
+  <text x="2886" y="1104" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Nagole</text>
+  <circle cx="2000" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2014" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">సికింద్రాబాద్ వెస్ట్</text>
+  <text x="2014" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Secunderabad West</text>
+  <circle cx="2000" cy="1500" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2014" y="1494" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ఆర్టీసీ క్రాస్ రోడ్స్</text>
+  <text x="2014" y="1504" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">RTC X Roads</text>
+  <circle cx="2000" cy="1700" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2014" y="1694" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">చిక్కడపల్లి</text>
+  <text x="2014" y="1704" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Chikkadpally</text>
+</g>
+<!-- LEGEND -->
+<g transform="translate(2460, 60)">
+  <rect width="680" height="264" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">HYDERABAD METRO RAIL</text>
+  <line x1="24" y1="50" x2="656" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="78" r="6" fill="#DC2626"/>
+  <text x="54" y="82" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Red Line: Miyapur - L.B. Nagar</text>
+  <circle cx="36" cy="114" r="6" fill="#2563EB"/>
+  <text x="54" y="118" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Blue Line: Nagole - Raidurg (HITEC City)</text>
+  <circle cx="36" cy="150" r="6" fill="#16A34A"/>
+  <text x="54" y="154" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Green Line: JBS Parade Ground - MGBS</text>
+  <line x1="24" y1="189" x2="656" y2="189" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="211" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
+  <circle cx="36" cy="211" r="3" fill="#0F172A"/>
+  <text x="54" y="215" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="240" cy="211" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="256" y="215" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+</g>
+</svg>

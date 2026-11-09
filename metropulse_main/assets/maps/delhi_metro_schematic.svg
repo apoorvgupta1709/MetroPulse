@@ -1,322 +1,875 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2600" width="100%" height="100%">
-  <defs>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-opacity="0.15"/>
-    </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <style>
-      .label-interchange { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 14px; font-weight: 800; fill: #0F172A; }
-      .label-hindi-interchange { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #64748B; }
-      .label-station { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #334155; }
-      .label-hindi-station { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 9px; font-weight: 500; fill: #94A3B8; }
-      .legend-title { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 14px; font-weight: 900; fill: #0F172A; letter-spacing: 1px; }
-      .legend-item { font-family: 'Plus Jakarta Sans', Arial, sans-serif; font-size: 11px; font-weight: 700; fill: #334155; }
-    </style>
-  </defs>
-
-  <!-- Clean Canvas Background -->
-  <rect width="3200" height="2600" fill="#FFFFFF"/>
-
-  <!-- Subtle Blueprint Grid -->
-  <g stroke="#F1F5F9" stroke-width="1.5">
-    <line x1="0" y1="0" x2="0" y2="2600"/>
-    <line x1="100" y1="0" x2="100" y2="2600"/>
-    <line x1="200" y1="0" x2="200" y2="2600"/>
-    <line x1="300" y1="0" x2="300" y2="2600"/>
-    <line x1="400" y1="0" x2="400" y2="2600"/>
-    <line x1="500" y1="0" x2="500" y2="2600"/>
-    <line x1="600" y1="0" x2="600" y2="2600"/>
-    <line x1="700" y1="0" x2="700" y2="2600"/>
-    <line x1="800" y1="0" x2="800" y2="2600"/>
-    <line x1="900" y1="0" x2="900" y2="2600"/>
-    <line x1="1000" y1="0" x2="1000" y2="2600"/>
-    <line x1="1100" y1="0" x2="1100" y2="2600"/>
-    <line x1="1200" y1="0" x2="1200" y2="2600"/>
-    <line x1="1300" y1="0" x2="1300" y2="2600"/>
-    <line x1="1400" y1="0" x2="1400" y2="2600"/>
-    <line x1="1500" y1="0" x2="1500" y2="2600"/>
-    <line x1="1600" y1="0" x2="1600" y2="2600"/>
-    <line x1="1700" y1="0" x2="1700" y2="2600"/>
-    <line x1="1800" y1="0" x2="1800" y2="2600"/>
-    <line x1="1900" y1="0" x2="1900" y2="2600"/>
-    <line x1="2000" y1="0" x2="2000" y2="2600"/>
-    <line x1="2100" y1="0" x2="2100" y2="2600"/>
-    <line x1="2200" y1="0" x2="2200" y2="2600"/>
-    <line x1="2300" y1="0" x2="2300" y2="2600"/>
-    <line x1="2400" y1="0" x2="2400" y2="2600"/>
-    <line x1="2500" y1="0" x2="2500" y2="2600"/>
-    <line x1="2600" y1="0" x2="2600" y2="2600"/>
-    <line x1="2700" y1="0" x2="2700" y2="2600"/>
-    <line x1="2800" y1="0" x2="2800" y2="2600"/>
-    <line x1="2900" y1="0" x2="2900" y2="2600"/>
-    <line x1="3000" y1="0" x2="3000" y2="2600"/>
-    <line x1="3100" y1="0" x2="3100" y2="2600"/>
-    <line x1="0" y1="0" x2="3200" y2="0"/>
-    <line x1="0" y1="100" x2="3200" y2="100"/>
-    <line x1="0" y1="200" x2="3200" y2="200"/>
-    <line x1="0" y1="300" x2="3200" y2="300"/>
-    <line x1="0" y1="400" x2="3200" y2="400"/>
-    <line x1="0" y1="500" x2="3200" y2="500"/>
-    <line x1="0" y1="600" x2="3200" y2="600"/>
-    <line x1="0" y1="700" x2="3200" y2="700"/>
-    <line x1="0" y1="800" x2="3200" y2="800"/>
-    <line x1="0" y1="900" x2="3200" y2="900"/>
-    <line x1="0" y1="1000" x2="3200" y2="1000"/>
-    <line x1="0" y1="1100" x2="3200" y2="1100"/>
-    <line x1="0" y1="1200" x2="3200" y2="1200"/>
-    <line x1="0" y1="1300" x2="3200" y2="1300"/>
-    <line x1="0" y1="1400" x2="3200" y2="1400"/>
-    <line x1="0" y1="1500" x2="3200" y2="1500"/>
-    <line x1="0" y1="1600" x2="3200" y2="1600"/>
-    <line x1="0" y1="1700" x2="3200" y2="1700"/>
-    <line x1="0" y1="1800" x2="3200" y2="1800"/>
-    <line x1="0" y1="1900" x2="3200" y2="1900"/>
-    <line x1="0" y1="2000" x2="3200" y2="2000"/>
-    <line x1="0" y1="2100" x2="3200" y2="2100"/>
-    <line x1="0" y1="2200" x2="3200" y2="2200"/>
-    <line x1="0" y1="2300" x2="3200" y2="2300"/>
-    <line x1="0" y1="2400" x2="3200" y2="2400"/>
-    <line x1="0" y1="2500" x2="3200" y2="2500"/>
-  </g>
-
-  <!-- Yamuna River Curve -->
-  <path d="M 2150 0 C 2100 400, 2000 650, 1850 950 C 1750 1200, 1800 1600, 1950 2000 C 2050 2300, 2150 2450, 2200 2600" 
-        fill="none" stroke="#E0F2FE" stroke-width="42" stroke-linecap="round"/>
-  <text x="1890" y="1120" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(65 1890 1120)">YAMUNA RIVER</text>
-  <!-- TRANSIT LINES -->
-  <g id="transit-lines" stroke-linecap="round" stroke-linejoin="round">
-    <path id="line-pink" d="M 1300 280 L 1100 380 L 800 500 L 720 750 L 720 1100 L 850 1350 L 1150 1550 L 1450 1600 L 1750 1550 L 2050 1400 L 2250 1150 L 2350 850 L 2350 650 L 2150 480 L 1950 420 L 1800 350" fill="none" stroke="#E91E63" stroke-width="10"/>
-    <path id="line-red" d="M 400 650 L 800 650 L 1050 650 L 1400 650 L 2150 650 L 2600 650" fill="none" stroke="#D32F2F" stroke-width="9"/>
-    <path id="line-yellow" d="M 1400 150 L 1400 650 L 1400 880 L 1400 1050 L 1400 1200 L 1400 1380 L 1400 1600 L 1400 1850 L 1400 2350" fill="none" stroke="#FBC02D" stroke-width="10"/>
-    <path id="line-blue" d="M 450 1950 L 600 1700 L 750 1450 L 950 1250 L 1150 1150 L 1400 1050 L 1600 1050 L 1800 1050 L 1950 1150 L 2150 1350 L 2450 1450 L 2750 1450" fill="none" stroke="#1976D2" stroke-width="10"/>
-    <path id="line-blue_branch" d="M 1800 1050 L 2050 950 L 2350 850 L 2550 850" fill="none" stroke="#1976D2" stroke-width="9"/>
-    <path id="line-green" d="M 250 880 L 800 880 L 1050 780 L 1050 650 M 1050 780 L 1150 1150" fill="none" stroke="#388E3C" stroke-width="9"/>
-    <path id="line-violet" d="M 1400 650 L 1550 800 L 1600 1050 L 1400 1200 L 1500 1450 L 1750 1550 L 1800 1850 L 1800 2450" fill="none" stroke="#7B1FA2" stroke-width="9"/>
-    <path id="line-magenta" d="M 750 1450 L 850 1650 L 1050 1780 L 1400 1600 L 1750 1700 L 2150 1550 L 2450 1450" fill="none" stroke="#C2185B" stroke-width="9"/>
-    <path id="line-orange" d="M 1400 880 L 1250 1150 L 1000 1500 L 750 1800 L 600 1900 L 450 1950" fill="none" stroke="#FF6F00" stroke-width="9"/>
-    <path id="line-rapid" d="M 1400 2150 L 1550 2150 L 1550 2350 L 1400 2350 L 1400 2150" fill="none" stroke="#0284C7" stroke-width="8"/>
-    <path id="line-grey" d="M 600 1700 L 400 1700 L 280 1700" fill="none" stroke="#64748B" stroke-width="8"/>
-    <path id="line-aqua" d="M 2550 1450 L 2550 1750 L 2550 2150" fill="none" stroke="#00B4D8" stroke-width="8"/>
-  </g>
-
-  <!-- STATIONS & INTERCHANGES -->
-  <g id="stations">
-    <circle cx="1400" cy="1050" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="1050" r="6" fill="#0F172A"/>
-    <text x="1420" y="1040" class="label-interchange">Rajiv Chowk (CP)</text>
-    <text x="1420" y="1054" class="label-hindi-interchange">राजीव चौक</text>
-    <circle cx="1400" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="650" r="6" fill="#0F172A"/>
-    <text x="1422" y="638" class="label-interchange">Kashmere Gate ISBT</text>
-    <text x="1422" y="652" class="label-hindi-interchange">कश्मीरी गेट</text>
-    <circle cx="1400" cy="880" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="880" r="6" fill="#0F172A"/>
-    <text x="1420" y="870" class="label-interchange">New Delhi Rly Stn</text>
-    <text x="1420" y="884" class="label-hindi-interchange">नई दिल्ली</text>
-    <circle cx="1400" cy="1200" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="1200" r="6" fill="#0F172A"/>
-    <text x="1235" y="1190" class="label-interchange">Central Secretariat</text>
-    <text x="1235" y="1204" class="label-hindi-interchange">केंद्रीय सचिवालय</text>
-    <circle cx="1400" cy="1380" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="1380" r="6" fill="#0F172A"/>
-    <text x="1420" y="1380" class="label-interchange">Dilli Haat - INA</text>
-    <text x="1420" y="1394" class="label-hindi-interchange">आईएनए</text>
-    <circle cx="1400" cy="1600" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="1600" r="6" fill="#0F172A"/>
-    <text x="1420" y="1592" class="label-interchange">Hauz Khas</text>
-    <text x="1420" y="1606" class="label-hindi-interchange">हौज़ खास</text>
-    <circle cx="1400" cy="1480" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="1480" r="6" fill="#0F172A"/>
-    <text x="1330" y="1470" class="label-interchange">AIIMS</text>
-    <text x="1330" y="1484" class="label-hindi-interchange">एम्स</text>
-    <circle cx="1400" cy="2150" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="2150" r="6" fill="#0F172A"/>
-    <text x="1290" y="2145" class="label-interchange">Sikanderpur</text>
-    <text x="1290" y="2159" class="label-hindi-interchange">सिकंदरपुर</text>
-    <circle cx="1400" cy="2350" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="2350" r="6" fill="#0F172A"/>
-    <text x="1420" y="2355" class="label-interchange">Millennium City Centre</text>
-    <text x="1420" y="2369" class="label-hindi-interchange">मिलेनियम सिटी सेंटर</text>
-    <circle cx="1400" cy="150" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1400" cy="150" r="6" fill="#0F172A"/>
-    <text x="1420" y="155" class="label-interchange">Samaypur Badli</text>
-    <text x="1420" y="169" class="label-hindi-interchange">समयपुर बादली</text>
-    <circle cx="750" cy="1450" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="750" cy="1450" r="6" fill="#0F172A"/>
-    <text x="615" y="1435" class="label-interchange">Janakpuri West</text>
-    <text x="615" y="1449" class="label-hindi-interchange">जनकपुरी पश्चिम</text>
-    <circle cx="950" cy="1250" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="950" cy="1250" r="6" fill="#0F172A"/>
-    <text x="825" y="1235" class="label-interchange">Rajouri Garden</text>
-    <text x="825" y="1249" class="label-hindi-interchange">राजौरी गार्डन</text>
-    <circle cx="1150" cy="1150" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1150" cy="1150" r="6" fill="#0F172A"/>
-    <text x="1168" y="1138" class="label-interchange">Kirti Nagar</text>
-    <text x="1168" y="1152" class="label-hindi-interchange">कीर्ति नगर</text>
-    <circle cx="1600" cy="1050" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1600" cy="1050" r="6" fill="#0F172A"/>
-    <text x="1618" y="1035" class="label-interchange">Mandi House</text>
-    <text x="1618" y="1049" class="label-hindi-interchange">मंडी हाउस</text>
-    <circle cx="1800" cy="1050" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1800" cy="1050" r="6" fill="#0F172A"/>
-    <text x="1690" y="1034" class="label-interchange">Yamuna Bank</text>
-    <text x="1690" y="1048" class="label-hindi-interchange">यमुना बैंक</text>
-    <circle cx="1950" cy="1150" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1950" cy="1150" r="6" fill="#0F172A"/>
-    <text x="1970" y="1140" class="label-interchange">Mayur Vihar-I</text>
-    <text x="1970" y="1154" class="label-hindi-interchange">मयूर विहार-1</text>
-    <circle cx="2150" cy="1350" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2150" cy="1350" r="6" fill="#0F172A"/>
-    <text x="2170" y="1340" class="label-interchange">Botanical Garden</text>
-    <text x="2170" y="1354" class="label-hindi-interchange">बॉटनिकल गार्डन</text>
-    <circle cx="2550" cy="1450" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2550" cy="1450" r="6" fill="#0F172A"/>
-    <text x="2570" y="1438" class="label-interchange">Noida Sector 52</text>
-    <text x="2570" y="1452" class="label-hindi-interchange">नोएडा सेक्टर 52</text>
-    <circle cx="2750" cy="1450" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2750" cy="1450" r="6" fill="#0F172A"/>
-    <text x="2765" y="1470" class="label-interchange">Noida Electronic City</text>
-    <text x="2765" y="1484" class="label-hindi-interchange">नोएडा इलेक्ट्रॉनिक सिटी</text>
-    <circle cx="450" cy="1950" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="450" cy="1950" r="6" fill="#0F172A"/>
-    <text x="305" y="1965" class="label-interchange">Dwarka Sector 21</text>
-    <text x="305" y="1979" class="label-hindi-interchange">द्वारका सेक्टर 21</text>
-    <circle cx="600" cy="1700" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="600" cy="1700" r="6" fill="#0F172A"/>
-    <text x="520" y="1685" class="label-interchange">Dwarka (Grey Int)</text>
-    <text x="520" y="1699" class="label-hindi-interchange">द्वारका</text>
-    <circle cx="800" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="800" cy="650" r="6" fill="#0F172A"/>
-    <text x="655" y="635" class="label-interchange">Netaji Subhash Place</text>
-    <text x="655" y="649" class="label-hindi-interchange">नेताजी सुभाष प्लेस</text>
-    <circle cx="1050" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1050" cy="650" r="6" fill="#0F172A"/>
-    <text x="975" y="635" class="label-interchange">Inderlok</text>
-    <text x="975" y="649" class="label-hindi-interchange">इंदरलोक</text>
-    <circle cx="2150" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2150" cy="650" r="6" fill="#0F172A"/>
-    <text x="2170" y="640" class="label-interchange">Welcome</text>
-    <text x="2170" y="654" class="label-hindi-interchange">वेलकम</text>
-    <circle cx="400" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="400" cy="650" r="6" fill="#0F172A"/>
-    <text x="340" y="635" class="label-interchange">Rithala</text>
-    <text x="340" y="649" class="label-hindi-interchange">रिठाला</text>
-    <circle cx="2600" cy="650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2600" cy="650" r="6" fill="#0F172A"/>
-    <text x="2615" y="655" class="label-interchange">Shaheed Sthal (Ghaziabad)</text>
-    <text x="2615" y="669" class="label-hindi-interchange">शहीद स्थल</text>
-    <circle cx="1100" cy="380" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1100" cy="380" r="6" fill="#0F172A"/>
-    <text x="1020" y="365" class="label-interchange">Azadpur</text>
-    <text x="1020" y="379" class="label-hindi-interchange">आजादपुर</text>
-    <circle cx="1300" cy="280" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1300" cy="280" r="6" fill="#0F172A"/>
-    <text x="1200" y="270" class="label-interchange">Majlis Park</text>
-    <text x="1200" y="284" class="label-hindi-interchange">मजलिस पार्क</text>
-    <circle cx="1800" cy="350" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1800" cy="350" r="6" fill="#0F172A"/>
-    <text x="1815" y="340" class="label-interchange">Shiv Vihar</text>
-    <text x="1815" y="354" class="label-hindi-interchange">शिव विहार</text>
-    <circle cx="2350" cy="850" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2350" cy="850" r="6" fill="#0F172A"/>
-    <text x="2370" y="840" class="label-interchange">Anand Vihar ISBT</text>
-    <text x="2370" y="854" class="label-hindi-interchange">आनंद विहार</text>
-    <circle cx="2550" cy="850" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="2550" cy="850" r="6" fill="#0F172A"/>
-    <text x="2565" y="855" class="label-interchange">Vaishali</text>
-    <text x="2565" y="869" class="label-hindi-interchange">वैशाली</text>
-    <circle cx="1750" cy="1550" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1750" cy="1550" r="6" fill="#0F172A"/>
-    <text x="1770" y="1540" class="label-interchange">Lajpat Nagar</text>
-    <text x="1770" y="1554" class="label-hindi-interchange">लाजपत नगर</text>
-    <circle cx="1750" cy="1700" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1750" cy="1700" r="6" fill="#0F172A"/>
-    <text x="1770" y="1710" class="label-interchange">Kalkaji Mandir</text>
-    <text x="1770" y="1724" class="label-hindi-interchange">कालकाजी मंदिर</text>
-    <circle cx="850" cy="1650" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="850" cy="1650" r="6" fill="#0F172A"/>
-    <text x="720" y="1668" class="label-interchange">IGI Airport T1</text>
-    <text x="720" y="1682" class="label-hindi-interchange">टर्मिनल 1 आईजीआई</text>
-    <circle cx="600" cy="1900" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="600" cy="1900" r="6" fill="#0F172A"/>
-    <text x="465" y="1918" class="label-interchange">IGI Airport T3</text>
-    <text x="465" y="1932" class="label-hindi-interchange">आईजीआई एयरपोर्ट टी3</text>
-    <circle cx="750" cy="1800" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="750" cy="1800" r="6" fill="#0F172A"/>
-    <text x="768" y="1805" class="label-interchange">Delhi Aerocity</text>
-    <text x="768" y="1819" class="label-hindi-interchange">दिल्ली एरोसिटी</text>
-    <circle cx="1000" cy="1500" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1000" cy="1500" r="6" fill="#0F172A"/>
-    <text x="1018" y="1490" class="label-interchange">Dhaula Kuan</text>
-    <text x="1018" y="1504" class="label-hindi-interchange">धौला कुआँ</text>
-    <circle cx="1800" cy="2450" r="14" fill="#FFFFFF" stroke="#0F172A" stroke-width="4.5" filter="url(#shadow)"/>
-    <circle cx="1800" cy="2450" r="6" fill="#0F172A"/>
-    <text x="1820" y="2455" class="label-interchange">Raja Nahar Singh (Ballabhgarh)</text>
-    <text x="1820" y="2469" class="label-hindi-interchange">राजा नाहर सिंह</text>
-  </g>
-
-  <!-- MAP LEGEND BOX -->
-  <g id="map-legend" transform="translate(2480, 80)" filter="url(#shadow)">
-    <rect width="640" height="480" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-    <rect width="640" height="46" rx="16" fill="#0F172A"/>
-    <text x="24" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" letter-spacing="1.5">METROPULSE • DELHI METRO MAP</text>
-
-    <!-- Legend Items -->
-    <g transform="translate(24, 70)">
-      <!-- Red Line -->
-      <line x1="0" y1="12" x2="45" y2="12" stroke="#D32F2F" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="16" class="legend-item">Red Line (Line 1): Rithala ↔ Shaheed Sthal</text>
-
-      <!-- Yellow Line -->
-      <line x1="0" y1="42" x2="45" y2="42" stroke="#FBC02D" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="46" class="legend-item">Yellow Line (Line 2): Samaypur Badli ↔ Millennium City</text>
-
-      <!-- Blue Line -->
-      <line x1="0" y1="72" x2="45" y2="72" stroke="#1976D2" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="76" class="legend-item">Blue Line (Line 3/4): Dwarka Sec 21 ↔ Noida / Vaishali</text>
-
-      <!-- Green Line -->
-      <line x1="0" y1="102" x2="45" y2="102" stroke="#388E3C" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="106" class="legend-item">Green Line (Line 5): Brig. Hoshiar Singh ↔ Inderlok</text>
-
-      <!-- Violet Line -->
-      <line x1="0" y1="132" x2="45" y2="132" stroke="#7B1FA2" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="136" class="legend-item">Violet Line (Line 6): Kashmere Gate ↔ Raja Nahar Singh</text>
-
-      <!-- Pink Line -->
-      <line x1="0" y1="162" x2="45" y2="162" stroke="#E91E63" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="166" class="legend-item">Pink Line (Line 7): Majlis Park ↔ Shiv Vihar (Ring)</text>
-
-      <!-- Magenta Line -->
-      <line x1="0" y1="192" x2="45" y2="192" stroke="#C2185B" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="196" class="legend-item">Magenta Line (Line 8): Janakpuri West ↔ Botanical Garden</text>
-
-      <!-- Airport Express -->
-      <line x1="0" y1="222" x2="45" y2="222" stroke="#FF6F00" stroke-width="8" stroke-linecap="round"/>
-      <text x="60" y="226" class="legend-item">Airport Express: New Delhi ↔ IGI Airport T3 ↔ Dwarka</text>
-
-      <!-- Rapid Metro -->
-      <line x1="0" y1="252" x2="45" y2="252" stroke="#0284C7" stroke-width="7" stroke-linecap="round"/>
-      <text x="60" y="256" class="legend-item">Rapid Metro: Sikanderpur ↔ Cyber City Loop</text>
-
-      <!-- Grey Line -->
-      <line x1="0" y1="282" x2="45" y2="282" stroke="#64748B" stroke-width="7" stroke-linecap="round"/>
-      <text x="60" y="286" class="legend-item">Grey Line (Line 9): Dwarka ↔ Dhansa Bus Stand</text>
-
-      <!-- Aqua Line -->
-      <line x1="0" y1="312" x2="45" y2="312" stroke="#00B4D8" stroke-width="7" stroke-linecap="round"/>
-      <text x="60" y="316" class="legend-item">Aqua Line: Noida Sec 51 ↔ Depot (NMRC)</text>
-
-      <!-- Interchange Symbol -->
-      <circle cx="22" cy="352" r="10" fill="#FFFFFF" stroke="#0F172A" stroke-width="3.5"/>
-      <circle cx="22" cy="352" r="4" fill="#0F172A"/>
-      <text x="60" y="356" class="legend-item" font-weight="900" fill="#0F172A">Interchange Station (Transfer Node)</text>
-
-      <!-- Signature attribution -->
-      <text x="0" y="392" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" font-weight="800" fill="#0284C7">Made with ❤️ by Apoorv • 4K High Precision Transit System</text>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3800 3200" width="100%" height="100%">
+<rect width="3800" height="3200" fill="#FFFFFF"/>
+<!-- Yamuna River Waterway -->
+<path d="M 2350 0 C 2300 450, 2220 750, 2060 1050 C 1950 1280, 2050 1550, 2250 1780 C 2420 1980, 2580 2300, 2640 3200" fill="none" stroke="#E0F2FE" stroke-width="48" stroke-linecap="round"/>
+<text x="2100" y="1120" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(58 2100 1120)">YAMUNA RIVER</text>
+<!-- Transfer Pathways -->
+<line x1="1230" y1="1740" x2="1270" y2="1780" stroke="#94A3B8" stroke-width="3" stroke-dasharray="4,4"/>
+<text x="1220.0" y="1760.0" font-family="sans-serif" font-size="9" font-weight="600" fill="#64748B">Travelator</text>
+<line x1="2980" y1="1550" x2="2980" y2="1680" stroke="#00BCD4" stroke-width="3.5" stroke-dasharray="5,5"/>
+<text x="2992" y="1619.0" font-family="sans-serif" font-size="9" font-weight="700" fill="#00838F">Exit - 300 m External Pathway</text>
+<!-- METRO LINE ROUTES -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <path id="route-grey" d="M 640.0 2100.0 L 520.0 2100.0 L 400.0 2100.0 L 280.0 2100.0" fill="none" stroke="#78909C" stroke-width="8"/>
+  <path id="route-rapid_metro" d="M 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 2720.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0 L 1600.0 1250.0" fill="none" stroke="#0288D1" stroke-width="8"/>
+  <path id="route-aqua_noida" d="M 2980.0 1680.0 L 2980.0 1735.0 L 2980.0 1790.0 L 2980.0 1845.0 L 2980.0 1900.0 L 2980.0 1955.0 L 2980.0 2010.0 L 2980.0 2065.0 L 2980.0 2120.0 L 2980.0 2175.0 L 2980.0 2230.0 L 2980.0 2285.0 L 2980.0 2340.0 L 2980.0 2395.0 L 2980.0 2450.0 L 3045.0 2495.0 L 3110.0 2540.0 L 3175.0 2585.0 L 3240.0 2630.0 L 3305.0 2675.0 L 3370.0 2720.0" fill="none" stroke="#00BCD4" stroke-width="8"/>
+  <path id="route-green" d="M 1220.0 750.0 L 1200.0 1330.0 L 1120.0 890.0 L 1030.0 890.0 L 880.0 1030.0 L 950.0 890.0 L 880.0 890.0 L 810.0 890.0 L 740.0 890.0 L 670.0 890.0 L 600.0 890.0 L 1600.0 1250.0 L 460.0 890.0 L 400.0 890.0 L 340.0 890.0 L 280.0 890.0 L 230.0 890.0 L 1600.0 1250.0 L 140.0 890.0 L 100.0 890.0 L 70.0 890.0 L 40.0 890.0 L 10.0 890.0" fill="none" stroke="#388E3C" stroke-width="9"/>
+  <path id="route-magenta" d="M 820.0 1650.0 L 800.0 1770.0 L 800.0 1860.0 L 820.0 1950.0 L 870.0 2030.0 L 950.0 2100.0 L 1050.0 2130.0 L 1160.0 2130.0 L 1270.0 2130.0 L 1380.0 2130.0 L 1490.0 2100.0 L 1600.0 2040.0 L 1720.0 2040.0 L 1820.0 2040.0 L 1920.0 2040.0 L 2010.0 2040.0 L 2100.0 2020.0 L 2210.0 1970.0 L 2300.0 1910.0 L 2380.0 1850.0 L 2450.0 1780.0 L 2520.0 1710.0 L 2580.0 1640.0 L 2640.0 1590.0 L 2700.0 1550.0" fill="none" stroke="#C2185B" stroke-width="9"/>
+  <path id="route-pink" d="M 1450.0 360.0 L 1300.0 470.0 L 1140.0 580.0 L 980.0 750.0 L 920.0 890.0 L 880.0 1030.0 L 930.0 1180.0 L 1020.0 1430.0 L 1080.0 1550.0 L 1140.0 1640.0 L 1200.0 1720.0 L 1270.0 1780.0 L 1360.0 1810.0 L 1440.0 1810.0 L 1520.0 1810.0 L 1600.0 1810.0 L 1770.0 1780.0 L 1940.0 1760.0 L 2050.0 1710.0 L 2140.0 1630.0 L 2210.0 1520.0 L 2280.0 1350.0 L 2350.0 1260.0 L 2420.0 1180.0 L 2480.0 1110.0 L 2520.0 1050.0 L 2540.0 1000.0 L 2540.0 960.0 L 2440.0 960.0 L 2360.0 910.0 L 2280.0 850.0 L 2170.0 800.0 L 2050.0 750.0 L 2050.0 640.0 L 2050.0 530.0 L 2130.0 440.0 L 2210.0 360.0 L 2300.0 300.0" fill="none" stroke="#EC407A" stroke-width="9.5"/>
+  <path id="route-violet" d="M 1600.0 750.0 L 1670.0 830.0 L 1710.0 890.0 L 1750.0 960.0 L 1790.0 1060.0 L 1850.0 1250.0 L 1730.0 1370.0 L 1600.0 1450.0 L 1700.0 1540.0 L 1780.0 1620.0 L 1860.0 1690.0 L 1940.0 1760.0 L 1980.0 1830.0 L 2020.0 1890.0 L 2060.0 1950.0 L 2100.0 2020.0 L 2100.0 2075.0 L 2100.0 2130.0 L 2100.0 2185.0 L 2100.0 2240.0 L 2100.0 2295.0 L 2100.0 2350.0 L 2100.0 2400.0 L 2100.0 2460.0 L 2100.0 2515.0 L 2100.0 2570.0 L 2100.0 2625.0 L 2100.0 2680.0 L 2100.0 2735.0 L 2100.0 2790.0 L 2100.0 2845.0 L 2100.0 2900.0 L 2100.0 2955.0 L 2100.0 2950.0" fill="none" stroke="#7B1FA2" stroke-width="9"/>
+  <path id="route-airport_express" d="M 1600.0 1120.0 L 1480.0 1280.0 L 1230.0 1740.0 L 990.0 2210.0 L 780.0 2350.0 L 380.0 2250.0 L 260.0 2250.0" fill="none" stroke="#F57C00" stroke-width="8.5"/>
+  <path id="route-red" d="M 450.0 750.0 L 538.5 750.0 L 626.9 750.0 L 715.4 750.0 L 803.8 750.0 L 980.0 750.0 L 980.8 750.0 L 1069.2 750.0 L 1220.0 750.0 L 1246.2 750.0 L 1334.6 750.0 L 1423.1 750.0 L 1511.5 750.0 L 1600.0 750.0 L 1685.0 750.0 L 1770.0 750.0 L 2050.0 750.0 L 1940.0 750.0 L 2025.0 750.0 L 2110.0 750.0 L 2195.0 750.0 L 2280.0 750.0 L 2355.0 775.0 L 2430.0 800.0 L 2505.0 825.0 L 2580.0 850.0 L 2655.0 875.0 L 2730.0 900.0 L 2805.0 925.0" fill="none" stroke="#D32F2F" stroke-width="9.5"/>
+  <path id="route-blue_vaishali" d="M 2100.0 1250.0 L 2180.0 1170.0 L 2260.0 1100.0 L 2340.0 1030.0 L 2440.0 960.0 L 2540.0 960.0 L 2660.0 960.0 L 2780.0 960.0" fill="none" stroke="#1565C0" stroke-width="9"/>
+  <path id="route-blue" d="M 380.0 2250.0 L 420.0 2205.0 L 460.0 2160.0 L 500.0 2115.0 L 540.0 2070.0 L 580.0 2025.0 L 620.0 1980.0 L 660.0 1935.0 L 640.0 2100.0 L 724.0 1842.0 L 748.0 1794.0 L 772.0 1746.0 L 796.0 1698.0 L 820.0 1650.0 L 860.0 1606.0 L 900.0 1562.0 L 940.0 1518.0 L 980.0 1474.0 L 1020.0 1430.0 L 1080.0 1396.7 L 1140.0 1363.3 L 1200.0 1330.0 L 1280.0 1310.0 L 1360.0 1290.0 L 1440.0 1270.0 L 1500.0 1250.0 L 1540.0 1250.0 L 1570.0 1250.0 L 1600.0 1250.0 L 1720.0 1250.0 L 1850.0 1250.0 L 1950.0 1250.0 L 2020.0 1250.0 L 2100.0 1250.0 L 2190.0 1300.0 L 2280.0 1350.0 L 2370.0 1400.0 L 2460.0 1450.0 L 2520.0 1480.0 L 2580.0 1515.0 L 2640.0 1550.0 L 2700.0 1550.0 L 2770.0 1550.0 L 2840.0 1550.0 L 2910.0 1550.0 L 2980.0 1550.0 L 3070.0 1550.0 L 3160.0 1550.0 L 3250.0 1550.0 L 3380.0 1550.0" fill="none" stroke="#1976D2" stroke-width="10"/>
+  <path id="route-yellow" d="M 1600.0 220.0 L 1600.0 291.7 L 1600.0 363.3 L 1600.0 435.0 L 1600.0 506.7 L 1300.0 470.0 L 1600.0 650.0 L 1600.0 721.7 L 1600.0 793.3 L 1600.0 865.0 L 1600.0 936.7 L 1600.0 750.0 L 1600.0 920.0 L 1600.0 1020.0 L 1600.0 1120.0 L 1600.0 1250.0 L 1600.0 1350.0 L 1600.0 1450.0 L 1600.0 1540.0 L 1600.0 1630.0 L 1600.0 1720.0 L 1600.0 1810.0 L 1600.0 1890.0 L 1600.0 1960.0 L 1600.0 2040.0 L 1600.0 2130.0 L 1600.0 2210.0 L 1600.0 2290.0 L 1600.0 2370.0 L 1600.0 2440.0 L 1600.0 2510.0 L 1600.0 2580.0 L 1600.0 2650.0 L 1600.0 2720.0 L 1600.0 2800.0 L 1500.0 2800.0 L 1400.0 2800.0" fill="none" stroke="#FBC02D" stroke-width="10"/>
+  <path d="M 1120 890 L 1220 750" fill="none" stroke="#388E3C" stroke-width="9"/>
+  <path d="M 1120 890 L 1160 1110 L 1200 1330" fill="none" stroke="#388E3C" stroke-width="9"/>
+</g>
+<!-- STATION NODES & BILINGUAL LABELS -->
+<g id="stations-layer">
+  <circle cx="1600" cy="220.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="214.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">समयपुर बादली</text>
+  <text x="1614" y="224.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Samaypur Badli</text>
+  <circle cx="1600" cy="291.6666666666667" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="285.6666666666667" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रोहिणी सेक्टर 18-19</text>
+  <text x="1614" y="295.6666666666667" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rohini Sector 18-19</text>
+  <circle cx="1600" cy="363.33333333333337" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="357.33333333333337" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">हैदरपुर बादली मोड़</text>
+  <text x="1614" y="367.33333333333337" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Haiderpur Badli Mor</text>
+  <circle cx="1600" cy="435.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="429.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जहाँगीरपुरी</text>
+  <text x="1614" y="439.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jahangirpuri</text>
+  <circle cx="1600" cy="506.6666666666667" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="500.6666666666667" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आदर्श नगर</text>
+  <text x="1614" y="510.6666666666667" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Adarsh Nagar</text>
+  <circle cx="1300" cy="470" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1300" cy="470" r="4.5" fill="#0F172A"/>
+  <text x="1314" y="464" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">आज़ादपुर</text>
+  <text x="1314" y="477" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Azadpur</text>
+  <circle cx="1600" cy="650.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="644.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मॉडल टाउन</text>
+  <text x="1614" y="654.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Model Town</text>
+  <circle cx="1600" cy="721.6666666666667" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="715.6666666666667" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">गुरु तेग बहादुर नगर</text>
+  <text x="1614" y="725.6666666666667" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Guru Tegh Bahadur Nagar (GTB)</text>
+  <circle cx="1600" cy="793.3333333333334" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="787.3333333333334" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">विश्वविद्यालय</text>
+  <text x="1614" y="797.3333333333334" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Vishwavidyalaya (Delhi University)</text>
+  <circle cx="1600" cy="865.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="859.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">विधान सभा</text>
+  <text x="1614" y="869.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Vidhan Sabha (Delhi Assembly)</text>
+  <circle cx="1600" cy="936.6666666666667" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="930.6666666666667" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सिविल लाइन्स</text>
+  <text x="1614" y="940.6666666666667" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Civil Lines</text>
+  <circle cx="1600" cy="750" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="750" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="744" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">कश्मीरी गेट</text>
+  <text x="1614" y="757" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kashmere Gate ISBT</text>
+  <circle cx="1600" cy="920" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="914" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">चाँदनी चौक</text>
+  <text x="1614" y="924" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Chandni Chowk (Old Delhi Railway)</text>
+  <circle cx="1600" cy="1020" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1014" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">चावड़ी बाज़ार</text>
+  <text x="1614" y="1024" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Chawri Bazar (Jama Masjid)</text>
+  <circle cx="1600" cy="1120" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1120" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="1114" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">नई दिल्ली</text>
+  <text x="1614" y="1127" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">New Delhi Railway Station</text>
+  <circle cx="1600" cy="1250" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1250" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">राजीव चौक</text>
+  <text x="1614" y="1257" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Rajiv Chowk (Connaught Place)</text>
+  <circle cx="1600" cy="1350" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1344" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पटेल चौक</text>
+  <text x="1614" y="1354" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Patel Chowk (Gurudwara Bangla Sahib)</text>
+  <circle cx="1600" cy="1450" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1450" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="1444" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">केंद्रीय सचिवालय</text>
+  <text x="1614" y="1457" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Central Secretariat</text>
+  <circle cx="1600" cy="1540" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1534" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">उद्योग भवन</text>
+  <text x="1614" y="1544" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Udyog Bhawan (National Museum)</text>
+  <circle cx="1600" cy="1630" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1624" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">लोक कल्याण मार्ग</text>
+  <text x="1614" y="1634" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Lok Kalyan Marg (Race Course)</text>
+  <circle cx="1600" cy="1720" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1714" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जोर बाग़</text>
+  <text x="1614" y="1724" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jor Bagh (Safdarjung Tomb)</text>
+  <circle cx="1600" cy="1810" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1810" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="1804" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">दिल्ली हाट - आईएनए</text>
+  <text x="1614" y="1817" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dilli Haat - INA</text>
+  <circle cx="1600" cy="1890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">एम्स</text>
+  <text x="1614" y="1894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">AIIMS Hospital</text>
+  <circle cx="1600" cy="1960" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1954" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ग्रीन पार्क</text>
+  <text x="1614" y="1964" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Green Park</text>
+  <circle cx="1600" cy="2040" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="2040" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="2034" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">हौज़ ख़ास</text>
+  <text x="1614" y="2047" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Hauz Khas (Deer Park / IIT)</text>
+  <circle cx="1600" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मालवीय नगर</text>
+  <text x="1614" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Malviya Nagar (Select Citywalk Link)</text>
+  <circle cx="1600" cy="2210" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2204" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">साकेत</text>
+  <text x="1614" y="2214" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Saket</text>
+  <circle cx="1600" cy="2290" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2284" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">क़ुतुब मीनार</text>
+  <text x="1614" y="2294" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Qutab Minar</text>
+  <circle cx="1600" cy="2370" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2364" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">छत्तरपुर</text>
+  <text x="1614" y="2374" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Chhattarpur (Chhattarpur Mandir)</text>
+  <circle cx="1600" cy="2440" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2434" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सुल्तानपुर</text>
+  <text x="1614" y="2444" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sultanpur</text>
+  <circle cx="1600" cy="2510" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2504" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">घिटोरनी</text>
+  <text x="1614" y="2514" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ghitorni</text>
+  <circle cx="1600" cy="2580" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2574" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">अर्जन गढ़</text>
+  <text x="1614" y="2584" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Arjan Garh (Aya Nagar)</text>
+  <circle cx="1600" cy="2650" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2644" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">गुरु द्रोणाचार्य</text>
+  <text x="1614" y="2654" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Guru Dronacharya (Garden Estate)</text>
+  <circle cx="1600" cy="2720" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="2720" r="4.5" fill="#0F172A"/>
+  <text x="1614" y="2714" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">सिकंदरपुर</text>
+  <text x="1614" y="2727" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sikanderpur (Gurugram)</text>
+  <circle cx="1600" cy="2800" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2794" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">एम जी रोड</text>
+  <text x="1614" y="2804" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">MG Road Gurugram (MGF Mall)</text>
+  <circle cx="1500" cy="2800" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="2794" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">इफ़्को चौक</text>
+  <text x="1514" y="2804" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">IFFCO Chowk</text>
+  <circle cx="1400" cy="2800" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1414" y="2794" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मिलेनियम सिटी सेंटर गुरुग्राम</text>
+  <text x="1414" y="2804" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Millennium City Centre Gurugram (HUDA)</text>
+  <circle cx="380" cy="2250" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="380" cy="2250" r="4.5" fill="#0F172A"/>
+  <text x="366" y="2244" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">द्वारका सेक्टर 21</text>
+  <text x="366" y="2257" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dwarka Sector 21</text>
+  <circle cx="420" cy="2205" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="406" y="2199" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 8</text>
+  <text x="406" y="2209" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 8</text>
+  <circle cx="460" cy="2160" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="446" y="2154" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 9</text>
+  <text x="446" y="2164" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 9</text>
+  <circle cx="500" cy="2115" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="486" y="2109" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 10</text>
+  <text x="486" y="2119" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 10</text>
+  <circle cx="540" cy="2070" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="526" y="2064" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 11</text>
+  <text x="526" y="2074" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 11</text>
+  <circle cx="580" cy="2025" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="566" y="2019" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 12</text>
+  <text x="566" y="2029" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 12</text>
+  <circle cx="620" cy="1980" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="606" y="1974" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 13</text>
+  <text x="606" y="1984" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 13</text>
+  <circle cx="660" cy="1935" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="646" y="1929" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका सेक्टर 14</text>
+  <text x="646" y="1939" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Sector 14</text>
+  <circle cx="640" cy="2100" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="640" cy="2100" r="4.5" fill="#0F172A"/>
+  <text x="626" y="2094" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">द्वारका</text>
+  <text x="626" y="2107" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dwarka</text>
+  <circle cx="724.0" cy="1842.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="710.0" y="1836.0" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">द्वारका मोड़</text>
+  <text x="710.0" y="1846.0" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dwarka Mor (NSUT Link)</text>
+  <circle cx="748.0" cy="1794.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="734.0" y="1788.0" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नवादा</text>
+  <text x="734.0" y="1798.0" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nawada</text>
+  <circle cx="772.0" cy="1746.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="758.0" y="1740.0" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">उत्तम नगर पश्चिम</text>
+  <text x="758.0" y="1750.0" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Uttam Nagar West</text>
+  <circle cx="796.0" cy="1698.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="782.0" y="1692.0" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">उत्तम नगर पूर्व</text>
+  <text x="782.0" y="1702.0" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Uttam Nagar East</text>
+  <circle cx="820" cy="1650" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="820" cy="1650" r="4.5" fill="#0F172A"/>
+  <text x="806" y="1644" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">जनकपुरी पश्चिम</text>
+  <text x="806" y="1657" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Janakpuri West</text>
+  <circle cx="860.0" cy="1606.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="846.0" y="1600.0" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जनकपुरी पूर्व</text>
+  <text x="846.0" y="1610.0" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Janakpuri East</text>
+  <circle cx="900.0" cy="1562.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="914.0" y="1556.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">तिलक नगर</text>
+  <text x="914.0" y="1566.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tilak Nagar</text>
+  <circle cx="940.0" cy="1518.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="954.0" y="1512.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सुभाष नगर</text>
+  <text x="954.0" y="1522.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Subhash Nagar (Pacific Mall)</text>
+  <circle cx="980.0" cy="1474.0" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="994.0" y="1468.0" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">टैगोर गार्डन</text>
+  <text x="994.0" y="1478.0" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tagore Garden</text>
+  <circle cx="1020" cy="1430" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1020" cy="1430" r="4.5" fill="#0F172A"/>
+  <text x="1034" y="1424" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">राजौरी गार्डन</text>
+  <text x="1034" y="1437" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Rajouri Garden</text>
+  <circle cx="1080.0" cy="1396.6666666666667" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1094.0" y="1390.6666666666667" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रमेश नगर</text>
+  <text x="1094.0" y="1400.6666666666667" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ramesh Nagar</text>
+  <circle cx="1140.0" cy="1363.3333333333333" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1154.0" y="1357.3333333333333" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मोती नगर</text>
+  <text x="1154.0" y="1367.3333333333333" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Moti Nagar</text>
+  <circle cx="1200" cy="1330" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1200" cy="1330" r="4.5" fill="#0F172A"/>
+  <text x="1214" y="1324" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">कीर्ति नगर</text>
+  <text x="1214" y="1337" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kirti Nagar</text>
+  <circle cx="1280" cy="1310" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1294" y="1304" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शादीपुर</text>
+  <text x="1294" y="1314" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shadipur</text>
+  <circle cx="1360" cy="1290" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1374" y="1284" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पटेल नगर</text>
+  <text x="1374" y="1294" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Patel Nagar</text>
+  <circle cx="1440" cy="1270" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1454" y="1264" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">राजेंद्र प्लेस</text>
+  <text x="1454" y="1274" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rajendra Place</text>
+  <circle cx="1500" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">करोल बाग़</text>
+  <text x="1514" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Karol Bagh (Market)</text>
+  <circle cx="1540" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1554" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">झंडेवालान</text>
+  <text x="1554" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jhandewalan (Hanuman Mandir)</text>
+  <circle cx="1570" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1584" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रामकृष्ण आश्रम मार्ग</text>
+  <text x="1584" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ramakrishna Ashram Marg</text>
+  <circle cx="1720" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1734" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बाराखंभा रोड</text>
+  <text x="1734" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Barakhamba Road</text>
+  <circle cx="1850" cy="1250" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1850" cy="1250" r="4.5" fill="#0F172A"/>
+  <text x="1864" y="1244" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">मंडी हाउस</text>
+  <text x="1864" y="1257" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Mandi House (National School of Drama)</text>
+  <circle cx="1950" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1964" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सुप्रीम कोर्ट</text>
+  <text x="1964" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Supreme Court (Pragati Maidan)</text>
+  <circle cx="2020" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2034" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">इंद्रप्रस्थ</text>
+  <text x="2034" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Indraprastha</text>
+  <circle cx="2100" cy="1250" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2100" cy="1250" r="4.5" fill="#0F172A"/>
+  <text x="2114" y="1244" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">यमुना बैंक</text>
+  <text x="2114" y="1257" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Yamuna Bank</text>
+  <circle cx="2190" cy="1300" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2204" y="1294" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">अक्षरधाम</text>
+  <text x="2204" y="1304" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Akshardham Temple</text>
+  <circle cx="2280" cy="1350" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2280" cy="1350" r="4.5" fill="#0F172A"/>
+  <text x="2294" y="1344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">मयूर विहार-१</text>
+  <text x="2294" y="1357" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Mayur Vihar-I</text>
+  <circle cx="2370" cy="1400" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2384" y="1394" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मयूर विहार विस्तार</text>
+  <text x="2384" y="1404" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mayur Vihar Extension</text>
+  <circle cx="2460" cy="1450" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2474" y="1444" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">न्यू अशोक नगर</text>
+  <text x="2474" y="1454" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">New Ashok Nagar</text>
+  <circle cx="2520" cy="1480" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2534" y="1474" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 15</text>
+  <text x="2534" y="1484" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 15</text>
+  <circle cx="2580" cy="1515" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2594" y="1509" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 16</text>
+  <text x="2594" y="1519" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 16</text>
+  <circle cx="2640" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2654" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 18</text>
+  <text x="2654" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 18 (Atta Market / Mall of India)</text>
+  <circle cx="2700" cy="1550" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2700" cy="1550" r="4.5" fill="#0F172A"/>
+  <text x="2714" y="1544" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">बॉटनिकल गार्डन</text>
+  <text x="2714" y="1557" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Botanical Garden (Noida)</text>
+  <circle cx="2770" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2784" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">गोल्फ कोर्स</text>
+  <text x="2784" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Golf Course Noida</text>
+  <circle cx="2840" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2854" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सिटी सेंटर</text>
+  <text x="2854" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida City Centre (Sector 32)</text>
+  <circle cx="2910" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2924" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 34</text>
+  <text x="2924" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 34</text>
+  <circle cx="2980" cy="1550" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2980" cy="1550" r="4.5" fill="#0F172A"/>
+  <text x="2994" y="1544" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">नोएडा सेक्टर 52</text>
+  <text x="2994" y="1557" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Noida Sector 52 (Interchange Walkway to Aqua Line Sec 51)</text>
+  <circle cx="3070" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3084" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 61</text>
+  <text x="3084" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 61</text>
+  <circle cx="3160" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3174" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 59</text>
+  <text x="3174" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 59</text>
+  <circle cx="3250" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3264" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 62</text>
+  <text x="3264" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 62</text>
+  <circle cx="3380" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3394" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा इलेक्ट्रॉनिक सिटी</text>
+  <text x="3394" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Electronic City (NH-24)</text>
+  <circle cx="2180" cy="1170" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2194" y="1164" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">लक्ष्मी नगर</text>
+  <text x="2194" y="1174" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Laxmi Nagar (V3S Mall)</text>
+  <circle cx="2260" cy="1100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2274" y="1094" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">निर्माण विहार</text>
+  <text x="2274" y="1104" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nirman Vihar (Scope Minar)</text>
+  <circle cx="2340" cy="1030" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2354" y="1024" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">प्रीत विहार</text>
+  <text x="2354" y="1034" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Preet Vihar</text>
+  <circle cx="2440" cy="960" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2440" cy="960" r="4.5" fill="#0F172A"/>
+  <text x="2454" y="954" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">कड़कड़डूमा</text>
+  <text x="2454" y="967" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Karkarduma</text>
+  <circle cx="2540" cy="960" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2540" cy="960" r="4.5" fill="#0F172A"/>
+  <text x="2554" y="954" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">आनंद विहार</text>
+  <text x="2554" y="967" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Anand Vihar ISBT &amp; Railway Station</text>
+  <circle cx="2660" cy="960" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2674" y="954" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कौशाम्बी</text>
+  <text x="2674" y="964" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Kaushambi (Wave Cinema)</text>
+  <circle cx="2780" cy="960" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2794" y="954" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">वैशाली</text>
+  <text x="2794" y="964" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Vaishali (Ghaziabad)</text>
+  <circle cx="2980" cy="1680" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2980" cy="1680" r="4.5" fill="#0F172A"/>
+  <text x="2994" y="1674" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">नोएडा सेक्टर 51</text>
+  <text x="2994" y="1687" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Noida Sector 51 (Aqua Line Terminal Link)</text>
+  <circle cx="2980" cy="1735" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="1729" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 50</text>
+  <text x="2994" y="1739" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 50 (She-Is-Special)</text>
+  <circle cx="2980" cy="1790" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="1784" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 76</text>
+  <text x="2994" y="1794" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 76</text>
+  <circle cx="2980" cy="1845" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="1839" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 101</text>
+  <text x="2994" y="1849" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 101</text>
+  <circle cx="2980" cy="1900" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="1894" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 81</text>
+  <text x="2994" y="1904" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 81</text>
+  <circle cx="2980" cy="1955" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="1949" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">एनएसईजेड</text>
+  <text x="2994" y="1959" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">NSEZ (Noida Special Economic Zone)</text>
+  <circle cx="2980" cy="2010" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2004" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 83</text>
+  <text x="2994" y="2014" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 83</text>
+  <circle cx="2980" cy="2065" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2059" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 137</text>
+  <text x="2994" y="2069" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 137 (Felix Hospital Link)</text>
+  <circle cx="2980" cy="2120" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2114" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 142</text>
+  <text x="2994" y="2124" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 142 (Advant Navis Link)</text>
+  <circle cx="2980" cy="2175" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2169" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 143</text>
+  <text x="2994" y="2179" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 143</text>
+  <circle cx="2980" cy="2230" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2224" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 144</text>
+  <text x="2994" y="2234" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 144</text>
+  <circle cx="2980" cy="2285" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2279" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 145</text>
+  <text x="2994" y="2289" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 145</text>
+  <circle cx="2980" cy="2340" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2334" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 146</text>
+  <text x="2994" y="2344" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 146</text>
+  <circle cx="2980" cy="2395" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2389" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 147</text>
+  <text x="2994" y="2399" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 147</text>
+  <circle cx="2980" cy="2450" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2994" y="2444" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नोएडा सेक्टर 148</text>
+  <text x="2994" y="2454" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Noida Sector 148</text>
+  <circle cx="3045" cy="2495" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3059" y="2489" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नॉलेज पार्क २</text>
+  <text x="3059" y="2499" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Knowledge Park II (Greater Noida)</text>
+  <circle cx="3110" cy="2540" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3124" y="2534" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">परी चौक</text>
+  <text x="3124" y="2544" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Pari Chowk (Greater Noida Bus Port)</text>
+  <circle cx="3175" cy="2585" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3189" y="2579" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">अल्फा १</text>
+  <text x="3189" y="2589" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Alpha 1 (Commercial Belt)</text>
+  <circle cx="3240" cy="2630" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3254" y="2624" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डेल्टा १</text>
+  <text x="3254" y="2634" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Delta 1</text>
+  <circle cx="3305" cy="2675" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3319" y="2669" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ग्रेनो प्राधिकरण कार्यालय</text>
+  <text x="3319" y="2679" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">GNIDA Office (Greater Noida Authority)</text>
+  <circle cx="3370" cy="2720" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="3384" y="2714" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डिपो स्टेशन</text>
+  <text x="3384" y="2724" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Depot Station (Greater Noida Terminal)</text>
+  <circle cx="450.0" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="450.0" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रिठाला</text>
+  <text x="450.0" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rithala</text>
+  <circle cx="538.4615384615385" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="538.4615384615385" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रोहिणी पश्चिम</text>
+  <text x="538.4615384615385" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rohini West</text>
+  <circle cx="626.9230769230769" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="626.9230769230769" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">रोहिणी पूर्व</text>
+  <text x="626.9230769230769" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rohini East</text>
+  <circle cx="715.3846153846155" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="715.3846153846155" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पीतमपुरा</text>
+  <text x="715.3846153846155" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Pitampura</text>
+  <circle cx="803.8461538461538" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="803.8461538461538" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कोहाट एन्क्लेव</text>
+  <text x="803.8461538461538" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Kohat Enclave</text>
+  <circle cx="980" cy="750" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="980" cy="750" r="4.5" fill="#0F172A"/>
+  <text x="994" y="744" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">नेताजी सुभाष प्लेस</text>
+  <text x="994" y="757" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Netaji Subhash Place (NSP)</text>
+  <circle cx="980.7692307692308" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="980.7692307692308" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">केशव पुरम</text>
+  <text x="980.7692307692308" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Keshav Puram</text>
+  <circle cx="1069.230769230769" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1069.230769230769" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कन्हैया नगर</text>
+  <text x="1069.230769230769" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Kanhaiya Nagar</text>
+  <circle cx="1220" cy="750" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1220" cy="750" r="4.5" fill="#0F172A"/>
+  <text x="1234" y="744" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">इंद्रलोक</text>
+  <text x="1234" y="757" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Inderlok</text>
+  <circle cx="1246.1538461538462" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1246.1538461538462" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शास्त्री नगर</text>
+  <text x="1246.1538461538462" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shastri Nagar</text>
+  <circle cx="1334.6153846153848" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1334.6153846153848" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">प्रताप नगर</text>
+  <text x="1334.6153846153848" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Pratap Nagar</text>
+  <circle cx="1423.076923076923" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1423.076923076923" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पुल बंगश</text>
+  <text x="1423.076923076923" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Pulbangash</text>
+  <circle cx="1511.5384615384617" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1511.5384615384617" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">तीस हज़ारी</text>
+  <text x="1511.5384615384617" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tis Hazari (Courts)</text>
+  <circle cx="1685" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1685" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शास्त्री पार्क</text>
+  <text x="1685" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shastri Park</text>
+  <circle cx="1770" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1770" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सीलमपुर</text>
+  <text x="1770" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Seelampur</text>
+  <circle cx="2050" cy="750" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2050" cy="750" r="4.5" fill="#0F172A"/>
+  <text x="2064" y="744" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">वेलकम</text>
+  <text x="2064" y="757" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Welcome</text>
+  <circle cx="1940" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1940" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शाहदरा</text>
+  <text x="1940" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shahdara</text>
+  <circle cx="2025" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2025" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मानसरोवर पार्क</text>
+  <text x="2025" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mansarovar Park</text>
+  <circle cx="2110" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2110" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">झिलमिल</text>
+  <text x="2110" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jhilmil</text>
+  <circle cx="2195" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2195" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दिलशाद गार्डन</text>
+  <text x="2195" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dilshad Garden</text>
+  <circle cx="2280" cy="750" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2280" y="734" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शहीद नगर</text>
+  <text x="2280" y="744" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shaheed Nagar (Ghaziabad Border)</text>
+  <circle cx="2355" cy="775" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2355" y="759" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">राज बाग़</text>
+  <text x="2355" y="769" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Raj Bagh</text>
+  <circle cx="2430" cy="800" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2430" y="784" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मेजर मोहित शर्मा</text>
+  <text x="2430" y="794" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Major Mohit Sharma Rajendra Nagar</text>
+  <circle cx="2505" cy="825" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2505" y="809" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">श्याम पार्क</text>
+  <text x="2505" y="819" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shyam Park</text>
+  <circle cx="2580" cy="850" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2580" y="834" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मोहन नगर</text>
+  <text x="2580" y="844" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mohan Nagar (World Square Mall)</text>
+  <circle cx="2655" cy="875" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2655" y="859" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">अर्थला</text>
+  <text x="2655" y="869" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Arthala</text>
+  <circle cx="2730" cy="900" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2730" y="884" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">हिंडन रिवर</text>
+  <text x="2730" y="894" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Hindon River</text>
+  <circle cx="2805" cy="925" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2819" y="919" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शहीद स्थल</text>
+  <text x="2819" y="929" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shaheed Sthal (New Bus Adda Ghaziabad)</text>
+  <circle cx="1120" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1134" y="884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">अशोक पार्क मेन</text>
+  <text x="1134" y="894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ashok Park Main</text>
+  <circle cx="1030" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1044" y="884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पंजाबी बाग़</text>
+  <text x="1044" y="894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Punjabi Bagh</text>
+  <circle cx="880" cy="1030" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="880" cy="1030" r="4.5" fill="#0F172A"/>
+  <text x="866" y="1024" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">पंजाबी बाग़ पश्चिम</text>
+  <text x="866" y="1037" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Punjabi Bagh West</text>
+  <circle cx="950" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="964" y="884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शिवाजी पार्क</text>
+  <text x="964" y="894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shivaji Park</text>
+  <circle cx="880" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="866" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मादीपुर</text>
+  <text x="866" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Madipur</text>
+  <circle cx="810" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="796" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पश्चिम विहार पूर्व</text>
+  <text x="796" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Paschim Vihar East</text>
+  <circle cx="740" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="726" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पश्चिम विहार पश्चिम</text>
+  <text x="726" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Paschim Vihar West</text>
+  <circle cx="670" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="656" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पीरागढ़ी</text>
+  <text x="656" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Peera Garhi (Outer Ring Road)</text>
+  <circle cx="600" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="586" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">उद्योग नगर</text>
+  <text x="586" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Udyog Nagar</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">महाराजा सूरजमल स्टेडियम</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Maharaja Surajmal Stadium</text>
+  <circle cx="460" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="446" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नांगलोई</text>
+  <text x="446" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nangloi</text>
+  <circle cx="400" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="386" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नांगलोई रेलवे स्टेशन</text>
+  <text x="386" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nangloi Railway Station</text>
+  <circle cx="340" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="326" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">राजधानी पार्क</text>
+  <text x="326" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Rajdhani Park</text>
+  <circle cx="280" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="266" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मुंडका</text>
+  <text x="266" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mundka</text>
+  <circle cx="230" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="216" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मुंडका औद्योगिक क्षेत्र</text>
+  <text x="216" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mundka Industrial Area</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">घेवरा</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ghevra</text>
+  <circle cx="140" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="126" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">टिकरी कलाँ</text>
+  <text x="126" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tikri Kalan</text>
+  <circle cx="100" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="86" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">टिकरी बॉर्डर</text>
+  <text x="86" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tikri Border (Delhi-Haryana Border)</text>
+  <circle cx="70" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="56" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पंडित श्री राम शर्मा</text>
+  <text x="56" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Pandit Shree Ram Sharma</text>
+  <circle cx="40" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="26" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बहादुरगढ़ सिटी</text>
+  <text x="26" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Bahadurgarh City</text>
+  <circle cx="10" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="-4" y="884" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ब्रिगेडियर होशियार सिंह</text>
+  <text x="-4" y="894" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Brigadier Hoshiar Singh (City Park Bahadurgarh)</text>
+  <circle cx="1670" cy="830" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1684" y="824" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">लाल किला</text>
+  <text x="1684" y="834" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Lal Quila (Red Fort)</text>
+  <circle cx="1710" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1724" y="884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जामा मस्जिद</text>
+  <text x="1724" y="894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jama Masjid</text>
+  <circle cx="1750" cy="960" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1764" y="954" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दिल्ली गेट</text>
+  <text x="1764" y="964" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Delhi Gate (Feroz Shah Kotla Stadium)</text>
+  <circle cx="1790" cy="1060" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1804" y="1054" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आईटीओ</text>
+  <text x="1804" y="1064" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">ITO (Police HQ)</text>
+  <circle cx="1730" cy="1370" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1744" y="1364" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जनपथ</text>
+  <text x="1744" y="1374" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Janpath</text>
+  <circle cx="1700" cy="1540" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1714" y="1534" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ख़ान मार्केट</text>
+  <text x="1714" y="1544" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Khan Market</text>
+  <circle cx="1780" cy="1620" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1794" y="1614" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जवाहरलाल नेहरू स्टेडियम</text>
+  <text x="1794" y="1624" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jawaharlal Nehru Stadium (JLN)</text>
+  <circle cx="1860" cy="1690" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1874" y="1684" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जंगपुरा</text>
+  <text x="1874" y="1694" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jangpura</text>
+  <circle cx="1980" cy="1830" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1994" y="1824" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मूलचंद</text>
+  <text x="1994" y="1834" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Moolchand Hospital</text>
+  <circle cx="2020" cy="1890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2034" y="1884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कैलाश कॉलोनी</text>
+  <text x="2034" y="1894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Kailash Colony</text>
+  <circle cx="2060" cy="1950" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2074" y="1944" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नेहरू प्लेस</text>
+  <text x="2074" y="1954" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nehru Place (IT Market)</text>
+  <circle cx="2100" cy="2020" r="11" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2100" cy="2020" r="4.5" fill="#0F172A"/>
+  <text x="2114" y="2014" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="600" fill="#334155">कालकाजी मंदिर</text>
+  <text x="2114" y="2027" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kalkaji Mandir</text>
+  <circle cx="2100" cy="2075" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2069" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">गोविंदपुरी</text>
+  <text x="2114" y="2079" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Govindpuri</text>
+  <circle cx="2100" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">हरकेश नगर ओखला</text>
+  <text x="2114" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Harkesh Nagar Okhla</text>
+  <circle cx="2100" cy="2185" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2179" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जसोला अपोलो</text>
+  <text x="2114" y="2189" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jasola Apollo Hospital</text>
+  <circle cx="2100" cy="2240" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2234" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सरिता विहार</text>
+  <text x="2114" y="2244" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sarita Vihar</text>
+  <circle cx="2100" cy="2295" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2289" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मोहन एस्टेट</text>
+  <text x="2114" y="2299" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mohan Estate</text>
+  <circle cx="2100" cy="2350" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2344" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">तुग़लकाबाद स्टेशन</text>
+  <text x="2114" y="2354" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Tughlakabad Station</text>
+  <circle cx="2100" cy="2400" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2394" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बदरपुर बॉर्डर</text>
+  <text x="2114" y="2404" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Badarpur Border (Delhi-Faridabad)</text>
+  <circle cx="2100" cy="2460" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2454" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सराय</text>
+  <text x="2114" y="2464" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sarai (Faridabad)</text>
+  <circle cx="2100" cy="2515" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2509" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">एनएचपीसी चौक</text>
+  <text x="2114" y="2519" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">NHPC Chowk</text>
+  <circle cx="2100" cy="2570" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2564" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मेवला महाराजपुर</text>
+  <text x="2114" y="2574" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mewala Maharajpur</text>
+  <circle cx="2100" cy="2625" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2619" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सेक्टर 28</text>
+  <text x="2114" y="2629" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sector 28 Faridabad</text>
+  <circle cx="2100" cy="2680" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2674" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बड़खल मोड़</text>
+  <text x="2114" y="2684" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Badkal Mor</text>
+  <circle cx="2100" cy="2735" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2729" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ओल्ड फरीदाबाद</text>
+  <text x="2114" y="2739" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Old Faridabad Railway Station</text>
+  <circle cx="2100" cy="2790" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2784" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नीलम चौक अजरौंदा</text>
+  <text x="2114" y="2794" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Neelam Chowk Ajronda</text>
+  <circle cx="2100" cy="2845" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2839" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बाटा चौक</text>
+  <text x="2114" y="2849" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Bata Chowk</text>
+  <circle cx="2100" cy="2900" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2894" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">एस्कॉर्ट्स मुजेसर</text>
+  <text x="2114" y="2904" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Escorts Mujesar</text>
+  <circle cx="2100" cy="2955" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2949" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">संत सूरदास</text>
+  <text x="2114" y="2959" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sant Surdas (Sihi)</text>
+  <circle cx="2100" cy="2950" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="2944" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">राजा नाहर सिंह</text>
+  <text x="2114" y="2954" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Raja Nahar Singh (Ballabhgarh)</text>
+  <circle cx="800" cy="1770" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="786" y="1764" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डाबरी मोड़ - जनकपुरी दक्षिण</text>
+  <text x="786" y="1774" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dabri Mor - Janakpuri South</text>
+  <circle cx="800" cy="1860" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="786" y="1854" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दशरथ पुरी</text>
+  <text x="786" y="1864" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dashrath Puri</text>
+  <circle cx="820" cy="1950" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="806" y="1944" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पालम</text>
+  <text x="806" y="1954" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Palam (Railway Station Link)</text>
+  <circle cx="870" cy="2030" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="856" y="2024" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सदर बाज़ार छावनी</text>
+  <text x="856" y="2034" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sadar Bazar Cantonment</text>
+  <circle cx="950" cy="2100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="964" y="2094" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">टर्मिनल १ आईजीआई एयरपोर्ट</text>
+  <text x="964" y="2104" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Terminal 1 IGI Domestic Airport</text>
+  <circle cx="1050" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1064" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शंकर विहार</text>
+  <text x="1064" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shankar Vihar</text>
+  <circle cx="1160" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1174" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">वसंत विहार</text>
+  <text x="1174" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Vasant Vihar</text>
+  <circle cx="1270" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1284" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मुनीरका</text>
+  <text x="1284" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Munirka (JNU North Gate Link)</text>
+  <circle cx="1380" cy="2130" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1394" y="2124" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आर के पुरम</text>
+  <text x="1394" y="2134" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">RK Puram Sector 1</text>
+  <circle cx="1490" cy="2100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1504" y="2094" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आईआईटी</text>
+  <text x="1504" y="2104" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">IIT Delhi Gate</text>
+  <circle cx="1720" cy="2040" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1734" y="2034" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पंचशील पार्क</text>
+  <text x="1734" y="2044" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Panchsheel Park</text>
+  <circle cx="1820" cy="2040" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1834" y="2034" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">चिराग दिल्ली</text>
+  <text x="1834" y="2044" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Chirag Delhi</text>
+  <circle cx="1920" cy="2040" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1934" y="2034" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ग्रेटर कैलाश</text>
+  <text x="1934" y="2044" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Greater Kailash (GK)</text>
+  <circle cx="2010" cy="2040" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2024" y="2034" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नेहरू एन्क्लेव</text>
+  <text x="2024" y="2044" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nehru Enclave</text>
+  <circle cx="2210" cy="1970" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2224" y="1964" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ओखला एनएसआईसी</text>
+  <text x="2224" y="1974" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Okhla NSIC</text>
+  <circle cx="2300" cy="1910" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2314" y="1904" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सुखदेव विहार</text>
+  <text x="2314" y="1914" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sukhdev Vihar (Fortis Escorts Link)</text>
+  <circle cx="2380" cy="1850" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2394" y="1844" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जामिया मिल्लिया इस्लामिया</text>
+  <text x="2394" y="1854" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jamia Millia Islamia University</text>
+  <circle cx="2450" cy="1780" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2464" y="1774" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ओखला विहार</text>
+  <text x="2464" y="1784" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Okhla Vihar</text>
+  <circle cx="2520" cy="1710" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2534" y="1704" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जसोला विहार शाहीन बाग़</text>
+  <text x="2534" y="1714" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jasola Vihar Shaheen Bagh</text>
+  <circle cx="2580" cy="1640" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2594" y="1634" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कालिंदी कुंज</text>
+  <text x="2594" y="1644" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Kalindi Kunj (Yamuna Riverfront)</text>
+  <circle cx="2640" cy="1590" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2654" y="1584" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ओखला पक्षी अभयारण्य</text>
+  <text x="2654" y="1594" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Okhla Bird Sanctuary (Noida)</text>
+  <circle cx="1450" cy="360" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1464" y="354" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मजलिस पार्क</text>
+  <text x="1464" y="364" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Majlis Park</text>
+  <circle cx="1140" cy="580" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1154" y="574" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शालीमार बाग़</text>
+  <text x="1154" y="584" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shalimar Bagh</text>
+  <circle cx="920" cy="890" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="934" y="884" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शकूरपुर</text>
+  <text x="934" y="894" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shakurpur</text>
+  <circle cx="930" cy="1180" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="944" y="1174" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ईएसआई बसईदारापुर</text>
+  <text x="944" y="1184" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">ESI Basaidarapur Hospital</text>
+  <circle cx="1080" cy="1550" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1094" y="1544" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मायापुरी</text>
+  <text x="1094" y="1554" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mayapuri</text>
+  <circle cx="1140" cy="1640" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1154" y="1634" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नारायणा विहार</text>
+  <text x="1154" y="1644" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Naraina Vihar</text>
+  <circle cx="1200" cy="1720" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1214" y="1714" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दिल्ली कैंट</text>
+  <text x="1214" y="1724" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Delhi Cantt</text>
+  <circle cx="1270" cy="1780" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1284" y="1774" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दुर्गाबाई देशमुख साउथ कैंपस</text>
+  <text x="1284" y="1784" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Durgabai Deshmukh South Campus (DU South)</text>
+  <circle cx="1360" cy="1810" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1374" y="1804" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मोती बाग़</text>
+  <text x="1374" y="1814" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sir M. Vishweshwaraiah Moti Bagh</text>
+  <circle cx="1440" cy="1810" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1454" y="1804" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">भीकाजी कामा प्लेस</text>
+  <text x="1454" y="1814" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Bhikaji Cama Place</text>
+  <circle cx="1520" cy="1810" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1534" y="1804" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सरोजिनी नगर</text>
+  <text x="1534" y="1814" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sarojini Nagar Market</text>
+  <circle cx="1770" cy="1780" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1784" y="1774" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">साउथ एक्सटेंशन</text>
+  <text x="1784" y="1784" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">South Extension (South Ex)</text>
+  <circle cx="2050" cy="1710" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2064" y="1704" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">विनोबापुरी</text>
+  <text x="2064" y="1714" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Vinobapuri</text>
+  <circle cx="2140" cy="1630" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2154" y="1624" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आश्रम</text>
+  <text x="2154" y="1634" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Ashram</text>
+  <circle cx="2210" cy="1520" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2224" y="1514" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">हज़रत निज़ामुद्दीन</text>
+  <text x="2224" y="1524" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sarai Kale Khan - Hazrat Nizamuddin Railway</text>
+  <circle cx="2350" cy="1260" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2364" y="1254" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मयूर विहार पॉकेट-१</text>
+  <text x="2364" y="1264" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mayur Vihar Pocket-1</text>
+  <circle cx="2420" cy="1180" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2434" y="1174" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">त्रिलोकपुरी - संजय झील</text>
+  <text x="2434" y="1184" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Trilokpuri - Sanjay Lake</text>
+  <circle cx="2480" cy="1110" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2494" y="1104" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">पूर्वी विनोद नगर</text>
+  <text x="2494" y="1114" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">East Vinod Nagar - Mayur Vihar-II</text>
+  <circle cx="2520" cy="1050" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2534" y="1044" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मंडावली</text>
+  <text x="2534" y="1054" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Mandawali - West Vinod Nagar</text>
+  <circle cx="2540" cy="1000" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2554" y="994" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आईपी एक्सटेंशन</text>
+  <text x="2554" y="1004" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">IP Extension</text>
+  <circle cx="2360" cy="910" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2374" y="904" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कड़कड़डूमा कोर्ट</text>
+  <text x="2374" y="914" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Karkarduma Court</text>
+  <circle cx="2280" cy="850" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2294" y="844" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">कृष्णा नगर</text>
+  <text x="2294" y="854" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Krishna Nagar</text>
+  <circle cx="2170" cy="800" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2184" y="794" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ईस्ट आज़ाद नगर</text>
+  <text x="2184" y="804" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">East Azad Nagar</text>
+  <circle cx="2050" cy="640" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2064" y="634" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जाफ़राबाद</text>
+  <text x="2064" y="644" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Jaffrabad</text>
+  <circle cx="2050" cy="530" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2064" y="524" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मौजपुर - बाबरपुर</text>
+  <text x="2064" y="534" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Maujpur - Babarpur</text>
+  <circle cx="2130" cy="440" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2144" y="434" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">गोकुलपुरी</text>
+  <text x="2144" y="444" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Gokulpuri</text>
+  <circle cx="2210" cy="360" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2224" y="354" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">जौहरी एन्क्लेव</text>
+  <text x="2224" y="364" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Johri Enclave</text>
+  <circle cx="2300" cy="300" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2314" y="294" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शिव विहार</text>
+  <text x="2314" y="304" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shiv Vihar</text>
+  <circle cx="1480" cy="1280" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1494" y="1274" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">शिवाजी स्टेडियम</text>
+  <text x="1494" y="1284" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Shivaji Stadium (CP Airport Check-in)</text>
+  <circle cx="1230" cy="1740" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1244" y="1734" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">धौला कुआँ</text>
+  <text x="1244" y="1744" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dhaula Kuan (Skywalk to South Campus Pink Line)</text>
+  <circle cx="990" cy="2210" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1004" y="2204" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">दिल्ली एरोसिटी</text>
+  <text x="1004" y="2214" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Delhi Aerocity (Hospitality District)</text>
+  <circle cx="780" cy="2350" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="766" y="2344" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">आईजीआई एयरपोर्ट टर्मिनल ३</text>
+  <text x="766" y="2354" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">IGI Airport Terminal 3 (International &amp; Domestic)</text>
+  <circle cx="260" cy="2250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="246" y="2244" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">यशोभूमि द्वारका सेक्टर २५</text>
+  <text x="246" y="2254" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Yashobhoomi Dwarka Sector 25 (IICC)</text>
+  <circle cx="520" cy="2100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="506" y="2094" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नांगली</text>
+  <text x="506" y="2104" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Nangli</text>
+  <circle cx="400" cy="2100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="386" y="2094" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">नजफ़गढ़</text>
+  <text x="386" y="2104" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Najafgarh</text>
+  <circle cx="280" cy="2100" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="266" y="2094" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">ढांसा बस स्टैंड</text>
+  <text x="266" y="2104" text-anchor="end" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Dhansa Bus Stand</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सेक्टर 55-56</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sector 55-56 Gurugram</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सेक्टर 54 चौक</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sector 54 Chowk</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सेक्टर 53-54</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sector 53-54</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">सेक्टर 42-43</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Sector 42-43</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डीएलएफ फेज़ 1</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">DLF Phase 1</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डीएलएफ फेज़ 2</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">DLF Phase 2</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">बेलवेडियर टावर्स</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Belvedere Towers</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">साइबर सिटी</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Cyber City (DLF Gateway Tower)</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">मौलसरी एवेन्यू</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">Moulsari Avenue (Ambience Mall Link)</text>
+  <circle cx="1600" cy="1250" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="9" font-weight="500" fill="#475569">डीएलएफ फेज़ 3</text>
+  <text x="1614" y="1254" text-anchor="start" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#0F172A">DLF Phase 3</text>
+</g>
+<!-- CLEAN LEGEND CARD -->
+<g transform="translate(2950, 60)">
+  <rect width="780" height="680" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="30" y="42" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">DELHI NCR METRO NETWORK</text>
+  <line x1="30" y1="56" x2="740" y2="56" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="45" cy="86" r="6.5" fill="#D32F2F"/>
+  <text x="64" y="90" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Red Line: Shaheed Sthal - Rithala</text>
+  <circle cx="45" cy="122" r="6.5" fill="#FBC02D"/>
+  <text x="64" y="126" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Yellow Line: Samaypur Badli - Millennium City Centre</text>
+  <circle cx="45" cy="158" r="6.5" fill="#1976D2"/>
+  <text x="64" y="162" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Blue Line Main: Dwarka Sec 21 - Noida Electronic City</text>
+  <circle cx="45" cy="194" r="6.5" fill="#1565C0"/>
+  <text x="64" y="198" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Blue Line Branch: Yamuna Bank - Vaishali</text>
+  <circle cx="45" cy="230" r="6.5" fill="#388E3C"/>
+  <text x="64" y="234" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Green Line: Brigadier Hoshiar Singh - Inderlok / Kirti Nagar</text>
+  <circle cx="45" cy="266" r="6.5" fill="#7B1FA2"/>
+  <text x="64" y="270" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Violet Line: Kashmere Gate - Raja Nahar Singh (Ballabhgarh)</text>
+  <circle cx="45" cy="302" r="6.5" fill="#EC407A"/>
+  <text x="64" y="306" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Pink Line: Majlis Park - Shiv Vihar (Loop)</text>
+  <circle cx="45" cy="338" r="6.5" fill="#C2185B"/>
+  <text x="64" y="342" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Magenta Line: Janakpuri West - Botanical Garden Noida</text>
+  <circle cx="45" cy="374" r="6.5" fill="#78909C"/>
+  <text x="64" y="378" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Grey Line: Dwarka - Dhansa Bus Stand</text>
+  <circle cx="45" cy="410" r="6.5" fill="#F57C00"/>
+  <text x="64" y="414" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Airport Express: New Delhi - Yashobhoomi Dwarka Sec 25</text>
+  <circle cx="45" cy="446" r="6.5" fill="#0288D1"/>
+  <text x="64" y="450" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Rapid Metro: Gurugram Sikanderpur Loop - Sec 55-56</text>
+  <circle cx="45" cy="482" r="6.5" fill="#00BCD4"/>
+  <text x="64" y="486" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Aqua Line (NMRC): Noida Sector 51 - Depot Station Greater Noida</text>
+  <line x1="30" y1="521" x2="740" y2="521" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="45" cy="545" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
+  <circle cx="45" cy="545" r="3" fill="#0F172A"/>
+  <text x="64" y="549" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="260" cy="545" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="278" y="549" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+  <line x1="450" y1="545" x2="495" y2="545" stroke="#00BCD4" stroke-width="3" stroke-dasharray="4,4"/>
+  <text x="510" y="549" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">External Transfer (300m)</text>
+</g>
 </svg>

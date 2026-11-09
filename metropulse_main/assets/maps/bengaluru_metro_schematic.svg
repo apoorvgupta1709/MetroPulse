@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2600" width="100%" height="100%">
+<rect width="3200" height="2600" fill="#FFFFFF"/>
+<!-- LINES -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M 400 1300 L 650 1300 L 950 1300 L 1250 1300 L 1600 1300 L 1850 1300 L 2100 1300 L 2350 1300 L 2600 1300 L 2800 1300 L 3000 1300" fill="none" stroke="#7C3AED" stroke-width="10"/>
+  <path d="M 1600 350 L 1600 550 L 1600 750 L 1600 950 L 1600 1120 L 1600 1300 L 1600 1500 L 1600 1680 L 1600 1850 L 1600 2020 L 1600 2180 L 1600 2320 L 1600 2480" fill="none" stroke="#16A34A" stroke-width="10"/>
+  <path d="M 1600 1850 L 1950 1950 L 2250 2100 L 2550 2250 L 2850 2400" fill="none" stroke="#EAB308" stroke-width="10"/>
+</g>
+<!-- STATIONS -->
+<g id="stations-layer">
+  <circle cx="400" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="414" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಚಲ್ಲಘಟ್ಟ</text>
+  <text x="414" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Challaghatta</text>
+  <circle cx="650" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="664" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಕೆಂಗೇರಿ</text>
+  <text x="664" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Kengeri</text>
+  <circle cx="950" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="964" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಮೈಸೂರು ರಸ್ತೆ</text>
+  <text x="964" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Mysuru Road</text>
+  <circle cx="1250" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1264" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ವಿಜಯನಗರ</text>
+  <text x="1264" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Vijayanagar</text>
+  <circle cx="1600" cy="1300" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1300" r="5" fill="#0F172A"/>
+  <text x="1614" y="1294" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">ಮೆಜೆಸ್ಟಿಕ್</text>
+  <text x="1614" y="1307" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">Nadaprabhu Kempegowda (Majestic)</text>
+  <circle cx="1850" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1864" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ವಿಧಾನ ಸೌಧ</text>
+  <text x="1864" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Vidhana Soudha</text>
+  <circle cx="2100" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2114" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಎಂ.ಜಿ. ರಸ್ತೆ</text>
+  <text x="2114" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">M.G. Road</text>
+  <circle cx="2350" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2364" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಇಂದಿರಾನಗರ</text>
+  <text x="2364" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Indiranagar</text>
+  <circle cx="2600" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2586" y="1294" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಬೈಯಪ್ಪನಹಳ್ಳಿ</text>
+  <text x="2586" y="1304" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Baiyappanahalli</text>
+  <circle cx="2800" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2786" y="1294" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಕೆ.ಆರ್. ಪುರ</text>
+  <text x="2786" y="1304" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">K.R. Pura</text>
+  <circle cx="3000" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2986" y="1294" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ವೈಟ್‌ಫೀಲ್ಡ್</text>
+  <text x="2986" y="1304" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Whitefield (Kadugodi)</text>
+  <circle cx="1600" cy="350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="344" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಮಾದವಾರ</text>
+  <text x="1614" y="354" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Madavara (BIEC)</text>
+  <circle cx="1600" cy="550" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="544" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ನಾಗಸಂದ್ರ</text>
+  <text x="1614" y="554" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Nagasandra</text>
+  <circle cx="1600" cy="750" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="744" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಪೀಣ್ಯ</text>
+  <text x="1614" y="754" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Peenya</text>
+  <circle cx="1600" cy="950" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="944" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಯಶವಂತಪುರ</text>
+  <text x="1614" y="954" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Yeshwantpur</text>
+  <circle cx="1600" cy="1120" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1114" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್</text>
+  <text x="1614" y="1124" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Mantri Square Sampige Road</text>
+  <circle cx="1600" cy="1500" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1494" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಚಿಕ್ಕಪೇಟೆ</text>
+  <text x="1614" y="1504" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Chickpete</text>
+  <circle cx="1600" cy="1680" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="1674" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಕೆ.ಆರ್. ಮಾರ್ಕೆಟ್</text>
+  <text x="1614" y="1684" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Krishna Rajendra Market</text>
+  <circle cx="1600" cy="1850" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1600" cy="1850" r="5" fill="#0F172A"/>
+  <text x="1614" y="1844" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">ನ್ಯಾಷನಲ್ ಕಾಲೇಜ್</text>
+  <text x="1614" y="1857" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">National College</text>
+  <circle cx="1600" cy="2020" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2014" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಲಾಲ್‌ಬಾಗ್</text>
+  <text x="1614" y="2024" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Lalbagh</text>
+  <circle cx="1600" cy="2180" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2174" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಜಯನಗರ</text>
+  <text x="1614" y="2184" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Jayanagar</text>
+  <circle cx="1600" cy="2320" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2314" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಬನಶಂಕರಿ</text>
+  <text x="1614" y="2324" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Banashankari</text>
+  <circle cx="1600" cy="2480" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1614" y="2474" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ರೇಷ್ಮೆ ಸಂಸ್ಥೆ</text>
+  <text x="1614" y="2484" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Silk Institute</text>
+  <circle cx="1950" cy="1950" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1964" y="1944" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಜಯದೇವ</text>
+  <text x="1964" y="1954" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Jayadeva Hospital</text>
+  <circle cx="2250" cy="2100" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="2250" cy="2100" r="5" fill="#0F172A"/>
+  <text x="2264" y="2094" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">ಸಿಲ್ಕ್ ಬೋರ್ಡ್</text>
+  <text x="2264" y="2107" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617">Central Silk Board</text>
+  <circle cx="2550" cy="2250" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2536" y="2244" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ</text>
+  <text x="2536" y="2254" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Electronic City</text>
+  <circle cx="2850" cy="2400" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="2836" y="2394" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569">ಬೊಮ್ಮಸಂದ್ರ</text>
+  <text x="2836" y="2404" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A">Bommasandra</text>
+</g>
+<!-- LEGEND -->
+<g transform="translate(2460, 60)">
+  <rect width="680" height="264" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">BENGALURU NAMMA METRO</text>
+  <line x1="24" y1="50" x2="656" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="78" r="6" fill="#7C3AED"/>
+  <text x="54" y="82" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Purple Line: Challaghatta - Whitefield (Kadugodi)</text>
+  <circle cx="36" cy="114" r="6" fill="#16A34A"/>
+  <text x="54" y="118" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Green Line: Madavara (BIEC) - Silk Institute</text>
+  <circle cx="36" cy="150" r="6" fill="#EAB308"/>
+  <text x="54" y="154" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Yellow Line: R.V. Road - Bommasandra (Electronic City)</text>
+  <line x1="24" y1="189" x2="656" y2="189" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="211" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
+  <circle cx="36" cy="211" r="3" fill="#0F172A"/>
+  <text x="54" y="215" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="240" cy="211" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="256" y="215" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+</g>
+</svg>

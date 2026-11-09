@@ -402,6 +402,8 @@ class _InteractiveMapScreenState extends State<InteractiveMapScreen> {
             Expanded(
               child: CrispVectorMap(
                 key: _mapKey,
+                cityId: transit.activeCity.id,
+                cityName: transit.activeCity.name,
                 stations: transit.stations,
                 lines: transit.lines,
                 activeRoute: _overlayActiveRoute ? transit.fastestRoute : null,
