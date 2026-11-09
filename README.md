@@ -62,13 +62,26 @@ Every client and admin screen features:
 
 ---
 
-## 4. Production Checklist Status
-- [x] Unique App Identity & Package Naming (`com.apoorv.metropulse` & `com.apoorv.metropulse.admin`)
-- [x] Standard Directory Structure (`publish/` sub-directories created)
-- [x] Hardened Firestore Security Rules
-- [ ] Production App Icon & Native Splash Assets
-- [ ] Offline Graph Engine & Seed Datasets
-- [ ] Dynamic AdMob Module with Safety Test IDs
-- [ ] Razorpay Prime Pass Integration
-- [ ] Admin Control Dashboard
-- [ ] Store Listing & Release Builds Generated
+## 4. Production Checklist Status (10/10 Complete)
+- [x] **1. Unique App Identity & Package Naming**:
+  - Client: `com.apoorv.metropulse`
+  - Admin: `com.apoorv.metropulse.admin`
+- [x] **2. Production App Icon & Adaptive Assets**:
+  - `flutter_launcher_icons` generated for Android adaptive mipmaps and iOS AppIcon set.
+- [x] **3. Native Splash Screen**:
+  - `flutter_native_splash` configured with brand navy background (`#0F172A`) and transit logo.
+- [x] **4. Branding Credit Included**:
+  - *"Made with ❤️ by Apoorv"* visible in Settings/About, Home footer, and Admin header.
+- [x] **5. AdMob Configuration & Safety**:
+  - Test IDs wired for banner, interstitial, and rewarded ads; global kill-switch and Pro ad suppression implemented.
+- [x] **6. Payment & Entitlement Verification**:
+  - Razorpay Prime Commuter Pass flow with instant local persistence (`shared_preferences`) and restore purchase.
+- [x] **7. Hardened Firestore Security Rules**:
+  - Public read-only access for cached transit graphs; write access restricted to verified Admin UID.
+- [x] **8. Error Handling & Offline State**:
+  - Customized `ErrorWidget.builder` prevents red exception screens; offline graph routing functions without internet.
+- [x] **9. Store Listing Assets in `publish/`**:
+  - 512×512 icon (no alpha), 1024×1024 icon, 1024×500 feature graphic, 4 localized preview screenshots, and full store metadata.
+- [x] **10. Release Build Artifacts Generated**:
+  - `metropulse_main/publish/builds/app-release.apk` (57.6 MB)
+  - `metropulse_main/publish/builds/app-release.aab` (58.5 MB)
