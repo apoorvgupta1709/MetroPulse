@@ -1,0 +1,129 @@
+{
+  "lines": [
+    {
+      "id": "pun_purple",
+      "cityId": "pune",
+      "name": "Purple Line (Line 1: PCMC - Swargate)",
+      "code": "L1",
+      "colorHex": "#7B1FA2",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "10:00 PM",
+      "frequencyMinutes": 7,
+      "startStationName": "PCMC (Pimpri Chinchwad)",
+      "endStationName": "Swargate",
+      "stationIds": [
+        "pun_pcmc",
+        "pun_tukaram_nagar",
+        "pun_bhosari",
+        "pun_kasarwadi",
+        "pun_phugewadi",
+        "pun_dapodi",
+        "pun_bopodi",
+        "pun_khadki",
+        "pun_range_hill",
+        "pun_shivajinagar",
+        "pun_civil_court",
+        "pun_budhwar_peth",
+        "pun_mandai",
+        "pun_swargate"
+      ]
+    },
+    {
+      "id": "pun_aqua",
+      "cityId": "pune",
+      "name": "Aqua Line (Line 2: Vanaz - Ramwadi)",
+      "code": "L2",
+      "colorHex": "#00ACC1",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "10:00 PM",
+      "frequencyMinutes": 7,
+      "startStationName": "Vanaz",
+      "endStationName": "Ramwadi",
+      "stationIds": [
+        "pun_vanaz",
+        "pun_anand_nagar",
+        "pun_ideal_colony",
+        "pun_nal_stop",
+        "pun_garware_college",
+        "pun_deccan_gymkhana",
+        "pun_chhatrapati_sambhaji_udyan",
+        "pun_pmc",
+        "pun_civil_court",
+        "pun_mangwar_peth",
+        "pun_pune_railway_station",
+        "pun_ruby_hall_clinic",
+        "pun_bund_garden",
+        "pun_yerawada",
+        "pun_kalyani_nagar",
+        "pun_ramwadi"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "pun_civil_court",
+      "cityId": "pune",
+      "name": "Civil Court Central Interchange Hub",
+      "hindiName": "सिविल कोर्ट",
+      "lineIds": [
+        "pun_purple",
+        "pun_aqua"
+      ],
+      "isInterchange": true,
+      "latitude": 18.5289,
+      "longitude": 73.8569,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "District Court & Sancheti Hospital",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "J.M. Road & Mutha Riverfront",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "pun_purple": "Platform 1: Swargate | Platform 2: PCMC",
+        "pun_aqua": "Platform 3: Ramwadi | Platform 4: Vanaz"
+      }
+    },
+    {
+      "id": "pun_pune_railway_station",
+      "cityId": "pune",
+      "name": "Pune Railway Station Metro",
+      "hindiName": "पुणे रेल्वे स्टेशन",
+      "lineIds": [
+        "pun_aqua"
+      ],
+      "isInterchange": true,
+      "latitude": 18.5284,
+      "longitude": 73.8744,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Pune Junction Railway Platforms 1-6 Link",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "pun_aqua": "Platform 1: Ramwadi | Platform 2: Vanaz via Civil Court"
+      }
+    }
+  ]
+}

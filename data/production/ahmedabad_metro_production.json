@@ -1,0 +1,132 @@
+{
+  "lines": [
+    {
+      "id": "ahm_red",
+      "cityId": "ahmedabad",
+      "name": "North-South Line (Red Line: Motera - APMC)",
+      "code": "NS",
+      "colorHex": "#E53935",
+      "firstTrain": "06:20 AM",
+      "lastTrain": "10:00 PM",
+      "frequencyMinutes": 8,
+      "startStationName": "Narendra Modi Motera Stadium",
+      "endStationName": "APMC Vasna",
+      "stationIds": [
+        "ahm_motera_stadium",
+        "ahm_sabarmati",
+        "ahm_aec",
+        "ahm_sabarmati_railway",
+        "ahm_ranip",
+        "ahm_vadaj",
+        "ahm_vijay_nagar",
+        "ahm_usmanpura",
+        "ahm_old_high_court",
+        "ahm_gandhigram",
+        "ahm_paldi",
+        "ahm_shreyas",
+        "ahm_rajiv_nagar",
+        "ahm_jivraj_park",
+        "ahm_apmc"
+      ]
+    },
+    {
+      "id": "ahm_blue",
+      "cityId": "ahmedabad",
+      "name": "East-West Line (Blue Line: Thaltej Gam - Vastral Gam)",
+      "code": "EW",
+      "colorHex": "#1E88E5",
+      "firstTrain": "06:20 AM",
+      "lastTrain": "10:00 PM",
+      "frequencyMinutes": 8,
+      "startStationName": "Thaltej Gam",
+      "endStationName": "Vastral Gam",
+      "stationIds": [
+        "ahm_thaltej_gam",
+        "ahm_thaltej",
+        "ahm_doordarshan_kendra",
+        "ahm_gurukul_road",
+        "ahm_gujarat_university",
+        "ahm_commerce_six_road",
+        "ahm_stadium",
+        "ahm_old_high_court",
+        "ahm_shahpur",
+        "ahm_gheekanta",
+        "ahm_kalupur_railway",
+        "ahm_kankaria_east",
+        "ahm_apparel_park",
+        "ahm_amraiwadi",
+        "ahm_rabari_colony",
+        "ahm_vastral",
+        "ahm_nirant_cross_road",
+        "ahm_vastral_gam"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "ahm_old_high_court",
+      "cityId": "ahmedabad",
+      "name": "Old High Court Interchange",
+      "hindiName": "ओल्ड हाई कोर्ट",
+      "lineIds": [
+        "ahm_red",
+        "ahm_blue"
+      ],
+      "isInterchange": true,
+      "latitude": 23.0381,
+      "longitude": 72.5694,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Ashram Road & Sabarmati Riverfront",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Income Tax Circle",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "ahm_red": "Platform 1: APMC | Platform 2: Motera Stadium",
+        "ahm_blue": "Platform 3: Vastral Gam | Platform 4: Thaltej Gam"
+      }
+    },
+    {
+      "id": "ahm_motera_stadium",
+      "cityId": "ahmedabad",
+      "name": "Narendra Modi Motera Stadium",
+      "hindiName": "नरेंद्र मोदी मोटेरा स्टेडियम",
+      "lineIds": [
+        "ahm_red"
+      ],
+      "isInterchange": false,
+      "latitude": 23.0913,
+      "longitude": 72.5976,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "World's Largest Cricket Stadium Gate 1 Link",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "ahm_red": "Platform 1 & 2: APMC via Old High Court"
+      }
+    }
+  ]
+}

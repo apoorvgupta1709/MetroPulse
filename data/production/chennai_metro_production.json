@@ -1,0 +1,167 @@
+{
+  "lines": [
+    {
+      "id": "chn_blue",
+      "cityId": "chennai",
+      "name": "Blue Line (Corridor 1: Wimco Nagar - Airport)",
+      "code": "C1",
+      "colorHex": "#1E88E5",
+      "firstTrain": "05:00 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 5,
+      "startStationName": "Wimco Nagar Depot",
+      "endStationName": "Chennai International Airport",
+      "stationIds": [
+        "chn_wimco_nagar",
+        "chn_tollgate",
+        "chn_washermanpet",
+        "chn_chennai_central",
+        "chn_government_estate",
+        "chn_lic",
+        "chn_thousand_lights",
+        "chn_ag_dms",
+        "chn_teynampet",
+        "chn_nandanam",
+        "chn_saidapet",
+        "chn_guindy",
+        "chn_alandur",
+        "chn_meenambakkam",
+        "chn_chennai_airport"
+      ]
+    },
+    {
+      "id": "chn_green",
+      "cityId": "chennai",
+      "name": "Green Line (Corridor 2: Chennai Central - St. Thomas Mount)",
+      "code": "C2",
+      "colorHex": "#43A047",
+      "firstTrain": "05:00 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 6,
+      "startStationName": "Chennai Central (Dr. MGR)",
+      "endStationName": "St. Thomas Mount",
+      "stationIds": [
+        "chn_chennai_central",
+        "chn_egmore",
+        "chn_nehru_park",
+        "chn_kilpauk",
+        "chn_pachaiyappa_college",
+        "chn_shenoy_nagar",
+        "chn_anna_nagar_east",
+        "chn_anna_nagar_tower",
+        "chn_thirumangalam",
+        "chn_koyambedu",
+        "chn_cmbt",
+        "chn_arumbakkam",
+        "chn_vadapalani",
+        "chn_ashok_nagar",
+        "chn_ekkatutthangal",
+        "chn_alandur",
+        "chn_st_thomas_mount"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "chn_chennai_central",
+      "cityId": "chennai",
+      "name": "Puratchi Thalaivar Dr. MGR Central (Interchange)",
+      "hindiName": "चेन्नई सेंट्रल",
+      "lineIds": [
+        "chn_blue",
+        "chn_green"
+      ],
+      "isInterchange": true,
+      "latitude": 13.0827,
+      "longitude": 80.2755,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Chennai Central Railway Terminal Main Concourse",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Chennai Moore Market Complex & Suburbans",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "chn_blue": "Platform 1: Chennai Airport | Platform 2: Wimco Nagar Depot",
+        "chn_green": "Platform 3: St. Thomas Mount via Koyambedu CMBT"
+      }
+    },
+    {
+      "id": "chn_alandur",
+      "cityId": "chennai",
+      "name": "Alandur (Elevated Dual-Line Interchange)",
+      "hindiName": "आलंदूर",
+      "lineIds": [
+        "chn_blue",
+        "chn_green"
+      ],
+      "isInterchange": true,
+      "latitude": 13.0039,
+      "longitude": 80.2016,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "GST Road & Kathipara Junction",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Alandur Asarkhana",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "chn_blue": "Platform 1: Chennai Airport | Platform 2: Chennai Central",
+        "chn_green": "Platform 3: St. Thomas Mount | Platform 4: Chennai Central via CMBT"
+      }
+    },
+    {
+      "id": "chn_chennai_airport",
+      "cityId": "chennai",
+      "name": "Chennai International Airport",
+      "hindiName": "चेन्नई एयरपोर्ट",
+      "lineIds": [
+        "chn_blue"
+      ],
+      "isInterchange": false,
+      "latitude": 12.9815,
+      "longitude": 80.1637,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Domestic & International Terminals Skywalk Link",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "chn_blue": "Platform 1 & 2: Wimco Nagar via Chennai Central"
+      }
+    }
+  ]
+}

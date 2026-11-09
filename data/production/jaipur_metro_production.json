@@ -1,0 +1,94 @@
+{
+  "lines": [
+    {
+      "id": "jai_pink",
+      "cityId": "jaipur",
+      "name": "Pink Line (Mansarovar - Badi Chaupar)",
+      "code": "L1",
+      "colorHex": "#E91E63",
+      "firstTrain": "06:20 AM",
+      "lastTrain": "10:00 PM",
+      "frequencyMinutes": 8,
+      "startStationName": "Mansarovar",
+      "endStationName": "Badi Chaupar (Hawa Mahal)",
+      "stationIds": [
+        "jai_mansarovar",
+        "jai_new_atish_market",
+        "jai_vivek_vihar",
+        "jai_shyam_nagar",
+        "jai_ram_nagar",
+        "jai_civil_lines",
+        "jai_railway_station",
+        "jai_sindhi_camp",
+        "jai_chandpole",
+        "jai_chhoti_chaupar",
+        "jai_badi_chaupar"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "jai_badi_chaupar",
+      "cityId": "jaipur",
+      "name": "Badi Chaupar (Hawa Mahal & City Palace)",
+      "hindiName": "बड़ी चौपड़",
+      "lineIds": [
+        "jai_pink"
+      ],
+      "isInterchange": false,
+      "latitude": 26.9242,
+      "longitude": 75.8267,
+      "facilities": {
+        "hasParking": false,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Hawa Mahal & Johari Bazaar Entry",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "City Palace & Jantar Mantar Link",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "jai_pink": "Platform 1 & 2: Mansarovar via Sindhi Camp & Railway Station"
+      }
+    },
+    {
+      "id": "jai_sindhi_camp",
+      "cityId": "jaipur",
+      "name": "Sindhi Camp Inter-State Bus Terminal",
+      "hindiName": "सिंधी कैंप",
+      "lineIds": [
+        "jai_pink"
+      ],
+      "isInterchange": true,
+      "latitude": 26.9238,
+      "longitude": 75.8016,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "RSRTC Central Bus Stand Concourse",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "jai_pink": "Platform 1: Badi Chaupar | Platform 2: Mansarovar"
+      }
+    }
+  ]
+}

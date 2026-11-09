@@ -91,7 +91,12 @@ datasets = [
     'mumbai_metro_production.json',
     'bengaluru_metro_production.json',
     'kolkata_metro_production.json',
-    'hyderabad_metro_production.json'
+    'hyderabad_metro_production.json',
+    'chennai_metro_production.json',
+    'pune_metro_production.json',
+    'ahmedabad_metro_production.json',
+    'kochi_metro_production.json',
+    'jaipur_metro_production.json'
 ]
 
 total_lines_pushed = 0

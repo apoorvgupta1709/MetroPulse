@@ -1,0 +1,103 @@
+{
+  "lines": [
+    {
+      "id": "koc_cyan",
+      "cityId": "kochi",
+      "name": "Line 1 (Cyan Line: Aluva - Thripunithura)",
+      "code": "L1",
+      "colorHex": "#00BCD4",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "10:30 PM",
+      "frequencyMinutes": 7,
+      "startStationName": "Aluva",
+      "endStationName": "Thripunithura Railway Station",
+      "stationIds": [
+        "koc_aluva",
+        "koc_pulinchodu",
+        "koc_companypady",
+        "koc_ambattukavu",
+        "koc_muttom",
+        "koc_kalamassery",
+        "koc_cochin_university",
+        "koc_pathadipalam",
+        "koc_edapally",
+        "koc_changampuzha_park",
+        "koc_palarivattom",
+        "koc_jln_stadium",
+        "koc_kaloor",
+        "koc_lissie",
+        "koc_mg_road",
+        "koc_maharajas_college",
+        "koc_ernakulam_south",
+        "koc_kadavanthra",
+        "koc_elamkulam",
+        "koc_vyttila",
+        "koc_thaikoodam",
+        "koc_petta",
+        "koc_vadakkekotta",
+        "koc_sn_junction",
+        "koc_thripunithura"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "koc_aluva",
+      "cityId": "kochi",
+      "name": "Aluva Metro Terminal",
+      "hindiName": "अलुवा",
+      "lineIds": [
+        "koc_cyan"
+      ],
+      "isInterchange": false,
+      "latitude": 10.1086,
+      "longitude": 76.3533,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Aluva KSRTC Bus Stand & Periyar River View",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "koc_cyan": "Platform 1 & 2: Thripunithura via Ernakulam South"
+      }
+    },
+    {
+      "id": "koc_vyttila",
+      "cityId": "kochi",
+      "name": "Vyttila Mobility Hub (Water Metro Interchange)",
+      "hindiName": "वाइटिला",
+      "lineIds": [
+        "koc_cyan"
+      ],
+      "isInterchange": true,
+      "latitude": 9.9676,
+      "longitude": 76.3218,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Vyttila Water Metro Ferry Jetty & Inter-city Bus Port",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "koc_cyan": "Platform 1: Thripunithura | Platform 2: Aluva"
+      }
+    }
+  ]
+}

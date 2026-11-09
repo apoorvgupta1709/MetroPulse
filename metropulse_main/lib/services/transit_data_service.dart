@@ -152,6 +152,16 @@ class TransitDataService {
       return _kolkataLines;
     } else if (cityId == 'hyderabad') {
       return _hyderabadLines;
+    } else if (cityId == 'chennai') {
+      return _chennaiLines;
+    } else if (cityId == 'pune') {
+      return _puneLines;
+    } else if (cityId == 'ahmedabad') {
+      return _ahmedabadLines;
+    } else if (cityId == 'kochi') {
+      return _kochiLines;
+    } else if (cityId == 'jaipur') {
+      return _jaipurLines;
     } else if (cityId == 'dubai') {
       return _dubaiLines;
     } else if (cityId == 'singapore') {
@@ -175,6 +185,16 @@ class TransitDataService {
       return _kolkataStations;
     } else if (cityId == 'hyderabad') {
       return _hyderabadStations;
+    } else if (cityId == 'chennai') {
+      return _chennaiStations;
+    } else if (cityId == 'pune') {
+      return _puneStations;
+    } else if (cityId == 'ahmedabad') {
+      return _ahmedabadStations;
+    } else if (cityId == 'kochi') {
+      return _kochiStations;
+    } else if (cityId == 'jaipur') {
+      return _jaipurStations;
     } else if (cityId == 'dubai') {
       return _dubaiStations;
     } else if (cityId == 'singapore') {
@@ -1410,6 +1430,346 @@ class TransitDataService {
       ],
       platformDirections: {
         'hyd_blue': 'Platform 1 & 2: Nagole via Ameerpet',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // CHENNAI METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _chennaiLines = [
+    const MetroLine(
+      id: 'chn_blue',
+      cityId: 'chennai',
+      name: 'Blue Line (Wimco Nagar - Airport)',
+      code: 'C1',
+      colorHex: '#1E88E5',
+      firstTrain: '05:00 AM',
+      lastTrain: '11:00 PM',
+      frequencyMinutes: 5,
+      startStationName: 'Wimco Nagar Depot',
+      endStationName: 'Chennai Airport',
+      stationIds: ['chn_chennai_central', 'chn_alandur', 'chn_chennai_airport'],
+    ),
+    const MetroLine(
+      id: 'chn_green',
+      cityId: 'chennai',
+      name: 'Green Line (Chennai Central - St. Thomas Mount)',
+      code: 'C2',
+      colorHex: '#43A047',
+      firstTrain: '05:00 AM',
+      lastTrain: '11:00 PM',
+      frequencyMinutes: 6,
+      startStationName: 'Chennai Central',
+      endStationName: 'St. Thomas Mount',
+      stationIds: ['chn_chennai_central', 'chn_alandur', 'chn_st_thomas_mount'],
+    ),
+  ];
+
+  static final List<Station> _chennaiStations = [
+    const Station(
+      id: 'chn_chennai_central',
+      cityId: 'chennai',
+      name: 'Dr. MGR Central (Interchange)',
+      hindiName: 'चेन्नई सेंट्रल',
+      lineIds: ['chn_blue', 'chn_green'],
+      isInterchange: true,
+      latitude: 13.0827,
+      longitude: 80.2755,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Chennai Central Railway Main Concourse'),
+      ],
+      platformDirections: {
+        'chn_blue': 'Platform 1: Airport | Platform 2: Wimco Nagar',
+        'chn_green': 'Platform 3: St. Thomas Mount',
+      },
+    ),
+    const Station(
+      id: 'chn_alandur',
+      cityId: 'chennai',
+      name: 'Alandur (Dual-Line Interchange)',
+      hindiName: 'आलंदूर',
+      lineIds: ['chn_blue', 'chn_green'],
+      isInterchange: true,
+      latitude: 13.0039,
+      longitude: 80.2016,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'GST Road & Kathipara Junction'),
+      ],
+      platformDirections: {
+        'chn_blue': 'Platform 1: Airport | Platform 2: Chennai Central',
+        'chn_green': 'Platform 3: St. Thomas Mount | Platform 4: Chennai Central',
+      },
+    ),
+    const Station(
+      id: 'chn_chennai_airport',
+      cityId: 'chennai',
+      name: 'Chennai International Airport',
+      hindiName: 'चेन्नई एयरपोर्ट',
+      lineIds: ['chn_blue'],
+      isInterchange: false,
+      latitude: 12.9815,
+      longitude: 80.1637,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Domestic & International Terminals Skywalk'),
+      ],
+      platformDirections: {
+        'chn_blue': 'Platform 1 & 2: Wimco Nagar via Chennai Central',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // PUNE METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _puneLines = [
+    const MetroLine(
+      id: 'pun_purple',
+      cityId: 'pune',
+      name: 'Purple Line (PCMC - Swargate)',
+      code: 'L1',
+      colorHex: '#7B1FA2',
+      firstTrain: '06:00 AM',
+      lastTrain: '10:00 PM',
+      frequencyMinutes: 7,
+      startStationName: 'PCMC',
+      endStationName: 'Swargate',
+      stationIds: ['pun_pcmc', 'pun_civil_court', 'pun_swargate'],
+    ),
+    const MetroLine(
+      id: 'pun_aqua',
+      cityId: 'pune',
+      name: 'Aqua Line (Vanaz - Ramwadi)',
+      code: 'L2',
+      colorHex: '#00ACC1',
+      firstTrain: '06:00 AM',
+      lastTrain: '10:00 PM',
+      frequencyMinutes: 7,
+      startStationName: 'Vanaz',
+      endStationName: 'Ramwadi',
+      stationIds: ['pun_vanaz', 'pun_civil_court', 'pun_pune_railway_station', 'pun_ramwadi'],
+    ),
+  ];
+
+  static final List<Station> _puneStations = [
+    const Station(
+      id: 'pun_civil_court',
+      cityId: 'pune',
+      name: 'Civil Court Central Hub',
+      hindiName: 'सिविल कोर्ट',
+      lineIds: ['pun_purple', 'pun_aqua'],
+      isInterchange: true,
+      latitude: 18.5289,
+      longitude: 73.8569,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'District Court & Sancheti Hospital'),
+      ],
+      platformDirections: {
+        'pun_purple': 'Platform 1: Swargate | Platform 2: PCMC',
+        'pun_aqua': 'Platform 3: Ramwadi | Platform 4: Vanaz',
+      },
+    ),
+    const Station(
+      id: 'pun_pune_railway_station',
+      cityId: 'pune',
+      name: 'Pune Railway Station Metro',
+      hindiName: 'पुणे रेल्वे स्टेशन',
+      lineIds: ['pun_aqua'],
+      isInterchange: true,
+      latitude: 18.5284,
+      longitude: 73.8744,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Pune Junction Railway Platforms Link'),
+      ],
+      platformDirections: {
+        'pun_aqua': 'Platform 1: Ramwadi | Platform 2: Vanaz via Civil Court',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // AHMEDABAD METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _ahmedabadLines = [
+    const MetroLine(
+      id: 'ahm_red',
+      cityId: 'ahmedabad',
+      name: 'North-South Line (Motera - APMC)',
+      code: 'NS',
+      colorHex: '#E53935',
+      firstTrain: '06:20 AM',
+      lastTrain: '10:00 PM',
+      frequencyMinutes: 8,
+      startStationName: 'Motera Stadium',
+      endStationName: 'APMC',
+      stationIds: ['ahm_motera_stadium', 'ahm_old_high_court', 'ahm_apmc'],
+    ),
+    const MetroLine(
+      id: 'ahm_blue',
+      cityId: 'ahmedabad',
+      name: 'East-West Line (Thaltej - Vastral)',
+      code: 'EW',
+      colorHex: '#1E88E5',
+      firstTrain: '06:20 AM',
+      lastTrain: '10:00 PM',
+      frequencyMinutes: 8,
+      startStationName: 'Thaltej Gam',
+      endStationName: 'Vastral Gam',
+      stationIds: ['ahm_thaltej_gam', 'ahm_old_high_court', 'ahm_vastral_gam'],
+    ),
+  ];
+
+  static final List<Station> _ahmedabadStations = [
+    const Station(
+      id: 'ahm_old_high_court',
+      cityId: 'ahmedabad',
+      name: 'Old High Court Interchange',
+      hindiName: 'ओल्ड हाई कोर्ट',
+      lineIds: ['ahm_red', 'ahm_blue'],
+      isInterchange: true,
+      latitude: 23.0381,
+      longitude: 72.5694,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Ashram Road & Income Tax Circle'),
+      ],
+      platformDirections: {
+        'ahm_red': 'Platform 1: APMC | Platform 2: Motera Stadium',
+        'ahm_blue': 'Platform 3: Vastral Gam | Platform 4: Thaltej Gam',
+      },
+    ),
+    const Station(
+      id: 'ahm_motera_stadium',
+      cityId: 'ahmedabad',
+      name: 'Narendra Modi Motera Stadium',
+      hindiName: 'नरेंद्र मोदी मोटेरा स्टेडियम',
+      lineIds: ['ahm_red'],
+      isInterchange: false,
+      latitude: 23.0913,
+      longitude: 72.5976,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Cricket Stadium Main Gate Link'),
+      ],
+      platformDirections: {
+        'ahm_red': 'Platform 1 & 2: APMC via Old High Court',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // KOCHI METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _kochiLines = [
+    const MetroLine(
+      id: 'koc_cyan',
+      cityId: 'kochi',
+      name: 'Line 1 (Aluva - Thripunithura)',
+      code: 'L1',
+      colorHex: '#00BCD4',
+      firstTrain: '06:00 AM',
+      lastTrain: '10:30 PM',
+      frequencyMinutes: 7,
+      startStationName: 'Aluva',
+      endStationName: 'Thripunithura',
+      stationIds: ['koc_aluva', 'koc_vyttila', 'koc_thripunithura'],
+    ),
+  ];
+
+  static final List<Station> _kochiStations = [
+    const Station(
+      id: 'koc_aluva',
+      cityId: 'kochi',
+      name: 'Aluva Metro Terminal',
+      hindiName: 'अलुवा',
+      lineIds: ['koc_cyan'],
+      isInterchange: false,
+      latitude: 10.1086,
+      longitude: 76.3533,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Aluva KSRTC Bus Stand'),
+      ],
+      platformDirections: {
+        'koc_cyan': 'Platform 1 & 2: Thripunithura',
+      },
+    ),
+    const Station(
+      id: 'koc_vyttila',
+      cityId: 'kochi',
+      name: 'Vyttila Mobility Hub',
+      hindiName: 'वाइटिला',
+      lineIds: ['koc_cyan'],
+      isInterchange: true,
+      latitude: 9.9676,
+      longitude: 76.3218,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Water Metro Ferry Jetty & Bus Port'),
+      ],
+      platformDirections: {
+        'koc_cyan': 'Platform 1: Thripunithura | Platform 2: Aluva',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // JAIPUR METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _jaipurLines = [
+    const MetroLine(
+      id: 'jai_pink',
+      cityId: 'jaipur',
+      name: 'Pink Line (Mansarovar - Badi Chaupar)',
+      code: 'L1',
+      colorHex: '#E91E63',
+      firstTrain: '06:20 AM',
+      lastTrain: '10:00 PM',
+      frequencyMinutes: 8,
+      startStationName: 'Mansarovar',
+      endStationName: 'Badi Chaupar',
+      stationIds: ['jai_mansarovar', 'jai_sindhi_camp', 'jai_badi_chaupar'],
+    ),
+  ];
+
+  static final List<Station> _jaipurStations = [
+    const Station(
+      id: 'jai_badi_chaupar',
+      cityId: 'jaipur',
+      name: 'Badi Chaupar (Hawa Mahal)',
+      hindiName: 'बड़ी चौपड़',
+      lineIds: ['jai_pink'],
+      isInterchange: false,
+      latitude: 26.9242,
+      longitude: 75.8267,
+      facilities: StationFacilities(hasParking: false, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Hawa Mahal & Johari Bazaar'),
+      ],
+      platformDirections: {
+        'jai_pink': 'Platform 1 & 2: Mansarovar via Sindhi Camp',
+      },
+    ),
+    const Station(
+      id: 'jai_sindhi_camp',
+      cityId: 'jaipur',
+      name: 'Sindhi Camp ISBT',
+      hindiName: 'सिंधी कैंप',
+      lineIds: ['jai_pink'],
+      isInterchange: true,
+      latitude: 26.9238,
+      longitude: 75.8016,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Central Bus Stand Concourse'),
+      ],
+      platformDirections: {
+        'jai_pink': 'Platform 1: Badi Chaupar | Platform 2: Mansarovar',
       },
     ),
   ];
