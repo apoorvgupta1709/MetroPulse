@@ -51,6 +51,38 @@ class TransitGraphService {
         }
       }
     }
+
+    // Connect official pedestrian transfer walkways & junctions
+    final s52 = stationMap['del_noida_sec_52'];
+    final s51 = stationMap['del_noida_sec_51'];
+    final aqua = lineMap['aqua_noida'] ?? lineMap.values.first;
+    if (s52 != null && s51 != null) {
+      _adjacencyList.putIfAbsent(s52.id, () => []).add(_GraphEdge(toStation: s51, line: aqua, weightMinutes: 4.0));
+      _adjacencyList.putIfAbsent(s51.id, () => []).add(_GraphEdge(toStation: s52, line: aqua, weightMinutes: 4.0));
+    }
+
+    final dk = stationMap['del_dhaula_kuan'];
+    final sc = stationMap['del_durgabai_deshmukh_south_campus'];
+    final pink = lineMap['pink'] ?? lineMap.values.first;
+    if (dk != null && sc != null) {
+      _adjacencyList.putIfAbsent(dk.id, () => []).add(_GraphEdge(toStation: sc, line: pink, weightMinutes: 6.0));
+      _adjacencyList.putIfAbsent(sc.id, () => []).add(_GraphEdge(toStation: dk, line: pink, weightMinutes: 6.0));
+    }
+
+    final ap = stationMap['del_ashok_park_main'];
+    final il = stationMap['del_inderlok'];
+    final kn = stationMap['del_kirti_nagar'];
+    final green = lineMap['green'] ?? lineMap.values.first;
+    if (ap != null && green != null) {
+      if (il != null) {
+        _adjacencyList.putIfAbsent(ap.id, () => []).add(_GraphEdge(toStation: il, line: green, weightMinutes: 3.5));
+        _adjacencyList.putIfAbsent(il.id, () => []).add(_GraphEdge(toStation: ap, line: green, weightMinutes: 3.5));
+      }
+      if (kn != null) {
+        _adjacencyList.putIfAbsent(ap.id, () => []).add(_GraphEdge(toStation: kn, line: green, weightMinutes: 3.5));
+        _adjacencyList.putIfAbsent(kn.id, () => []).add(_GraphEdge(toStation: ap, line: green, weightMinutes: 3.5));
+      }
+    }
   }
 
   /// Calculates route according to specified mode (fastest vs fewest line changes)

@@ -1,0 +1,88 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:metropulse_main/models/route_result.dart';
+import 'package:metropulse_main/services/transit_data_service.dart';
+import 'package:metropulse_main/services/transit_graph_service.dart';
+
+void main() {
+  group('Delhi NCR Inter-Line Routing Tests', () {
+    late TransitGraphService graphService;
+
+    setUp(() {
+      final stations = TransitDataService.getStationsForCity('delhi_ncr');
+      final lines = TransitDataService.getLinesForCity('delhi_ncr');
+      graphService = TransitGraphService(stations: stations, lines: lines);
+    });
+
+    test('Yellow Line to Blue Line (Samaypur Badli -> Dwarka Sec 21)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_samaypur_badli',
+        destinationStationId: 'del_dwarka_sec_21',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThanOrEqualTo(20));
+      expect(route.numberOfInterchanges, greaterThanOrEqualTo(1));
+    });
+
+    test('Red Line to Yellow Line (Rithala -> Millennium City Centre)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_rithala',
+        destinationStationId: 'del_millennium_city_centre',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThan(25));
+      expect(route.numberOfInterchanges, greaterThanOrEqualTo(1));
+    });
+
+    test('Blue Branch to Yellow Line (Vaishali -> Millennium City Centre)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_vaishali',
+        destinationStationId: 'del_millennium_city_centre',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThanOrEqualTo(20));
+      expect(route.numberOfInterchanges, greaterThanOrEqualTo(1));
+    });
+
+    test('Magenta to Violet (Janakpuri West -> Raja Nahar Singh)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_janakpuri_west',
+        destinationStationId: 'del_raja_nahar_singh',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThan(25));
+    });
+
+    test('Pink to Green (Majlis Park -> Brigadier Hoshiar Singh)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_majlis_park',
+        destinationStationId: 'del_brigadier_hoshiar_singh',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThanOrEqualTo(20));
+    });
+
+    test('Airport Express to Blue (New Delhi -> Dwarka Sec 21 via Airport Line)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_new_delhi',
+        destinationStationId: 'del_dwarka_sec_21',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+    });
+
+    test('Blue Line to Aqua Line Pedestrian Transfer (Rajiv Chowk -> Depot Station)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_rajiv_chowk',
+        destinationStationId: 'del_depot_station',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.totalStationsCount, greaterThan(30));
+    });
+  });
+}

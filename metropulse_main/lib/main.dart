@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
+import 'providers/auth_provider.dart';
 import 'providers/monetization_provider.dart';
 import 'providers/transit_provider.dart';
 import 'services/admob_service.dart';
@@ -118,6 +119,7 @@ class MetroPulseApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => MonetizationProvider()),
         ChangeNotifierProvider(create: (_) => TransitProvider()),
       ],

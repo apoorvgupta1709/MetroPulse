@@ -3,12 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../models/city.dart';
 import '../models/service_alert.dart';
+import '../providers/auth_provider.dart';
 import '../providers/transit_provider.dart';
 import '../widgets/banner_ad_widget.dart';
 import '../widgets/prime_highlight_card.dart';
 import '../widgets/searchable_city_picker_sheet.dart';
 import 'fare_calculator_screen.dart';
 import 'interactive_map_screen.dart';
+import 'login_screen.dart';
 import 'metro_near_me_screen.dart';
 import 'recharge_screen.dart';
 import 'route_planner_screen.dart';
@@ -104,6 +106,45 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Consumer<AuthProvider>(
+            builder: (context, auth, _) {
+              if (auth.isLoggedIn) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                    );
+                  },
+                  borderRadius: BorderRadius.circular(16),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+                    child: CircleAvatar(
+                      radius: 14,
+                      backgroundColor: const Color(0xFF1E88E5),
+                      backgroundImage: auth.photoUrl != null ? NetworkImage(auth.photoUrl!) : null,
+                      child: auth.photoUrl == null
+                          ? Text(
+                              auth.displayName.isNotEmpty ? auth.displayName[0].toUpperCase() : 'U',
+                              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                            )
+                          : null,
+                    ),
+                  ),
+                );
+              }
+              return IconButton(
+                icon: const Icon(Icons.account_circle_outlined, color: Color(0xFF475569), size: 24),
+                tooltip: 'Sign In / Register',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  );
+                },
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.settings_outlined, color: Color(0xFF475569), size: 22),

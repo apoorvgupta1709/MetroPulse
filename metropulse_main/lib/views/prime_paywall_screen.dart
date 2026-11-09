@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../providers/auth_provider.dart';
 import '../providers/monetization_provider.dart';
+import 'login_screen.dart';
 
 class PrimePaywallScreen extends StatefulWidget {
   const PrimePaywallScreen({super.key});
@@ -14,12 +16,22 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
   bool _isProcessing = false;
 
   Future<void> _handlePrimeCheckout() async {
+    final auth = Provider.of<AuthProvider>(context, listen: false);
     final monetization = Provider.of<MonetizationProvider>(context, listen: false);
 
-    // 1. Authentication on Demand: Prompt Google Sign-In only when user decides to purchase
-    if (!monetization.isGoogleAuthenticated) {
-      final success = await _showGoogleSignInDialog(context, monetization);
-      if (!success) return;
+    // 1. Mandatory Login: Prime Commuter Pass cannot be purchased without an account
+    if (!auth.isLoggedIn) {
+      final signedIn = await Navigator.push<bool>(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const LoginScreen(
+            messagePrompt: 'Please sign in with Google or Email to unlock and bind your Prime Commuter Pass',
+          ),
+        ),
+      );
+      if (signedIn != true && !auth.isLoggedIn) {
+        return; // User canceled sign-in
+      }
     }
 
     // 2. Initiate Razorpay Checkout Flow
@@ -27,7 +39,11 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
 
     await Future.delayed(const Duration(seconds: 2)); // Simulate Razorpay UPI / Card payment
 
-    await monetization.upgradeToPrime(paymentId: 'pay_rzp_${DateTime.now().millisecondsSinceEpoch}');
+    await monetization.upgradeToPrime(
+      paymentId: 'pay_rzp_${DateTime.now().millisecondsSinceEpoch}',
+      email: auth.email,
+      userId: auth.user?.uid,
+    );
 
     setState(() => _isProcessing = false);
 
@@ -48,7 +64,7 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
             ],
           ),
           content: Text(
-            'Your Prime Commuter Pass is now active and permanently bound to ${monetization.userEmail ?? "your account"}.\n\nAll ads have been removed and premium perks unlocked forever.',
+            'Your Prime Commuter Pass is now active and permanently bound to ${auth.email.isNotEmpty ? auth.email : "your account"}.\n\nAll ads have been removed and premium perks unlocked forever.',
             style: GoogleFonts.plusJakartaSans(fontSize: 13),
           ),
           actions: [
@@ -63,85 +79,6 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
         ),
       );
     }
-  }
-
-  Future<bool> _showGoogleSignInDialog(BuildContext context, MonetizationProvider monetization) async {
-    return await showModalBottomSheet<bool>(
-          context: context,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-          ),
-          builder: (ctx) {
-            return Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(Icons.account_circle, size: 36, color: Colors.blue),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    'Link Your Prime Commuter Pass',
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Sign in with Google to securely link your lifetime pass across device transfers and reinstallations.',
-                    style: GoogleFonts.plusJakartaSans(
-                      fontSize: 13,
-                      color: Colors.grey.shade600,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: OutlinedButton.icon(
-                      onPressed: () async {
-                        await monetization.signInWithGoogleOnDemand();
-                        if (ctx.mounted) {
-                          Navigator.pop(ctx, true);
-                        }
-                      },
-                      icon: Image.network(
-                        'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg',
-                        width: 22,
-                        height: 22,
-                        errorBuilder: (_, __, ___) =>
-                            const Icon(Icons.g_mobiledata, size: 24, color: Colors.red),
-                      ),
-                      label: Text(
-                        'Continue with Google',
-                        style: GoogleFonts.plusJakartaSans(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                ],
-              ),
-            );
-          },
-        ) ??
-        false;
   }
 
   @override

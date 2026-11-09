@@ -7,6 +7,7 @@ import '../providers/monetization_provider.dart';
 import '../providers/transit_provider.dart';
 import '../services/admob_service.dart';
 import '../widgets/banner_ad_widget.dart';
+import '../widgets/station_picker_sheet.dart';
 import '../widgets/vertical_route_timeline.dart';
 
 class RoutePlannerScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _RoutePlannerScreenState extends State<RoutePlannerScreen> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (ctx) {
-        return _StationPickerSheet(
+        return StationPickerSheet(
           isOrigin: isOrigin,
           stations: transit.stations,
           onSelected: (station) {
@@ -354,122 +355,4 @@ class _RoutePlannerScreenState extends State<RoutePlannerScreen> {
   }
 }
 
-class _StationPickerSheet extends StatefulWidget {
-  final bool isOrigin;
-  final List<Station> stations;
-  final ValueChanged<Station> onSelected;
 
-  const _StationPickerSheet({
-    required this.isOrigin,
-    required this.stations,
-    required this.onSelected,
-  });
-
-  @override
-  State<_StationPickerSheet> createState() => _StationPickerSheetState();
-}
-
-class _StationPickerSheetState extends State<_StationPickerSheet> {
-  String _query = '';
-
-  @override
-  Widget build(BuildContext context) {
-    final filtered = widget.stations.where((s) {
-      if (_query.isEmpty) return true;
-      final q = _query.toLowerCase();
-      return s.name.toLowerCase().contains(q) || s.hindiName.toLowerCase().contains(q);
-    }).toList();
-
-    return DraggableScrollableSheet(
-      initialChildSize: 0.85,
-      minChildSize: 0.5,
-      maxChildSize: 0.95,
-      expand: false,
-      builder: (ctx, scrollController) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          child: Column(
-            children: [
-              Container(
-                width: 40,
-                height: 4,
-                margin: const EdgeInsets.only(bottom: 12),
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              Text(
-                widget.isOrigin ? 'Select Origin Station' : 'Select Destination Station',
-                style: GoogleFonts.plusJakartaSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search station or landmark...',
-                  prefixIcon: const Icon(Icons.search),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-                onChanged: (val) {
-                  setState(() => _query = val);
-                },
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: ListView.builder(
-                  controller: scrollController,
-                  itemCount: filtered.length,
-                  itemBuilder: (ctx, idx) {
-                    final s = filtered[idx];
-                    return ListTile(
-                      leading: Icon(
-                        s.isInterchange ? Icons.sync_alt : Icons.subway,
-                        color: s.isInterchange ? Colors.amber : Colors.blueGrey,
-                      ),
-                      title: Text(
-                        s.name,
-                        style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w700),
-                      ),
-                      subtitle: s.hindiName.isNotEmpty
-                          ? Text(s.hindiName, style: GoogleFonts.plusJakartaSans(fontSize: 12))
-                          : null,
-                      trailing: s.isInterchange
-                          ? Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                              decoration: BoxDecoration(
-                                color: Colors.amber.withOpacity(0.15),
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              child: Text(
-                                'Interchange',
-                                style: GoogleFonts.plusJakartaSans(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.amber.shade900,
-                                ),
-                              ),
-                            )
-                          : null,
-                      onTap: () {
-                        widget.onSelected(s);
-                        Navigator.pop(ctx);
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
