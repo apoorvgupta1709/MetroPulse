@@ -48,7 +48,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   Animation<Matrix4>? _animation;
 
   static const double _canvasWidth = 3400.0;
-  static const double _canvasHeight = 2600.0;
+  double get _canvasHeight => widget.cityId == 'delhi_ncr' ? 3000.0 : 2600.0;
 
   // City-specific SVG assets
   static const Map<String, String> _citySvgAssets = {
@@ -379,7 +379,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
                   else
                     // Dynamic Canvas Fallback for any other city
                     CustomPaint(
-                      size: const Size(_canvasWidth, _canvasHeight),
+                      size: Size(_canvasWidth, _canvasHeight),
                       painter: _DynamicCitySchematicPainter(
                         stations: widget.stations,
                         lines: widget.lines,
@@ -391,7 +391,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
                   // Active Route Highlight Overlay (Prime Commuter Feature)
                   if (widget.activeRoute != null && widget.isPrimeUser)
                     CustomPaint(
-                      size: const Size(_canvasWidth, _canvasHeight),
+                      size: Size(_canvasWidth, _canvasHeight),
                       painter: _RouteOverlayPainter(
                         activeRoute: widget.activeRoute!,
                         getStationOffset: getStationCanvasOffset,

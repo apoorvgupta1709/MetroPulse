@@ -18,7 +18,7 @@ stations_by_id = {s['id']: s for s in stations}
 
 # Balanced, compact mobile-optimized dimensions (matching benchmark app)
 WIDTH = 3400
-HEIGHT = 2600
+HEIGHT = 3000
 
 coords = {}
 label_rules = {} # sid -> {'angle': float, 'dx': float, 'dy': float, 'anchor': str}
@@ -289,7 +289,7 @@ label_rules['del_kalkaji_mandir'] = {'angle': 0, 'dx': -20, 'dy': -18, 'anchor':
 vl = lines_meta['violet']['stationIds']
 km_idx = vl.index('del_kalkaji_mandir')
 for k, sid in enumerate(vl[km_idx + 1:]):
-    coords[sid] = (2110, 1920 + (k + 1) * 38)
+    coords[sid] = (2110, 1920 + (k + 1) * 36)
     label_rules[sid] = {'angle': 0, 'dx': 16, 'dy': -3, 'anchor': 'start'}
 
 # ------------------------------------------
@@ -488,11 +488,11 @@ coords['del_rm_cyber_city'] = (2000, 2300)
 coords['del_rm_belvedere_towers'] = (2000, 2450)
 
 # Spur South of Sikanderpur
-coords['del_rm_phase_1'] = (1860, 2585)
-coords['del_rm_sec_42_43'] = (1860, 2645)
-coords['del_rm_sec_53_54'] = (1860, 2705)
-coords['del_rm_sec_54_chowk'] = (1860, 2760)
-coords['del_rm_sec_55_56'] = (1860, 2810)
+coords['del_rm_phase_1'] = (1860, 2580)
+coords['del_rm_sec_42_43'] = (1860, 2630)
+coords['del_rm_sec_53_54'] = (1860, 2680)
+coords['del_rm_sec_54_chowk'] = (1860, 2730)
+coords['del_rm_sec_55_56'] = (1860, 2780)
 
 label_rules['del_rm_phase_2'] = {'angle': 0, 'dx': 16, 'dy': 0, 'anchor': 'start'}
 label_rules['del_rm_phase_3'] = {'angle': 0, 'dx': 16, 'dy': 0, 'anchor': 'start'}
@@ -514,11 +514,11 @@ for a_idx, sid in enumerate(aqua_stations):
     if a_idx == 0:
         continue
     elif a_idx <= 14:
-        coords[sid] = (3150, 1720 + a_idx * 48)
+        coords[sid] = (3150, 1720 + a_idx * 44)
         label_rules[sid] = {'angle': 0, 'dx': 16, 'dy': -2, 'anchor': 'start'}
     else:
         off = a_idx - 14
-        coords[sid] = (3150 + off * 56, 1720 + 14 * 48 + off * 38)
+        coords[sid] = (3150 + off * 56, 1720 + 14 * 44 + off * 34)
         label_rules[sid] = {'angle': -30, 'dx': 12, 'dy': -2, 'anchor': 'start'}
 
 # Verify 100% of stations in dataset are mapped
