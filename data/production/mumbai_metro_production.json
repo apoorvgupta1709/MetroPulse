@@ -1,0 +1,289 @@
+{
+  "lines": [
+    {
+      "id": "mum_line_1",
+      "cityId": "mumbai",
+      "name": "Line 1 (Blue Line: Versova - Andheri - Ghatkopar)",
+      "code": "L1",
+      "colorHex": "#1E88E5",
+      "firstTrain": "05:30 AM",
+      "lastTrain": "11:50 PM",
+      "frequencyMinutes": 4,
+      "startStationName": "Versova",
+      "endStationName": "Ghatkopar",
+      "stationIds": [
+        "mum_versova",
+        "mum_dn_nagar",
+        "mum_azad_nagar",
+        "mum_andheri",
+        "mum_western_express_highway",
+        "mum_chakala",
+        "mum_airport_road",
+        "mum_marol_naka",
+        "mum_saki_naka",
+        "mum_asalpha",
+        "mum_jagruti_nagar",
+        "mum_ghatkopar"
+      ]
+    },
+    {
+      "id": "mum_line_2a",
+      "cityId": "mumbai",
+      "name": "Line 2A (Yellow Line: Dahisar East - Andheri West)",
+      "code": "L2A",
+      "colorHex": "#FDD835",
+      "firstTrain": "05:55 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 6,
+      "startStationName": "Dahisar East",
+      "endStationName": "Andheri West (DN Nagar)",
+      "stationIds": [
+        "mum_dahisar_east",
+        "mum_anand_nagar",
+        "mum_kanderpada",
+        "mum_mandapeshwar",
+        "mum_eksar",
+        "mum_borivali_west",
+        "mum_pahadi_eksar",
+        "mum_kandivali_west",
+        "mum_dahanukarwadi",
+        "mum_valnai",
+        "mum_malad_west",
+        "mum_lower_malad",
+        "mum_pahadi_goregaon",
+        "mum_goregaon_west",
+        "mum_oshiwara",
+        "mum_lower_oshiwara",
+        "mum_andheri_west"
+      ]
+    },
+    {
+      "id": "mum_line_7",
+      "cityId": "mumbai",
+      "name": "Line 7 (Red Line: Dahisar East - Gundavali)",
+      "code": "L7",
+      "colorHex": "#E53935",
+      "firstTrain": "05:58 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 6,
+      "startStationName": "Dahisar East",
+      "endStationName": "Gundavali (Andheri East)",
+      "stationIds": [
+        "mum_dahisar_east",
+        "mum_ovari_pada",
+        "mum_national_park",
+        "mum_devipada",
+        "mum_magathane",
+        "mum_poisar",
+        "mum_akrli",
+        "mum_kurar",
+        "mum_dindoshi",
+        "mum_aarey",
+        "mum_goregaon_east",
+        "mum_jogeshwari_east",
+        "mum_mogra",
+        "mum_gundavali"
+      ]
+    },
+    {
+      "id": "mum_line_3",
+      "cityId": "mumbai",
+      "name": "Line 3 (Aqua Line: Aarey JVLR - BKC Phase 1)",
+      "code": "L3",
+      "colorHex": "#00ACC1",
+      "firstTrain": "05:55 AM",
+      "lastTrain": "10:30 PM",
+      "frequencyMinutes": 7,
+      "startStationName": "Aarey JVLR",
+      "endStationName": "Bandra Kurla Complex (BKC)",
+      "stationIds": [
+        "mum_aarey_jvlr",
+        "mum_seepz",
+        "mum_midc_andheri",
+        "mum_marol_naka_l3",
+        "mum_csmia_t2",
+        "mum_sahar_road",
+        "mum_csmia_t1",
+        "mum_santacruz",
+        "mum_vidyanagari",
+        "mum_bkc"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "mum_andheri",
+      "cityId": "mumbai",
+      "name": "Andheri Metro (Western Railway Interchange)",
+      "hindiName": "अंधेरी",
+      "lineIds": [
+        "mum_line_1"
+      ],
+      "isInterchange": true,
+      "latitude": 19.1197,
+      "longitude": 72.8464,
+      "facilities": {
+        "hasParking": false,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Andheri Railway Station Skywalk Foot Overbridge",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "SV Road & Andheri Market",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "mum_line_1": "Platform 1: Ghatkopar | Platform 2: Versova"
+      }
+    },
+    {
+      "id": "mum_ghatkopar",
+      "cityId": "mumbai",
+      "name": "Ghatkopar Metro (Central Railway Interchange)",
+      "hindiName": "घाटकोपर",
+      "lineIds": [
+        "mum_line_1"
+      ],
+      "isInterchange": true,
+      "latitude": 19.086,
+      "longitude": 72.908,
+      "facilities": {
+        "hasParking": false,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Central Railway Suburban Platforms 1-4 Link",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "LBS Marg & Ghatkopar West",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "mum_line_1": "Platform 1 & 2: Versova via Andheri"
+      }
+    },
+    {
+      "id": "mum_marol_naka",
+      "cityId": "mumbai",
+      "name": "Marol Naka (Line 1 & Line 3 Interchange)",
+      "hindiName": "मरोल नाका",
+      "lineIds": [
+        "mum_line_1",
+        "mum_line_3"
+      ],
+      "isInterchange": true,
+      "latitude": 19.1118,
+      "longitude": 72.8824,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Andheri-Kurla Road",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Line 3 Underground Inter-Concourse Passage",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "mum_line_1": "Platform 1: Ghatkopar | Platform 2: Versova",
+        "mum_line_3": "Platform 3: BKC | Platform 4: Aarey JVLR"
+      }
+    },
+    {
+      "id": "mum_dahisar_east",
+      "cityId": "mumbai",
+      "name": "Dahisar East (Line 2A & Line 7 Interchange)",
+      "hindiName": "दहिसर पूर्व",
+      "lineIds": [
+        "mum_line_2a",
+        "mum_line_7"
+      ],
+      "isInterchange": true,
+      "latitude": 19.2559,
+      "longitude": 72.8687,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Western Express Highway",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Link Road & Dahisar Check Naka",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "mum_line_2a": "Platform 1: Andheri West (DN Nagar)",
+        "mum_line_7": "Platform 2: Gundavali (Andheri East)"
+      }
+    },
+    {
+      "id": "mum_bkc",
+      "cityId": "mumbai",
+      "name": "Bandra Kurla Complex (BKC)",
+      "hindiName": "बांद्रा कुर्ला संकुल (बीकेसी)",
+      "lineIds": [
+        "mum_line_3"
+      ],
+      "isInterchange": false,
+      "latitude": 19.0657,
+      "longitude": 72.8689,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "MMRDA Grounds & Jio World Centre",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "NSE National Stock Exchange & ICICI Tower",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "mum_line_3": "Platform 1 & 2: Aarey JVLR via CSMIA Airport T2"
+      }
+    }
+  ]
+}

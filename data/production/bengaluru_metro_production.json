@@ -1,0 +1,203 @@
+{
+  "lines": [
+    {
+      "id": "blr_purple",
+      "cityId": "bengaluru",
+      "name": "Purple Line (Challaghatta - Whitefield Kadugodi)",
+      "code": "PL",
+      "colorHex": "#7B1FA2",
+      "firstTrain": "05:00 AM",
+      "lastTrain": "11:05 PM",
+      "frequencyMinutes": 5,
+      "startStationName": "Challaghatta",
+      "endStationName": "Whitefield (Kadugodi)",
+      "stationIds": [
+        "blr_challaghatta",
+        "blr_kengeri",
+        "blr_mysore_road",
+        "blr_deepanjali_nagar",
+        "blr_attiguppe",
+        "blr_vijayanagar",
+        "blr_hosahalli",
+        "blr_majestic",
+        "blr_kr_market",
+        "blr_vidhana_soudha",
+        "blr_cubbon_park",
+        "blr_mg_road",
+        "blr_trinity",
+        "blr_halasuru",
+        "blr_indiranagar",
+        "blr_swami_vivekananda_road",
+        "blr_baiyappanahalli",
+        "blr_benniganahalli",
+        "blr_kr_puram",
+        "blr_singayyanapalya",
+        "blr_garudacharpalya",
+        "blr_hoodi",
+        "blr_seetharampalya",
+        "blr_kundalahalli",
+        "blr_nallurhalli",
+        "blr_sathya_sai_hospital",
+        "blr_pattandur_agrahara",
+        "blr_kadugodi_tree_park",
+        "blr_hopefarm_channasandra",
+        "blr_whitefield"
+      ]
+    },
+    {
+      "id": "blr_green",
+      "cityId": "bengaluru",
+      "name": "Green Line (Madavara BIEC - Silk Institute)",
+      "code": "GL",
+      "colorHex": "#388E3C",
+      "firstTrain": "05:00 AM",
+      "lastTrain": "11:05 PM",
+      "frequencyMinutes": 6,
+      "startStationName": "Madavara (BIEC)",
+      "endStationName": "Silk Institute",
+      "stationIds": [
+        "blr_madavara",
+        "blr_nagasandra",
+        "blr_dasarahalli",
+        "blr_jalahalli",
+        "blr_peenya_industry",
+        "blr_peenya",
+        "blr_goraguntepalya",
+        "blr_yeshwanthpur",
+        "blr_sandal_soap_factory",
+        "blr_mahalakshmi",
+        "blr_rajajinagar",
+        "blr_kuvempu_road",
+        "blr_srirampura",
+        "blr_sampige_road",
+        "blr_majestic",
+        "blr_chickpete",
+        "blr_kr_market",
+        "blr_national_college",
+        "blr_lalbagh",
+        "blr_south_end_circle",
+        "blr_jayanagar",
+        "blr_rashtreeya_vidyalaya_road",
+        "blr_banashankari",
+        "blr_jaya_prakash_nagar",
+        "blr_yelachenahalli",
+        "blr_konanakunte_cross",
+        "blr_doddakallasandra",
+        "blr_vajarahalli",
+        "blr_thalaghattapura",
+        "blr_silk_institute"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "blr_majestic",
+      "cityId": "bengaluru",
+      "name": "Nadaprabhu Kempegowda Majestic (Interchange)",
+      "hindiName": "केम्पेगौड़ा मैजेस्टिक",
+      "lineIds": [
+        "blr_purple",
+        "blr_green"
+      ],
+      "isInterchange": true,
+      "latitude": 12.9757,
+      "longitude": 77.5728,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "KSR Bengaluru City Railway Station Footbridge",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "BMTC City Bus Stand",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 3",
+          "landmark": "KSRTC Inter-city Kempegowda Bus Station",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "blr_purple": "Platform 1: Whitefield (Kadugodi) | Platform 2: Challaghatta",
+        "blr_green": "Platform 3: Silk Institute | Platform 4: Madavara (BIEC)"
+      }
+    },
+    {
+      "id": "blr_whitefield",
+      "cityId": "bengaluru",
+      "name": "Whitefield (Kadugodi)",
+      "hindiName": "व्हाइटफ़ील्ड",
+      "lineIds": [
+        "blr_purple"
+      ],
+      "isInterchange": false,
+      "latitude": 12.9964,
+      "longitude": 77.7612,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Whitefield Railway Station Link",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Kadugodi Bus Stand",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "blr_purple": "Platform 1 & 2: Challaghatta via Majestic"
+      }
+    },
+    {
+      "id": "blr_mg_road",
+      "cityId": "bengaluru",
+      "name": "Mahatma Gandhi Road (MG Road)",
+      "hindiName": "एम जी रोड",
+      "lineIds": [
+        "blr_purple"
+      ],
+      "isInterchange": false,
+      "latitude": 12.9755,
+      "longitude": 77.6066,
+      "facilities": {
+        "hasParking": false,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Brigade Road & Church Street",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "MG Road Boulevard & 1 MG-Lido Mall",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "blr_purple": "Platform 1: Whitefield | Platform 2: Challaghatta"
+      }
+    }
+  ]
+}

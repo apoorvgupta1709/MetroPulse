@@ -1,0 +1,154 @@
+{
+  "lines": [
+    {
+      "id": "hyd_red",
+      "cityId": "hyderabad",
+      "name": "Red Line (Corridor 1: Miyapur - LB Nagar)",
+      "code": "C1",
+      "colorHex": "#E53935",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 4,
+      "startStationName": "Miyapur",
+      "endStationName": "LB Nagar",
+      "stationIds": [
+        "hyd_miyapur",
+        "hyd_jntu_college",
+        "hyd_kphb_colony",
+        "hyd_kukatpally",
+        "hyd_balanagar",
+        "hyd_moosapet",
+        "hyd_bharat_nagar",
+        "hyd_erragadda",
+        "hyd_esi_hospital",
+        "hyd_sr_nagar",
+        "hyd_ameerpet",
+        "hyd_punjagutta",
+        "hyd_irani_manzil",
+        "hyd_khairatabad",
+        "hyd_lakdi_ka_pul",
+        "hyd_assembly",
+        "hyd_nampally",
+        "hyd_gandhi_bhavan",
+        "hyd_osmania_medical_college",
+        "hyd_mg_bus_station",
+        "hyd_malakpet",
+        "hyd_new_market",
+        "hyd_musarambagh",
+        "hyd_dilsukhnagar",
+        "hyd_chaitanyapuri",
+        "hyd_victoria_memorial",
+        "hyd_lb_nagar"
+      ]
+    },
+    {
+      "id": "hyd_blue",
+      "cityId": "hyderabad",
+      "name": "Blue Line (Corridor 3: Nagole - Raidurg Hitec City)",
+      "code": "C3",
+      "colorHex": "#1E88E5",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 4,
+      "startStationName": "Nagole",
+      "endStationName": "Raidurg",
+      "stationIds": [
+        "hyd_nagole",
+        "hyd_uppal",
+        "hyd_stadium",
+        "hyd_ngri",
+        "hyd_habsiguda",
+        "hyd_tarnaka",
+        "hyd_mettuguda",
+        "hyd_secunderabad_east",
+        "hyd_parade_ground",
+        "hyd_paradise",
+        "hyd_rasoolpura",
+        "hyd_prakash_nagar",
+        "hyd_begumpet",
+        "hyd_ameerpet",
+        "hyd_madhura_nagar",
+        "hyd_yusufguda",
+        "hyd_road_no_5_jubilee_hills",
+        "hyd_jubilee_hills_check_post",
+        "hyd_peddamma_gudi",
+        "hyd_madhapur",
+        "hyd_durgam_cheruvu",
+        "hyd_hitec_city",
+        "hyd_raidurg"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "hyd_ameerpet",
+      "cityId": "hyderabad",
+      "name": "Ameerpet Interchange",
+      "hindiName": "अमीरपेट",
+      "lineIds": [
+        "hyd_red",
+        "hyd_blue"
+      ],
+      "isInterchange": true,
+      "latitude": 17.4375,
+      "longitude": 78.4483,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate A",
+          "landmark": "Sarathi Studios & Yellareddyguda",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate B",
+          "landmark": "Mytrivanam & Ameerpet Circle",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "hyd_red": "Platform 1: LB Nagar | Platform 2: Miyapur",
+        "hyd_blue": "Platform 3: Raidurg (Hitec City) | Platform 4: Nagole"
+      }
+    },
+    {
+      "id": "hyd_raidurg",
+      "cityId": "hyderabad",
+      "name": "Raidurg (Hitec City & Mindspace)",
+      "hindiName": "रायदुर्ग",
+      "lineIds": [
+        "hyd_blue"
+      ],
+      "isInterchange": false,
+      "latitude": 17.4398,
+      "longitude": 78.3772,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Raheja Mindspace IT Park Skywalk",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Knowledge City & Inorbit Mall Road",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "hyd_blue": "Platform 1 & 2: Nagole via Ameerpet"
+      }
+    }
+  ]
+}

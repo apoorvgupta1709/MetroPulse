@@ -148,6 +148,10 @@ class TransitDataService {
       return _mumbaiLines;
     } else if (cityId == 'bengaluru') {
       return _bengaluruLines;
+    } else if (cityId == 'kolkata') {
+      return _kolkataLines;
+    } else if (cityId == 'hyderabad') {
+      return _hyderabadLines;
     } else if (cityId == 'dubai') {
       return _dubaiLines;
     } else if (cityId == 'singapore') {
@@ -167,6 +171,10 @@ class TransitDataService {
       return _mumbaiStations;
     } else if (cityId == 'bengaluru') {
       return _bengaluruStations;
+    } else if (cityId == 'kolkata') {
+      return _kolkataStations;
+    } else if (cityId == 'hyderabad') {
+      return _hyderabadStations;
     } else if (cityId == 'dubai') {
       return _dubaiStations;
     } else if (cityId == 'singapore') {
@@ -1262,6 +1270,146 @@ class TransitDataService {
       facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true),
       platformDirections: {
         'lon_piccadilly': 'Eastbound (Towards Cockfosters) / Westbound (Towards Heathrow Airport)',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // KOLKATA METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _kolkataLines = [
+    const MetroLine(
+      id: 'kol_blue',
+      cityId: 'kolkata',
+      name: 'Blue Line (Line 1: Dakshineswar - Kavi Subhash)',
+      code: 'L1',
+      colorHex: '#1E88E5',
+      firstTrain: '06:55 AM',
+      lastTrain: '09:40 PM',
+      frequencyMinutes: 6,
+      startStationName: 'Dakshineswar',
+      endStationName: 'Kavi Subhash',
+      stationIds: ['kol_dakshineswar', 'kol_dum_dum', 'kol_esplanade', 'kol_park_street', 'kol_kalighat', 'kol_kavi_subhash'],
+    ),
+    const MetroLine(
+      id: 'kol_green',
+      cityId: 'kolkata',
+      name: 'Green Line (Line 2: Howrah - Sector V)',
+      code: 'L2',
+      colorHex: '#43A047',
+      firstTrain: '07:00 AM',
+      lastTrain: '09:45 PM',
+      frequencyMinutes: 10,
+      startStationName: 'Howrah Maidan (River Tunnel)',
+      endStationName: 'Salt Lake Sector V',
+      stationIds: ['kol_howrah_maidan', 'kol_howrah_station', 'kol_esplanade', 'kol_sealdah', 'kol_salt_lake_sector_v'],
+    ),
+  ];
+
+  static final List<Station> _kolkataStations = [
+    const Station(
+      id: 'kol_howrah_station',
+      cityId: 'kolkata',
+      name: 'Howrah Railway Station (Underwater Metro)',
+      hindiName: 'हावड़ा स्टेशन',
+      lineIds: ['kol_green'],
+      isInterchange: true,
+      latitude: 22.5855,
+      longitude: 88.3426,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Howrah Railway Concourse & Ganga River Ferry Link'),
+      ],
+      platformDirections: {
+        'kol_green': 'Platform 1: Esplanade via River Ganga Tunnel | Platform 2: Howrah Maidan',
+      },
+    ),
+    const Station(
+      id: 'kol_esplanade',
+      cityId: 'kolkata',
+      name: 'Esplanade (Line 1 & 2 Hub)',
+      hindiName: 'एस्प्लेनेड',
+      lineIds: ['kol_blue', 'kol_green'],
+      isInterchange: true,
+      latitude: 22.5645,
+      longitude: 88.3516,
+      facilities: StationFacilities(hasParking: false, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'New Market & Jawaharlal Nehru Road'),
+      ],
+      platformDirections: {
+        'kol_blue': 'Platform 1: Kavi Subhash | Platform 2: Dakshineswar',
+        'kol_green': 'Platform 3: Howrah Maidan via Underwater Tunnel',
+      },
+    ),
+  ];
+
+  // =========================================================================
+  // HYDERABAD METRO PRODUCTION DATASET
+  // =========================================================================
+  static final List<MetroLine> _hyderabadLines = [
+    const MetroLine(
+      id: 'hyd_red',
+      cityId: 'hyderabad',
+      name: 'Red Line (Miyapur - LB Nagar)',
+      code: 'C1',
+      colorHex: '#E53935',
+      firstTrain: '06:00 AM',
+      lastTrain: '11:00 PM',
+      frequencyMinutes: 4,
+      startStationName: 'Miyapur',
+      endStationName: 'LB Nagar',
+      stationIds: ['hyd_miyapur', 'hyd_kphb_colony', 'hyd_ameerpet', 'hyd_mg_bus_station', 'hyd_lb_nagar'],
+    ),
+    const MetroLine(
+      id: 'hyd_blue',
+      cityId: 'hyderabad',
+      name: 'Blue Line (Nagole - Raidurg Hitec City)',
+      code: 'C3',
+      colorHex: '#1E88E5',
+      firstTrain: '06:00 AM',
+      lastTrain: '11:00 PM',
+      frequencyMinutes: 4,
+      startStationName: 'Nagole',
+      endStationName: 'Raidurg (Hitec City)',
+      stationIds: ['hyd_nagole', 'hyd_secunderabad_east', 'hyd_ameerpet', 'hyd_hitec_city', 'hyd_raidurg'],
+    ),
+  ];
+
+  static final List<Station> _hyderabadStations = [
+    const Station(
+      id: 'hyd_ameerpet',
+      cityId: 'hyderabad',
+      name: 'Ameerpet (Red & Blue Line Hub)',
+      hindiName: 'अमीरपेट',
+      lineIds: ['hyd_red', 'hyd_blue'],
+      isInterchange: true,
+      latitude: 17.4375,
+      longitude: 78.4483,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate A', landmark: 'Sarathi Studios & Ameerpet Circle'),
+      ],
+      platformDirections: {
+        'hyd_red': 'Platform 1: LB Nagar | Platform 2: Miyapur',
+        'hyd_blue': 'Platform 3: Raidurg (Hitec City) | Platform 4: Nagole',
+      },
+    ),
+    const Station(
+      id: 'hyd_raidurg',
+      cityId: 'hyderabad',
+      name: 'Raidurg (Hitec City / Mindspace)',
+      hindiName: 'रायदुर्ग',
+      lineIds: ['hyd_blue'],
+      isInterchange: false,
+      latitude: 17.4398,
+      longitude: 78.3772,
+      facilities: StationFacilities(hasParking: true, hasEscalator: true, hasElevator: true, hasAtm: true, hasRestroom: true),
+      gates: [
+        StationGate(gateNumber: 'Gate 1', landmark: 'Mindspace IT Park Skywalk'),
+      ],
+      platformDirections: {
+        'hyd_blue': 'Platform 1 & 2: Nagole via Ameerpet',
       },
     ),
   ];

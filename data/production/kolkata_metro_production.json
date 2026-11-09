@@ -1,0 +1,141 @@
+{
+  "lines": [
+    {
+      "id": "kol_blue",
+      "cityId": "kolkata",
+      "name": "Blue Line (Line 1: Dakshineswar - Kavi Subhash)",
+      "code": "L1",
+      "colorHex": "#1E88E5",
+      "firstTrain": "06:55 AM",
+      "lastTrain": "09:40 PM",
+      "frequencyMinutes": 6,
+      "startStationName": "Dakshineswar",
+      "endStationName": "Kavi Subhash (New Garia)",
+      "stationIds": [
+        "kol_dakshineswar",
+        "kol_baranagar",
+        "kol_noapara",
+        "kol_dum_dum",
+        "kol_belgachia",
+        "kol_shyambazar",
+        "kol_shovabazar",
+        "kol_girish_park",
+        "kol_mahatma_gandhi_road",
+        "kol_central",
+        "kol_chandni_chowk",
+        "kol_esplanade",
+        "kol_park_street",
+        "kol_maidan",
+        "kol_netaji_bhavan",
+        "kol_jatin_das_park",
+        "kol_kalighat",
+        "kol_rabindra_sarobar",
+        "kol_mahanayak_uttam_kumar",
+        "kol_netaji",
+        "kol_masterda_surya_sen",
+        "kol_gitanjali",
+        "kol_kavi_nazrul",
+        "kol_shahid_khudiram",
+        "kol_kavi_subhash"
+      ]
+    },
+    {
+      "id": "kol_green",
+      "cityId": "kolkata",
+      "name": "Green Line (Line 2: Howrah Maidan - Esplanade / Sector V)",
+      "code": "L2",
+      "colorHex": "#43A047",
+      "firstTrain": "07:00 AM",
+      "lastTrain": "09:45 PM",
+      "frequencyMinutes": 10,
+      "startStationName": "Howrah Maidan (Underwater Ganga Tunnel)",
+      "endStationName": "Salt Lake Sector V",
+      "stationIds": [
+        "kol_howrah_maidan",
+        "kol_howrah_station",
+        "kol_mahakaran",
+        "kol_esplanade",
+        "kol_sealdah",
+        "kol_phoolbagan",
+        "kol_salt_lake_stadium",
+        "kol_bengal_chemical",
+        "kol_city_centre",
+        "kol_central_park",
+        "kol_karunamoyee",
+        "kol_salt_lake_sector_v"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "kol_howrah_station",
+      "cityId": "kolkata",
+      "name": "Howrah Railway Station (Deepest Underground Metro)",
+      "hindiName": "हावड़ा स्टेशन",
+      "lineIds": [
+        "kol_green"
+      ],
+      "isInterchange": true,
+      "latitude": 22.5855,
+      "longitude": 88.3426,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Howrah Railway Station Complex & Ferries",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Howrah Bridge & Station Road",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "kol_green": "Platform 1: Esplanade via Underwater Ganga Metro Tunnel | Platform 2: Howrah Maidan"
+      }
+    },
+    {
+      "id": "kol_esplanade",
+      "cityId": "kolkata",
+      "name": "Esplanade (Line 1 & Line 2 Interchange Hub)",
+      "hindiName": "एस्प्लेनेड",
+      "lineIds": [
+        "kol_blue",
+        "kol_green"
+      ],
+      "isInterchange": true,
+      "latitude": 22.5645,
+      "longitude": 88.3516,
+      "facilities": {
+        "hasParking": false,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Jawaharlal Nehru Road & New Market",
+          "accessible": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Curzon Park & Esplanade Tram/Bus Terminal",
+          "accessible": true
+        }
+      ],
+      "platformDirections": {
+        "kol_blue": "Platform 1: Kavi Subhash | Platform 2: Dakshineswar",
+        "kol_green": "Platform 3: Howrah Maidan via River Tunnel"
+      }
+    }
+  ]
+}
