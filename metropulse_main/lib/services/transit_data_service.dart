@@ -2,6 +2,7 @@ import '../models/city.dart';
 import '../models/metro_line.dart';
 import '../models/station.dart';
 import '../models/service_alert.dart';
+import 'delhi_full_dataset.dart';
 
 class TransitDataService {
   static final List<City> supportedCities = [
@@ -143,7 +144,7 @@ class TransitDataService {
   // Fetch Lines for a given city
   static List<MetroLine> getLinesForCity(String cityId) {
     if (cityId == 'delhi_ncr') {
-      return _delhiLines;
+      return DelhiFullDataset.lines;
     } else if (cityId == 'mumbai') {
       return _mumbaiLines;
     } else if (cityId == 'bengaluru') {
@@ -176,7 +177,7 @@ class TransitDataService {
   // Fetch Stations for a given city
   static List<Station> getStationsForCity(String cityId) {
     if (cityId == 'delhi_ncr') {
-      return _delhiStations;
+      return DelhiFullDataset.stations;
     } else if (cityId == 'mumbai') {
       return _mumbaiStations;
     } else if (cityId == 'bengaluru') {
