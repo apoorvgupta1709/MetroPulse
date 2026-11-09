@@ -1,0 +1,50 @@
+🚇 Welcome to MetroPulse — The Next-Gen Urban Transit & Metro Navigation Suite!
+
+Designed for daily commuters, travelers, and city navigators, MetroPulse is engineered from the ground up for zero-friction launch. No registration or mandatory login required — open the app and instantly plan your subway route offline with zero latency.
+
+=========================================
+🌟 WHY COMMUTERS LOVE METROPULSE
+=========================================
+• Zero-Friction Launch: Opens directly to your transit dashboard without ANY login barrier.
+• Dual Offline Routing Engine:
+  - Fastest Route: Powered by Dijkstra’s shortest-path algorithm considering station runtimes and transfer penalties.
+  - Fewest Line Changes: Powered by BFS graph traversal to minimize stair climbing and corridor walks.
+• Ultra-Crisp 4K Vector Maps: Pinch-to-zoom interactive maps rendered with vector precision that never blurs at any zoom level.
+• Dynamic Pan-to-Station: Search any station or interchange to smoothly center and highlight it on the canvas.
+• Exit Gates & Landmark Directory: Find the exact numbered exit gate closest to your hospital, college, office, or mall.
+• Smart Fare Calculator: Calculate token prices and smart card discounts (10% to 20% off) automatically across distance slabs.
+• First & Last Metro Timings: Check exact morning departure and night terminus arrival schedules per line.
+• Metro Near Me: GPS-based nearest station finder with walking distance and arrival estimate.
+• Recharge Deep-Links: 1-tap direct links to official metro smart card recharge gateways (DMRC, Mumbai Metro, Namma Metro, Dubai Nol, London Oyster).
+
+=========================================
+🌍 MULTI-CITY SUPPORT
+=========================================
+Indian Transit Networks:
+- Delhi NCR Metro (Red, Yellow, Blue, Magenta, Pink, Violet, Airport Express)
+- Mumbai Metro & Monorail (Line 1, Line 2A, Line 7)
+- Bengaluru Namma Metro (Purple, Green lines)
+- Hyderabad Metro (Red, Blue, Green lines)
+- Kolkata Metro (Underwater East-West & North-South lines)
+- Chennai, Pune, Ahmedabad, Kochi, and Jaipur Metros
+
+International Transit Networks:
+- Dubai Metro (Red & Green lines)
+- Singapore MRT (North South, East West, Circle lines)
+- London Underground (Central, Piccadilly, Jubilee lines)
+
+=========================================
+👑 PRIME COMMUTER PASS
+=========================================
+Upgrade once and enjoy lifetime premium perks:
+- 100% Ad-Free experience forever.
+- Glowing active route lines rendered directly over the 4K interactive map.
+- Dual route side-by-side comparison.
+- True OLED Dark Mode.
+- Google Account Cloud Sync (pass restores seamlessly on reinstallation).
+
+=========================================
+❤️ SIGNATURE ATTRIBUTION
+=========================================
+Made with ❤️ by Apoorv
+MetroPulse Commuter Engine © 2026. All rights reserved.

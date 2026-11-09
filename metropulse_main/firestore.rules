@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function: Check if user is authenticated admin
+    function isAdmin() {
+      return request.auth != null && 
+        (request.auth.token.admin == true || 
+         request.auth.uid == "APOORV_ADMIN_MASTER_UID" ||
+         get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true);
+    }
+
+    // Metro transit networks, cities, lines, stations, and fare matrices: Publicly readable, admin writable
+    match /cities/{cityId} {
+      allow read: if true;
+      allow write: if isAdmin();
+      
+      match /lines/{lineId} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+      
+      match /stations/{stationId} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+      
+      match /fare_matrix/{fareId} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+    }
+
+    // Live delay and disruption alerts: Publicly readable, admin writable
+    match /service_alerts/{alertId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // App monetization & Remote Config: Publicly readable, admin writable
+    match /app_config/{configId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // User entitlements & profiles: Users read/write their own record, admin full access
+    match /users/{userId} {
+      allow read: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow write: if request.auth != null && (request.auth.uid == userId || isAdmin());
+    }
+
+    // Admin records: Admin access only
+    match /admins/{adminId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
