@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../providers/admin_control_provider.dart';
+import 'station_line_editor_screen.dart';
 
 class CityNetworkCmsScreen extends StatefulWidget {
   const CityNetworkCmsScreen({super.key});
@@ -97,7 +98,15 @@ class _CityNetworkCmsScreenState extends State<CityNetworkCmsScreen> {
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(16),
               child: ListTile(
-              leading: Container(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => StationLineEditorScreen(initialCityId: city.id),
+                    ),
+                  );
+                },
+                leading: Container(
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
@@ -130,8 +139,11 @@ class _CityNetworkCmsScreenState extends State<CityNetworkCmsScreen> {
                   const PopupMenuItem(value: 'map', child: Text('Assign Vector Map')),
                 ],
                 onSelected: (val) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Opening CMS editor for ${city.name}')),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => StationLineEditorScreen(initialCityId: city.id),
+                    ),
                   );
                 },
               ),

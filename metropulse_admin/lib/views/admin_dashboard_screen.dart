@@ -36,13 +36,23 @@ class AdminDashboardScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh),
-            tooltip: 'Sync Remote Config',
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Synced with Firestore Remote Config')),
-              );
-            },
+            icon: const Icon(Icons.cloud_sync_rounded),
+            tooltip: 'Sync with Cloud Firestore',
+            onPressed: admin.isSyncing
+                ? null
+                : () async {
+                    await admin.seedInitialDataToCloud();
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(admin.syncStatusMessage.isNotEmpty
+                              ? admin.syncStatusMessage
+                              : 'Synced with Cloud Firestore!'),
+                          backgroundColor: Colors.green.shade700,
+                        ),
+                      );
+                    }
+                  },
           ),
         ],
       ),
@@ -100,7 +110,7 @@ class AdminDashboardScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(
-                              'LIVE',
+                              'FIREBASE CONNECTED',
                               style: GoogleFonts.plusJakartaSans(
                                 color: Colors.white,
                                 fontSize: 9,
@@ -121,6 +131,87 @@ class AdminDashboardScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+
+          // Firebase Live Cloud Sync Card
+          Container(
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: Colors.blue.shade50,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: Colors.blue.shade200),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade600,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(Icons.cloud_done_rounded, color: Colors.white, size: 20),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Real-Time Firestore Sync',
+                        style: GoogleFonts.plusJakartaSans(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 13,
+                          color: Colors.blue.shade900,
+                        ),
+                      ),
+                      Text(
+                        'Changes push live over-the-air to commuter apps & work offline.',
+                        style: GoogleFonts.plusJakartaSans(
+                          fontSize: 11,
+                          color: Colors.blue.shade700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                ElevatedButton(
+                  onPressed: admin.isSyncing
+                      ? null
+                      : () async {
+                          await admin.seedInitialDataToCloud();
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(admin.syncStatusMessage.isNotEmpty
+                                    ? admin.syncStatusMessage
+                                    : 'Synced to Firebase!'),
+                                backgroundColor: Colors.green.shade700,
+                              ),
+                            );
+                          }
+                        },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade700,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    minimumSize: Size.zero,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  ),
+                  child: admin.isSyncing
+                      ? const SizedBox(
+                          width: 14,
+                          height: 14,
+                          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                        )
+                      : Text(
+                          'Sync Now',
+                          style: GoogleFonts.plusJakartaSans(fontSize: 11, fontWeight: FontWeight.w700),
+                        ),
                 ),
               ],
             ),
@@ -316,26 +407,26 @@ class AdminDashboardScreen extends StatelessWidget {
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(14),
         child: ListTile(
-        leading: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.12),
-            borderRadius: BorderRadius.circular(10),
+          leading: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.12),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(icon, color: color, size: 22),
           ),
-          child: Icon(icon, color: color, size: 22),
+          title: Text(
+            title,
+            style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w700, fontSize: 14),
+          ),
+          subtitle: Text(
+            subtitle,
+            style: GoogleFonts.plusJakartaSans(fontSize: 11, color: Colors.grey.shade600),
+          ),
+          trailing: const Icon(Icons.arrow_forward_ios, size: 14),
+          onTap: onTap,
         ),
-        title: Text(
-          title,
-          style: GoogleFonts.plusJakartaSans(fontWeight: FontWeight.w700, fontSize: 14),
-        ),
-        subtitle: Text(
-          subtitle,
-          style: GoogleFonts.plusJakartaSans(fontSize: 11, color: Colors.grey.shade600),
-        ),
-        trailing: const Icon(Icons.arrow_forward_ios, size: 14),
-        onTap: onTap,
       ),
-    ),
-  );
+    );
   }
 }

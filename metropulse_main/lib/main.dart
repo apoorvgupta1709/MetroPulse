@@ -1,11 +1,14 @@
 import 'dart:async';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'firebase_options.dart';
 import 'providers/monetization_provider.dart';
 import 'providers/transit_provider.dart';
 import 'services/admob_service.dart';
+import 'services/transit_sync_service.dart';
 import 'views/home_screen.dart';
 
 void main() {
@@ -23,6 +26,22 @@ void main() {
       debugPrint('MetroPulse Platform Error: $error\n$stack');
       return true; // handled, prevent process crash
     };
+
+    // Initialize Firebase safely without throwing if unavailable
+    try {
+      if (kIsWeb ||
+          defaultTargetPlatform == TargetPlatform.android ||
+          defaultTargetPlatform == TargetPlatform.iOS) {
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
+      } else {
+        await Firebase.initializeApp();
+      }
+      TransitSyncService.init();
+    } catch (e) {
+      debugPrint('Firebase startup notice: $e');
+    }
 
     // Custom ErrorWidget builder to prevent red unhandled exception screens
     ErrorWidget.builder = (FlutterErrorDetails details) {

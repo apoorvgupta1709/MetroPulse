@@ -42,6 +42,8 @@ dependencies:
   url_launcher: ^6.3.3
   geolocator: ^14.1.2
   google_mobile_ads: ^9.2.0
+  firebase_core: ^5.1.0
+  cloud_firestore: ^7.1.0
 
 dev_dependencies:
   flutter_test:

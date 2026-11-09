@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../services/admob_service.dart';
+import '../services/transit_sync_service.dart';
 
 class MonetizationProvider extends ChangeNotifier {
   static const String _prefKeyIsPro = 'metropulse_is_prime_user';
@@ -20,6 +21,7 @@ class MonetizationProvider extends ChangeNotifier {
   DateTime _discountExpiry = DateTime.now().add(const Duration(hours: 4, minutes: 28, seconds: 15));
   Timer? _countdownTimer;
   Duration _timeLeft = const Duration(hours: 4, minutes: 28, seconds: 15);
+  StreamSubscription? _remoteConfigSub;
 
   bool get isPro => _isPro;
   bool get adsRemoved => _adsRemoved;
@@ -33,6 +35,7 @@ class MonetizationProvider extends ChangeNotifier {
   MonetizationProvider() {
     _loadStoredPreferences();
     _startCountdown();
+    _initRemoteConfigSync();
   }
 
   Future<void> _loadStoredPreferences() async {
@@ -44,6 +47,30 @@ class MonetizationProvider extends ChangeNotifier {
       _isGoogleAuthenticated = true;
     }
     notifyListeners();
+  }
+
+  void _initRemoteConfigSync() {
+    _remoteConfigSub?.cancel();
+    _remoteConfigSub = TransitSyncService.streamMonetizationConfig().listen((config) {
+      if (config != null) {
+        if (config['primePrice'] != null) {
+          _currentPrice = (config['primePrice'] as num).toInt();
+        }
+        if (config['primeOriginalPrice'] != null) {
+          _originalPrice = (config['primeOriginalPrice'] as num).toInt();
+        }
+        if (config['primeDiscountPercent'] != null) {
+          _discountPercent = (config['primeDiscountPercent'] as num).toInt();
+        }
+        if (config['adsEnabled'] != null) {
+          final adsEnabled = config['adsEnabled'] as bool;
+          if (!_isPro) {
+            AdMobService.adsGloballyEnabled = adsEnabled;
+          }
+        }
+        notifyListeners();
+      }
+    }, onError: (e) => debugPrint('MonetizationProvider cloud config notice: $e'));
   }
 
   void _startCountdown() {
@@ -110,6 +137,7 @@ class MonetizationProvider extends ChangeNotifier {
   @override
   void dispose() {
     _countdownTimer?.cancel();
+    _remoteConfigSub?.cancel();
     super.dispose();
   }
 }

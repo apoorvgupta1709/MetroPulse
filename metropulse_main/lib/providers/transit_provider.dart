@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/city.dart';
 import '../models/metro_line.dart';
@@ -6,6 +7,7 @@ import '../models/service_alert.dart';
 import '../models/station.dart';
 import '../services/transit_data_service.dart';
 import '../services/transit_graph_service.dart';
+import '../services/transit_sync_service.dart';
 
 class TransitProvider extends ChangeNotifier {
   List<City> _cities = [];
@@ -20,6 +22,12 @@ class TransitProvider extends ChangeNotifier {
   RouteResult? _fastestRoute;
   RouteResult? _fewestChangesRoute;
   bool _isCalculating = false;
+
+  // Real-time Firestore sync subscriptions
+  StreamSubscription<List<Station>>? _stationsSubscription;
+  StreamSubscription<List<MetroLine>>? _linesSubscription;
+  StreamSubscription<List<ServiceAlert>>? _alertsSubscription;
+  StreamSubscription<List<City>>? _citiesSubscription;
 
   // Getters
   List<City> get cities => _cities;
@@ -37,6 +45,7 @@ class TransitProvider extends ChangeNotifier {
     _cities = TransitDataService.supportedCities;
     _activeCity = _cities.first; // Default: Delhi NCR
     _loadCityData(_activeCity.id);
+    _initCloudSync();
   }
 
   void switchCity(City city) {
@@ -47,6 +56,7 @@ class TransitProvider extends ChangeNotifier {
     _fastestRoute = null;
     _fewestChangesRoute = null;
     _loadCityData(city.id);
+    _subscribeToActiveCityData(city.id);
     notifyListeners();
   }
 
@@ -62,6 +72,82 @@ class TransitProvider extends ChangeNotifier {
       _destinationStation = _stations[1];
       computeRoutes();
     }
+  }
+
+  void _initCloudSync() {
+    _subscribeToActiveCityData(_activeCity.id);
+
+    // Global city updates
+    _citiesSubscription?.cancel();
+    _citiesSubscription = TransitSyncService.streamCities().listen((cloudCities) {
+      if (cloudCities.isNotEmpty) {
+        final Map<String, City> cityMap = {for (var c in _cities) c.id: c};
+        for (var cc in cloudCities) {
+          cityMap[cc.id] = cc;
+        }
+        _cities = cityMap.values.toList();
+        notifyListeners();
+      }
+    }, onError: (e) => debugPrint('TransitProvider cloud cities sync notice: $e'));
+  }
+
+  void _subscribeToActiveCityData(String cityId) {
+    // 1. Cancel existing city listeners
+    _stationsSubscription?.cancel();
+    _linesSubscription?.cancel();
+    _alertsSubscription?.cancel();
+
+    // 2. Real-time Stations synchronization
+    _stationsSubscription = TransitSyncService.streamStations(cityId).listen((cloudStations) {
+      if (cloudStations.isNotEmpty) {
+        final Map<String, Station> map = {for (var s in _stations) s.id: s};
+        for (var cs in cloudStations) {
+          map[cs.id] = cs;
+        }
+        _stations = map.values.toList();
+        _graphService = TransitGraphService(stations: _stations, lines: _lines);
+
+        // Keep origin/destination intact or refresh if modified
+        if (_originStation != null) {
+          _originStation = _stations.firstWhere(
+            (s) => s.id == _originStation!.id,
+            orElse: () => _originStation!,
+          );
+        }
+        if (_destinationStation != null) {
+          _destinationStation = _stations.firstWhere(
+            (s) => s.id == _destinationStation!.id,
+            orElse: () => _destinationStation!,
+          );
+        }
+
+        if (_originStation != null && _destinationStation != null) {
+          computeRoutes();
+        }
+        notifyListeners();
+      }
+    }, onError: (e) => debugPrint('TransitProvider cloud stations sync notice: $e'));
+
+    // 3. Real-time Lines synchronization
+    _linesSubscription = TransitSyncService.streamLines(cityId).listen((cloudLines) {
+      if (cloudLines.isNotEmpty) {
+        final Map<String, MetroLine> map = {for (var l in _lines) l.id: l};
+        for (var cl in cloudLines) {
+          map[cl.id] = cl;
+        }
+        _lines = map.values.toList();
+        _graphService = TransitGraphService(stations: _stations, lines: _lines);
+        notifyListeners();
+      }
+    }, onError: (e) => debugPrint('TransitProvider cloud lines sync notice: $e'));
+
+    // 4. Real-time Alerts synchronization
+    _alertsSubscription = TransitSyncService.streamActiveAlerts(cityId).listen((cloudAlerts) {
+      if (cloudAlerts.isNotEmpty) {
+        _alerts = cloudAlerts;
+        notifyListeners();
+      }
+    }, onError: (e) => debugPrint('TransitProvider cloud alerts sync notice: $e'));
   }
 
   void setOrigin(Station? station) {
@@ -128,5 +214,14 @@ class TransitProvider extends ChangeNotifier {
           s.hindiName.toLowerCase().contains(q) ||
           s.gates.any((g) => g.landmark.toLowerCase().contains(q));
     }).toList();
+  }
+
+  @override
+  void dispose() {
+    _stationsSubscription?.cancel();
+    _linesSubscription?.cancel();
+    _alertsSubscription?.cancel();
+    _citiesSubscription?.cancel();
+    super.dispose();
   }
 }

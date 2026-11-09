@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "871519492758",
+    "project_id": "metropulse-transit-2026",
+    "storage_bucket": "metropulse-transit-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871519492758:android:ab85a673fdb7b34ada00b7",
+        "android_client_info": {
+          "package_name": "com.apoorv.metropulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_ShaHv8EqDsPo-xMBLrDtmQSbgzz9VTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871519492758:android:2486f95503c7a936da00b7",
+        "android_client_info": {
+          "package_name": "com.apoorv.metropulse.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_ShaHv8EqDsPo-xMBLrDtmQSbgzz9VTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
