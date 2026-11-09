@@ -274,7 +274,7 @@ class TransitGraphService {
 
     final totalHops = max(1, pathStations.length - 1);
     final distanceKm = (totalHops * 1.6).clamp(1.2, 85.0);
-    final fare = _calculateFare(totalHops, currencySymbol);
+    final fare = _calculateFareForEdges(pathEdges, totalHops, currencySymbol);
 
     return RouteResult(
       origin: origin,
@@ -305,6 +305,79 @@ class TransitGraphService {
       }
     }
     return 'Towards ${line.endStationName}';
+  }
+
+  int _calculateFareForEdges(List<_GraphEdge> edges, int totalHops, String currencySymbol) {
+    if (currencySymbol != '₹' || edges.isEmpty) {
+      return _calculateFare(totalHops, currencySymbol);
+    }
+
+    int dmrcHops = 0;
+    int aquaHops = 0;
+    int rapidHops = 0;
+    int airportHops = 0;
+
+    for (final e in edges) {
+      final lineId = e.line.id.toLowerCase();
+      if (lineId.contains('aqua')) {
+        aquaHops++;
+      } else if (lineId.contains('rapid')) {
+        rapidHops++;
+      } else if (lineId.contains('airport') || lineId.contains('orange')) {
+        airportHops++;
+      } else {
+        dmrcHops++;
+      }
+    }
+
+    // Pure single-operator routes
+    if (aquaHops > 0 && dmrcHops == 0 && rapidHops == 0 && airportHops == 0) {
+      return _aquaFareForHops(aquaHops);
+    }
+    if (rapidHops > 0 && dmrcHops == 0 && aquaHops == 0 && airportHops == 0) {
+      return 20; // Gurugram Rapid Metro standalone flat rate
+    }
+    if (airportHops > 0 && dmrcHops == 0 && aquaHops == 0 && rapidHops == 0) {
+      return _airportFareForHops(airportHops);
+    }
+    if (dmrcHops > 0 && aquaHops == 0 && rapidHops == 0 && airportHops == 0) {
+      return _dmrcFareForHops(dmrcHops);
+    }
+
+    // Integrated / Multi-network travel
+    int totalFare = 0;
+    if (dmrcHops > 0) totalFare += _dmrcFareForHops(dmrcHops);
+    if (aquaHops > 0) totalFare += _aquaFareForHops(aquaHops);
+    if (rapidHops > 0) totalFare += 20;
+    if (airportHops > 0) totalFare += _airportFareForHops(airportHops);
+
+    return totalFare > 0 ? totalFare : _calculateFare(totalHops, currencySymbol);
+  }
+
+  int _dmrcFareForHops(int hops) {
+    if (hops <= 2) return 10;
+    if (hops <= 5) return 20;
+    if (hops <= 9) return 30;
+    if (hops <= 15) return 40;
+    if (hops <= 22) return 50;
+    return 60;
+  }
+
+  int _aquaFareForHops(int hops) {
+    if (hops <= 1) return 10;
+    if (hops <= 2) return 15;
+    if (hops <= 6) return 20;
+    if (hops <= 9) return 30;
+    if (hops <= 16) return 40;
+    return 50;
+  }
+
+  int _airportFareForHops(int hops) {
+    if (hops <= 2) return 20;
+    if (hops <= 4) return 30;
+    if (hops <= 6) return 40;
+    if (hops <= 8) return 50;
+    return 60;
   }
 
   int _calculateFare(int hops, String currencySymbol) {

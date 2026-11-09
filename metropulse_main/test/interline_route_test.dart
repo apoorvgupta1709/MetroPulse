@@ -102,5 +102,23 @@ void main() {
       expect(route, isNotNull);
       expect(route!.totalStationsCount, greaterThan(30));
     });
+
+    test('Yellow Line to Aqua Line Dynamic Fare (Samaypur Badli -> Noida Sec 144)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_samaypur_badli',
+        destinationStationId: 'del_noida_sec_144',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.fareAmount, greaterThanOrEqualTo(60));
+      // Short trip on Yellow Line should have low fare
+      final shortRoute = graphService.calculateRoute(
+        originStationId: 'del_samaypur_badli',
+        destinationStationId: 'del_rohini_sec_18_19',
+        mode: RouteMode.fastest,
+      );
+      expect(shortRoute, isNotNull);
+      expect(shortRoute!.fareAmount, equals(10));
+    });
   });
 }
