@@ -10,57 +10,57 @@
 <!-- STATIONS -->
 <g id="stations-layer">
   <circle cx="1600" cy="350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="344" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">দক্ষিণেশ্বর</text>
-  <text x="1614" y="354" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Dakshineswar</text>
+  <text x="1614" y="344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">দক্ষিণেশ্বর</text>
+  <text x="1614" y="356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dakshineswar</text>
   <circle cx="1600" cy="520" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="514" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">বরাহনগর</text>
-  <text x="1614" y="524" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Baranagar</text>
+  <text x="1614" y="514" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">বরাহনগর</text>
+  <text x="1614" y="526" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Baranagar</text>
   <circle cx="1600" cy="700" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="694" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">দমদম</text>
-  <text x="1614" y="704" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Dum Dum</text>
+  <text x="1614" y="694" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">দমদম</text>
+  <text x="1614" y="706" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dum Dum</text>
   <circle cx="1600" cy="900" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="894" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">শ্যামবাজার</text>
-  <text x="1614" y="904" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Shyambazar</text>
+  <text x="1614" y="894" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">শ্যামবাজার</text>
+  <text x="1614" y="906" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Shyambazar</text>
   <circle cx="1600" cy="1060" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1054" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">শোভাবাজার</text>
-  <text x="1614" y="1064" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Shobhabazar Sutanuti</text>
+  <text x="1614" y="1054" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">শোভাবাজার</text>
+  <text x="1614" y="1066" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Shobhabazar Sutanuti</text>
   <circle cx="1600" cy="1300" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
   <circle cx="1600" cy="1300" r="5" fill="#0F172A"/>
-  <text x="1614" y="1294" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">এসপ্ল্যানেড</text>
-  <text x="1614" y="1307" text-anchor="start" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">Esplanade Hub</text>
+  <text x="1614" y="1294" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">এসপ্ল্যানেড</text>
+  <text x="1614" y="1308" text-anchor="start" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">Esplanade Hub</text>
   <circle cx="1600" cy="1480" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1474" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">পার্ক স্ট্রিট</text>
-  <text x="1614" y="1484" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Park Street</text>
+  <text x="1614" y="1474" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">পার্ক স্ট্রিট</text>
+  <text x="1614" y="1486" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Park Street</text>
   <circle cx="1600" cy="1650" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1644" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">রবীন্দ্র সদন</text>
-  <text x="1614" y="1654" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Rabindra Sadan</text>
+  <text x="1614" y="1644" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">রবীন্দ্র সদন</text>
+  <text x="1614" y="1656" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Rabindra Sadan</text>
   <circle cx="1600" cy="1850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1844" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">কালীঘাট</text>
-  <text x="1614" y="1854" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Kalighat</text>
+  <text x="1614" y="1844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">কালীঘাট</text>
+  <text x="1614" y="1856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kalighat</text>
   <circle cx="1600" cy="2080" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="2074" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">টালিগঞ্জ</text>
-  <text x="1614" y="2084" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Mahanayak Uttam Kumar (Tollygunge)</text>
+  <text x="1614" y="2074" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">টালিগঞ্জ</text>
+  <text x="1614" y="2086" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Mahanayak Uttam Kumar (Tollygunge)</text>
   <circle cx="1600" cy="2350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="2344" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">কবি সুভাষ</text>
-  <text x="1614" y="2354" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Kavi Subhash (New Garia)</text>
+  <text x="1614" y="2344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">কবি সুভাষ</text>
+  <text x="1614" y="2356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kavi Subhash (New Garia)</text>
   <circle cx="650" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="664" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">হাওড়া ময়দান</text>
-  <text x="664" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Howrah Maidan</text>
+  <text x="664" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">হাওড়া ময়দান</text>
+  <text x="664" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Howrah Maidan</text>
   <circle cx="950" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="964" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">হাওড়া স্টেশন</text>
-  <text x="964" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Howrah Railway Station</text>
+  <text x="964" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">হাওড়া স্টেশন</text>
+  <text x="964" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Howrah Railway Station</text>
   <circle cx="2050" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2064" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">শিয়ালদহ</text>
-  <text x="2064" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Sealdah Rly Station</text>
+  <text x="2064" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">শিয়ালদহ</text>
+  <text x="2064" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sealdah Rly Station</text>
   <circle cx="2350" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2364" y="1294" text-anchor="start" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">ফুলবাগান</text>
-  <text x="2364" y="1304" text-anchor="start" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Phoolbagan</text>
+  <text x="2364" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">ফুলবাগান</text>
+  <text x="2364" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Phoolbagan</text>
   <circle cx="2600" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2586" y="1294" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">সল্টলেক স্টেডিয়াম</text>
-  <text x="2586" y="1304" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Salt Lake Stadium</text>
+  <text x="2586" y="1294" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">সল্টলেক স্টেডিয়াম</text>
+  <text x="2586" y="1306" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Salt Lake Stadium</text>
   <circle cx="2900" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2886" y="1294" text-anchor="end" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">সল্টলেক সেক্টর ৫</text>
-  <text x="2886" y="1304" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">Salt Lake Sector V</text>
+  <text x="2886" y="1294" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">সল্টলেক সেক্টর ৫</text>
+  <text x="2886" y="1306" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Salt Lake Sector V</text>
 </g>
 <!-- LEGEND -->
 <g transform="translate(2460, 60)">

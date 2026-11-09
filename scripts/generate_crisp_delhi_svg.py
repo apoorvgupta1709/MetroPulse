@@ -452,13 +452,13 @@ svg_parts.append('<!-- Transfers -->')
 dk = coords['del_dhaula_kuan']
 sc = coords['del_durgabai_deshmukh_south_campus']
 svg_parts.append(f'<line x1="{dk[0]}" y1="{dk[1]}" x2="{sc[0]}" y2="{sc[1]}" stroke="#94A3B8" stroke-width="3" stroke-dasharray="4,4"/>')
-svg_parts.append(f'<text x="{(dk[0]+sc[0])/2 - 25}" y="{(dk[1]+sc[1])/2 - 6}" font-family="sans-serif" font-size="9" font-weight="bold" fill="#64748B" paint-order="stroke" stroke="#FFFFFF" stroke-width="3">Travelator</text>')
+svg_parts.append(f'<text x="{(dk[0]+sc[0])/2 - 25}" y="{(dk[1]+sc[1])/2 - 6}" font-family="sans-serif" font-size="9" font-weight="bold" fill="#64748B">Travelator</text>')
 
 # Sector 52 to Sector 51 (Noida Aqua link)
 s52 = coords['del_noida_sec_52']
 s51 = coords['del_noida_sec_51']
 svg_parts.append(f'<line x1="{s52[0]}" y1="{s52[1]}" x2="{s51[0]}" y2="{s51[1]}" stroke="#00BCD4" stroke-width="3.5" stroke-dasharray="5,5"/>')
-svg_parts.append(f'<text x="{s52[0] + 16}" y="{(s52[1]+s51[1])/2 + 4}" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#00838F" paint-order="stroke" stroke="#FFFFFF" stroke-width="3">Exit - 300 m External Pathway</text>')
+svg_parts.append(f'<text x="{s52[0] + 16}" y="{(s52[1]+s51[1])/2 + 4}" font-family="sans-serif" font-size="9.5" font-weight="bold" fill="#00838F">Exit - 300 m External Pathway</text>')
 
 # Metro Line paths
 svg_parts.append('<!-- LINES LAYER -->')
@@ -527,14 +527,14 @@ for s in stations:
     if is_ic:
         # Bold Interchange Label
         svg_parts.append(f'  <g{transform_attr}>')
-        svg_parts.append(f'    <text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#334155" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">{name_hi}</text>')
-        svg_parts.append(f'    <text x="{lx}" y="{ly + 13}" text-anchor="{anchor}" font-family="sans-serif" font-size="12.5" font-weight="900" fill="#020617" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">{name_en}</text>')
+        svg_parts.append(f'    <text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#334155">{name_hi}</text>')
+        svg_parts.append(f'    <text x="{lx}" y="{ly + 14}" text-anchor="{anchor}" font-family="sans-serif" font-size="13.5" font-weight="900" fill="#020617">{name_en}</text>')
         svg_parts.append('  </g>')
     else:
         # Clean Normal Station Label
         svg_parts.append(f'  <g{transform_attr}>')
-        svg_parts.append(f'    <text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="sans-serif" font-size="9" font-weight="600" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">{name_hi}</text>')
-        svg_parts.append(f'    <text x="{lx}" y="{ly + 10}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">{name_en}</text>')
+        svg_parts.append(f'    <text x="{lx}" y="{ly}" text-anchor="{anchor}" font-family="sans-serif" font-size="10" font-weight="600" fill="#475569">{name_hi}</text>')
+        svg_parts.append(f'    <text x="{lx}" y="{ly + 12}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#0F172A">{name_en}</text>')
         svg_parts.append('  </g>')
 
 svg_parts.append('</g>')

@@ -5,6 +5,7 @@ import '../models/station.dart';
 import '../providers/monetization_provider.dart';
 import '../providers/transit_provider.dart';
 import '../widgets/crisp_vector_map.dart';
+import '../widgets/searchable_city_picker_sheet.dart';
 import 'home_screen.dart';
 import 'prime_paywall_screen.dart';
 import 'route_planner_screen.dart';
@@ -274,73 +275,131 @@ class _InteractiveMapScreenState extends State<InteractiveMapScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Top Bar: Back Button & "Search a station to locate" (Matching Reference UI)
+            // Top Bar: Back Button, City Switcher Pill & Station Search
             if (!_isFullscreen)
               Container(
-                padding: const EdgeInsets.fromLTRB(12, 10, 16, 10),
+                padding: const EdgeInsets.fromLTRB(12, 6, 16, 10),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(bottom: BorderSide(color: Colors.grey.shade200, width: 1)),
                 ),
-                child: Row(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Back Arrow Button
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Color(0xFF1E293B)),
-                      onPressed: () => Navigator.maybePop(context),
+                    // Header Row: Back button, City Pill, and Stations count badge
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.arrow_back, color: Color(0xFF1E293B)),
+                          onPressed: () => Navigator.maybePop(context),
+                        ),
+                        const SizedBox(width: 4),
+
+                        // Prominent City Selector Pill
+                        InkWell(
+                          onTap: () => SearchableCityPickerSheet.show(context, transit),
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF1F5F9),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: const Color(0xFFE2E8F0)),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  transit.activeCity.country == 'India' ? '🇮🇳' : '🌐',
+                                  style: const TextStyle(fontSize: 14),
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  transit.activeCity.name,
+                                  style: GoogleFonts.plusJakartaSans(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w800,
+                                    color: const Color(0xFF0F172A),
+                                  ),
+                                ),
+                                const SizedBox(width: 4),
+                                const Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: Color(0xFF64748B)),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+
+                        // Total Stations Count badge
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFE0F2FE),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            '${transit.stations.length} Stations',
+                            style: GoogleFonts.plusJakartaSans(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              color: const Color(0xFF0284C7),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 4),
+                    const SizedBox(height: 8),
 
                     // Rounded Station Search Input
-                    Expanded(
-                      child: Container(
-                        height: 48,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF1F5F9),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                        child: Autocomplete<Station>(
-                          displayStringForOption: (s) => s.name,
-                          optionsBuilder: (textEditingValue) {
-                            if (textEditingValue.text.isEmpty) {
-                              return const Iterable<Station>.empty();
-                            }
-                            return transit.searchStations(textEditingValue.text);
-                          },
-                          onSelected: _onStationSelected,
-                          fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
-                            return TextField(
-                              controller: controller,
-                              focusNode: focusNode,
-                              style: GoogleFonts.plusJakartaSans(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: const Color(0xFF1E293B),
+                    Container(
+                      height: 46,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF8FAFC),
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(color: const Color(0xFFE2E8F0)),
+                      ),
+                      child: Autocomplete<Station>(
+                        displayStringForOption: (s) => s.name,
+                        optionsBuilder: (textEditingValue) {
+                          if (textEditingValue.text.isEmpty) {
+                            return const Iterable<Station>.empty();
+                          }
+                          return transit.searchStations(textEditingValue.text);
+                        },
+                        onSelected: _onStationSelected,
+                        fieldViewBuilder: (context, controller, focusNode, onFieldSubmitted) {
+                          return TextField(
+                            controller: controller,
+                            focusNode: focusNode,
+                            style: GoogleFonts.plusJakartaSans(
+                              fontSize: 13.5,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF1E293B),
+                            ),
+                            decoration: InputDecoration(
+                              hintText: 'Search in ${transit.activeCity.name}...',
+                              hintStyle: GoogleFonts.plusJakartaSans(
+                                fontSize: 13,
+                                color: Colors.grey.shade500,
+                                fontWeight: FontWeight.w500,
                               ),
-                              decoration: InputDecoration(
-                                hintText: 'Search a station to locate',
-                                hintStyle: GoogleFonts.plusJakartaSans(
-                                  fontSize: 13,
-                                  color: Colors.grey.shade500,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                prefixIcon: const Icon(Icons.search, color: Color(0xFF64748B), size: 22),
-                                suffixIcon: controller.text.isNotEmpty || _highlightedStation != null
-                                    ? IconButton(
-                                        icon: const Icon(Icons.clear, size: 18, color: Colors.grey),
-                                        onPressed: () {
-                                          controller.clear();
-                                          setState(() {
-                                            _highlightedStation = null;
-                                          });
-                                        },
-                                      )
-                                    : null,
-                                border: InputBorder.none,
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                              ),
-                            );
-                          },
+                              prefixIcon: const Icon(Icons.search, color: Color(0xFF64748B), size: 20),
+                              suffixIcon: controller.text.isNotEmpty || _highlightedStation != null
+                                  ? IconButton(
+                                      icon: const Icon(Icons.clear, size: 18, color: Colors.grey),
+                                      onPressed: () {
+                                        controller.clear();
+                                        setState(() {
+                                          _highlightedStation = null;
+                                        });
+                                      },
+                                    )
+                                  : null,
+                              border: InputBorder.none,
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 11),
+                            ),
+                          );
+                        },
                           optionsViewBuilder: (context, onSelected, options) {
                             return Align(
                               alignment: Alignment.topLeft,
@@ -393,7 +452,6 @@ class _InteractiveMapScreenState extends State<InteractiveMapScreen> {
                           },
                         ),
                       ),
-                    ),
                   ],
                 ),
               ),

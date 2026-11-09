@@ -314,12 +314,12 @@ for city_id, cfg in cities_config.items():
         if is_ic:
             svg.append(f'  <circle cx="{x}" cy="{y}" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>')
             svg.append(f'  <circle cx="{x}" cy="{y}" r="5" fill="#0F172A"/>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">{sinfo["reg"]}</text>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy + 13}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="13" font-weight="bold" fill="#020617" paint-order="stroke" stroke="#FFFFFF" stroke-width="4.5" stroke-linejoin="round">{sinfo["name"]}</text>')
+            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">{sinfo["reg"]}</text>')
+            svg.append(f'  <text x="{x + dx}" y="{y + dy + 14}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">{sinfo["name"]}</text>')
         else:
             svg.append(f'  <circle cx="{x}" cy="{y}" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="9.5" font-weight="500" fill="#475569" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">{sinfo["reg"]}</text>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy + 10}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="11" font-weight="600" fill="#0F172A" paint-order="stroke" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round">{sinfo["name"]}</text>')
+            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">{sinfo["reg"]}</text>')
+            svg.append(f'  <text x="{x + dx}" y="{y + dy + 12}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">{sinfo["name"]}</text>')
     svg.append('</g>')
 
     # Legend
