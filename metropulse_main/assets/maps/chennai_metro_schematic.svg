@@ -1,88 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2600" width="100%" height="100%">
-<rect width="3200" height="2600" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3400 2600" width="100%" height="100%">
+<rect width="3400" height="2600" fill="#FFFFFF"/>
 <!-- Water Body -->
 <path d="M 2600 0 C 2650 800, 2600 1600, 2650 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="2720" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(90 2720 1100)">BAY OF BENGAL</text>
 <!-- LINES -->
 <g stroke-linecap="round" stroke-linejoin="round">
-  <path d="M 2200 350 L 2200 600 L 2200 850 L 2200 1100 L 1900 1300 L 1700 1550 L 1500 1750 L 1350 1900 L 1200 2050 L 1050 2200 L 800 2400" fill="none" stroke="#0284C7" stroke-width="10"/>
-  <path d="M 1900 1300 L 1650 1300 L 1400 1300 L 1150 1300 L 900 1400 L 850 1650 L 850 1900 L 950 2050 L 1050 2200 L 1150 2350" fill="none" stroke="#16A34A" stroke-width="10"/>
+  <path d="M 2200 350 L 2200 580 L 2200 810 L 2200 1040 L 1900 1300 L 1700 1550 L 1500 1750 L 1350 1920 L 1200 2060 L 1050 2200 L 800 2400" fill="none" stroke="#0284C7" stroke-width="9.5"/>
+  <path d="M 1900 1300 L 1650 1300 L 1400 1300 L 1150 1300 L 900 1400 L 850 1650 L 850 1900 L 950 2050 L 1050 2200 L 1150 2350" fill="none" stroke="#16A34A" stroke-width="9.5"/>
 </g>
-<!-- STATIONS -->
+<!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <circle cx="2200" cy="350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2214" y="344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">விம்கோ நகர்</text>
-  <text x="2214" y="356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Wimco Nagar Depot</text>
-  <circle cx="2200" cy="600" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2214" y="594" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">டோல்கேட்</text>
-  <text x="2214" y="606" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Tollgate</text>
-  <circle cx="2200" cy="850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2214" y="844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">வண்ணாரப்பேட்டை</text>
-  <text x="2214" y="856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Washermanpet</text>
-  <circle cx="2200" cy="1100" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2214" y="1094" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">உயர் நீதிமன்றம்</text>
-  <text x="2214" y="1106" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">High Court</text>
-  <circle cx="1900" cy="1300" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
-  <circle cx="1900" cy="1300" r="5" fill="#0F172A"/>
-  <text x="1914" y="1294" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">சென்ட்ரல்</text>
-  <text x="1914" y="1308" text-anchor="start" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">Puratchi Thalaivar Dr. M.G.R Central</text>
-  <circle cx="1700" cy="1550" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1714" y="1544" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">ஆயிரம் விளக்கு</text>
-  <text x="1714" y="1556" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Thousand Lights</text>
-  <circle cx="1500" cy="1750" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1514" y="1744" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">தேனாம்பேட்டை</text>
-  <text x="1514" y="1756" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Teynampet</text>
-  <circle cx="1350" cy="1900" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1364" y="1894" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">நந்தனம்</text>
-  <text x="1364" y="1906" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Nandanam</text>
-  <circle cx="1200" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1214" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">சைதாப்பேட்டை</text>
-  <text x="1214" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Saidapet</text>
-  <circle cx="1050" cy="2200" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
-  <circle cx="1050" cy="2200" r="5" fill="#0F172A"/>
-  <text x="1064" y="2194" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">ஆலந்தூர்</text>
-  <text x="1064" y="2208" text-anchor="start" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">Alandur Interchange</text>
-  <circle cx="800" cy="2400" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="814" y="2394" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">விமான நிலையம்</text>
-  <text x="814" y="2406" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Chennai International Airport</text>
-  <circle cx="1650" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1664" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">எழும்பூர்</text>
-  <text x="1664" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Egmore Railway Station</text>
-  <circle cx="1400" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1414" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">கீழ்ப்பாக்கம்</text>
-  <text x="1414" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kilpauk Medical College</text>
-  <circle cx="1150" cy="1300" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1164" y="1294" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">ஷெனாய் நகர்</text>
-  <text x="1164" y="1306" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Shenoy Nagar</text>
-  <circle cx="900" cy="1400" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="914" y="1394" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">அண்ணா நகர்</text>
-  <text x="914" y="1406" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Anna Nagar Tower</text>
-  <circle cx="850" cy="1650" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="864" y="1644" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">கோயம்பேடு</text>
-  <text x="864" y="1656" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Koyambedu CMBT</text>
-  <circle cx="850" cy="1900" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="864" y="1894" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">வடபழனி</text>
-  <text x="864" y="1906" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Vadapalani</text>
-  <circle cx="950" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="964" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">அசோக் நகர்</text>
-  <text x="964" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Ashok Nagar</text>
-  <circle cx="1150" cy="2350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1164" y="2344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">பரங்கிமலை</text>
-  <text x="1164" y="2356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">St. Thomas Mount</text>
+  <rect x="2214.0" y="336.0" width="126.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2200" cy="350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2216.0" y="350.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">விம்கோ நகர்</text>
+    <text x="2216.0" y="361.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Wimco Nagar Depot</text>
+  </g>
+  <rect x="2214.0" y="566.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2200" cy="580" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2216.0" y="580.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">டோல்கேட்</text>
+    <text x="2216.0" y="591.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tollgate</text>
+  </g>
+  <rect x="2214.0" y="796.0" width="106.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2200" cy="810" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2216.0" y="810.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">வண்ணாரப்பேட்டை</text>
+    <text x="2216.0" y="821.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Washermanpet</text>
+  </g>
+  <rect x="2214.0" y="1026.0" width="113.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2200" cy="1040" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2216.0" y="1040.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">உயர் நீதிமன்றம்</text>
+    <text x="2216.0" y="1051.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">High Court</text>
+  </g>
+  <rect x="1103.4" y="1268.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1150" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1150.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ஷெனாய் நகர்</text>
+    <text x="1150.0" y="1293.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shenoy Nagar</text>
+  </g>
+  <rect x="1317.1" y="1308.0" width="165.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1400" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1400.0" y="1322.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">கீழ்ப்பாக்கம்</text>
+    <text x="1400.0" y="1333.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kilpauk Medical College</text>
+  </g>
+  <rect x="1570.4" y="1268.0" width="159.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1650" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1650.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">எழும்பூர்</text>
+    <text x="1650.0" y="1293.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Egmore Railway Station</text>
+  </g>
+  <rect x="1914.0" y="1286.0" width="251.6" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1900" cy="1300" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
+  <circle cx="1900" cy="1300" r="3.4" fill="#0F172A"/>
+  <g>
+    <text x="1916.0" y="1300.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">சென்ட்ரல்</text>
+    <text x="1916.0" y="1312.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Puratchi Thalaivar Dr. M.G.R Central</text>
+  </g>
+  <rect x="914.0" y="1386.0" width="119.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="900" cy="1400" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="916.0" y="1400.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">அண்ணா நகர்</text>
+    <text x="916.0" y="1411.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Anna Nagar Tower</text>
+  </g>
+  <rect x="1714.0" y="1536.0" width="113.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1700" cy="1550" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1716.0" y="1550.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ஆயிரம் விளக்கு</text>
+    <text x="1716.0" y="1561.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Thousand Lights</text>
+  </g>
+  <rect x="864.0" y="1636.0" width="106.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="850" cy="1650" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="866.0" y="1650.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">கோயம்பேடு</text>
+    <text x="866.0" y="1661.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Koyambedu CMBT</text>
+  </g>
+  <rect x="1514.0" y="1736.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1500" cy="1750" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1516.0" y="1750.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">தேனாம்பேட்டை</text>
+    <text x="1516.0" y="1761.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Teynampet</text>
+  </g>
+  <rect x="864.0" y="1886.0" width="80.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="850" cy="1900" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="866.0" y="1900.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">வடபழனி</text>
+    <text x="866.0" y="1911.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Vadapalani</text>
+  </g>
+  <rect x="1364.0" y="1906.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1350" cy="1920" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1366.0" y="1920.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">நந்தனம்</text>
+    <text x="1366.0" y="1931.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nandanam</text>
+  </g>
+  <rect x="964.0" y="2036.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="950" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="966.0" y="2050.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">அசோக் நகர்</text>
+    <text x="966.0" y="2061.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ashok Nagar</text>
+  </g>
+  <rect x="1214.0" y="2046.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1200" cy="2060" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1216.0" y="2060.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">சைதாப்பேட்டை</text>
+    <text x="1216.0" y="2071.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Saidapet</text>
+  </g>
+  <rect x="1064.0" y="2186.0" width="139.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1050" cy="2200" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
+  <circle cx="1050" cy="2200" r="3.4" fill="#0F172A"/>
+  <g>
+    <text x="1066.0" y="2200.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">ஆலந்தூர்</text>
+    <text x="1066.0" y="2212.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Alandur Interchange</text>
+  </g>
+  <rect x="1164.0" y="2336.0" width="119.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1150" cy="2350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1166.0" y="2350.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">பரங்கிமலை</text>
+    <text x="1166.0" y="2361.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">St. Thomas Mount</text>
+  </g>
+  <rect x="814.0" y="2386.0" width="205.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="800" cy="2400" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="816.0" y="2400.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">விமான நிலையம்</text>
+    <text x="816.0" y="2411.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Chennai International Airport</text>
+  </g>
 </g>
-<!-- LEGEND -->
-<g transform="translate(2460, 60)">
-  <rect width="680" height="226" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">CHENNAI METRO RAIL (CMRL)</text>
-  <line x1="24" y1="50" x2="656" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="36" cy="78" r="6" fill="#0284C7"/>
-  <text x="54" y="82" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Blue Line: Wimco Nagar - Chennai International Airport</text>
-  <circle cx="36" cy="114" r="6" fill="#16A34A"/>
-  <text x="54" y="118" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Green Line: Chennai Central - St. Thomas Mount</text>
-  <line x1="24" y1="153" x2="656" y2="153" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="36" cy="175" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
-  <circle cx="36" cy="175" r="3" fill="#0F172A"/>
-  <text x="54" y="179" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
-  <circle cx="240" cy="175" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="256" y="179" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+<!-- MODERN LEGEND CARD -->
+<g transform="translate(2640, 50)">
+  <rect width="700" height="207" rx="14" ry="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.8"/>
+  <text x="24" y="36" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" letter-spacing="1">CHENNAI METRO RAIL (CMRL)</text>
+  <line x1="24" y1="48" x2="676" y2="48" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="38" cy="74" r="6" fill="#0284C7"/>
+  <text x="56" y="78" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Blue Line: Wimco Nagar - Chennai International Airport</text>
+  <circle cx="38" cy="108" r="6" fill="#16A34A"/>
+  <text x="56" y="112" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Green Line: Chennai Central - St. Thomas Mount</text>
+  <line x1="24" y1="146" x2="676" y2="146" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="38" cy="166" r="7.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.2"/>
+  <circle cx="38" cy="166" r="3" fill="#0F172A"/>
+  <text x="56" y="170" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="230" cy="166" r="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.8"/>
+  <text x="246" y="170" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Regular Station</text>
 </g>
 </svg>

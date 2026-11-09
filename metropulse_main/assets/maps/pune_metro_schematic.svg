@@ -1,87 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2600" width="100%" height="100%">
-<rect width="3200" height="2600" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3400 2600" width="100%" height="100%">
+<rect width="3400" height="2600" fill="#FFFFFF"/>
 <!-- Water Body -->
 <path d="M 800 1700 C 1200 1800, 1700 1900, 2400 1950 L 3200 1950" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="1400" y="1840" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6">MULA-MUTHA RIVER</text>
 <!-- LINES -->
 <g stroke-linecap="round" stroke-linejoin="round">
-  <path d="M 1600 350 L 1600 600 L 1600 850 L 1600 1050 L 1600 1250 L 1600 1450 L 1600 1650 L 1600 1850 L 1600 2050 L 1600 2350" fill="none" stroke="#7C3AED" stroke-width="10"/>
-  <path d="M 600 2050 L 850 2050 L 1100 2050 L 1350 2050 L 1600 2050 L 1900 2050 L 2150 2050 L 2400 2050 L 2650 2050 L 2900 2050" fill="none" stroke="#06B6D4" stroke-width="10"/>
+  <path d="M 1600 350 L 1600 580 L 1600 810 L 1600 1020 L 1600 1230 L 1600 1440 L 1600 1650 L 1600 1850 L 1600 2050 L 1600 2350" fill="none" stroke="#7C3AED" stroke-width="9.5"/>
+  <path d="M 600 2050 L 850 2050 L 1100 2050 L 1350 2050 L 1600 2050 L 1900 2050 L 2150 2050 L 2400 2050 L 2650 2050 L 2900 2050" fill="none" stroke="#06B6D4" stroke-width="9.5"/>
 </g>
-<!-- STATIONS -->
+<!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <circle cx="1600" cy="350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">पिंपरी-चिंचवड</text>
-  <text x="1614" y="356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">PCMC</text>
-  <circle cx="1600" cy="600" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="594" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">संत तुकाराम नगर</text>
-  <text x="1614" y="606" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sant Tukaram Nagar</text>
-  <circle cx="1600" cy="850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">भोसरी</text>
-  <text x="1614" y="856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Bhosari (Nashik Phata)</text>
-  <circle cx="1600" cy="1050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">कासारवाडी</text>
-  <text x="1614" y="1056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kasarwadi</text>
-  <circle cx="1600" cy="1250" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1244" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">फुगेवाडी</text>
-  <text x="1614" y="1256" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Phugewadi</text>
-  <circle cx="1600" cy="1450" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1444" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">दापोडी</text>
-  <text x="1614" y="1456" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Dapodi</text>
-  <circle cx="1600" cy="1650" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1644" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">बोपोडी</text>
-  <text x="1614" y="1656" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Bopodi</text>
-  <circle cx="1600" cy="1850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="1844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">शिवाजीनगर</text>
-  <text x="1614" y="1856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Shivajinagar</text>
-  <circle cx="1600" cy="2050" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
-  <circle cx="1600" cy="2050" r="5" fill="#0F172A"/>
-  <text x="1614" y="2044" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">सिव्हिल कोर्ट</text>
-  <text x="1614" y="2058" text-anchor="start" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">Civil Court Central Interchange</text>
-  <circle cx="1600" cy="2350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1614" y="2344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">स्वारगेट</text>
-  <text x="1614" y="2356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Swargate</text>
-  <circle cx="600" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="614" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">वणझ</text>
-  <text x="614" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Vanaz</text>
-  <circle cx="850" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="864" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">आनंद नगर</text>
-  <text x="864" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Anand Nagar</text>
-  <circle cx="1100" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1114" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">आयडियल कॉलनी</text>
-  <text x="1114" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Ideal Colony</text>
-  <circle cx="1350" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1364" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">नल स्टॉप</text>
-  <text x="1364" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Nal Stop</text>
-  <circle cx="1900" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="1914" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">पुणे रेल्वे स्टेशन</text>
-  <text x="1914" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Pune Railway Station</text>
-  <circle cx="2150" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2164" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">रुबी हॉल क्लिनिक</text>
-  <text x="2164" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Ruby Hall Clinic</text>
-  <circle cx="2400" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2414" y="2044" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">बंड गार्डन</text>
-  <text x="2414" y="2056" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Bund Garden</text>
-  <circle cx="2650" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2636" y="2044" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">कल्याणी नगर</text>
-  <text x="2636" y="2056" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kalyani Nagar</text>
-  <circle cx="2900" cy="2050" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="2886" y="2044" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">रामवाडी</text>
-  <text x="2886" y="2056" text-anchor="end" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Ramwadi</text>
+  <rect x="1614.0" y="336.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="350.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पिंपरी-चिंचवड</text>
+    <text x="1616.0" y="361.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">PCMC</text>
+  </g>
+  <rect x="1614.0" y="566.0" width="132.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="580" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="580.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">संत तुकाराम नगर</text>
+    <text x="1616.0" y="591.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Sant Tukaram Nagar</text>
+  </g>
+  <rect x="1614.0" y="796.0" width="159.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="810" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="810.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">भोसरी</text>
+    <text x="1616.0" y="821.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bhosari (Nashik Phata)</text>
+  </g>
+  <rect x="1614.0" y="1006.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="1020" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="1020.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कासारवाडी</text>
+    <text x="1616.0" y="1031.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kasarwadi</text>
+  </g>
+  <rect x="1614.0" y="1216.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="1230" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="1230.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">फुगेवाडी</text>
+    <text x="1616.0" y="1241.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Phugewadi</text>
+  </g>
+  <rect x="1614.0" y="1426.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="1440" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="1440.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">दापोडी</text>
+    <text x="1616.0" y="1451.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Dapodi</text>
+  </g>
+  <rect x="1614.0" y="1636.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="1650" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="1650.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बोपोडी</text>
+    <text x="1616.0" y="1661.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bopodi</text>
+  </g>
+  <rect x="1614.0" y="1836.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="1850" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="1850.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शिवाजीनगर</text>
+    <text x="1616.0" y="1861.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shivajinagar</text>
+  </g>
+  <rect x="614.0" y="2036.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="600" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="616.0" y="2050.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">वणझ</text>
+    <text x="616.0" y="2061.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Vanaz</text>
+  </g>
+  <rect x="806.7" y="2058.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="850" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="850.0" y="2072.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आनंद नगर</text>
+    <text x="850.0" y="2083.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Anand Nagar</text>
+  </g>
+  <rect x="1053.4" y="2018.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1100" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1100.0" y="2032.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आयडियल कॉलनी</text>
+    <text x="1100.0" y="2043.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ideal Colony</text>
+  </g>
+  <rect x="1312.5" y="2058.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1350" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1350.0" y="2072.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">नल स्टॉप</text>
+    <text x="1350.0" y="2083.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nal Stop</text>
+  </g>
+  <rect x="1490.7" y="2018.0" width="218.6" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="2050" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
+  <circle cx="1600" cy="2050" r="3.4" fill="#0F172A"/>
+  <g>
+    <text x="1600.0" y="2032.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">सिव्हिल कोर्ट</text>
+    <text x="1600.0" y="2044.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Civil Court Central Interchange</text>
+  </g>
+  <rect x="1827.0" y="2058.0" width="146.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1900" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1900.0" y="2072.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पुणे रेल्वे स्टेशन</text>
+    <text x="1900.0" y="2083.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Pune Railway Station</text>
+  </g>
+  <rect x="2090.2" y="2018.0" width="119.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2150" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2150.0" y="2032.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">रुबी हॉल क्लिनिक</text>
+    <text x="2150.0" y="2043.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ruby Hall Clinic</text>
+  </g>
+  <rect x="2356.7" y="2058.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2400" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2400.0" y="2072.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बंड गार्डन</text>
+    <text x="2400.0" y="2083.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bund Garden</text>
+  </g>
+  <rect x="2600.1" y="2018.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2650" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2650.0" y="2032.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कल्याणी नगर</text>
+    <text x="2650.0" y="2043.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kalyani Nagar</text>
+  </g>
+  <rect x="2811.0" y="2036.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="2900" cy="2050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="2884.0" y="2050.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">रामवाडी</text>
+    <text x="2884.0" y="2061.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ramwadi</text>
+  </g>
+  <rect x="1614.0" y="2336.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
+  <circle cx="1600" cy="2350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g>
+    <text x="1616.0" y="2350.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">स्वारगेट</text>
+    <text x="1616.0" y="2361.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Swargate</text>
+  </g>
 </g>
-<!-- LEGEND -->
-<g transform="translate(2460, 60)">
-  <rect width="680" height="226" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
-  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">PUNE METRO NETWORK</text>
-  <line x1="24" y1="50" x2="656" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="36" cy="78" r="6" fill="#7C3AED"/>
-  <text x="54" y="82" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Purple Line: PCMC - Swargate</text>
-  <circle cx="36" cy="114" r="6" fill="#06B6D4"/>
-  <text x="54" y="118" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Aqua Line: Vanaz - Ramwadi</text>
-  <line x1="24" y1="153" x2="656" y2="153" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="36" cy="175" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
-  <circle cx="36" cy="175" r="3" fill="#0F172A"/>
-  <text x="54" y="179" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
-  <circle cx="240" cy="175" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <text x="256" y="179" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+<!-- MODERN LEGEND CARD -->
+<g transform="translate(2640, 50)">
+  <rect width="700" height="207" rx="14" ry="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.8"/>
+  <text x="24" y="36" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" letter-spacing="1">PUNE METRO NETWORK</text>
+  <line x1="24" y1="48" x2="676" y2="48" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="38" cy="74" r="6" fill="#7C3AED"/>
+  <text x="56" y="78" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Purple Line: PCMC - Swargate</text>
+  <circle cx="38" cy="108" r="6" fill="#06B6D4"/>
+  <text x="56" y="112" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Aqua Line: Vanaz - Ramwadi</text>
+  <line x1="24" y1="146" x2="676" y2="146" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="38" cy="166" r="7.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.2"/>
+  <circle cx="38" cy="166" r="3" fill="#0F172A"/>
+  <text x="56" y="170" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="230" cy="166" r="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.8"/>
+  <text x="246" y="170" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Regular Station</text>
 </g>
 </svg>

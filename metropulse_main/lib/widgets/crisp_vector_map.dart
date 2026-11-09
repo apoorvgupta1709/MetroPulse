@@ -6,6 +6,7 @@ import '../models/metro_line.dart';
 import '../models/route_result.dart';
 import '../models/station.dart';
 import 'delhi_schematic_coords.dart';
+import 'all_cities_schematic_coords.dart';
 
 class CrispVectorMap extends StatefulWidget {
   final String cityId;
@@ -46,8 +47,8 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   late AnimationController _animationController;
   Animation<Matrix4>? _animation;
 
-  static const double _canvasWidth = 4500.0;
-  static const double _canvasHeight = 3450.0;
+  static const double _canvasWidth = 3400.0;
+  static const double _canvasHeight = 2600.0;
 
   // City-specific SVG assets
   static const Map<String, String> _citySvgAssets = {
@@ -61,6 +62,9 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
     'ahmedabad': 'assets/maps/ahmedabad_metro_schematic.svg',
     'kochi': 'assets/maps/kochi_metro_schematic.svg',
     'jaipur': 'assets/maps/jaipur_metro_schematic.svg',
+    'dubai': 'assets/maps/dubai_metro_schematic.svg',
+    'singapore': 'assets/maps/singapore_metro_schematic.svg',
+    'london': 'assets/maps/london_metro_schematic.svg',
   };
 
   // Station positions on schematic canvas (matching the authentic layout)
@@ -184,25 +188,42 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   Offset _getCityCenterHub(String cityId) {
     switch (cityId) {
       case 'delhi_ncr':
-        return const Offset(1600, 1280); // Rajiv Chowk
+        return const Offset(1420, 1180); // Rajiv Chowk
       case 'mumbai':
-        return const Offset(1500, 1300); // Andheri Hub
+        return const Offset(1450, 1300); // Andheri Hub
       case 'bengaluru':
-        return const Offset(1600, 1300); // Kempegowda Majestic
+        return const Offset(1550, 1300); // Kempegowda Majestic
       case 'kolkata':
         return const Offset(1600, 1300); // Esplanade Hub
       case 'hyderabad':
         return const Offset(1400, 1300); // Ameerpet Hub
       case 'chennai':
         return const Offset(1900, 1300); // Chennai Central
+      case 'pune':
+        return const Offset(1600, 2050); // Civil Court Interchange
+      case 'ahmedabad':
+        return const Offset(1600, 1300); // Old High Court Interchange
+      case 'kochi':
+        return const Offset(1550, 1300); // Palarivattom Central
+      case 'jaipur':
+        return const Offset(1950, 1300); // Jaipur Railway Station
+      case 'dubai':
+        return const Offset(1550, 1180); // BurJuman Hub
+      case 'singapore':
+        return const Offset(1600, 1540); // City Hall Interchange
+      case 'london':
+        return const Offset(1600, 1300); // Oxford Circus Interchange
       default:
-        return const Offset(1900, 1500);
+        return const Offset(1700, 1300);
     }
   }
 
   Offset getStationCanvasOffset(Station station) {
     if (delhiSchematicCoords.containsKey(station.id)) {
       return delhiSchematicCoords[station.id]!;
+    }
+    if (allCitiesSchematicCoords.containsKey(station.id)) {
+      return allCitiesSchematicCoords[station.id]!;
     }
     if (_schematicStationCoords.containsKey(station.id)) {
       return _schematicStationCoords[station.id]!;
@@ -221,7 +242,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
     final normX = (station.longitude - minLng) / (maxLng - minLng);
     final normY = 1.0 - (station.latitude - minLat) / (maxLat - minLat);
 
-    return Offset(500 + normX * 2600, 400 + normY * 2200);
+    return Offset(500 + normX * 2400, 400 + normY * 1800);
   }
 
   void panToStation(Station station, {double targetScale = 1.6}) {

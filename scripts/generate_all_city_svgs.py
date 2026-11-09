@@ -1,15 +1,20 @@
-import json
 import os
+import math
 
-OUT_DIR = r'MetroPulse\metropulse_main\assets\maps'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+OUT_DIR = os.path.join(PROJECT_DIR, 'metropulse_main', 'assets', 'maps')
 os.makedirs(OUT_DIR, exist_ok=True)
 
-# Define city configurations with lines, stations, and layout geometry
+# Common compact schematic canvas
+CANVAS_WIDTH = 3400
+CANVAS_HEIGHT = 2600
+
+# City configurations with realistic lines, stations, waterways, and schematic positions
 cities_config = {
     'mumbai': {
         'title': 'MUMBAI METRO NETWORK',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 400 0 C 450 600, 400 1200, 350 1800 C 300 2200, 200 2400, 150 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="240" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 240 1100)">ARABIAN SEA</text>',
         'lines': [
             {
                 'id': 'blue',
@@ -17,42 +22,42 @@ cities_config = {
                 'color': '#0284C7',
                 'stations': [
                     ('mum_versova', 'Versova', 'वर्सोवा', 600, 1300),
-                    ('mum_dn_nagar', 'D.N. Nagar', 'डी.एन. नगर', 900, 1300),
-                    ('mum_azad_nagar', 'Azad Nagar', 'आझाद नगर', 1200, 1300),
-                    ('mum_andheri', 'Andheri Metro', 'अंधेरी मेट्रो', 1500, 1300),
-                    ('mum_western_express', 'Western Express Highway', 'पश्चिम द्रुतगती महामार्ग', 1800, 1300),
-                    ('mum_jb_nagar', 'Chakala (J.B. Nagar)', 'चाकला (जे.बी. नगर)', 2100, 1300),
-                    ('mum_airport_road', 'Airport Road', 'विमानतळ रस्ता', 2400, 1300),
-                    ('mum_marol_naka', 'Marol Naka', 'मरोळ नाका', 2650, 1300),
-                    ('mum_saki_naka', 'Saki Naka', 'साकी नाका', 2850, 1400),
-                    ('mum_asalpha', 'Asalpha', 'असल्फा', 2850, 1550),
-                    ('mum_jagrutinagar', 'Jagruti Nagar', 'जागृती नगर', 2850, 1700),
-                    ('mum_ghatkopar', 'Ghatkopar', 'घाटकोपर', 2850, 1850),
+                    ('mum_dn_nagar', 'D.N. Nagar', 'डी.एन. नगर', 880, 1300),
+                    ('mum_azad_nagar', 'Azad Nagar', 'आझाद नगर', 1150, 1300),
+                    ('mum_andheri', 'Andheri Metro', 'अंधेरी मेट्रो', 1450, 1300),
+                    ('mum_western_express', 'Western Express Highway', 'पश्चिम द्रुतगती महामार्ग', 1780, 1300),
+                    ('mum_jb_nagar', 'Chakala (J.B. Nagar)', 'चाकला (जे.बी. नगर)', 2080, 1300),
+                    ('mum_airport_road', 'Airport Road', 'विमानतळ रस्ता', 2350, 1300),
+                    ('mum_marol_naka', 'Marol Naka', 'मरोळ नाका', 2600, 1300),
+                    ('mum_saki_naka', 'Saki Naka', 'साकी नाका', 2780, 1450),
+                    ('mum_asalpha', 'Asalpha', 'असल्फा', 2780, 1620),
+                    ('mum_jagrutinagar', 'Jagruti Nagar', 'जागृती नगर', 2780, 1780),
+                    ('mum_ghatkopar', 'Ghatkopar', 'घाटकोपर', 2780, 1950),
                 ]
             },
             {
                 'id': 'yellow',
-                'name': 'Line 2A: Dahisar E - Andheri W',
+                'name': 'Line 2A: Dahisar E - Andheri W (D.N. Nagar)',
                 'color': '#F59E0B',
                 'stations': [
-                    ('mum_dahisar_e', 'Dahisar (East)', 'दहिसर (पूर्व)', 900, 400),
-                    ('mum_anand_nagar', 'Anand Nagar', 'आनंद नगर', 900, 550),
-                    ('mum_kandivali_w', 'Kandivali (West)', 'कांदिवली (पश्चिम)', 900, 750),
-                    ('mum_malad_w', 'Malad (West)', 'मालाड (पश्चिम)', 900, 950),
-                    ('mum_dn_nagar', 'D.N. Nagar', 'डी.एन. नगर', 900, 1300),
+                    ('mum_dahisar_e', 'Dahisar (East)', 'दहिसर (पूर्व)', 880, 380),
+                    ('mum_anand_nagar', 'Anand Nagar', 'आनंद नगर', 880, 560),
+                    ('mum_kandivali_w', 'Kandivali (West)', 'कांदिवली (पश्चिम)', 880, 780),
+                    ('mum_malad_w', 'Malad (West)', 'मालाड (पश्चिम)', 880, 1000),
+                    ('mum_dn_nagar', 'D.N. Nagar', 'डी.एन. नगर', 880, 1300),
                 ]
             },
             {
                 'id': 'red',
-                'name': 'Line 7: Dahisar E - Gundavali',
+                'name': 'Line 7: Dahisar E - Gundavali (WEH)',
                 'color': '#DC2626',
                 'stations': [
-                    ('mum_dahisar_e', 'Dahisar (East)', 'दहिसर (पूर्व)', 900, 400),
-                    ('mum_borivali_e', 'Borivali (East)', 'बोरिवली (पूर्व)', 1500, 600),
-                    ('mum_kandivali_e', 'Kandivali (East)', 'कांदिवली (पूर्व)', 1500, 800),
-                    ('mum_goregaon_e', 'Goregaon (East)', 'गोरेगाव (पूर्व)', 1500, 1000),
-                    ('mum_gundavali', 'Gundavali', 'गुंदवली', 1500, 1200),
-                    ('mum_western_express', 'Western Express Highway', 'पश्चिम द्रुतगती महामार्ग', 1800, 1300),
+                    ('mum_dahisar_e', 'Dahisar (East)', 'दहिसर (पूर्व)', 880, 380),
+                    ('mum_borivali_e', 'Borivali (East)', 'बोरिवली (पूर्व)', 1780, 550),
+                    ('mum_kandivali_e', 'Kandivali (East)', 'कांदिवली (पूर्व)', 1780, 750),
+                    ('mum_goregaon_e', 'Goregaon (East)', 'गोरेगाव (पूर्व)', 1780, 950),
+                    ('mum_gundavali', 'Gundavali', 'गुंदवली', 1780, 1150),
+                    ('mum_western_express', 'Western Express Highway', 'पश्चिम द्रुतगती महामार्ग', 1780, 1300),
                 ]
             },
             {
@@ -60,38 +65,36 @@ cities_config = {
                 'name': 'Line 3: Aqua Line (Aarey - BKC - Cuffe Parade)',
                 'color': '#06B6D4',
                 'stations': [
-                    ('mum_aarey', 'Aarey JVLR', 'आरे जेव्हीएलआर', 2650, 800),
-                    ('mum_marol_naka', 'Marol Naka', 'मरोळ नाका', 2650, 1300),
-                    ('mum_csmia_t2', 'CSMIA Terminal 2', 'सीएसएमआयए टी२', 2650, 1600),
-                    ('mum_bkc', 'BKC (Bandra Kurla Complex)', 'बीकेसी', 2400, 1950),
-                    ('mum_worli', 'Worli', 'वरळी', 2100, 2200),
-                    ('mum_cuffe_parade', 'Cuffe Parade', 'कफ परेड', 1800, 2450),
+                    ('mum_aarey', 'Aarey JVLR', 'आरे जेव्हीएलआर', 2600, 800),
+                    ('mum_marol_naka', 'Marol Naka', 'मरोळ नाका', 2600, 1300),
+                    ('mum_csmia_t2', 'CSMIA Terminal 2', 'सीएसएमआयए टी२', 2600, 1600),
+                    ('mum_bkc', 'BKC (Bandra Kurla Complex)', 'बीकेसी', 2350, 1950),
+                    ('mum_worli', 'Worli', 'वरळी', 2050, 2200),
+                    ('mum_cuffe_parade', 'Cuffe Parade', 'कफ परेड', 1750, 2450),
                 ]
             }
-        ],
-        'waterway': '<path d="M 400 0 C 450 600, 400 1200, 350 1800 C 300 2200, 200 2400, 150 2600" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="240" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 240 1100)">ARABIAN SEA</text>'
+        ]
     },
     'bengaluru': {
         'title': 'BENGALURU NAMMA METRO',
-        'width': 3200,
-        'height': 2600,
+        'waterway': None,
         'lines': [
             {
                 'id': 'purple',
                 'name': 'Purple Line: Challaghatta - Whitefield (Kadugodi)',
                 'color': '#7C3AED',
                 'stations': [
-                    ('blr_challaghatta', 'Challaghatta', 'ಚಲ್ಲಘಟ್ಟ', 400, 1300),
-                    ('blr_kengeri', 'Kengeri', 'ಕೆಂಗೇರಿ', 650, 1300),
-                    ('blr_mysuru_road', 'Mysuru Road', 'ಮೈಸೂರು ರಸ್ತೆ', 950, 1300),
-                    ('blr_vijayanagar', 'Vijayanagar', 'ವಿಜಯನಗರ', 1250, 1300),
-                    ('blr_majestic', 'Nadaprabhu Kempegowda (Majestic)', 'ಮೆಜೆಸ್ಟಿಕ್', 1600, 1300),
-                    ('blr_vidhana_soudha', 'Vidhana Soudha', 'ವಿಧಾನ ಸೌಧ', 1850, 1300),
-                    ('blr_mg_road', 'M.G. Road', 'ಎಂ.ಜಿ. ರಸ್ತೆ', 2100, 1300),
-                    ('blr_indiranagar', 'Indiranagar', 'ಇಂದಿರಾನಗರ', 2350, 1300),
-                    ('blr_baiyappanahalli', 'Baiyappanahalli', 'ಬೈಯಪ್ಪನಹಳ್ಳಿ', 2600, 1300),
+                    ('blr_challaghatta', 'Challaghatta', 'ಚಲ್ಲಘಟ್ಟ', 380, 1300),
+                    ('blr_kengeri', 'Kengeri', 'ಕೆಂಗೇರಿ', 620, 1300),
+                    ('blr_mysuru_road', 'Mysuru Road', 'ಮೈಸೂರು ರಸ್ತೆ', 900, 1300),
+                    ('blr_vijayanagar', 'Vijayanagar', 'ವಿಜಯನಗರ', 1200, 1300),
+                    ('blr_majestic', 'Nadaprabhu Kempegowda (Majestic)', 'ಮೆಜೆಸ್ಟಿಕ್', 1550, 1300),
+                    ('blr_vidhana_soudha', 'Vidhana Soudha', 'ವಿಧಾನ ಸೌಧ', 1820, 1300),
+                    ('blr_mg_road', 'M.G. Road', 'ಎಂ.ಜಿ. ರಸ್ತೆ', 2080, 1300),
+                    ('blr_indiranagar', 'Indiranagar', 'ಇಂದಿರಾನಗರ', 2320, 1300),
+                    ('blr_baiyappanahalli', 'Baiyappanahalli', 'ಬೈಯಪ್ಪನಹಳ್ಳಿ', 2560, 1300),
                     ('blr_kr_puram', 'K.R. Pura', 'ಕೆ.ಆರ್. ಪುರ', 2800, 1300),
-                    ('blr_whitefield', 'Whitefield (Kadugodi)', 'ವೈಟ್‌ಫೀಲ್ಡ್', 3000, 1300),
+                    ('blr_whitefield', 'Whitefield (Kadugodi)', 'ವೈಟ್‌ಫೀಲ್ಡ್', 3050, 1300),
                 ]
             },
             {
@@ -99,19 +102,19 @@ cities_config = {
                 'name': 'Green Line: Madavara (BIEC) - Silk Institute',
                 'color': '#16A34A',
                 'stations': [
-                    ('blr_madavara', 'Madavara (BIEC)', 'ಮಾದವಾರ', 1600, 350),
-                    ('blr_nagasandra', 'Nagasandra', 'ನಾಗಸಂದ್ರ', 1600, 550),
-                    ('blr_peenya', 'Peenya', 'ಪೀಣ್ಯ', 1600, 750),
-                    ('blr_yeshwantpur', 'Yeshwantpur', 'ಯಶವಂತಪುರ', 1600, 950),
-                    ('blr_mantri_square', 'Mantri Square Sampige Road', 'ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್', 1600, 1120),
-                    ('blr_majestic', 'Nadaprabhu Kempegowda (Majestic)', 'ಮೆಜೆಸ್ಟಿಕ್', 1600, 1300),
-                    ('blr_chickpete', 'Chickpete', 'ಚಿಕ್ಕಪೇಟೆ', 1600, 1500),
-                    ('blr_kr_market', 'Krishna Rajendra Market', 'ಕೆ.ಆರ್. ಮಾರ್ಕೆಟ್', 1600, 1680),
-                    ('blr_national_college', 'National College', 'ನ್ಯಾಷನಲ್ ಕಾಲೇಜ್', 1600, 1850),
-                    ('blr_lalbagh', 'Lalbagh', 'ಲಾಲ್‌ಬಾಗ್', 1600, 2020),
-                    ('blr_jayanagar', 'Jayanagar', 'ಜಯನಗರ', 1600, 2180),
-                    ('blr_banashankari', 'Banashankari', 'ಬನಶಂಕರಿ', 1600, 2320),
-                    ('blr_silk_institute', 'Silk Institute', 'ರೇಷ್ಮೆ ಸಂಸ್ಥೆ', 1600, 2480),
+                    ('blr_madavara', 'Madavara (BIEC)', 'ಮಾದವಾರ', 1550, 320),
+                    ('blr_nagasandra', 'Nagasandra', 'ನಾಗಸಂದ್ರ', 1550, 520),
+                    ('blr_peenya', 'Peenya', 'ಪೀಣ್ಯ', 1550, 720),
+                    ('blr_yeshwantpur', 'Yeshwantpur', 'ಯಶವಂತಪುರ', 1550, 920),
+                    ('blr_mantri_square', 'Mantri Square Sampige Road', 'ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್', 1550, 1100),
+                    ('blr_majestic', 'Nadaprabhu Kempegowda (Majestic)', 'ಮೆಜೆಸ್ಟಿಕ್', 1550, 1300),
+                    ('blr_chickpete', 'Chickpete', 'ಚಿಕ್ಕಪೇಟೆ', 1550, 1490),
+                    ('blr_kr_market', 'Krishna Rajendra Market', 'ಕೆ.ಆರ್. ಮಾರ್ಕೆಟ್', 1550, 1660),
+                    ('blr_national_college', 'National College', 'ನ್ಯಾಷನಲ್ ಕಾಲೇಜ್', 1550, 1830),
+                    ('blr_lalbagh', 'Lalbagh', 'ಲಾಲ್‌ಬಾಗ್', 1550, 1990),
+                    ('blr_jayanagar', 'Jayanagar', 'ಜಯನಗರ', 1550, 2150),
+                    ('blr_banashankari', 'Banashankari', 'ಬನಶಂಕರಿ', 1550, 2300),
+                    ('blr_silk_institute', 'Silk Institute', 'ರೇಷ್ಮೆ ಸಂಸ್ಥೆ', 1550, 2450),
                 ]
             },
             {
@@ -119,37 +122,35 @@ cities_config = {
                 'name': 'Yellow Line: R.V. Road - Bommasandra (Electronic City)',
                 'color': '#EAB308',
                 'stations': [
-                    ('blr_national_college', 'National College', 'ನ್ಯಾಷನಲ್ ಕಾಲೇಜ್', 1600, 1850),
-                    ('blr_jayadeva', 'Jayadeva Hospital', 'ಜಯದೇವ', 1950, 1950),
-                    ('blr_bmtc_silk_board', 'Central Silk Board', 'ಸಿಲ್ಕ್ ಬೋರ್ಡ್', 2250, 2100),
-                    ('blr_electronic_city', 'Electronic City', 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ', 2550, 2250),
+                    ('blr_national_college', 'National College', 'ನ್ಯಾಷನಲ್ ಕಾಲೇಜ್', 1550, 1830),
+                    ('blr_jayadeva', 'Jayadeva Hospital', 'ಜಯದೇವ', 1900, 1950),
+                    ('blr_bmtc_silk_board', 'Central Silk Board', 'ಸಿಲ್ಕ್ ಬೋರ್ಡ್', 2220, 2100),
+                    ('blr_electronic_city', 'Electronic City', 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ', 2540, 2250),
                     ('blr_bommasandra', 'Bommasandra', 'ಬೊಮ್ಮಸಂದ್ರ', 2850, 2400),
                 ]
             }
-        ],
-        'waterway': None
+        ]
     },
     'kolkata': {
         'title': 'KOLKATA METRO NETWORK',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 1250 0 C 1300 600, 1250 1200, 1300 1800 C 1350 2200, 1400 2400, 1450 2600" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1340" y="1000" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(85 1340 1000)">HOOGHLY (GANGA) RIVER</text>',
         'lines': [
             {
                 'id': 'blue',
                 'name': 'Blue Line (Line 1): Dakshineswar - Kavi Subhash',
                 'color': '#0284C7',
                 'stations': [
-                    ('kol_dakshineswar', 'Dakshineswar', 'দক্ষিণেশ্বর', 1600, 350),
-                    ('kol_baranagar', 'Baranagar', 'বরাহনগর', 1600, 520),
-                    ('kol_dum_dum', 'Dum Dum', 'দমদম', 1600, 700),
-                    ('kol_shyambazar', 'Shyambazar', 'শ্যামবাজার', 1600, 900),
-                    ('kol_shobhabazar', 'Shobhabazar Sutanuti', 'শোভাবাজার', 1600, 1060),
+                    ('kol_dakshineswar', 'Dakshineswar', 'দক্ষিণেশ্বর', 1600, 320),
+                    ('kol_baranagar', 'Baranagar', 'বরাহনগর', 1600, 500),
+                    ('kol_dum_dum', 'Dum Dum', 'দমদম', 1600, 690),
+                    ('kol_shyambazar', 'Shyambazar', 'শ্যামবাজার', 1600, 890),
+                    ('kol_shobhabazar', 'Shobhabazar Sutanuti', 'শোভাবাজার', 1600, 1070),
                     ('kol_esplanade', 'Esplanade Hub', 'এসপ্ল্যানেড', 1600, 1300),
-                    ('kol_park_street', 'Park Street', 'পার্ক স্ট্রিট', 1600, 1480),
-                    ('kol_rabindra_sadan', 'Rabindra Sadan', 'রবীন্দ্র সদন', 1600, 1650),
-                    ('kol_kalighat', 'Kalighat', 'কালীঘাট', 1600, 1850),
-                    ('kol_tollygunge', 'Mahanayak Uttam Kumar (Tollygunge)', 'টালিগঞ্জ', 1600, 2080),
-                    ('kol_kavi_subhash', 'Kavi Subhash (New Garia)', 'কবি সুভাষ', 1600, 2350),
+                    ('kol_park_street', 'Park Street', 'পার্ক স্ট্রিট', 1600, 1490),
+                    ('kol_rabindra_sadan', 'Rabindra Sadan', 'রবীন্দ্র সদন', 1600, 1670),
+                    ('kol_kalighat', 'Kalighat', 'কালীঘাট', 1600, 1870),
+                    ('kol_tollygunge', 'Mahanayak Uttam Kumar (Tollygunge)', 'টালিগঞ্জ', 1600, 2100),
+                    ('kol_kavi_subhash', 'Kavi Subhash (New Garia)', 'কবি সুভাষ', 1600, 2380),
                 ]
             },
             {
@@ -157,22 +158,20 @@ cities_config = {
                 'name': 'Green Line (Line 2): Howrah Maidan - Sector V (Underwater Ganga)',
                 'color': '#16A34A',
                 'stations': [
-                    ('kol_howrah_maidan', 'Howrah Maidan', 'হাওড়া ময়দান', 650, 1300),
-                    ('kol_howrah_rly', 'Howrah Railway Station', 'হাওড়া স্টেশন', 950, 1300),
+                    ('kol_howrah_maidan', 'Howrah Maidan', 'হাওড়া ময়দান', 620, 1300),
+                    ('kol_howrah_rly', 'Howrah Railway Station', 'হাওড়া স্টেশন', 920, 1300),
                     ('kol_esplanade', 'Esplanade Hub', 'এসপ্ল্যানেড', 1600, 1300),
-                    ('kol_sealdah', 'Sealdah Rly Station', 'শিয়ালদহ', 2050, 1300),
-                    ('kol_phoolbagan', 'Phoolbagan', 'ফুলবাগান', 2350, 1300),
+                    ('kol_sealdah', 'Sealdah Rly Station', 'শিয়ালদহ', 2020, 1300),
+                    ('kol_phoolbagan', 'Phoolbagan', 'फूलবাগান', 2320, 1300),
                     ('kol_salt_lake_stadium', 'Salt Lake Stadium', 'সল্টলেক স্টেডিয়াম', 2600, 1300),
                     ('kol_sector_v', 'Salt Lake Sector V', 'সল্টলেক সেক্টর ৫', 2900, 1300),
                 ]
             }
-        ],
-        'waterway': '<path d="M 1250 0 C 1300 600, 1250 1200, 1300 1800 C 1350 2200, 1400 2400, 1450 2600" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1340" y="1000" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(85 1340 1000)">HOOGHLY (GANGA) RIVER</text>'
+        ]
     },
     'hyderabad': {
         'title': 'HYDERABAD METRO RAIL',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 600 2000 C 1200 1900, 1800 1900, 2600 1950 L 3200 2000" fill="none" stroke="#E0F2FE" stroke-width="36"/><text x="1400" y="1960" font-family="sans-serif" font-size="14" font-weight="800" fill="#7DD3FC" letter-spacing="6">MUSI RIVER</text>',
         'lines': [
             {
                 'id': 'red',
@@ -221,13 +220,11 @@ cities_config = {
                     ('hyd_mgbs', 'MGBS (Imlibun)', 'ఎంజీబీఎస్', 2200, 1900),
                 ]
             }
-        ],
-        'waterway': '<path d="M 600 2000 C 1200 1900, 1800 1900, 2600 1950 L 3200 2000" fill="none" stroke="#E0F2FE" stroke-width="36"/><text x="1400" y="1960" font-family="sans-serif" font-size="14" font-weight="800" fill="#7DD3FC" letter-spacing="6">MUSI RIVER</text>'
+        ]
     },
     'chennai': {
         'title': 'CHENNAI METRO RAIL (CMRL)',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 2600 0 C 2650 800, 2600 1600, 2650 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="2720" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(90 2720 1100)">BAY OF BENGAL</text>',
         'lines': [
             {
                 'id': 'blue',
@@ -235,14 +232,14 @@ cities_config = {
                 'color': '#0284C7',
                 'stations': [
                     ('che_wimco_nagar', 'Wimco Nagar Depot', 'விம்கோ நகர்', 2200, 350),
-                    ('che_tollgate', 'Tollgate', 'டோல்கேட்', 2200, 600),
-                    ('che_washermanpet', 'Washermanpet', 'வண்ணாரப்பேட்டை', 2200, 850),
-                    ('che_high_court', 'High Court', 'உயர் நீதிமன்றம்', 2200, 1100),
+                    ('che_tollgate', 'Tollgate', 'டோல்கேட்', 2200, 580),
+                    ('che_washermanpet', 'Washermanpet', 'வண்ணாரப்பேட்டை', 2200, 810),
+                    ('che_high_court', 'High Court', 'உயர் நீதிமன்றம்', 2200, 1040),
                     ('che_central', 'Puratchi Thalaivar Dr. M.G.R Central', 'சென்ட்ரல்', 1900, 1300),
                     ('che_thousand_lights', 'Thousand Lights', 'ஆயிரம் விளக்கு', 1700, 1550),
                     ('che_teynampet', 'Teynampet', 'தேனாம்பேட்டை', 1500, 1750),
-                    ('che_nandanam', 'Nandanam', 'நந்தனம்', 1350, 1900),
-                    ('che_saidapet', 'Saidapet', 'சைதாப்பேட்டை', 1200, 2050),
+                    ('che_nandanam', 'Nandanam', 'நந்தனம்', 1350, 1920),
+                    ('che_saidapet', 'Saidapet', 'சைதாப்பேட்டை', 1200, 2060),
                     ('che_alandur', 'Alandur Interchange', 'ஆலந்தூர்', 1050, 2200),
                     ('che_airport', 'Chennai International Airport', 'விமான நிலையம்', 800, 2400),
                 ]
@@ -264,13 +261,11 @@ cities_config = {
                     ('che_st_thomas_mount', 'St. Thomas Mount', 'பரங்கிமலை', 1150, 2350),
                 ]
             }
-        ],
-        'waterway': '<path d="M 2600 0 C 2650 800, 2600 1600, 2650 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="2720" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(90 2720 1100)">BAY OF BENGAL</text>'
+        ]
     },
     'pune': {
         'title': 'PUNE METRO NETWORK',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 800 1700 C 1200 1800, 1700 1900, 2400 1950 L 3200 1950" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="1400" y="1840" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6">MULA-MUTHA RIVER</text>',
         'lines': [
             {
                 'id': 'purple',
@@ -278,11 +273,11 @@ cities_config = {
                 'color': '#7C3AED',
                 'stations': [
                     ('pun_pcmc', 'PCMC', 'पिंपरी-चिंचवड', 1600, 350),
-                    ('pun_sant_tukaram_nagar', 'Sant Tukaram Nagar', 'संत तुकाराम नगर', 1600, 600),
-                    ('pun_bhosari', 'Bhosari (Nashik Phata)', 'भोसरी', 1600, 850),
-                    ('pun_kasarwadi', 'Kasarwadi', 'कासारवाडी', 1600, 1050),
-                    ('pun_phugewadi', 'Phugewadi', 'फुगेवाडी', 1600, 1250),
-                    ('pun_dapodi', 'Dapodi', 'दापोडी', 1600, 1450),
+                    ('pun_sant_tukaram_nagar', 'Sant Tukaram Nagar', 'संत तुकाराम नगर', 1600, 580),
+                    ('pun_bhosari', 'Bhosari (Nashik Phata)', 'भोसरी', 1600, 810),
+                    ('pun_kasarwadi', 'Kasarwadi', 'कासारवाडी', 1600, 1020),
+                    ('pun_phugewadi', 'Phugewadi', 'फुगेवाडी', 1600, 1230),
+                    ('pun_dapodi', 'Dapodi', 'दापोडी', 1600, 1440),
                     ('pun_bopodi', 'Bopodi', 'बोपोडी', 1600, 1650),
                     ('pun_shivaji_nagar', 'Shivajinagar', 'शिवाजीनगर', 1600, 1850),
                     ('pun_civil_court', 'Civil Court Central Interchange', 'सिव्हिल कोर्ट', 1600, 2050),
@@ -306,22 +301,20 @@ cities_config = {
                     ('pun_ramwadi', 'Ramwadi', 'रामवाडी', 2900, 2050),
                 ]
             }
-        ],
-        'waterway': '<path d="M 800 1700 C 1200 1800, 1700 1900, 2400 1950 L 3200 1950" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="1400" y="1840" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6">MULA-MUTHA RIVER</text>'
+        ]
     },
     'ahmedabad': {
         'title': 'AHMEDABAD METRO NETWORK',
-        'width': 3200,
-        'height': 2600,
+        'waterway': '<path d="M 1400 0 C 1450 800, 1350 1600, 1450 2600" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1420" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 1420 1100)">SABARMATI RIVER</text>',
         'lines': [
             {
                 'id': 'red',
                 'name': 'North-South Line: Motera Stadium - APMC',
                 'color': '#DC2626',
                 'stations': [
-                    ('ahm_motera_stadium', 'Motera Stadium', 'મોટેરા સ્ટેડિયમ', 1600, 400),
-                    ('ahm_sabarmati', 'Sabarmati Railway Station', 'સાબરમતી', 1600, 700),
-                    ('ahm_ranip', 'Ranip', 'રાણીપ', 1600, 1000),
+                    ('ahm_motera_stadium', 'Motera Stadium', 'મોટેરા સ્ટેડિયમ', 1600, 380),
+                    ('ahm_sabarmati', 'Sabarmati Railway Station', 'સાબરમતી', 1600, 680),
+                    ('ahm_ranip', 'Ranip', 'રાણીપ', 1600, 980),
                     ('ahm_old_high_court', 'Old High Court Interchange', 'ઓલ્ડ હાઈકોર્ટ', 1600, 1300),
                     ('ahm_paldi', 'Paldi', 'પાલડી', 1600, 1600),
                     ('ahm_vasna', 'Vasna', 'વાસણા', 1600, 1900),
@@ -342,139 +335,389 @@ cities_config = {
                     ('ahm_vastral_gam', 'Vastral Gam', 'વસ્ત્રાલ ગામ', 2800, 1300),
                 ]
             }
-        ],
-        'waterway': '<path d="M 1400 0 C 1450 800, 1350 1600, 1450 2600" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1420" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 1420 1100)">SABARMATI RIVER</text>'
+        ]
     },
     'kochi': {
         'title': 'KOCHI METRO (KMRL)',
-        'width': 3000,
-        'height': 2600,
+        'waterway': '<path d="M 1000 0 C 1100 800, 950 1600, 1100 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="1050" y="1200" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6" transform="rotate(86 1050 1200)">VEMBANAD BACKWATERS</text>',
         'lines': [
             {
                 'id': 'cyan',
                 'name': 'Line 1: Aluva - Thripunithura',
                 'color': '#06B6D4',
                 'stations': [
-                    ('koc_aluva', 'Aluva Terminal', 'ആലുവ', 1500, 350),
-                    ('koc_kalamassery', 'Kalamassery', 'കളമശ്ശേരി', 1500, 600),
-                    ('koc_cusat', 'CUSAT', 'കുസാറ്റ്', 1500, 850),
-                    ('koc_edapally', 'Edapally', 'ഇടപ്പള്ളി', 1500, 1100),
-                    ('koc_palarivattom', 'Palarivattom', 'പാലാരിവട്ടം', 1500, 1350),
-                    ('koc_mg_road', 'M.G. Road', 'എം.ജി. റോഡ്', 1500, 1600),
-                    ('koc_maharajas', 'Maharajas College', 'മഹാരാജാസ്', 1500, 1850),
-                    ('koc_vyttila', 'Vyttila Mobility Hub', 'വൈറ്റില', 1500, 2100),
-                    ('koc_thripunithura', 'Thripunithura Terminal', 'തൃപ്പൂണിത്തുറ', 1500, 2350),
+                    ('koc_aluva', 'Aluva Terminal', 'ആലുവ', 1550, 320),
+                    ('koc_kalamassery', 'Kalamassery', 'കളമശ്ശേരി', 1550, 560),
+                    ('koc_cusat', 'CUSAT', 'കുസാറ്റ്', 1550, 800),
+                    ('koc_edapally', 'Edapally', 'ഇടപ്പള്ളി', 1550, 1050),
+                    ('koc_palarivattom', 'Palarivattom', 'പാലാരിവട്ടം', 1550, 1300),
+                    ('koc_mg_road', 'M.G. Road', 'എം.ജി. റോഡ്', 1550, 1560),
+                    ('koc_maharajas', 'Maharajas College', 'മഹാരാജಾസ്', 1550, 1800),
+                    ('koc_vyttila', 'Vyttila Mobility Hub', 'വൈറ്റില', 1550, 2060),
+                    ('koc_thripunithura', 'Thripunithura Terminal', 'തൃപ്പൂണിത്തുറ', 1550, 2350),
                 ]
             }
-        ],
-        'waterway': '<path d="M 1000 0 C 1100 800, 950 1600, 1100 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="1050" y="1200" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6" transform="rotate(86 1050 1200)">VEMBANAD BACKWATERS</text>'
+        ]
     },
     'jaipur': {
         'title': 'JAIPUR METRO (JMRC)',
-        'width': 3000,
-        'height': 2400,
+        'waterway': None,
         'lines': [
             {
                 'id': 'pink',
                 'name': 'Pink Line: Mansarovar - Badi Chaupar',
                 'color': '#EC407A',
                 'stations': [
-                    ('jai_mansarovar', 'Mansarovar Terminal', 'मानसरोवर', 500, 1200),
-                    ('jai_new_atish_market', 'New Aatish Market', 'न्यू आतिश मार्केट', 800, 1200),
-                    ('jai_vivek_vihar', 'Vivek Vihar', 'विवेक विहार', 1100, 1200),
-                    ('jai_shyam_nagar', 'Shyam Nagar', 'श्याम नगर', 1400, 1200),
-                    ('jai_civil_lines', 'Civil Lines', 'सिविल लाइन्स', 1700, 1200),
-                    ('jai_railway_station', 'Railway Station', 'रेलवे स्टेशन', 2000, 1200),
-                    ('jai_sindhi_camp', 'Sindhi Camp ISBT Hub', 'सिंधी कैंप', 2250, 1200),
-                    ('jai_chandpole', 'Chandpole Gate', 'चांदपोल', 2500, 1200),
-                    ('jai_chhoti_chaupar', 'Chhoti Chaupar', 'छोटी चौपड़', 2700, 1200),
-                    ('jai_badi_chaupar', 'Badi Chaupar (Hawa Mahal)', 'बड़ी चौपड़', 2900, 1200),
+                    ('jai_mansarovar', 'Mansarovar Terminal', 'मानसरोवर', 450, 1300),
+                    ('jai_new_atish_market', 'New Aatish Market', 'न्यू आतिश मार्केट', 750, 1300),
+                    ('jai_vivek_vihar', 'Vivek Vihar', 'विवेक विहार', 1050, 1300),
+                    ('jai_shyam_nagar', 'Shyam Nagar', 'श्याम नगर', 1350, 1300),
+                    ('jai_civil_lines', 'Civil Lines', 'सिविल लाइन्स', 1650, 1300),
+                    ('jai_railway_station', 'Railway Station', 'रेलवे स्टेशन', 1950, 1300),
+                    ('jai_sindhi_camp', 'Sindhi Camp ISBT Hub', 'सिंधी कैंप', 2220, 1300),
+                    ('jai_chandpole', 'Chandpole Gate', 'चांदपोल', 2480, 1300),
+                    ('jai_chhoti_chaupar', 'Chhoti Chaupar', 'छोटी चौपड़', 2720, 1300),
+                    ('jai_badi_chaupar', 'Badi Chaupar (Hawa Mahal)', 'बड़ी चौपड़', 2950, 1300),
                 ]
             }
-        ],
-        'waterway': ''
+        ]
+    },
+    'dubai': {
+        'title': 'DUBAI METRO (RTA)',
+        'waterway': '<path d="M 600 600 C 1100 800, 1600 950, 2400 1200 L 2900 1350" fill="none" stroke="#E0F2FE" stroke-width="44"/><text x="1450" y="870" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(14 1450 870)">DUBAI CREEK (KHOR DUBAI)</text>',
+        'lines': [
+            {
+                'id': 'red',
+                'name': 'Red Line: Centrepoint - Expo 2020 / UAE Exchange',
+                'color': '#DC2626',
+                'stations': [
+                    ('dxb_centrepoint', 'Centrepoint (Rashidiya)', 'سنتربوينت', 2850, 500),
+                    ('dxb_airport_t3', 'Dubai Airport Terminal 3', 'المطار مبنى 3', 2550, 650),
+                    ('dxb_airport_t1', 'Dubai Airport Terminal 1', 'المطار مبنى 1', 2300, 780),
+                    ('dxb_deira_city_centre', 'Deira City Centre', 'ديرة سيتي سنتر', 2050, 920),
+                    ('dxb_union', 'Union Station Hub', 'الاتحاد', 1800, 1050),
+                    ('dxb_burjuman', 'BurJuman Interchange', 'برجمان', 1550, 1180),
+                    ('dxb_adcb', 'ADCB (Al Karama)', 'بنك أبوظبي التجاري', 1350, 1280),
+                    ('dxb_world_trade_centre', 'World Trade Centre', 'المركز التجاري العالمي', 1150, 1400),
+                    ('dxb_burj_khalifa', 'Burj Khalifa / Dubai Mall', 'برج خليفة / دبي مول', 950, 1550),
+                    ('dxb_business_bay', 'Business Bay', 'الخليج التجاري', 800, 1720),
+                    ('dxb_mall_of_emirates', 'Mall of the Emirates', 'مول الإمارات', 650, 1920),
+                    ('dxb_dmcc', 'DMCC (Jumeirah Lakes Towers)', 'أبراج بحيرات جميرا', 520, 2150),
+                    ('dxb_expo_2020', 'Expo 2020 Terminal', 'إكسبو 2020', 420, 2380),
+                ]
+            },
+            {
+                'id': 'green',
+                'name': 'Green Line: Etisalat - Creek',
+                'color': '#16A34A',
+                'stations': [
+                    ('dxb_etisalat', 'Etisalat Terminal', 'اتصالات', 1800, 400),
+                    ('dxb_al_nahda', 'Al Nahda', 'النهدة', 1800, 620),
+                    ('dxb_stadium', 'Stadium', 'الاستاد', 1800, 840),
+                    ('dxb_union', 'Union Station Hub', 'الاتحاد', 1800, 1050),
+                    ('dxb_al_ras', 'Al Ras (Gold Souq)', 'الراس', 1680, 1110),
+                    ('dxb_burjuman', 'BurJuman Interchange', 'برجمان', 1550, 1180),
+                    ('dxb_oud_metha', 'Oud Metha', 'عود ميثاء', 1550, 1420),
+                    ('dxb_healthcare_city', 'Dubai Healthcare City', 'مدينة دبي الطبية', 1550, 1660),
+                    ('dxb_creek', 'Creek Terminal', 'الخور', 1550, 1900),
+                ]
+            }
+        ]
+    },
+    'singapore': {
+        'title': 'SINGAPORE MRT SYSTEM',
+        'waterway': '<path d="M 1200 1600 C 1500 1700, 1900 1750, 2400 1650 L 2900 1600" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="1950" y="1740" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6">MARINA BAY & SINGAPORE RIVER</text>',
+        'lines': [
+            {
+                'id': 'red',
+                'name': 'North-South Line (NSL): Jurong East - Marina South Pier',
+                'color': '#DC2626',
+                'stations': [
+                    ('sg_woodlands', 'Woodlands', '兀兰', 1600, 350),
+                    ('sg_yishun', 'Yishun', '义顺', 1600, 560),
+                    ('sg_ang_mo_kio', 'Ang Mo Kio', '宏茂桥', 1600, 770),
+                    ('sg_bishan', 'Bishan Interchange', '碧山', 1600, 980),
+                    ('sg_orchard', 'Orchard Road', '乌节', 1600, 1200),
+                    ('sg_dhoby_ghaut', 'Dhoby Ghaut Hub', '多美歌', 1600, 1380),
+                    ('sg_city_hall', 'City Hall Interchange', '政府大厦', 1600, 1540),
+                    ('sg_raffles_place', 'Raffles Place Central', '莱佛士坊', 1600, 1720),
+                    ('sg_marina_bay', 'Marina Bay', '滨海湾', 1600, 1940),
+                    ('sg_marina_south_pier', 'Marina South Pier', '滨海南码头', 1600, 2180),
+                ]
+            },
+            {
+                'id': 'green',
+                'name': 'East-West Line (EWL): Tuas Link - Changi Airport',
+                'color': '#16A34A',
+                'stations': [
+                    ('sg_jurong_east', 'Jurong East Hub', '裕廊东', 600, 1630),
+                    ('sg_buona_vista', 'Buona Vista', '波那维斯达', 950, 1630),
+                    ('sg_outram_park', 'Outram Park', '欧南园', 1300, 1630),
+                    ('sg_raffles_place', 'Raffles Place Central', '莱佛士坊', 1600, 1720),
+                    ('sg_city_hall', 'City Hall Interchange', '政府大厦', 1600, 1540),
+                    ('sg_bugis', 'Bugis Junction', '武吉士', 1900, 1420),
+                    ('sg_paya_lebar', 'Paya Lebar Interchange', '巴耶利峇', 2250, 1350),
+                    ('sg_tanah_merah', 'Tanah Merah', '丹那美拉', 2600, 1350),
+                    ('sg_changi_airport', 'Changi Airport Terminal', '樟宜机场', 2950, 1350),
+                ]
+            },
+            {
+                'id': 'blue',
+                'name': 'Downtown Line (DTL): Bukit Panjang - Expo',
+                'color': '#0284C7',
+                'stations': [
+                    ('sg_botanic_gardens', 'Botanic Gardens', '植物园', 1250, 1100),
+                    ('sg_newton', 'Newton Circus', '纽顿', 1400, 1240),
+                    ('sg_bugis', 'Bugis Junction', '武吉士', 1900, 1420),
+                    ('sg_bayfront', 'Bayfront (Marina Bay Sands)', '海湾舫', 2050, 1720),
+                    ('sg_chinatown', 'Chinatown', '牛车水', 1450, 1850),
+                ]
+            }
+        ]
+    },
+    'london': {
+        'title': 'LONDON UNDERGROUND (TfL)',
+        'waterway': '<path d="M 400 1550 C 900 1450, 1400 1700, 1900 1600 C 2400 1500, 2900 1650, 3300 1550" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1800" y="1660" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 1800 1660)">RIVER THAMES</text>',
+        'lines': [
+            {
+                'id': 'central',
+                'name': 'Central Line: West Ruislip - Epping',
+                'color': '#DC2626',
+                'stations': [
+                    ('lon_white_city', 'White City', 'BBC Media Village', 600, 1300),
+                    ('lon_notting_hill', 'Notting Hill Gate', 'Portobello Road', 950, 1300),
+                    ('lon_marble_arch', 'Marble Arch (Hyde Park)', 'Oxford St West', 1300, 1300),
+                    ('lon_oxford_circus', 'Oxford Circus Interchange', 'Regent Street', 1600, 1300),
+                    ('lon_tottenham_court', 'Tottenham Court Road', 'Soho & West End', 1880, 1300),
+                    ('lon_holborn', 'Holborn', 'British Museum', 2120, 1300),
+                    ('lon_bank', 'Bank - Monument Hub', 'City Financial District', 2400, 1300),
+                    ('lon_liverpool_st', 'Liverpool Street', 'Spitalfields & East End', 2650, 1300),
+                    ('lon_stratford', 'Stratford International', 'Olympic Park', 2950, 1300),
+                ]
+            },
+            {
+                'id': 'piccadilly',
+                'name': 'Piccadilly Line: Heathrow - Cockfosters',
+                'color': '#1E3A8A',
+                'stations': [
+                    ('lon_heathrow', 'Heathrow Airport (T1-5)', 'International Terminals', 550, 2100),
+                    ('lon_south_ken', 'South Kensington', 'V&A & Natural History', 950, 1850),
+                    ('lon_green_park', 'Green Park', 'Buckingham Palace', 1400, 1550),
+                    ('lon_piccadilly_circus', 'Piccadilly Circus', 'West End Theatres', 1600, 1450),
+                    ('lon_holborn', 'Holborn', 'British Museum', 2120, 1300),
+                    ('lon_king_cross', 'King\'s Cross St. Pancras', 'Eurostar Hub / Platform 9¾', 2120, 950),
+                    ('lon_finsbury_park', 'Finsbury Park', 'Arsenal Emirates', 2120, 680),
+                    ('lon_cockfosters', 'Cockfosters Terminal', 'North London', 2120, 420),
+                ]
+            },
+            {
+                'id': 'victoria',
+                'name': 'Victoria Line: Brixton - Walthamstow Central',
+                'color': '#0284C7',
+                'stations': [
+                    ('lon_brixton', 'Brixton Terminal', 'South London', 1400, 2350),
+                    ('lon_victoria', 'Victoria Station', 'Gatwick Express Hub', 1400, 1850),
+                    ('lon_green_park', 'Green Park', 'Buckingham Palace', 1400, 1550),
+                    ('lon_oxford_circus', 'Oxford Circus Interchange', 'Regent Street', 1600, 1300),
+                    ('lon_king_cross', 'King\'s Cross St. Pancras', 'Eurostar Hub / Platform 9¾', 2120, 950),
+                    ('lon_walthamstow', 'Walthamstow Central', 'East London', 2600, 650),
+                ]
+            },
+            {
+                'id': 'northern',
+                'name': 'Northern Line: Edgware - Morden',
+                'color': '#1E293B',
+                'stations': [
+                    ('lon_camden_town', 'Camden Town', 'Camden Market', 1880, 650),
+                    ('lon_king_cross', 'King\'s Cross St. Pancras', 'Eurostar Hub / Platform 9¾', 2120, 950),
+                    ('lon_bank', 'Bank - Monument Hub', 'City Financial District', 2400, 1300),
+                    ('lon_london_bridge', 'London Bridge Hub', 'The Shard & Borough Market', 2400, 1720),
+                    ('lon_waterloo', 'Waterloo Station', 'South Bank & London Eye', 1900, 1720),
+                    ('lon_morden', 'Morden Terminal', 'South Terminus', 1900, 2250),
+                ]
+            }
+        ]
     }
 }
 
+all_station_coords = {}
+
 for city_id, cfg in cities_config.items():
-    w = cfg['width']
-    h = cfg['height']
+    w = CANVAS_WIDTH
+    h = CANVAS_HEIGHT
     svg = []
     svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="100%" height="100%">')
     svg.append(f'<rect width="{w}" height="{h}" fill="#FFFFFF"/>')
 
-    if cfg['waterway']:
+    if cfg.get('waterway'):
         svg.append(f'<!-- Water Body -->\n{cfg["waterway"]}')
 
-    # Draw lines
-    svg.append('<!-- LINES -->\n<g stroke-linecap="round" stroke-linejoin="round">')
+    # Process all lines and map stations
     station_map = {}
+    lines_geometry = []
+
     for line in cfg['lines']:
         pts = []
         for s in line['stations']:
             sid, name, reg_name, x, y = s
-            pts.append(f"{x} {y}")
+            pts.append((x, y))
+            all_station_coords[sid] = (x, y)
             if sid not in station_map:
-                station_map[sid] = {'name': name, 'reg': reg_name, 'x': x, 'y': y, 'lines': [line['color']], 'count': 1}
+                station_map[sid] = {
+                    'name': name,
+                    'reg': reg_name,
+                    'x': x,
+                    'y': y,
+                    'lines': [line['color']],
+                    'count': 1,
+                    'is_h': False
+                }
             else:
                 station_map[sid]['count'] += 1
                 station_map[sid]['lines'].append(line['color'])
 
-        d = f"M {pts[0]} " + " ".join([f"L {p}" for p in pts[1:]])
-        svg.append(f'  <path d="{d}" fill="none" stroke="{line["color"]}" stroke-width="10"/>')
+        lines_geometry.append((line, pts))
+
+    # Detect horizontal vs vertical orientation for staggering
+    for line, pts in lines_geometry:
+        for idx in range(len(pts)):
+            sid = line['stations'][idx][0]
+            if idx > 0 and idx < len(pts) - 1:
+                p_prev = pts[idx - 1]
+                p_next = pts[idx + 1]
+                dx = abs(p_next[0] - p_prev[0])
+                dy = abs(p_next[1] - p_prev[1])
+                if dx > dy * 1.2:
+                    station_map[sid]['is_h'] = True
+
+    # 1. DRAW METRO TRACKS
+    svg.append('<!-- LINES -->\n<g stroke-linecap="round" stroke-linejoin="round">')
+    for line, pts in lines_geometry:
+        d = f"M {pts[0][0]} {pts[0][1]} " + " ".join([f"L {p[0]} {p[1]}" for p in pts[1:]])
+        svg.append(f'  <path d="{d}" fill="none" stroke="{line["color"]}" stroke-width="9.5"/>')
     svg.append('</g>')
 
-    # Draw stations
-    svg.append('<!-- STATIONS -->\n<g id="stations-layer">')
-    for sid, sinfo in station_map.items():
+    # 2. DRAW STATIONS AND PROTECTED LABELS
+    svg.append('<!-- STATIONS & LABELS -->\n<g id="stations-layer">')
+
+    # Assign alternating labels for horizontal tracks
+    sorted_sids = sorted(station_map.keys(), key=lambda s: (station_map[s]['y'], station_map[s]['x']))
+
+    for idx, sid in enumerate(sorted_sids):
+        sinfo = station_map[sid]
         x = sinfo['x']
         y = sinfo['y']
-        is_ic = sinfo['count'] > 1 or 'Interchange' in sinfo['name'] or 'Hub' in sinfo['name'] or 'Central' in sinfo['name'] or 'Majestic' in sinfo['name'] or 'D.N. Nagar' in sinfo['name'] or 'Andheri' in sinfo['name']
-        dx = 14
-        dy = -6
-        text_anchor = "start"
+        is_ic = sinfo['count'] > 1 or 'Interchange' in sinfo['name'] or 'Hub' in sinfo['name'] or 'Central' in sinfo['name'] or 'Terminal' in sinfo['name']
 
-        if x > 2500:
-            dx = -14
-            text_anchor = "end"
+        # Determine label position
+        name_en = sinfo['name']
+        name_reg = sinfo['reg']
+        char_len = max(len(name_en), len(name_reg))
+        bw = max(char_len * 6.6 + 14, 75)
+        bh = 27 if is_ic else 24
 
-        if is_ic:
-            svg.append(f'  <circle cx="{x}" cy="{y}" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>')
-            svg.append(f'  <circle cx="{x}" cy="{y}" r="5" fill="#0F172A"/>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">{sinfo["reg"]}</text>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy + 14}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">{sinfo["name"]}</text>')
+        if sinfo.get('is_h', False):
+            # Alternating above and below track
+            if idx % 2 == 0:
+                lx = x
+                ly = y - 18
+                anchor = 'middle'
+                rx = lx - bw / 2
+                ry = ly - 14
+            else:
+                lx = x
+                ly = y + 22
+                anchor = 'middle'
+                rx = lx - bw / 2
+                ry = ly - 14
         else:
-            svg.append(f'  <circle cx="{x}" cy="{y}" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">{sinfo["reg"]}</text>')
-            svg.append(f'  <text x="{x + dx}" y="{y + dy + 12}" text-anchor="{text_anchor}" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">{sinfo["name"]}</text>')
+            # Vertical or angled track
+            if x > 2400:
+                lx = x - 16
+                ly = y
+                anchor = 'end'
+                rx = lx - bw + 2
+                ry = ly - 14
+            else:
+                lx = x + 16
+                ly = y
+                anchor = 'start'
+                rx = lx - 2
+                ry = ly - 14
+
+        # A. Protective White Background Capsule
+        svg.append(f'  <rect x="{rx:.1f}" y="{ry:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>')
+
+        # B. Station Node Dot
+        if is_ic:
+            svg.append(f'  <circle cx="{x}" cy="{y}" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>')
+            svg.append(f'  <circle cx="{x}" cy="{y}" r="3.4" fill="#0F172A"/>')
+        else:
+            svg.append(f'  <circle cx="{x}" cy="{y}" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>')
+
+        # C. Bilingual / Vernacular Crisp Typography
+        if is_ic:
+            svg.append(f'  <g>')
+            if name_reg:
+                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">{name_reg}</text>')
+                svg.append(f'    <text x="{lx:.1f}" y="{ly + 12.5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{name_en}</text>')
+            else:
+                svg.append(f'    <text x="{lx:.1f}" y="{ly + 5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{name_en}</text>')
+            svg.append('  </g>')
+        else:
+            svg.append(f'  <g>')
+            if name_reg:
+                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">{name_reg}</text>')
+                svg.append(f'    <text x="{lx:.1f}" y="{ly + 11:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{name_en}</text>')
+            else:
+                svg.append(f'    <text x="{lx:.1f}" y="{ly + 4:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{name_en}</text>')
+            svg.append('  </g>')
+
     svg.append('</g>')
 
-    # Legend
-    leg_x = w - 740
-    leg_y = 60
-    leg_w = 680
-    leg_h = 100 + len(cfg['lines']) * 38 + 50
-    svg.append(f'<!-- LEGEND -->')
+    # 3. MODERN LEGEND CARD (TOP RIGHT)
+    leg_x = w - 760
+    leg_y = 50
+    leg_w = 700
+    leg_h = 90 + len(cfg['lines']) * 36 + 45
+    svg.append(f'<!-- MODERN LEGEND CARD -->')
     svg.append(f'<g transform="translate({leg_x}, {leg_y})">')
-    svg.append(f'  <rect width="{leg_w}" height="{leg_h}" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>')
-    svg.append(f'  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">{cfg["title"]}</text>')
-    svg.append(f'  <line x1="24" y1="50" x2="{leg_w - 24}" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>')
+    svg.append(f'  <rect width="{leg_w}" height="{leg_h}" rx="14" ry="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.8"/>')
+    svg.append(f'  <text x="24" y="36" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" letter-spacing="1">{cfg["title"]}</text>')
+    svg.append(f'  <line x1="24" y1="48" x2="{leg_w - 24}" y2="48" stroke="#E2E8F0" stroke-width="1.5"/>')
     for idx, line in enumerate(cfg['lines']):
-        iy = 78 + idx * 36
-        svg.append(f'  <circle cx="36" cy="{iy}" r="6" fill="{line["color"]}"/>')
-        svg.append(f'  <text x="54" y="{iy + 4}" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">{line["name"]}</text>')
+        iy = 74 + idx * 34
+        svg.append(f'  <circle cx="38" cy="{iy}" r="6" fill="{line["color"]}"/>')
+        svg.append(f'  <text x="56" y="{iy + 4}" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">{line["name"]}</text>')
 
-    sym_y = 78 + len(cfg['lines']) * 36 + 15
-    svg.append(f'  <line x1="24" y1="{sym_y - 12}" x2="{leg_w - 24}" y2="{sym_y - 12}" stroke="#E2E8F0" stroke-width="1.5"/>')
-    svg.append(f'  <circle cx="36" cy="{sym_y + 10}" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>')
-    svg.append(f'  <circle cx="36" cy="{sym_y + 10}" r="3" fill="#0F172A"/>')
-    svg.append(f'  <text x="54" y="{sym_y + 14}" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>')
-    svg.append(f'  <circle cx="240" cy="{sym_y + 10}" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>')
-    svg.append(f'  <text x="256" y="{sym_y + 14}" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>')
+    sym_y = 74 + len(cfg['lines']) * 34 + 14
+    svg.append(f'  <line x1="24" y1="{sym_y - 10}" x2="{leg_w - 24}" y2="{sym_y - 10}" stroke="#E2E8F0" stroke-width="1.5"/>')
+    svg.append(f'  <circle cx="38" cy="{sym_y + 10}" r="7.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.2"/>')
+    svg.append(f'  <circle cx="38" cy="{sym_y + 10}" r="3" fill="#0F172A"/>')
+    svg.append(f'  <text x="56" y="{sym_y + 14}" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Interchange Station</text>')
+    svg.append(f'  <circle cx="230" cy="{sym_y + 10}" r="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.8"/>')
+    svg.append(f'  <text x="246" y="{sym_y + 14}" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Regular Station</text>')
     svg.append('</g>')
 
     svg.append('</svg>')
     out_file = os.path.join(OUT_DIR, f'{city_id}_metro_schematic.svg')
     with open(out_file, 'w', encoding='utf-8') as f:
         f.write("\n".join(svg))
-    print(f"Generated {out_file} ({len(svg)} lines)")
+    print(f"Generated clean schematic {out_file} ({len(svg)} lines)")
+
+print(f"Total non-Delhi stations mapped: {len(all_station_coords)}")
+
+DART_OUT = os.path.join(PROJECT_DIR, 'metropulse_main', 'lib', 'widgets', 'all_cities_schematic_coords.dart')
+dart_content = [
+    "import 'dart:ui';",
+    "",
+    "/// Auto-generated station schematic coordinates for all non-Delhi metro networks (3400x2600)",
+    "const Map<String, Offset> allCitiesSchematicCoords = {"
+]
+for sid, (cx, cy) in sorted(all_station_coords.items()):
+    dart_content.append(f"  '{sid}': Offset({cx:.1f}, {cy:.1f}),")
+dart_content.append("};")
+
+with open(DART_OUT, 'w', encoding='utf-8') as f:
+    f.write("\n".join(dart_content) + "\n")
+print(f"Exported {len(all_station_coords)} non-Delhi coordinates to {DART_OUT}")
