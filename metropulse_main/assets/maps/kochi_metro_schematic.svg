@@ -8,62 +8,53 @@
 </g>
 <!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <rect x="1564.0" y="306.0" width="106.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="320" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1550" cy="320" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1566.0" y="320.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">ആലുവ</text>
-    <text x="1566.0" y="332.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Aluva Terminal</text>
+    <text x="1566.0" y="317.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">ആലുവ</text>
+    <text x="1566.0" y="329.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Aluva Terminal</text>
   </g>
-  <rect x="1564.0" y="546.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="560" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="560.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">കളമശ്ശേരി</text>
-    <text x="1566.0" y="571.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kalamassery</text>
+    <text x="1566.0" y="557.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">കളമശ്ശേരി</text>
+    <text x="1566.0" y="568.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kalamassery</text>
   </g>
-  <rect x="1564.0" y="786.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="800" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="800.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">കുസാറ്റ്</text>
-    <text x="1566.0" y="811.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">CUSAT</text>
+    <text x="1566.0" y="797.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">കുസാറ്റ്</text>
+    <text x="1566.0" y="808.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">CUSAT</text>
   </g>
-  <rect x="1564.0" y="1036.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1050" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1050.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ഇടപ്പള്ളി</text>
-    <text x="1566.0" y="1061.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Edapally</text>
+    <text x="1566.0" y="1047.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ഇടപ്പള്ളി</text>
+    <text x="1566.0" y="1058.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Edapally</text>
   </g>
-  <rect x="1564.0" y="1286.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1300.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">പാലാരിവട്ടം</text>
-    <text x="1566.0" y="1311.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Palarivattom</text>
+    <text x="1566.0" y="1297.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">പാലാരിവട്ടം</text>
+    <text x="1566.0" y="1308.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Palarivattom</text>
   </g>
-  <rect x="1564.0" y="1546.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1560" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1560.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">എം.ജി. റോഡ്</text>
-    <text x="1566.0" y="1571.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">M.G. Road</text>
+    <text x="1566.0" y="1557.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">എം.ജി. റോഡ്</text>
+    <text x="1566.0" y="1568.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">M.G. Road</text>
   </g>
-  <rect x="1564.0" y="1786.0" width="126.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1800" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1800.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">മഹാരാജಾസ്</text>
-    <text x="1566.0" y="1811.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Maharajas College</text>
+    <text x="1566.0" y="1797.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">മഹാരാജಾസ്</text>
+    <text x="1566.0" y="1808.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Maharajas College</text>
   </g>
-  <rect x="1564.0" y="2046.0" width="146.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="2060" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1550" cy="2060" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1566.0" y="2060.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">വൈറ്റില</text>
-    <text x="1566.0" y="2072.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Vyttila Mobility Hub</text>
+    <text x="1566.0" y="2057.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">വൈറ്റില</text>
+    <text x="1566.0" y="2069.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Vyttila Mobility Hub</text>
   </g>
-  <rect x="1564.0" y="2336.0" width="159.2" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="2350" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1550" cy="2350" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1566.0" y="2350.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">തൃപ്പൂണിത്തുറ</text>
-    <text x="1566.0" y="2362.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Thripunithura Terminal</text>
+    <text x="1566.0" y="2347.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">തൃപ്പൂണിത്തുറ</text>
+    <text x="1566.0" y="2359.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Thripunithura Terminal</text>
   </g>
 </g>
 <!-- MODERN LEGEND CARD -->

@@ -1,5 +1,6 @@
 import os
 import math
+import re
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -183,8 +184,8 @@ cities_config = {
                     ('hyd_kukatpally', 'Kukatpally', 'కూకట్‌పల్లి', 1050, 1050),
                     ('hyd_ameerpet', 'Ameerpet Interchange', 'అమీర్‌పేట్', 1400, 1300),
                     ('hyd_punjagutta', 'Punjagutta', 'పంజాగుట్ట', 1600, 1450),
-                    ('hyd_khairatabad', 'Khairatabad', 'ఖైరతాబాద్', 1800, 1600),
-                    ('hyd_nampally', 'Nampally Railway Stn', 'నాంపల్లి', 2000, 1750),
+                    ('hyd_khairatabad', 'Khairatabad', 'ఖైరతాబాద్', 1780, 1600),
+                    ('hyd_nampally', 'Nampally Railway Stn', 'నాంపల్లి', 1880, 1750),
                     ('hyd_mgbs', 'MGBS (Imlibun)', 'ఎంజీబీఎస్', 2200, 1900),
                     ('hyd_malakpet', 'Malakpet', 'మలక్‌పేట్', 2450, 2050),
                     ('hyd_dilsukhnagar', 'Dilsukhnagar', 'దిల్‌సుఖ్‌నగర్', 2700, 2200),
@@ -597,7 +598,7 @@ for city_id, cfg in cities_config.items():
         svg.append(f'  <path d="{d}" fill="none" stroke="{line["color"]}" stroke-width="9.5"/>')
     svg.append('</g>')
 
-    # 2. DRAW STATIONS AND PROTECTED LABELS
+    # 2. DRAW STATIONS AND CRISP LABELS (ZERO WHITE BLUR CAPSULES)
     svg.append('<!-- STATIONS & LABELS -->\n<g id="stations-layer">')
 
     # Assign alternating labels for horizontal tracks
@@ -609,68 +610,80 @@ for city_id, cfg in cities_config.items():
         y = sinfo['y']
         is_ic = sinfo['count'] > 1 or 'Interchange' in sinfo['name'] or 'Hub' in sinfo['name'] or 'Central' in sinfo['name'] or 'Terminal' in sinfo['name']
 
-        # Determine label position
-        name_en = sinfo['name']
-        name_reg = sinfo['reg']
-        char_len = max(len(name_en), len(name_reg))
-        bw = max(char_len * 6.6 + 14, 75)
-        bh = 27 if is_ic else 24
+        # Determine clean concise names without parenthetical clutter
+        clean_en = re.sub(r'\s*\([^)]*\)', '', sinfo['name']).strip().replace('&', '&amp;')
+        clean_reg = re.sub(r'\s*\([^)]*\)', '', sinfo['reg']).strip().replace('&', '&amp;')
 
-        if sinfo.get('is_h', False):
-            # Alternating above and below track
+        is_horizontal = sinfo.get('is_h', False)
+        if is_horizontal:
+            # Alternating above and below track with mathematical line clearance
             if idx % 2 == 0:
                 lx = x
-                ly = y - 18
+                ly = y - 20
                 anchor = 'middle'
-                rx = lx - bw / 2
-                ry = ly - 14
+                is_above = True
             else:
                 lx = x
-                ly = y + 22
+                ly = y + 24
                 anchor = 'middle'
-                rx = lx - bw / 2
-                ry = ly - 14
+                is_above = False
         else:
             # Vertical or angled track
+            is_above = None
             if x > 2400:
                 lx = x - 16
                 ly = y
                 anchor = 'end'
-                rx = lx - bw + 2
-                ry = ly - 14
             else:
                 lx = x + 16
                 ly = y
                 anchor = 'start'
-                rx = lx - 2
-                ry = ly - 14
 
-        # A. Protective White Background Capsule
-        svg.append(f'  <rect x="{rx:.1f}" y="{ry:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>')
-
-        # B. Station Node Dot
+        # A. Station Node Dot
         if is_ic:
             svg.append(f'  <circle cx="{x}" cy="{y}" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>')
             svg.append(f'  <circle cx="{x}" cy="{y}" r="3.4" fill="#0F172A"/>')
         else:
             svg.append(f'  <circle cx="{x}" cy="{y}" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>')
 
-        # C. Bilingual / Vernacular Crisp Typography
+        # B. Bilingual / Vernacular Crisp Typography (No blur pills, perfect line clearance)
         if is_ic:
-            svg.append(f'  <g>')
-            if name_reg:
-                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">{name_reg}</text>')
-                svg.append(f'    <text x="{lx:.1f}" y="{ly + 12.5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{name_en}</text>')
+            svg.append('  <g>')
+            if is_above is True:
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly - 11.5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">{clean_reg}</text>')
+                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{clean_en}</text>')
+            elif is_above is False:
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">{clean_reg}</text>')
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 12:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{clean_en}</text>')
+                else:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{clean_en}</text>')
             else:
-                svg.append(f'    <text x="{lx:.1f}" y="{ly + 5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{name_en}</text>')
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly - 3:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">{clean_reg}</text>')
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 9.5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{clean_en}</text>')
+                else:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 4:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">{clean_en}</text>')
             svg.append('  </g>')
         else:
-            svg.append(f'  <g>')
-            if name_reg:
-                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">{name_reg}</text>')
-                svg.append(f'    <text x="{lx:.1f}" y="{ly + 11:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{name_en}</text>')
+            svg.append('  <g>')
+            if is_above is True:
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly - 10:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">{clean_reg}</text>')
+                svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{clean_en}</text>')
+            elif is_above is False:
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">{clean_reg}</text>')
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 11:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{clean_en}</text>')
+                else:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{clean_en}</text>')
             else:
-                svg.append(f'    <text x="{lx:.1f}" y="{ly + 4:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{name_en}</text>')
+                if clean_reg:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly - 3:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">{clean_reg}</text>')
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 8:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{clean_en}</text>')
+                else:
+                    svg.append(f'    <text x="{lx:.1f}" y="{ly + 3.5:.1f}" text-anchor="{anchor}" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">{clean_en}</text>')
             svg.append('  </g>')
 
     svg.append('</g>')

@@ -9,132 +9,112 @@
 </g>
 <!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <rect x="1814.0" y="386.0" width="126.2" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1800" cy="400" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1800" cy="400" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1816.0" y="400.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">اتصالات</text>
-    <text x="1816.0" y="412.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Etisalat Terminal</text>
+    <text x="1816.0" y="397.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">اتصالات</text>
+    <text x="1816.0" y="409.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Etisalat Terminal</text>
   </g>
-  <rect x="2670.2" y="486.0" width="165.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2850" cy="500" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2834.0" y="500.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">سنتربوينت</text>
-    <text x="2834.0" y="511.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Centrepoint (Rashidiya)</text>
+    <text x="2834.0" y="497.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">سنتربوينت</text>
+    <text x="2834.0" y="508.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Centrepoint</text>
   </g>
-  <rect x="1814.0" y="606.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1800" cy="620" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1816.0" y="620.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">النهدة</text>
-    <text x="1816.0" y="631.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Al Nahda</text>
+    <text x="1816.0" y="617.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">النهدة</text>
+    <text x="1816.0" y="628.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Al Nahda</text>
   </g>
-  <rect x="2463.8" y="658.0" width="172.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2550" cy="650" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2550" cy="650" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2550.0" y="672.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">المطار مبنى 3</text>
-    <text x="2550.0" y="684.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dubai Airport Terminal 3</text>
+    <text x="2550.0" y="674.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">المطار مبنى 3</text>
+    <text x="2550.0" y="686.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dubai Airport Terminal 3</text>
   </g>
-  <rect x="2213.8" y="748.0" width="172.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2300" cy="780" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2300" cy="780" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2300.0" y="762.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">المطار مبنى 1</text>
-    <text x="2300.0" y="774.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dubai Airport Terminal 1</text>
+    <text x="2300.0" y="748.5" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">المطار مبنى 1</text>
+    <text x="2300.0" y="760.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dubai Airport Terminal 1</text>
   </g>
-  <rect x="1814.0" y="826.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1800" cy="840" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1816.0" y="840.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الاستاد</text>
-    <text x="1816.0" y="851.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Stadium</text>
+    <text x="1816.0" y="837.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الاستاد</text>
+    <text x="1816.0" y="848.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Stadium</text>
   </g>
-  <rect x="1986.9" y="888.0" width="126.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2050" cy="920" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2050.0" y="902.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ديرة سيتي سنتر</text>
-    <text x="2050.0" y="913.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Deira City Centre</text>
+    <text x="2050.0" y="890.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ديرة سيتي سنتر</text>
+    <text x="2050.0" y="900.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Deira City Centre</text>
   </g>
-  <rect x="1736.9" y="1058.0" width="126.2" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1800" cy="1050" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1800" cy="1050" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1800.0" y="1072.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">الاتحاد</text>
-    <text x="1800.0" y="1084.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Union Station Hub</text>
+    <text x="1800.0" y="1074.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">الاتحاد</text>
+    <text x="1800.0" y="1086.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Union Station Hub</text>
   </g>
-  <rect x="1613.6" y="1078.0" width="132.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1680" cy="1110" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1680.0" y="1092.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الراس</text>
-    <text x="1680.0" y="1103.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Al Ras (Gold Souq)</text>
+    <text x="1680.0" y="1080.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الراس</text>
+    <text x="1680.0" y="1090.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Al Ras</text>
   </g>
-  <rect x="1477.0" y="1188.0" width="146.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1180" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1550" cy="1180" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1550.0" y="1202.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">برجمان</text>
-    <text x="1550.0" y="1214.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">BurJuman Interchange</text>
+    <text x="1550.0" y="1204.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">برجمان</text>
+    <text x="1550.0" y="1216.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">BurJuman Interchange</text>
   </g>
-  <rect x="1283.6" y="1248.0" width="132.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1350" cy="1280" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1350.0" y="1262.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">بنك أبوظبي التجاري</text>
-    <text x="1350.0" y="1273.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">ADCB (Al Karama)</text>
+    <text x="1350.0" y="1250.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">بنك أبوظبي التجاري</text>
+    <text x="1350.0" y="1260.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">ADCB</text>
   </g>
-  <rect x="1070.4" y="1408.0" width="159.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1150" cy="1400" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1150.0" y="1422.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">المركز التجاري العالمي</text>
-    <text x="1150.0" y="1433.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">World Trade Centre</text>
+    <text x="1150.0" y="1424.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">المركز التجاري العالمي</text>
+    <text x="1150.0" y="1435.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">World Trade Centre</text>
   </g>
-  <rect x="1564.0" y="1406.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1420" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1420.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">عود ميثاء</text>
-    <text x="1566.0" y="1431.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Oud Metha</text>
+    <text x="1566.0" y="1417.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">عود ميثاء</text>
+    <text x="1566.0" y="1428.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Oud Metha</text>
   </g>
-  <rect x="964.0" y="1536.0" width="179.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="950" cy="1550" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="966.0" y="1550.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">برج خليفة / دبي مول</text>
-    <text x="966.0" y="1561.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Burj Khalifa / Dubai Mall</text>
+    <text x="966.0" y="1547.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">برج خليفة / دبي مول</text>
+    <text x="966.0" y="1558.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Burj Khalifa / Dubai Mall</text>
   </g>
-  <rect x="1564.0" y="1646.0" width="152.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1660" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1566.0" y="1660.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">مدينة دبي الطبية</text>
-    <text x="1566.0" y="1671.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Dubai Healthcare City</text>
+    <text x="1566.0" y="1657.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">مدينة دبي الطبية</text>
+    <text x="1566.0" y="1668.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Dubai Healthcare City</text>
   </g>
-  <rect x="814.0" y="1706.0" width="106.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="800" cy="1720" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="816.0" y="1720.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الخليج التجاري</text>
-    <text x="816.0" y="1731.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Business Bay</text>
+    <text x="816.0" y="1717.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">الخليج التجاري</text>
+    <text x="816.0" y="1728.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Business Bay</text>
   </g>
-  <rect x="1564.0" y="1886.0" width="106.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1550" cy="1900" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1550" cy="1900" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1566.0" y="1900.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">الخور</text>
-    <text x="1566.0" y="1912.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Creek Terminal</text>
+    <text x="1566.0" y="1897.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">الخور</text>
+    <text x="1566.0" y="1909.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Creek Terminal</text>
   </g>
-  <rect x="664.0" y="1906.0" width="146.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="650" cy="1920" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="666.0" y="1920.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">مول الإمارات</text>
-    <text x="666.0" y="1931.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mall of the Emirates</text>
+    <text x="666.0" y="1917.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">مول الإمارات</text>
+    <text x="666.0" y="1928.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mall of the Emirates</text>
   </g>
-  <rect x="534.0" y="2136.0" width="198.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="520" cy="2150" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="536.0" y="2150.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">أبراج بحيرات جميرا</text>
-    <text x="536.0" y="2161.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">DMCC (Jumeirah Lakes Towers)</text>
+    <text x="536.0" y="2147.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">أبراج بحيرات جميرا</text>
+    <text x="536.0" y="2158.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">DMCC</text>
   </g>
-  <rect x="434.0" y="2366.0" width="132.8" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="420" cy="2380" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="420" cy="2380" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="436.0" y="2380.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">إكسبو 2020</text>
-    <text x="436.0" y="2392.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Expo 2020 Terminal</text>
+    <text x="436.0" y="2377.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">إكسبو 2020</text>
+    <text x="436.0" y="2389.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Expo 2020 Terminal</text>
   </g>
 </g>
 <!-- MODERN LEGEND CARD -->

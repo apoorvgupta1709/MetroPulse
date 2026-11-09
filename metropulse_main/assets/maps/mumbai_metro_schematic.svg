@@ -11,160 +11,135 @@
 </g>
 <!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <rect x="894.0" y="366.0" width="106.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="880" cy="380" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="880" cy="380" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="896.0" y="380.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">दहिसर (पूर्व)</text>
-    <text x="896.0" y="392.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dahisar (East)</text>
+    <text x="896.0" y="377.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">दहिसर</text>
+    <text x="896.0" y="389.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dahisar</text>
   </g>
-  <rect x="1723.5" y="558.0" width="113.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1780" cy="550" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1780.0" y="572.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बोरिवली (पूर्व)</text>
-    <text x="1780.0" y="583.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Borivali (East)</text>
+    <text x="1780.0" y="574.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बोरिवली</text>
+    <text x="1780.0" y="585.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Borivali</text>
   </g>
-  <rect x="894.0" y="546.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="880" cy="560" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="896.0" y="560.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आनंद नगर</text>
-    <text x="896.0" y="571.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Anand Nagar</text>
+    <text x="896.0" y="557.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आनंद नगर</text>
+    <text x="896.0" y="568.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Anand Nagar</text>
   </g>
-  <rect x="1794.0" y="736.0" width="119.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1780" cy="750" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1796.0" y="750.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कांदिवली (पूर्व)</text>
-    <text x="1796.0" y="761.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kandivali (East)</text>
+    <text x="1796.0" y="747.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कांदिवली</text>
+    <text x="1796.0" y="758.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kandivali</text>
   </g>
-  <rect x="894.0" y="766.0" width="126.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="880" cy="780" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="896.0" y="780.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कांदिवली (पश्चिम)</text>
-    <text x="896.0" y="791.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kandivali (West)</text>
+    <text x="896.0" y="777.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कांदिवली</text>
+    <text x="896.0" y="788.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Kandivali</text>
   </g>
-  <rect x="2479.6" y="786.0" width="106.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2600" cy="800" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2584.0" y="800.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आरे जेव्हीएलआर</text>
-    <text x="2584.0" y="811.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Aarey JVLR</text>
+    <text x="2584.0" y="797.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आरे जेव्हीएलआर</text>
+    <text x="2584.0" y="808.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Aarey JVLR</text>
   </g>
-  <rect x="1794.0" y="936.0" width="113.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1780" cy="950" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1796.0" y="950.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">गोरेगाव (पूर्व)</text>
-    <text x="1796.0" y="961.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Goregaon (East)</text>
+    <text x="1796.0" y="947.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">गोरेगाव</text>
+    <text x="1796.0" y="958.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Goregaon</text>
   </g>
-  <rect x="894.0" y="986.0" width="106.4" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="880" cy="1000" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="896.0" y="1000.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मालाड (पश्चिम)</text>
-    <text x="896.0" y="1011.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Malad (West)</text>
+    <text x="896.0" y="997.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मालाड</text>
+    <text x="896.0" y="1008.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Malad</text>
   </g>
-  <rect x="1794.0" y="1136.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1780" cy="1150" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1796.0" y="1150.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">गुंदवली</text>
-    <text x="1796.0" y="1161.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Gundavali</text>
+    <text x="1796.0" y="1147.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">गुंदवली</text>
+    <text x="1796.0" y="1158.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Gundavali</text>
   </g>
-  <rect x="614.0" y="1286.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="600" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="616.0" y="1300.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">वर्सोवा</text>
-    <text x="616.0" y="1311.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Versova</text>
+    <text x="616.0" y="1297.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">वर्सोवा</text>
+    <text x="616.0" y="1308.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Versova</text>
   </g>
-  <rect x="840.0" y="1268.0" width="80.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="880" cy="1300" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="880" cy="1300" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="880.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">डी.एन. नगर</text>
-    <text x="880.0" y="1294.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">D.N. Nagar</text>
+    <text x="880.0" y="1268.5" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">डी.एन. नगर</text>
+    <text x="880.0" y="1280.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">D.N. Nagar</text>
   </g>
-  <rect x="1110.0" y="1308.0" width="80.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1150" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1150.0" y="1322.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आझाद नगर</text>
-    <text x="1150.0" y="1333.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Azad Nagar</text>
+    <text x="1150.0" y="1324.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">आझाद नगर</text>
+    <text x="1150.0" y="1335.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Azad Nagar</text>
   </g>
-  <rect x="1400.1" y="1268.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1450" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1450.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">अंधेरी मेट्रो</text>
-    <text x="1450.0" y="1293.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Andheri Metro</text>
+    <text x="1450.0" y="1270.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">अंधेरी मेट्रो</text>
+    <text x="1450.0" y="1280.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Andheri Metro</text>
   </g>
-  <rect x="1693.8" y="1308.0" width="172.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1780" cy="1300" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1780" cy="1300" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1780.0" y="1322.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">पश्चिम द्रुतगती महामार्ग</text>
-    <text x="1780.0" y="1334.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Western Express Highway</text>
+    <text x="1780.0" y="1324.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">पश्चिम द्रुतगती महामार्ग</text>
+    <text x="1780.0" y="1336.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Western Express Highway</text>
   </g>
-  <rect x="2007.0" y="1268.0" width="146.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2080" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2080.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">चाकला (जे.बी. नगर)</text>
-    <text x="2080.0" y="1293.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Chakala (J.B. Nagar)</text>
+    <text x="2080.0" y="1270.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">चाकला</text>
+    <text x="2080.0" y="1280.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Chakala</text>
   </g>
-  <rect x="2300.1" y="1308.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2350" cy="1300" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2350.0" y="1322.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">विमानतळ रस्ता</text>
-    <text x="2350.0" y="1333.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Airport Road</text>
+    <text x="2350.0" y="1324.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">विमानतळ रस्ता</text>
+    <text x="2350.0" y="1335.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Airport Road</text>
   </g>
-  <rect x="2560.0" y="1268.0" width="80.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2600" cy="1300" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2600" cy="1300" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2600.0" y="1282.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">मरोळ नाका</text>
-    <text x="2600.0" y="1294.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Marol Naka</text>
+    <text x="2600.0" y="1268.5" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">मरोळ नाका</text>
+    <text x="2600.0" y="1280.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Marol Naka</text>
   </g>
-  <rect x="2691.0" y="1436.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2780" cy="1450" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2764.0" y="1450.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">साकी नाका</text>
-    <text x="2764.0" y="1461.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Saki Naka</text>
+    <text x="2764.0" y="1447.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">साकी नाका</text>
+    <text x="2764.0" y="1458.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Saki Naka</text>
   </g>
-  <rect x="2466.4" y="1586.0" width="119.6" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2600" cy="1600" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2600" cy="1600" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2584.0" y="1600.0" text-anchor="end" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">सीएसएमआयए टी२</text>
-    <text x="2584.0" y="1612.5" text-anchor="end" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">CSMIA Terminal 2</text>
+    <text x="2584.0" y="1597.0" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">सीएसएमआयए टी२</text>
+    <text x="2584.0" y="1609.5" text-anchor="end" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">CSMIA Terminal 2</text>
   </g>
-  <rect x="2691.0" y="1606.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2780" cy="1620" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2764.0" y="1620.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">असल्फा</text>
-    <text x="2764.0" y="1631.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Asalpha</text>
+    <text x="2764.0" y="1617.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">असल्फा</text>
+    <text x="2764.0" y="1628.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Asalpha</text>
   </g>
-  <rect x="2666.2" y="1766.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2780" cy="1780" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2764.0" y="1780.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">जागृती नगर</text>
-    <text x="2764.0" y="1791.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Jagruti Nagar</text>
+    <text x="2764.0" y="1777.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">जागृती नगर</text>
+    <text x="2764.0" y="1788.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Jagruti Nagar</text>
   </g>
-  <rect x="2364.0" y="1936.0" width="185.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2350" cy="1950" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2366.0" y="1950.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बीकेसी</text>
-    <text x="2366.0" y="1961.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">BKC (Bandra Kurla Complex)</text>
+    <text x="2366.0" y="1947.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बीकेसी</text>
+    <text x="2366.0" y="1958.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">BKC</text>
   </g>
-  <rect x="2691.0" y="1936.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2780" cy="1950" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2764.0" y="1950.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">घाटकोपर</text>
-    <text x="2764.0" y="1961.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ghatkopar</text>
+    <text x="2764.0" y="1947.0" text-anchor="end" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">घाटकोपर</text>
+    <text x="2764.0" y="1958.0" text-anchor="end" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ghatkopar</text>
   </g>
-  <rect x="2064.0" y="2186.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2050" cy="2200" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2066.0" y="2200.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">वरळी</text>
-    <text x="2066.0" y="2211.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Worli</text>
+    <text x="2066.0" y="2197.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">वरळी</text>
+    <text x="2066.0" y="2208.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Worli</text>
   </g>
-  <rect x="1764.0" y="2436.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1750" cy="2450" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1766.0" y="2450.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कफ परेड</text>
-    <text x="1766.0" y="2461.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Cuffe Parade</text>
+    <text x="1766.0" y="2447.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">कफ परेड</text>
+    <text x="1766.0" y="2458.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Cuffe Parade</text>
   </g>
 </g>
 <!-- MODERN LEGEND CARD -->

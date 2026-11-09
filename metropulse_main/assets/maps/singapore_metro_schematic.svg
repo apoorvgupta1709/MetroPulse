@@ -10,139 +10,118 @@
 </g>
 <!-- STATIONS & LABELS -->
 <g id="stations-layer">
-  <rect x="1614.0" y="336.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="350.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">兀兰</text>
-    <text x="1616.0" y="361.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Woodlands</text>
+    <text x="1616.0" y="347.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">兀兰</text>
+    <text x="1616.0" y="358.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Woodlands</text>
   </g>
-  <rect x="1614.0" y="546.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="560" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="560.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">义顺</text>
-    <text x="1616.0" y="571.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Yishun</text>
+    <text x="1616.0" y="557.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">义顺</text>
+    <text x="1616.0" y="568.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Yishun</text>
   </g>
-  <rect x="1614.0" y="756.0" width="80.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="770" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="770.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">宏茂桥</text>
-    <text x="1616.0" y="781.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ang Mo Kio</text>
+    <text x="1616.0" y="767.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">宏茂桥</text>
+    <text x="1616.0" y="778.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ang Mo Kio</text>
   </g>
-  <rect x="1614.0" y="966.0" width="132.8" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="980" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1600" cy="980" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1616.0" y="980.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">碧山</text>
-    <text x="1616.0" y="992.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Bishan Interchange</text>
+    <text x="1616.0" y="977.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">碧山</text>
+    <text x="1616.0" y="989.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Bishan Interchange</text>
   </g>
-  <rect x="1264.0" y="1086.0" width="113.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1250" cy="1100" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1266.0" y="1100.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">植物园</text>
-    <text x="1266.0" y="1111.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Botanic Gardens</text>
+    <text x="1266.0" y="1097.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">植物园</text>
+    <text x="1266.0" y="1108.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Botanic Gardens</text>
   </g>
-  <rect x="1614.0" y="1186.0" width="93.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="1200" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="1200.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">乌节</text>
-    <text x="1616.0" y="1211.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Orchard Road</text>
+    <text x="1616.0" y="1197.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">乌节</text>
+    <text x="1616.0" y="1208.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Orchard Road</text>
   </g>
-  <rect x="1350.1" y="1208.0" width="99.8" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1400" cy="1240" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1400.0" y="1222.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">纽顿</text>
-    <text x="1400.0" y="1233.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Newton Circus</text>
+    <text x="1400.0" y="1210.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">纽顿</text>
+    <text x="1400.0" y="1220.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Newton Circus</text>
   </g>
-  <rect x="2170.4" y="1358.0" width="159.2" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2250" cy="1350" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2250" cy="1350" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2250.0" y="1372.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">巴耶利峇</text>
-    <text x="2250.0" y="1384.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Paya Lebar Interchange</text>
+    <text x="2250.0" y="1374.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">巴耶利峇</text>
+    <text x="2250.0" y="1386.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Paya Lebar Interchange</text>
   </g>
-  <rect x="2556.7" y="1318.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2600" cy="1350" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2600.0" y="1332.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">丹那美拉</text>
-    <text x="2600.0" y="1343.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tanah Merah</text>
+    <text x="2600.0" y="1320.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">丹那美拉</text>
+    <text x="2600.0" y="1330.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tanah Merah</text>
   </g>
-  <rect x="2770.2" y="1336.0" width="165.8" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2950" cy="1350" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="2950" cy="1350" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="2934.0" y="1350.0" text-anchor="end" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">樟宜机场</text>
-    <text x="2934.0" y="1362.5" text-anchor="end" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Changi Airport Terminal</text>
+    <text x="2934.0" y="1347.0" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">樟宜机场</text>
+    <text x="2934.0" y="1359.5" text-anchor="end" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Changi Airport Terminal</text>
   </g>
-  <rect x="1614.0" y="1366.0" width="113.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="1380" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1600" cy="1380" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1616.0" y="1380.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">多美歌</text>
-    <text x="1616.0" y="1392.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dhoby Ghaut Hub</text>
+    <text x="1616.0" y="1377.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">多美歌</text>
+    <text x="1616.0" y="1389.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Dhoby Ghaut Hub</text>
   </g>
-  <rect x="1846.8" y="1428.0" width="106.4" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1900" cy="1420" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1900" cy="1420" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1900.0" y="1442.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">武吉士</text>
-    <text x="1900.0" y="1454.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Bugis Junction</text>
+    <text x="1900.0" y="1444.0" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">武吉士</text>
+    <text x="1900.0" y="1456.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Bugis Junction</text>
   </g>
-  <rect x="1614.0" y="1526.0" width="152.6" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="1540" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1600" cy="1540" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1616.0" y="1540.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">政府大厦</text>
-    <text x="1616.0" y="1552.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">City Hall Interchange</text>
+    <text x="1616.0" y="1537.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">政府大厦</text>
+    <text x="1616.0" y="1549.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">City Hall Interchange</text>
   </g>
-  <rect x="614.0" y="1616.0" width="113.0" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="600" cy="1630" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="600" cy="1630" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="616.0" y="1630.0" text-anchor="start" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">裕廊东</text>
-    <text x="616.0" y="1642.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Jurong East Hub</text>
+    <text x="616.0" y="1627.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">裕廊东</text>
+    <text x="616.0" y="1639.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Jurong East Hub</text>
   </g>
-  <rect x="906.7" y="1598.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="950" cy="1630" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="950.0" y="1612.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">波那维斯达</text>
-    <text x="950.0" y="1623.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Buona Vista</text>
+    <text x="950.0" y="1600.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">波那维斯达</text>
+    <text x="950.0" y="1610.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Buona Vista</text>
   </g>
-  <rect x="1256.7" y="1638.0" width="86.6" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1300" cy="1630" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1300.0" y="1652.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">欧南园</text>
-    <text x="1300.0" y="1663.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Outram Park</text>
+    <text x="1300.0" y="1654.0" text-anchor="middle" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">欧南园</text>
+    <text x="1300.0" y="1665.0" text-anchor="middle" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Outram Park</text>
   </g>
-  <rect x="1523.7" y="1688.0" width="152.6" height="27.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="1720" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
   <circle cx="1600" cy="1720" r="3.4" fill="#0F172A"/>
   <g>
-    <text x="1600.0" y="1702.0" text-anchor="middle" font-family="sans-serif" font-size="9.8" font-weight="bold" fill="#334155">莱佛士坊</text>
-    <text x="1600.0" y="1714.5" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Raffles Place Central</text>
+    <text x="1600.0" y="1688.5" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">莱佛士坊</text>
+    <text x="1600.0" y="1700.0" text-anchor="middle" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Raffles Place Central</text>
   </g>
-  <rect x="2064.0" y="1706.0" width="192.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="2050" cy="1720" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="2066.0" y="1720.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">海湾舫</text>
-    <text x="2066.0" y="1731.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bayfront (Marina Bay Sands)</text>
+    <text x="2066.0" y="1717.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">海湾舫</text>
+    <text x="2066.0" y="1728.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bayfront</text>
   </g>
-  <rect x="1464.0" y="1836.0" width="75.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1450" cy="1850" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1466.0" y="1850.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">牛车水</text>
-    <text x="1466.0" y="1861.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Chinatown</text>
+    <text x="1466.0" y="1847.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">牛车水</text>
+    <text x="1466.0" y="1858.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Chinatown</text>
   </g>
-  <rect x="1614.0" y="1926.0" width="80.0" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="1940" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="1940.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">滨海湾</text>
-    <text x="1616.0" y="1951.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Marina Bay</text>
+    <text x="1616.0" y="1937.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">滨海湾</text>
+    <text x="1616.0" y="1948.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Marina Bay</text>
   </g>
-  <rect x="1614.0" y="2166.0" width="126.2" height="24.0" rx="3" ry="3" fill="#FFFFFF" fill-opacity="0.94"/>
   <circle cx="1600" cy="2180" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="1616.0" y="2180.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">滨海南码头</text>
-    <text x="1616.0" y="2191.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Marina South Pier</text>
+    <text x="1616.0" y="2177.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">滨海南码头</text>
+    <text x="1616.0" y="2188.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Marina South Pier</text>
   </g>
 </g>
 <!-- MODERN LEGEND CARD -->
