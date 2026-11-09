@@ -15,6 +15,16 @@ class _GraphEdge {
   });
 }
 
+class _RouteState {
+  final String stationId;
+  final double cost;
+  final String? lineId;
+
+  _RouteState(this.stationId, this.cost, this.lineId);
+
+  String get key => '$stationId::${lineId ?? "START"}';
+}
+
 class TransitGraphService {
   final Map<String, Station> stationMap;
   final Map<String, MetroLine> lineMap;
@@ -73,7 +83,7 @@ class TransitGraphService {
     final il = stationMap['del_inderlok'];
     final kn = stationMap['del_kirti_nagar'];
     final green = lineMap['green'] ?? lineMap.values.first;
-    if (ap != null && green != null) {
+    if (ap != null) {
       if (il != null) {
         _adjacencyList.putIfAbsent(ap.id, () => []).add(_GraphEdge(toStation: il, line: green, weightMinutes: 3.5));
         _adjacencyList.putIfAbsent(il.id, () => []).add(_GraphEdge(toStation: ap, line: green, weightMinutes: 3.5));
@@ -97,153 +107,119 @@ class TransitGraphService {
     final destination = stationMap[destinationStationId];
     if (origin == null || destination == null) return null;
 
-    if (mode == RouteMode.fastest) {
-      return _runDijkstra(origin, destination, currencySymbol);
-    } else {
-      return _runFewestChangesBFS(origin, destination, currencySymbol);
-    }
-  }
-
-  // Dijkstra's Algorithm for fastest travel time
-  RouteResult? _runDijkstra(Station origin, Station destination, String currencySymbol) {
-    final distances = <String, double>{};
-    final previousEdges = <String, _GraphEdge?>{};
-    final previousNodes = <String, String?>{};
-    final priorityQueue = <_QueueItem>[];
-
-    for (var sId in stationMap.keys) {
-      distances[sId] = double.infinity;
-    }
-    distances[origin.id] = 0.0;
-    priorityQueue.add(_QueueItem(origin.id, 0.0, null));
-
-    final visited = <String>{};
-
-    while (priorityQueue.isNotEmpty) {
-      priorityQueue.sort((a, b) => a.cost.compareTo(b.cost));
-      final current = priorityQueue.removeAt(0);
-
-      if (visited.contains(current.stationId)) continue;
-      visited.add(current.stationId);
-
-      if (current.stationId == destination.id) break;
-
-      final neighbors = _adjacencyList[current.stationId] ?? [];
-      for (var edge in neighbors) {
-        if (visited.contains(edge.toStation.id)) continue;
-
-        // Line interchange transfer penalty: 5.5 minutes
-        double edgeCost = edge.weightMinutes;
-        if (current.lineId != null && current.lineId != edge.line.id) {
-          edgeCost += 5.5; // transfer walk and train wait
-        }
-
-        final newCost = distances[current.stationId]! + edgeCost;
-        if (newCost < distances[edge.toStation.id]!) {
-          distances[edge.toStation.id] = newCost;
-          previousEdges[edge.toStation.id] = edge;
-          previousNodes[edge.toStation.id] = current.stationId;
-          priorityQueue.add(_QueueItem(edge.toStation.id, newCost, edge.line.id));
-        }
-      }
-    }
-
-    if (distances[destination.id] == double.infinity) {
-      return null;
-    }
-
-    return _reconstructPath(
+    final primary = _runRouting(
       origin: origin,
       destination: destination,
-      previousNodes: previousNodes,
-      previousEdges: previousEdges,
-      mode: RouteMode.fastest,
+      mode: mode,
+      currencySymbol: currencySymbol,
+    );
+
+    if (primary != null) return primary;
+
+    // Graceful fallback to alternative routing mode if one found no path
+    final altMode = (mode == RouteMode.fastest) ? RouteMode.fewestChanges : RouteMode.fastest;
+    return _runRouting(
+      origin: origin,
+      destination: destination,
+      mode: altMode,
       currencySymbol: currencySymbol,
     );
   }
 
-  // BFS / Priority search with heavy line-change penalties for Fewest Line Changes
-  RouteResult? _runFewestChangesBFS(Station origin, Station destination, String currencySymbol) {
-    final distances = <String, double>{};
-    final previousEdges = <String, _GraphEdge?>{};
-    final previousNodes = <String, String?>{};
-    final priorityQueue = <_QueueItem>[];
-
-    for (var sId in stationMap.keys) {
-      distances[sId] = double.infinity;
-    }
-    distances[origin.id] = 0.0;
-    priorityQueue.add(_QueueItem(origin.id, 0.0, null));
-
-    final visited = <String>{};
-
-    while (priorityQueue.isNotEmpty) {
-      priorityQueue.sort((a, b) => a.cost.compareTo(b.cost));
-      final current = priorityQueue.removeAt(0);
-
-      if (visited.contains(current.stationId)) continue;
-      visited.add(current.stationId);
-
-      if (current.stationId == destination.id) break;
-
-      final neighbors = _adjacencyList[current.stationId] ?? [];
-      for (var edge in neighbors) {
-        if (visited.contains(edge.toStation.id)) continue;
-
-        // Interchange penalty is weighted drastically (1000.0) to strongly minimize line switches
-        double costWeight = 1.0;
-        if (current.lineId != null && current.lineId != edge.line.id) {
-          costWeight += 1000.0;
-        }
-
-        final newCost = distances[current.stationId]! + costWeight;
-        if (newCost < distances[edge.toStation.id]!) {
-          distances[edge.toStation.id] = newCost;
-          previousEdges[edge.toStation.id] = edge;
-          previousNodes[edge.toStation.id] = current.stationId;
-          priorityQueue.add(_QueueItem(edge.toStation.id, newCost, edge.line.id));
-        }
-      }
-    }
-
-    if (distances[destination.id] == double.infinity) {
-      return null;
-    }
-
-    return _reconstructPath(
-      origin: origin,
-      destination: destination,
-      previousNodes: previousNodes,
-      previousEdges: previousEdges,
-      mode: RouteMode.fewestChanges,
-      currencySymbol: currencySymbol,
-    );
-  }
-
-  RouteResult _reconstructPath({
+  /// State-based (stationId, lineId) routing search
+  RouteResult? _runRouting({
     required Station origin,
     required Station destination,
-    required Map<String, String?> previousNodes,
-    required Map<String, _GraphEdge?> previousEdges,
     required RouteMode mode,
     required String currencySymbol,
   }) {
+    final bestCosts = <String, double>{};
+    final previousStates = <String, String>{};
+    final previousEdges = <String, _GraphEdge>{};
+    final previousStations = <String, Station>{};
+
+    final priorityQueue = <_RouteState>[];
+
+    final startState = _RouteState(origin.id, 0.0, null);
+    bestCosts[startState.key] = 0.0;
+    priorityQueue.add(startState);
+
+    String? destinationEndKey;
+
+    while (priorityQueue.isNotEmpty) {
+      priorityQueue.sort((a, b) => a.cost.compareTo(b.cost));
+      final current = priorityQueue.removeAt(0);
+
+      // Stop once lowest cost path to destination is popped
+      if (current.stationId == destination.id) {
+        destinationEndKey = current.key;
+        break;
+      }
+
+      final recordedCost = bestCosts[current.key];
+      if (recordedCost != null && current.cost > recordedCost) {
+        continue;
+      }
+
+      final neighbors = _adjacencyList[current.stationId] ?? [];
+      for (final edge in neighbors) {
+        // Line transfer penalty
+        double penalty = 0.0;
+        if (current.lineId != null && current.lineId != edge.line.id) {
+          penalty = (mode == RouteMode.fewestChanges) ? 1000.0 : 5.0;
+        }
+
+        final hopCost = (mode == RouteMode.fewestChanges) ? (1.0 + penalty) : (edge.weightMinutes + penalty);
+        final newCost = current.cost + hopCost;
+
+        final nextState = _RouteState(edge.toStation.id, newCost, edge.line.id);
+
+        if (newCost < (bestCosts[nextState.key] ?? double.infinity)) {
+          bestCosts[nextState.key] = newCost;
+          previousStates[nextState.key] = current.key;
+          previousEdges[nextState.key] = edge;
+          previousStations[nextState.key] = edge.toStation;
+          priorityQueue.add(nextState);
+        }
+      }
+    }
+
+    if (destinationEndKey == null) {
+      return null;
+    }
+
+    // Trace back path from destination to origin
     final pathStations = <Station>[];
     final pathEdges = <_GraphEdge>[];
 
-    String? currId = destination.id;
-    while (currId != null) {
-      final station = stationMap[currId];
-      if (station != null) {
-        pathStations.insert(0, station);
-      }
-      final edge = previousEdges[currId];
-      if (edge != null) {
-        pathEdges.insert(0, edge);
-      }
-      currId = previousNodes[currId];
+    String? currKey = destinationEndKey;
+    while (currKey != null && currKey != startState.key) {
+      final stn = previousStations[currKey];
+      final edge = previousEdges[currKey];
+      if (stn != null) pathStations.insert(0, stn);
+      if (edge != null) pathEdges.insert(0, edge);
+      currKey = previousStates[currKey];
     }
+    pathStations.insert(0, origin);
 
+    return _reconstructPathFromEdges(
+      origin: origin,
+      destination: destination,
+      pathStations: pathStations,
+      pathEdges: pathEdges,
+      mode: mode,
+      currencySymbol: currencySymbol,
+    );
+  }
+
+  RouteResult _reconstructPathFromEdges({
+    required Station origin,
+    required Station destination,
+    required List<Station> pathStations,
+    required List<_GraphEdge> pathEdges,
+    required RouteMode mode,
+    required String currencySymbol,
+  }) {
     final steps = <RouteStep>[];
     int cumulativeMinutes = 0;
     int interchanges = 0;
@@ -265,7 +241,7 @@ class TransitGraphService {
       if (activeLine != null && activeLine.id != lineForThisHop.id) {
         isInterchange = true;
         interchanges++;
-        cumulativeMinutes += 5; // 5 min transfer walking/waiting
+        cumulativeMinutes += 5; // 5 min transfer walking & train wait
       }
 
       if (i < pathEdges.length - 1 && pathEdges[i].line.id != pathEdges[i + 1].line.id) {
@@ -277,8 +253,11 @@ class TransitGraphService {
         cumulativeMinutes += 2; // 2 min station traversal
       }
 
-      // Compute platform & direction indicator
-      final directionText = _computeDirection(stn, lineForThisHop, i < pathStations.length - 1 ? pathStations[i + 1] : null);
+      final directionText = _computeDirection(
+        stn,
+        lineForThisHop,
+        i < pathStations.length - 1 ? pathStations[i + 1] : null,
+      );
 
       steps.add(RouteStep(
         station: stn,
@@ -345,18 +324,9 @@ class TransitGraphService {
       if (hops <= 10) return 4;
       return 6;
     } else {
-      // Singapore S$ or USD
       if (hops <= 5) return 2;
       if (hops <= 12) return 3;
       return 4;
     }
   }
-}
-
-class _QueueItem {
-  final String stationId;
-  final double cost;
-  final String? lineId;
-
-  _QueueItem(this.stationId, this.cost, this.lineId);
 }

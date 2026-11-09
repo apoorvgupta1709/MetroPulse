@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../models/station.dart';
 import '../providers/transit_provider.dart';
 import '../widgets/banner_ad_widget.dart';
 import '../widgets/station_picker_sheet.dart';

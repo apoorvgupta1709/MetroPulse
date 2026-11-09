@@ -13,6 +13,24 @@ void main() {
       graphService = TransitGraphService(stations: stations, lines: lines);
     });
 
+    test('Noida Sec 143 to Kashmere Gate (Fastest and Fewest Changes)', () {
+      final rFastest = graphService.calculateRoute(
+        originStationId: 'del_noida_sec_143',
+        destinationStationId: 'del_kashmere_gate',
+        mode: RouteMode.fastest,
+      );
+      print('Fastest: ' + (rFastest != null ? '${rFastest.totalStationsCount} stations, ${rFastest.travelTimeMinutes} mins, ${rFastest.numberOfInterchanges} changes' : 'NULL'));
+      expect(rFastest, isNotNull);
+
+      final rFewest = graphService.calculateRoute(
+        originStationId: 'del_noida_sec_143',
+        destinationStationId: 'del_kashmere_gate',
+        mode: RouteMode.fewestChanges,
+      );
+      print('Fewest: ' + (rFewest != null ? '${rFewest.totalStationsCount} stations, ${rFewest.travelTimeMinutes} mins, ${rFewest.numberOfInterchanges} changes' : 'NULL'));
+      expect(rFewest, isNotNull);
+    });
+
     test('Yellow Line to Blue Line (Samaypur Badli -> Dwarka Sec 21)', () {
       final route = graphService.calculateRoute(
         originStationId: 'del_samaypur_badli',
@@ -63,7 +81,7 @@ void main() {
         mode: RouteMode.fastest,
       );
       expect(route, isNotNull);
-      expect(route!.totalStationsCount, greaterThanOrEqualTo(20));
+      expect(route!.totalStationsCount, greaterThan(20));
     });
 
     test('Airport Express to Blue (New Delhi -> Dwarka Sec 21 via Airport Line)', () {

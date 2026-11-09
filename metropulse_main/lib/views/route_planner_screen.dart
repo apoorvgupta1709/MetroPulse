@@ -58,9 +58,11 @@ class _RoutePlannerScreenState extends State<RoutePlannerScreen> {
   @override
   Widget build(BuildContext context) {
     final transit = Provider.of<TransitProvider>(context);
-    final route = _selectedMode == RouteMode.fastest
-        ? transit.fastestRoute
-        : transit.fewestChangesRoute;
+    final route = (_selectedMode == RouteMode.fastest
+            ? transit.fastestRoute
+            : transit.fewestChangesRoute) ??
+        transit.fastestRoute ??
+        transit.fewestChangesRoute;
 
     return Scaffold(
       appBar: AppBar(
@@ -244,9 +246,21 @@ class _RoutePlannerScreenState extends State<RoutePlannerScreen> {
           Expanded(
             child: route == null
                 ? Center(
-                    child: Text(
-                      'Select Origin and Destination to calculate route',
-                      style: GoogleFonts.plusJakartaSans(color: Colors.grey),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Text(
+                        (transit.originStation != null && transit.destinationStation != null)
+                            ? (transit.isCalculating
+                                ? 'Calculating optimal route...'
+                                : 'No direct route found between selected stations.')
+                            : 'Select Origin and Destination to calculate route',
+                        style: GoogleFonts.plusJakartaSans(
+                          color: Colors.grey.shade600,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   )
                 : ListView(
