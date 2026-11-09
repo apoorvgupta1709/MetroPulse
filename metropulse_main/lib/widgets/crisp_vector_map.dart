@@ -45,8 +45,8 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   late AnimationController _animationController;
   Animation<Matrix4>? _animation;
 
-  static const double _canvasWidth = 3800.0;
-  static const double _canvasHeight = 3200.0;
+  static const double _canvasWidth = 3600.0;
+  static const double _canvasHeight = 2800.0;
 
   // City-specific SVG assets
   static const Map<String, String> _citySvgAssets = {
@@ -61,54 +61,54 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   // Station positions on schematic canvas (matching the authentic layout)
   static const Map<String, Offset> _schematicStationCoords = {
     // Delhi NCR Hubs
-    'del_rajiv_chowk': Offset(1600, 1250),
-    'del_kashmere_gate': Offset(1600, 750),
-    'del_new_delhi': Offset(1600, 1120),
-    'del_central_secretariat': Offset(1600, 1450),
-    'del_dilli_haat_ina': Offset(1600, 1810),
-    'del_aiims': Offset(1600, 1890),
-    'del_hauz_khas': Offset(1600, 2040),
-    'del_malviya_nagar': Offset(1600, 2130),
-    'del_saket': Offset(1600, 2210),
-    'del_qutab_minar': Offset(1600, 2290),
-    'del_sikanderpur': Offset(1600, 2720),
-    'del_millennium_city_centre': Offset(1400, 2800),
-    'del_samaypur_badli': Offset(1600, 220),
-    'del_azadpur': Offset(1300, 470),
-    'del_vishwa_vidyalaya': Offset(1600, 600),
-    'del_chandni_chowk': Offset(1600, 920),
-    'del_janakpuri_west': Offset(820, 1650),
-    'del_dwarka_sec_21': Offset(380, 2250),
-    'del_rajouri_garden': Offset(1020, 1430),
-    'del_kirti_nagar': Offset(1200, 1330),
-    'del_karol_bagh': Offset(1500, 1250),
-    'del_mandi_house': Offset(1850, 1250),
-    'del_yamuna_bank': Offset(2100, 1250),
-    'del_mayur_vihar_1': Offset(2280, 1350),
-    'del_botanical_garden': Offset(2700, 1550),
-    'del_noida_sec_18': Offset(2640, 1550),
-    'del_noida_sec_52': Offset(2980, 1550),
-    'del_noida_sec_51': Offset(2980, 1680),
-    'del_noida_electronic_city': Offset(3380, 1550),
-    'del_rithala': Offset(450, 750),
-    'del_netaji_subhash_place': Offset(980, 750),
-    'del_inderlok': Offset(1220, 750),
-    'del_welcome': Offset(2050, 750),
-    'del_shaheed_sthal': Offset(2650, 775),
-    'del_terminal_1_igi_airport': Offset(950, 2100),
-    'del_munirka': Offset(1270, 2130),
-    'del_greater_kailash': Offset(1920, 2040),
-    'del_kalkaji_mandir': Offset(2100, 2020),
-    'del_lajpat_nagar': Offset(1940, 1760),
-    'del_anand_vihar_isbt': Offset(2540, 960),
-    'del_vaishali': Offset(2780, 960),
-    'del_majlis_park': Offset(1450, 360),
-    'del_shiv_vihar': Offset(2300, 300),
-    'del_shivaji_stadium': Offset(1480, 1280),
-    'del_dhaula_kuan': Offset(1230, 1740),
-    'del_delhi_aerocity': Offset(990, 2210),
-    'del_igi_airport_t3': Offset(780, 2350),
-    'del_raja_nahar_singh': Offset(2100, 2950),
+    'del_rajiv_chowk': Offset(1500, 1150),
+    'del_kashmere_gate': Offset(1500, 680),
+    'del_new_delhi': Offset(1500, 1020),
+    'del_central_secretariat': Offset(1500, 1370),
+    'del_dilli_haat_ina': Offset(1500, 1730),
+    'del_aiims': Offset(1500, 1810),
+    'del_hauz_khas': Offset(1500, 1960),
+    'del_malviya_nagar': Offset(1500, 2040),
+    'del_saket': Offset(1500, 2120),
+    'del_qutab_minar': Offset(1500, 2200),
+    'del_sikanderpur': Offset(1500, 2600),
+    'del_millennium_city_centre': Offset(1320, 2730),
+    'del_samaypur_badli': Offset(1500, 220),
+    'del_azadpur': Offset(1220, 420),
+    'del_vishwa_vidyalaya': Offset(1500, 600),
+    'del_chandni_chowk': Offset(1500, 820),
+    'del_janakpuri_west': Offset(800, 1550),
+    'del_dwarka_sec_21': Offset(320, 2250),
+    'del_rajouri_garden': Offset(980, 1330),
+    'del_kirti_nagar': Offset(1180, 1190),
+    'del_karol_bagh': Offset(1410, 1150),
+    'del_mandi_house': Offset(1740, 1150),
+    'del_yamuna_bank': Offset(2040, 1150),
+    'del_mayur_vihar_1': Offset(2200, 1290),
+    'del_botanical_garden': Offset(2600, 1550),
+    'del_noida_sec_18': Offset(2540, 1550),
+    'del_noida_sec_52': Offset(2920, 1550),
+    'del_noida_sec_51': Offset(2920, 1680),
+    'del_noida_electronic_city': Offset(3300, 1550),
+    'del_rithala': Offset(420, 680),
+    'del_netaji_subhash_place': Offset(920, 680),
+    'del_inderlok': Offset(1150, 680),
+    'del_welcome': Offset(1950, 680),
+    'del_shaheed_sthal': Offset(2430, 960),
+    'del_terminal_1_igi_airport': Offset(920, 2020),
+    'del_munirka': Offset(1210, 2050),
+    'del_greater_kailash': Offset(1820, 1960),
+    'del_kalkaji_mandir': Offset(2000, 1940),
+    'del_lajpat_nagar': Offset(1840, 1680),
+    'del_anand_vihar_isbt': Offset(2480, 850),
+    'del_vaishali': Offset(2680, 850),
+    'del_majlis_park': Offset(1360, 320),
+    'del_shiv_vihar': Offset(2190, 260),
+    'del_shivaji_stadium': Offset(1380, 1180),
+    'del_dhaula_kuan': Offset(1170, 1660),
+    'del_delhi_aerocity': Offset(950, 2120),
+    'del_igi_airport_t3': Offset(740, 2260),
+    'del_raja_nahar_singh': Offset(2000, 2660),
 
     // Mumbai Hubs
     'mum_andheri': Offset(1500, 1300),
@@ -216,12 +216,12 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
     return Offset(500 + normX * 2600, 400 + normY * 2200);
   }
 
-  void panToStation(Station station, {double targetScale = 1.8}) {
+  void panToStation(Station station, {double targetScale = 1.6}) {
     final pos = getStationCanvasOffset(station);
     final screenSize = MediaQuery.of(context).size;
 
     final targetX = -pos.dx * targetScale + (screenSize.width / 2);
-    final targetY = -pos.dy * targetScale + (screenSize.height / 2.5);
+    final targetY = -pos.dy * targetScale + (screenSize.height / 2.3);
 
     final targetMatrix = Matrix4.identity()
       ..translate(targetX, targetY)
@@ -232,11 +232,15 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
 
   void recenterMap({bool animate = true}) {
     final screenSize = MediaQuery.of(context).size;
-    final centerPoint = _getCityCenterHub(widget.cityId);
-    const defaultScale = 0.52;
+    
+    // Fit the complete canvas width and height into screen with comfortable margins
+    final scaleX = (screenSize.width - 24) / _canvasWidth;
+    final scaleY = (screenSize.height - 120) / _canvasHeight;
+    final defaultScale = min(scaleX, scaleY).clamp(0.08, 0.45);
 
-    final targetX = -centerPoint.dx * defaultScale + (screenSize.width / 2);
-    final targetY = -centerPoint.dy * defaultScale + (screenSize.height / 2.2);
+    // Mathematically center the canvas within the screen viewport
+    final targetX = (screenSize.width - _canvasWidth * defaultScale) / 2;
+    final targetY = (screenSize.height - _canvasHeight * defaultScale) / 2.3;
 
     final targetMatrix = Matrix4.identity()
       ..translate(targetX, targetY)
@@ -269,7 +273,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   void zoomOut() {
     final currentMatrix = _transformationController.value;
     final scale = currentMatrix.getMaxScaleOnAxis() * 0.74;
-    if (scale < 0.25) return;
+    if (scale < 0.08) return;
 
     final screenSize = MediaQuery.of(context).size;
     final center = Offset(screenSize.width / 2, screenSize.height / 2);
@@ -323,9 +327,9 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
         // 1. High-Precision Vector Canvas (Zero Blur at any zoom)
         InteractiveViewer(
           transformationController: _transformationController,
-          minScale: 0.22,
-          maxScale: 8.0,
-          boundaryMargin: const EdgeInsets.all(1800),
+          minScale: 0.08,
+          maxScale: 7.0,
+          boundaryMargin: const EdgeInsets.all(800),
           constrained: false,
           child: GestureDetector(
             onTapUp: _handleCanvasTap,
@@ -730,6 +734,9 @@ class _DynamicCitySchematicPainter extends CustomPainter {
           color: const Color(0xFF0F172A),
           fontSize: s.isInterchange ? 13 : 11,
           fontWeight: s.isInterchange ? FontWeight.w800 : FontWeight.w600,
+          background: Paint()
+            ..color = Colors.white.withOpacity(0.9)
+            ..style = PaintingStyle.fill,
         ),
       );
       final textPainter = TextPainter(
