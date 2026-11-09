@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 2600" width="100%" height="100%">
+<rect width="3000" height="2600" fill="#FFFFFF"/>
+<!-- Water Body -->
+<path d="M 1000 0 C 1100 800, 950 1600, 1100 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="1050" y="1200" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6" transform="rotate(86 1050 1200)">VEMBANAD BACKWATERS</text>
+<!-- LINES -->
+<g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M 1500 350 L 1500 600 L 1500 850 L 1500 1100 L 1500 1350 L 1500 1600 L 1500 1850 L 1500 2100 L 1500 2350" fill="none" stroke="#06B6D4" stroke-width="10"/>
+</g>
+<!-- STATIONS -->
+<g id="stations-layer">
+  <circle cx="1500" cy="350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">ആലുവ</text>
+  <text x="1514" y="356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Aluva Terminal</text>
+  <circle cx="1500" cy="600" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="594" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">കളമശ്ശേരി</text>
+  <text x="1514" y="606" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Kalamassery</text>
+  <circle cx="1500" cy="850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">കുസാറ്റ്</text>
+  <text x="1514" y="856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">CUSAT</text>
+  <circle cx="1500" cy="1100" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="1094" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">ഇടപ്പള്ളി</text>
+  <text x="1514" y="1106" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Edapally</text>
+  <circle cx="1500" cy="1350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="1344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">പാലാരിവട്ടം</text>
+  <text x="1514" y="1356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Palarivattom</text>
+  <circle cx="1500" cy="1600" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="1594" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">എം.ജി. റോഡ്</text>
+  <text x="1514" y="1606" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">M.G. Road</text>
+  <circle cx="1500" cy="1850" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="1844" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">മഹാരാജാസ്</text>
+  <text x="1514" y="1856" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Maharajas College</text>
+  <circle cx="1500" cy="2100" r="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="3"/>
+  <circle cx="1500" cy="2100" r="5" fill="#0F172A"/>
+  <text x="1514" y="2094" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="600" fill="#334155">വൈറ്റില</text>
+  <text x="1514" y="2108" text-anchor="start" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#020617">Vyttila Mobility Hub</text>
+  <circle cx="1500" cy="2350" r="5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="1514" y="2344" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="500" fill="#475569">തൃപ്പൂണിത്തുറ</text>
+  <text x="1514" y="2356" text-anchor="start" font-family="sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Thripunithura Terminal</text>
+</g>
+<!-- LEGEND -->
+<g transform="translate(2260, 60)">
+  <rect width="680" height="188" rx="16" ry="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="24" y="38" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0F172A" letter-spacing="1">KOCHI METRO (KMRL)</text>
+  <line x1="24" y1="50" x2="656" y2="50" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="78" r="6" fill="#06B6D4"/>
+  <text x="54" y="82" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Line 1: Aluva - Thripunithura</text>
+  <line x1="24" y1="117" x2="656" y2="117" stroke="#E2E8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="139" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/>
+  <circle cx="36" cy="139" r="3" fill="#0F172A"/>
+  <text x="54" y="143" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Interchange Station</text>
+  <circle cx="240" cy="139" r="4.5" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <text x="256" y="143" font-family="sans-serif" font-size="11" font-weight="600" fill="#334155">Regular Station</text>
+</g>
+</svg>

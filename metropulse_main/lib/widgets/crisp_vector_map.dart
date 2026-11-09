@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/metro_line.dart';
 import '../models/route_result.dart';
 import '../models/station.dart';
+import 'delhi_schematic_coords.dart';
 
 class CrispVectorMap extends StatefulWidget {
   final String cityId;
@@ -45,8 +46,8 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   late AnimationController _animationController;
   Animation<Matrix4>? _animation;
 
-  static const double _canvasWidth = 3600.0;
-  static const double _canvasHeight = 2800.0;
+  static const double _canvasWidth = 3800.0;
+  static const double _canvasHeight = 3000.0;
 
   // City-specific SVG assets
   static const Map<String, String> _citySvgAssets = {
@@ -56,6 +57,10 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
     'kolkata': 'assets/maps/kolkata_metro_schematic.svg',
     'hyderabad': 'assets/maps/hyderabad_metro_schematic.svg',
     'chennai': 'assets/maps/chennai_metro_schematic.svg',
+    'pune': 'assets/maps/pune_metro_schematic.svg',
+    'ahmedabad': 'assets/maps/ahmedabad_metro_schematic.svg',
+    'kochi': 'assets/maps/kochi_metro_schematic.svg',
+    'jaipur': 'assets/maps/jaipur_metro_schematic.svg',
   };
 
   // Station positions on schematic canvas (matching the authentic layout)
@@ -161,7 +166,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
     super.didUpdateWidget(oldWidget);
     if (widget.cityId != oldWidget.cityId) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        recenterMap(animate: true);
+        recenterMap(animate: false);
       });
     } else if (widget.highlightedStation != null &&
         widget.highlightedStation != oldWidget.highlightedStation) {
@@ -179,7 +184,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
   Offset _getCityCenterHub(String cityId) {
     switch (cityId) {
       case 'delhi_ncr':
-        return const Offset(1600, 1250); // Rajiv Chowk
+        return const Offset(1450, 1200); // Rajiv Chowk
       case 'mumbai':
         return const Offset(1500, 1300); // Andheri Hub
       case 'bengaluru':
@@ -191,11 +196,14 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
       case 'chennai':
         return const Offset(1900, 1300); // Chennai Central
       default:
-        return const Offset(1600, 1300);
+        return const Offset(1900, 1500);
     }
   }
 
   Offset getStationCanvasOffset(Station station) {
+    if (delhiSchematicCoords.containsKey(station.id)) {
+      return delhiSchematicCoords[station.id]!;
+    }
     if (_schematicStationCoords.containsKey(station.id)) {
       return _schematicStationCoords[station.id]!;
     }
@@ -342,6 +350,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
                   if (svgAsset != null)
                     SvgPicture.asset(
                       svgAsset,
+                      key: ValueKey(svgAsset),
                       width: _canvasWidth,
                       height: _canvasHeight,
                       fit: BoxFit.fill,

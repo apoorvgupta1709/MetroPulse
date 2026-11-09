@@ -266,6 +266,133 @@ cities_config = {
             }
         ],
         'waterway': '<path d="M 2600 0 C 2650 800, 2600 1600, 2650 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="2720" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(90 2720 1100)">BAY OF BENGAL</text>'
+    },
+    'pune': {
+        'title': 'PUNE METRO NETWORK',
+        'width': 3200,
+        'height': 2600,
+        'lines': [
+            {
+                'id': 'purple',
+                'name': 'Purple Line: PCMC - Swargate',
+                'color': '#7C3AED',
+                'stations': [
+                    ('pun_pcmc', 'PCMC', 'पिंपरी-चिंचवड', 1600, 350),
+                    ('pun_sant_tukaram_nagar', 'Sant Tukaram Nagar', 'संत तुकाराम नगर', 1600, 600),
+                    ('pun_bhosari', 'Bhosari (Nashik Phata)', 'भोसरी', 1600, 850),
+                    ('pun_kasarwadi', 'Kasarwadi', 'कासारवाडी', 1600, 1050),
+                    ('pun_phugewadi', 'Phugewadi', 'फुगेवाडी', 1600, 1250),
+                    ('pun_dapodi', 'Dapodi', 'दापोडी', 1600, 1450),
+                    ('pun_bopodi', 'Bopodi', 'बोपोडी', 1600, 1650),
+                    ('pun_shivaji_nagar', 'Shivajinagar', 'शिवाजीनगर', 1600, 1850),
+                    ('pun_civil_court', 'Civil Court Central Interchange', 'सिव्हिल कोर्ट', 1600, 2050),
+                    ('pun_swargate', 'Swargate', 'स्वारगेट', 1600, 2350),
+                ]
+            },
+            {
+                'id': 'aqua',
+                'name': 'Aqua Line: Vanaz - Ramwadi',
+                'color': '#06B6D4',
+                'stations': [
+                    ('pun_vanaz', 'Vanaz', 'वणझ', 600, 2050),
+                    ('pun_anand_nagar', 'Anand Nagar', 'आनंद नगर', 850, 2050),
+                    ('pun_ideal_colony', 'Ideal Colony', 'आयडियल कॉलनी', 1100, 2050),
+                    ('pun_nal_stop', 'Nal Stop', 'नल स्टॉप', 1350, 2050),
+                    ('pun_civil_court', 'Civil Court Central Interchange', 'सिव्हिल कोर्ट', 1600, 2050),
+                    ('pun_pune_railway_station', 'Pune Railway Station', 'पुणे रेल्वे स्टेशन', 1900, 2050),
+                    ('pun_ruby_hall_clinic', 'Ruby Hall Clinic', 'रुबी हॉल क्लिनिक', 2150, 2050),
+                    ('pun_bund_garden', 'Bund Garden', 'बंड गार्डन', 2400, 2050),
+                    ('pun_kalyani_nagar', 'Kalyani Nagar', 'कल्याणी नगर', 2650, 2050),
+                    ('pun_ramwadi', 'Ramwadi', 'रामवाडी', 2900, 2050),
+                ]
+            }
+        ],
+        'waterway': '<path d="M 800 1700 C 1200 1800, 1700 1900, 2400 1950 L 3200 1950" fill="none" stroke="#E0F2FE" stroke-width="40"/><text x="1400" y="1840" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6">MULA-MUTHA RIVER</text>'
+    },
+    'ahmedabad': {
+        'title': 'AHMEDABAD METRO NETWORK',
+        'width': 3200,
+        'height': 2600,
+        'lines': [
+            {
+                'id': 'red',
+                'name': 'North-South Line: Motera Stadium - APMC',
+                'color': '#DC2626',
+                'stations': [
+                    ('ahm_motera_stadium', 'Motera Stadium', 'મોટેરા સ્ટેડિયમ', 1600, 400),
+                    ('ahm_sabarmati', 'Sabarmati Railway Station', 'સાબરમતી', 1600, 700),
+                    ('ahm_ranip', 'Ranip', 'રાણીપ', 1600, 1000),
+                    ('ahm_old_high_court', 'Old High Court Interchange', 'ઓલ્ડ હાઈકોર્ટ', 1600, 1300),
+                    ('ahm_paldi', 'Paldi', 'પાલડી', 1600, 1600),
+                    ('ahm_vasna', 'Vasna', 'વાસણા', 1600, 1900),
+                    ('ahm_apmc', 'APMC', 'એપીએમસી', 1600, 2250),
+                ]
+            },
+            {
+                'id': 'blue',
+                'name': 'East-West Line: Thaltej Gam - Vastral Gam',
+                'color': '#2563EB',
+                'stations': [
+                    ('ahm_thaltej_gam', 'Thaltej Gam', 'થલતેજ ગામ', 600, 1300),
+                    ('ahm_doordarshan', 'Doordarshan Kendra', 'દૂરદર્શન કેન્દ્ર', 900, 1300),
+                    ('ahm_gujarat_university', 'Gujarat University', 'ગુજરાત યુનિવર્સિટી', 1200, 1300),
+                    ('ahm_old_high_court', 'Old High Court Interchange', 'ઓલ્ડ હાઈકોર્ટ', 1600, 1300),
+                    ('ahm_kalupur', 'Kalupur Railway Station', 'કાલુપુર', 2000, 1300),
+                    ('ahm_kankaria_east', 'Kankaria East', 'કાંકરિયા પૂર્વ', 2400, 1300),
+                    ('ahm_vastral_gam', 'Vastral Gam', 'વસ્ત્રાલ ગામ', 2800, 1300),
+                ]
+            }
+        ],
+        'waterway': '<path d="M 1400 0 C 1450 800, 1350 1600, 1450 2600" fill="none" stroke="#E0F2FE" stroke-width="48"/><text x="1420" y="1100" font-family="sans-serif" font-size="16" font-weight="800" fill="#7DD3FC" letter-spacing="8" transform="rotate(88 1420 1100)">SABARMATI RIVER</text>'
+    },
+    'kochi': {
+        'title': 'KOCHI METRO (KMRL)',
+        'width': 3000,
+        'height': 2600,
+        'lines': [
+            {
+                'id': 'cyan',
+                'name': 'Line 1: Aluva - Thripunithura',
+                'color': '#06B6D4',
+                'stations': [
+                    ('koc_aluva', 'Aluva Terminal', 'ആലുവ', 1500, 350),
+                    ('koc_kalamassery', 'Kalamassery', 'കളമശ്ശേരി', 1500, 600),
+                    ('koc_cusat', 'CUSAT', 'കുസാറ്റ്', 1500, 850),
+                    ('koc_edapally', 'Edapally', 'ഇടപ്പള്ളി', 1500, 1100),
+                    ('koc_palarivattom', 'Palarivattom', 'പാലാരിവട്ടം', 1500, 1350),
+                    ('koc_mg_road', 'M.G. Road', 'എം.ജി. റോഡ്', 1500, 1600),
+                    ('koc_maharajas', 'Maharajas College', 'മഹാരാജാസ്', 1500, 1850),
+                    ('koc_vyttila', 'Vyttila Mobility Hub', 'വൈറ്റില', 1500, 2100),
+                    ('koc_thripunithura', 'Thripunithura Terminal', 'തൃപ്പൂണിത്തുറ', 1500, 2350),
+                ]
+            }
+        ],
+        'waterway': '<path d="M 1000 0 C 1100 800, 950 1600, 1100 2600" fill="none" stroke="#E0F2FE" stroke-width="45"/><text x="1050" y="1200" font-family="sans-serif" font-size="15" font-weight="800" fill="#7DD3FC" letter-spacing="6" transform="rotate(86 1050 1200)">VEMBANAD BACKWATERS</text>'
+    },
+    'jaipur': {
+        'title': 'JAIPUR METRO (JMRC)',
+        'width': 3000,
+        'height': 2400,
+        'lines': [
+            {
+                'id': 'pink',
+                'name': 'Pink Line: Mansarovar - Badi Chaupar',
+                'color': '#EC407A',
+                'stations': [
+                    ('jai_mansarovar', 'Mansarovar Terminal', 'मानसरोवर', 500, 1200),
+                    ('jai_new_atish_market', 'New Aatish Market', 'न्यू आतिश मार्केट', 800, 1200),
+                    ('jai_vivek_vihar', 'Vivek Vihar', 'विवेक विहार', 1100, 1200),
+                    ('jai_shyam_nagar', 'Shyam Nagar', 'श्याम नगर', 1400, 1200),
+                    ('jai_civil_lines', 'Civil Lines', 'सिविल लाइन्स', 1700, 1200),
+                    ('jai_railway_station', 'Railway Station', 'रेलवे स्टेशन', 2000, 1200),
+                    ('jai_sindhi_camp', 'Sindhi Camp ISBT Hub', 'सिंधी कैंप', 2250, 1200),
+                    ('jai_chandpole', 'Chandpole Gate', 'चांदपोल', 2500, 1200),
+                    ('jai_chhoti_chaupar', 'Chhoti Chaupar', 'छोटी चौपड़', 2700, 1200),
+                    ('jai_badi_chaupar', 'Badi Chaupar (Hawa Mahal)', 'बड़ी चौपड़', 2900, 1200),
+                ]
+            }
+        ],
+        'waterway': ''
     }
 }
 
