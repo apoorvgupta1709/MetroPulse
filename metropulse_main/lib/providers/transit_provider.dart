@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/city.dart';
 import '../models/metro_line.dart';
 import '../models/route_result.dart';
@@ -41,15 +42,23 @@ class TransitProvider extends ChangeNotifier {
   RouteResult? get fewestChangesRoute => _fewestChangesRoute;
   bool get isCalculating => _isCalculating;
 
+  static const String _savedCityPrefKey = 'metropulse_active_city_id';
+
   TransitProvider() {
     _cities = TransitDataService.supportedCities;
-    _activeCity = _cities.first; // Default: Delhi NCR
+    // Guaranteed baseline default: Delhi NCR
+    final delhi = _cities.firstWhere(
+      (c) => c.id == 'delhi_ncr' || c.name.toLowerCase().contains('delhi'),
+      orElse: () => _cities.first,
+    );
+    _activeCity = delhi;
     _loadCityData(_activeCity.id);
     _initCloudSync();
+    _loadSavedCity();
   }
 
-  void switchCity(City city) {
-    if (_activeCity.id == city.id) return;
+  void switchCity(City city, {bool savePreference = true}) {
+    if (_activeCity.id == city.id && _lines.isNotEmpty) return;
     _activeCity = city;
     _originStation = null;
     _destinationStation = null;
@@ -57,7 +66,37 @@ class TransitProvider extends ChangeNotifier {
     _fewestChangesRoute = null;
     _loadCityData(city.id);
     _subscribeToActiveCityData(city.id);
+    if (savePreference) {
+      _persistSelectedCity(city.id);
+    }
     notifyListeners();
+  }
+
+  Future<void> _persistSelectedCity(String cityId) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_savedCityPrefKey, cityId);
+    } catch (e) {
+      debugPrint('Error saving city preference: $e');
+    }
+  }
+
+  Future<void> _loadSavedCity() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final savedCityId = prefs.getString(_savedCityPrefKey);
+      if (savedCityId != null && savedCityId.isNotEmpty && savedCityId != _activeCity.id) {
+        final match = _cities.firstWhere(
+          (c) => c.id == savedCityId,
+          orElse: () => _activeCity,
+        );
+        if (match.id != _activeCity.id) {
+          switchCity(match, savePreference: false);
+        }
+      }
+    } catch (e) {
+      debugPrint('Error loading saved city: $e');
+    }
   }
 
   void _loadCityData(String cityId) {
