@@ -118,7 +118,15 @@ class AuthProvider extends ChangeNotifier {
       notifyListeners();
       return false;
     } catch (e) {
-      _errorMessage = 'Google Sign-In failed. Please try again or sign in with email.';
+      final err = e.toString();
+      debugPrint('AuthProvider signInWithGoogle exception: $err');
+      if (err.contains('10') || err.contains('DEVELOPER_ERROR')) {
+        _errorMessage = 'Google Sign-In error (ApiException 10): SHA-1 fingerprint needs to be added in Firebase Console.';
+      } else if (err.contains('12500')) {
+        _errorMessage = 'Google Sign-In error (12500): Ensure Google provider is enabled in Firebase Authentication.';
+      } else {
+        _errorMessage = 'Google Sign-In failed. Please try again or sign in with email.';
+      }
       _isLoading = false;
       notifyListeners();
       return false;

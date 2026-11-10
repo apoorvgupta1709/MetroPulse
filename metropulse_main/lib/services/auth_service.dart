@@ -65,6 +65,10 @@ class AuthService {
 
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
+      if (googleAuth.idToken == null && googleAuth.accessToken == null) {
+        throw Exception('Google Authentication returned empty credentials. Please verify Firebase SHA-1 and OAuth configuration.');
+      }
+
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
