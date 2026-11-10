@@ -299,9 +299,9 @@ coords['del_majlis_park'] = (1260, 350)
 coords['del_azadpur'] = (1420, 435) # Yellow interchange
 coords['del_shalimar_bagh'] = (1120, 560)
 coords['del_netaji_subhash_place'] = coords['del_netaji_subhash_place'] # Red interchange
-coords['del_shakurpur'] = (730, 930)
-coords['del_punjabi_bagh_west'] = (680, 1070) # Green interchange
-coords['del_esi_basaidarapur'] = (700, 1240)
+coords['del_shakurpur'] = (720, 885)
+coords['del_punjabi_bagh_west'] = (720, 980) # Green interchange
+coords['del_esi_basaidarapur'] = (600, 1210)
 coords['del_rajouri_garden'] = (480, 1440) # Blue interchange
 coords['del_maya_puri'] = (540, 1550)
 coords['del_naraina_vihar'] = (610, 1630)
@@ -451,29 +451,37 @@ label_rules['del_najafgarh'] = {'angle': 0, 'dx': -16, 'dy': 0, 'anchor': 'end'}
 label_rules['del_dhansa_bus_stand'] = {'angle': 0, 'dx': -16, 'dy': 0, 'anchor': 'end'}
 
 # ------------------------------------------
-# 10. GREEN LINE: Clean Y-Fork Trunk
+# 10. GREEN LINE: Clean Straight Trunk & Interchange
 # ------------------------------------------
 green_trunk = [
     'del_brigadier_hoshiar_singh', 'del_bahadurgarh_city', 'del_pandit_shree_ram_sharma',
     'del_tikri_border', 'del_tikri_kalan', 'del_ghevra_metro', 'del_mundka_industrial_area',
     'del_mundka', 'del_rajdhani_park', 'del_nangloi_railway_station', 'del_nangloi',
     'del_surajmal_stadium', 'del_udyog_nagar', 'del_peera_garhi', 'del_paschim_vihar_west',
-    'del_paschim_vihar_east', 'del_madipur', 'del_shivaji_park', 'del_punjabi_bagh',
-    'del_punjabi_bagh_west', 'del_ashok_park_main'
+    'del_paschim_vihar_east', 'del_madipur', 'del_shivaji_park',
+    'del_punjabi_bagh_west', 'del_punjabi_bagh', 'del_ashok_park_main'
 ]
 g_start = 30
-g_end = 950
-for idx, sid in enumerate(green_trunk):
-    coords[sid] = (g_start + idx * ((g_end - g_start) / (len(green_trunk)-1)), 980)
-    label_rules[sid] = {'angle': -45, 'dx': 8, 'dy': -10, 'anchor': 'start'}
+pb_west_x = 720
+for idx in range(19): # Stations 0 to 18 (up to del_punjabi_bagh_west at index 18)
+    sid = green_trunk[idx]
+    x = g_start + idx * ((pb_west_x - g_start) / 18)
+    coords[sid] = (x, 980)
+    if idx % 2 == 0:
+        label_rules[sid] = {'angle': -45, 'dx': 6, 'dy': -10, 'anchor': 'start'}
+    else:
+        label_rules[sid] = {'angle': 45, 'dx': 6, 'dy': 14, 'anchor': 'start'}
 
-coords['del_ashok_park_main'] = (950, 980)
-coords['del_punjabi_bagh_west'] = (680, 1070)
-coords['del_satguru_ram_singh_marg'] = (880, 1080)
+# Punjabi Bagh & Ashok Park Main
+coords['del_punjabi_bagh_west'] = (720, 980) # Exact Pink Line intersection
+coords['del_punjabi_bagh'] = (840, 980)
+coords['del_ashok_park_main'] = (960, 980)
+coords['del_satguru_ram_singh_marg'] = (870, 1080)
 coords['del_kirti_nagar'] = (780, 1180) # Blue interchange
 
-label_rules['del_ashok_park_main'] = {'angle': 0, 'dx': 16, 'dy': -12, 'anchor': 'start'}
-label_rules['del_punjabi_bagh_west'] = {'angle': 0, 'dx': -16, 'dy': 0, 'anchor': 'end'}
+label_rules['del_punjabi_bagh_west'] = {'angle': -45, 'dx': 6, 'dy': -10, 'anchor': 'start'}
+label_rules['del_punjabi_bagh'] = {'angle': 45, 'dx': 6, 'dy': 14, 'anchor': 'start'}
+label_rules['del_ashok_park_main'] = {'angle': 0, 'dx': 16, 'dy': -6, 'anchor': 'start'}
 label_rules['del_satguru_ram_singh_marg'] = {'angle': 0, 'dx': 16, 'dy': -2, 'anchor': 'start'}
 
 # ------------------------------------------

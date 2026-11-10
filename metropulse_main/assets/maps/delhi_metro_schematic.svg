@@ -13,18 +13,18 @@
   <path id="line-grey" d="M 200.0 2000.0 L 140.0 2080.0 L 80.0 2160.0 L 20.0 2240.0" fill="none" stroke="#78909C" stroke-width="8"/>
   <path id="line-aqua_noida" d="M 3150.0 1720.0 L 3150.0 1764.0 L 3150.0 1808.0 L 3150.0 1852.0 L 3150.0 1896.0 L 3150.0 1940.0 L 3150.0 1984.0 L 3150.0 2028.0 L 3150.0 2072.0 L 3150.0 2116.0 L 3150.0 2160.0 L 3150.0 2204.0 L 3150.0 2248.0 L 3150.0 2292.0 L 3150.0 2336.0 L 3206.0 2370.0 L 3262.0 2404.0 L 3318.0 2438.0 L 3374.0 2472.0 L 3430.0 2506.0 L 3486.0 2540.0" fill="none" stroke="#00BCD4" stroke-width="8"/>
   <path id="line-magenta" d="M 310.0 1740.0 L 360.0 1840.0 L 420.0 1910.0 L 490.0 1950.0 L 620.0 1950.0 L 750.0 1950.0 L 880.0 1950.0 L 1010.0 1950.0 L 1140.0 1950.0 L 1260.0 1950.0 L 1370.0 1950.0 L 1420.0 1950.0 L 1560.0 1950.0 L 1700.0 1950.0 L 1840.0 1950.0 L 1980.0 1950.0 L 2110.0 1920.0 L 2210.0 1870.0 L 2310.0 1820.0 L 2410.0 1770.0 L 2510.0 1720.0 L 2610.0 1670.0 L 2670.0 1660.0 L 2750.0 1640.0 L 2870.0 1600.0" fill="none" stroke="#C2185B" stroke-width="9"/>
-  <path id="line-pink" d="M 1260.0 350.0 L 1420.0 435.0 L 1120.0 560.0 L 720.0 790.0 L 730.0 930.0 L 680.0 1070.0 L 700.0 1240.0 L 480.0 1440.0 L 540.0 1550.0 L 610.0 1630.0 L 700.0 1690.0 L 820.0 1730.0 L 960.0 1730.0 L 1100.0 1730.0 L 1240.0 1730.0 L 1420.0 1730.0 L 1640.0 1710.0 L 1860.0 1680.0 L 1960.0 1630.0 L 2050.0 1560.0 L 2130.0 1470.0 L 2320.0 1390.0 L 2450.0 1390.0 L 2570.0 1330.0 L 2570.0 1240.0 L 2570.0 1150.0 L 2570.0 1060.0 L 2570.0 960.0 L 2440.0 960.0 L 2200.0 920.0 L 2020.0 880.0 L 1850.0 840.0 L 1684.0 790.0 L 1684.0 670.0 L 1684.0 550.0 L 1770.0 460.0 L 1870.0 380.0 L 1970.0 300.0" fill="none" stroke="#EC407A" stroke-width="9.5"/>
+  <path id="line-pink" d="M 1260.0 350.0 L 1420.0 435.0 L 1120.0 560.0 L 720.0 790.0 L 720.0 885.0 L 720.0 980.0 L 600.0 1210.0 L 480.0 1440.0 L 540.0 1550.0 L 610.0 1630.0 L 700.0 1690.0 L 820.0 1730.0 L 960.0 1730.0 L 1100.0 1730.0 L 1240.0 1730.0 L 1420.0 1730.0 L 1640.0 1710.0 L 1860.0 1680.0 L 1960.0 1630.0 L 2050.0 1560.0 L 2130.0 1470.0 L 2320.0 1390.0 L 2450.0 1390.0 L 2570.0 1330.0 L 2570.0 1240.0 L 2570.0 1150.0 L 2570.0 1060.0 L 2570.0 960.0 L 2440.0 960.0 L 2200.0 920.0 L 2020.0 880.0 L 1850.0 840.0 L 1684.0 790.0 L 1684.0 670.0 L 1684.0 550.0 L 1770.0 460.0 L 1870.0 380.0 L 1970.0 300.0" fill="none" stroke="#EC407A" stroke-width="9.5"/>
   <path id="line-violet" d="M 1420.0 790.0 L 1530.0 860.0 L 1620.0 930.0 L 1690.0 1010.0 L 1720.0 1095.0 L 1680.0 1180.0 L 1540.0 1290.0 L 1420.0 1400.0 L 1550.0 1490.0 L 1660.0 1560.0 L 1760.0 1620.0 L 1860.0 1680.0 L 1930.0 1740.0 L 1990.0 1800.0 L 2050.0 1860.0 L 2110.0 1920.0 L 2110.0 1956.0 L 2110.0 1992.0 L 2110.0 2028.0 L 2110.0 2064.0 L 2110.0 2100.0 L 2110.0 2136.0 L 2110.0 2172.0 L 2110.0 2208.0 L 2110.0 2244.0 L 2110.0 2280.0 L 2110.0 2316.0 L 2110.0 2352.0 L 2110.0 2388.0 L 2110.0 2424.0 L 2110.0 2460.0 L 2110.0 2496.0 L 2110.0 2532.0 L 2110.0 2568.0" fill="none" stroke="#7B1FA2" stroke-width="9"/>
   <path id="line-blue_branch" d="M 2020.0 1180.0 L 2120.0 1100.0 L 2220.0 1030.0 L 2320.0 960.0 L 2440.0 960.0 L 2570.0 960.0 L 2700.0 960.0 L 2820.0 960.0" fill="none" stroke="#1565C0" stroke-width="9"/>
   <path id="line-blue" d="M 200.0 2440.0 L 200.0 2385.0 L 200.0 2330.0 L 200.0 2275.0 L 200.0 2220.0 L 200.0 2165.0 L 200.0 2110.0 L 200.0 2055.0 L 200.0 2000.0 L 200.0 2000.0 L 227.5 1935.0 L 255.0 1870.0 L 282.5 1805.0 L 310.0 1740.0 L 344.0 1680.0 L 378.0 1620.0 L 412.0 1560.0 L 446.0 1500.0 L 480.0 1440.0 L 580.0 1345.0 L 680.0 1260.0 L 780.0 1180.0 L 880.0 1180.0 L 980.0 1180.0 L 1080.0 1180.0 L 1180.0 1180.0 L 1270.0 1180.0 L 1350.0 1180.0 L 1420.0 1180.0 L 1540.0 1180.0 L 1680.0 1180.0 L 1800.0 1180.0 L 1910.0 1180.0 L 2020.0 1180.0 L 2120.0 1260.0 L 2320.0 1390.0 L 2420.0 1450.0 L 2520.0 1500.0 L 2620.0 1545.0 L 2720.0 1580.0 L 2800.0 1600.0 L 2870.0 1600.0 L 2940.0 1600.0 L 3010.0 1600.0 L 3080.0 1600.0 L 3150.0 1600.0 L 3215.0 1600.0 L 3275.0 1600.0 L 3335.0 1600.0 L 3390.0 1600.0" fill="none" stroke="#1976D2" stroke-width="9.5"/>
   <path id="line-yellow" d="M 1420.0 150.0 L 1420.0 205.0 L 1420.0 260.0 L 1420.0 315.0 L 1420.0 370.0 L 1420.0 435.0 L 1420.0 495.0 L 1420.0 555.0 L 1420.0 615.0 L 1420.0 670.0 L 1420.0 725.0 L 1420.0 790.0 L 1420.0 870.0 L 1420.0 960.0 L 1420.0 1060.0 L 1420.0 1180.0 L 1420.0 1290.0 L 1420.0 1400.0 L 1420.0 1490.0 L 1420.0 1570.0 L 1420.0 1650.0 L 1420.0 1730.0 L 1420.0 1805.0 L 1420.0 1875.0 L 1420.0 1950.0 L 1420.0 2025.0 L 1420.0 2095.0 L 1420.0 2165.0 L 1480.0 2225.0 L 1540.0 2285.0 L 1600.0 2345.0 L 1660.0 2405.0 L 1720.0 2465.0 L 1780.0 2525.0 L 1680.0 2525.0 L 1580.0 2525.0 L 1460.0 2525.0" fill="none" stroke="#FBC02D" stroke-width="10"/>
   <path id="line-red" d="M 280.0 790.0 L 368.0 790.0 L 456.0 790.0 L 544.0 790.0 L 632.0 790.0 L 720.0 790.0 L 808.0 790.0 L 896.0 790.0 L 984.0 790.0 L 1072.0 790.0 L 1160.0 790.0 L 1248.0 790.0 L 1336.0 790.0 L 1420.0 790.0 L 1508.0 790.0 L 1596.0 790.0 L 1684.0 790.0 L 1772.0 790.0 L 1860.0 790.0 L 1948.0 790.0 L 2036.0 790.0 L 2121.0 660.0 L 2206.0 660.0 L 2291.0 660.0 L 2376.0 660.0 L 2461.0 660.0 L 2546.0 660.0 L 2631.0 660.0 L 2716.0 660.0" fill="none" stroke="#D32F2F" stroke-width="9.5"/>
   <path id="line-airport_express" d="M 1420.0 1060.0 L 1320.0 1340.0 L 780.0 1650.0 L 580.0 1880.0 L 410.0 2100.0 L 200.0 2440.0 L 100.0 2440.0" fill="none" stroke="#F57C00" stroke-width="7.5"/>
-  <path id="line-green_branch1" d="M 30.0 980.0 L 76.0 980.0 L 122.0 980.0 L 168.0 980.0 L 214.0 980.0 L 260.0 980.0 L 306.0 980.0 L 352.0 980.0 L 398.0 980.0 L 444.0 980.0 L 490.0 980.0 L 536.0 980.0 L 582.0 980.0 L 628.0 980.0 L 674.0 980.0 L 720.0 980.0 L 766.0 980.0 L 812.0 980.0 L 858.0 980.0 L 680.0 1070.0 L 950.0 980.0" fill="none" stroke="#388E3C" stroke-width="8.5"/>
+  <path id="line-green_branch1" d="M 30.0 980.0 L 68.3 980.0 L 106.7 980.0 L 145.0 980.0 L 183.3 980.0 L 221.7 980.0 L 260.0 980.0 L 298.3 980.0 L 336.7 980.0 L 375.0 980.0 L 413.3 980.0 L 451.7 980.0 L 490.0 980.0 L 528.3 980.0 L 566.7 980.0 L 605.0 980.0 L 643.3 980.0 L 681.7 980.0 L 720.0 980.0 L 840.0 980.0 L 960.0 980.0" fill="none" stroke="#388E3C" stroke-width="8.5"/>
   <path id="line-rapid-loop" d="M 1780 2525 L 1860 2450 L 1860 2375 L 1860 2300 L 2000 2300 L 2000 2450 L 1780 2525" fill="none" stroke="#0288D1" stroke-width="7.5"/>
   <path id="line-rapid-spur" d="M 1780 2525 L 1860 2580 L 1860 2630 L 1860 2680 L 1860 2730 L 1860 2780" fill="none" stroke="#0288D1" stroke-width="7.5"/>
-  <path d="M 950 980 L 984 790" fill="none" stroke="#388E3C" stroke-width="8.5"/>
-  <path d="M 950 980 L 880 1080 L 780 1180" fill="none" stroke="#388E3C" stroke-width="8.5"/>
+  <path d="M 960 980 L 984 790" fill="none" stroke="#388E3C" stroke-width="8.5"/>
+  <path d="M 960 980 L 870 1080 L 780 1180" fill="none" stroke="#388E3C" stroke-width="8.5"/>
 </g>
 <!-- STATIONS & LABELS LAYER -->
 <g id="stations-layer">
@@ -762,111 +762,111 @@
     <text x="2734.0" y="657.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शहीद स्थल</text>
     <text x="2734.0" y="668.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shaheed Sthal</text>
   </g>
-  <circle cx="950.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="960.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="966.0" y="957.5" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">अशोक पार्क मेन</text>
-    <text x="966.0" y="968.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ashok Park Main</text>
+    <text x="976.0" y="971.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">अशोक पार्क मेन</text>
+    <text x="976.0" y="982.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ashok Park Main</text>
   </g>
-  <circle cx="858.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 866.0 970.0)">
-    <text x="866.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पंजाबी बाग़</text>
-    <text x="866.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Punjabi Bagh</text>
+  <circle cx="840.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 846.0 994.0)">
+    <text x="846.0" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पंजाबी बाग़</text>
+    <text x="846.0" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Punjabi Bagh</text>
   </g>
-  <circle cx="680.0" cy="1070.0" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
-  <circle cx="680.0" cy="1070.0" r="3.4" fill="#0F172A"/>
-  <g>
-    <text x="664.0" y="1067.0" text-anchor="end" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">पंजाबी बाग़ पश्चिम</text>
-    <text x="664.0" y="1079.5" text-anchor="end" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Punjabi Bagh West</text>
+  <circle cx="720.0" cy="980.0" r="8.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.6"/>
+  <circle cx="720.0" cy="980.0" r="3.4" fill="#0F172A"/>
+  <g transform="rotate(-45 726.0 970.0)">
+    <text x="726.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="10" font-weight="bold" fill="#334155">पंजाबी बाग़ पश्चिम</text>
+    <text x="726.0" y="979.5" text-anchor="start" font-family="sans-serif" font-size="11.5" font-weight="900" fill="#020617">Punjabi Bagh West</text>
   </g>
-  <circle cx="812.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 820.0 970.0)">
-    <text x="820.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शिवाजी पार्क</text>
-    <text x="820.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shivaji Park</text>
+  <circle cx="681.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 687.7 994.0)">
+    <text x="687.7" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शिवाजी पार्क</text>
+    <text x="687.7" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shivaji Park</text>
   </g>
-  <circle cx="766.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 774.0 970.0)">
-    <text x="774.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मादीपुर</text>
-    <text x="774.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Madipur</text>
+  <circle cx="643.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 649.3 970.0)">
+    <text x="649.3" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मादीपुर</text>
+    <text x="649.3" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Madipur</text>
   </g>
-  <circle cx="720.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 728.0 970.0)">
-    <text x="728.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पश्चिम विहार पूर्व</text>
-    <text x="728.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Paschim Vihar East</text>
+  <circle cx="605.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 611.0 994.0)">
+    <text x="611.0" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पश्चिम विहार पूर्व</text>
+    <text x="611.0" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Paschim Vihar East</text>
   </g>
-  <circle cx="674.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 682.0 970.0)">
-    <text x="682.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पश्चिम विहार पश्चिम</text>
-    <text x="682.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Paschim Vihar West</text>
+  <circle cx="566.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 572.7 970.0)">
+    <text x="572.7" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पश्चिम विहार पश्चिम</text>
+    <text x="572.7" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Paschim Vihar West</text>
   </g>
-  <circle cx="628.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 636.0 970.0)">
-    <text x="636.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पीरागढ़ी</text>
-    <text x="636.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Peera Garhi</text>
-  </g>
-  <circle cx="582.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 590.0 970.0)">
-    <text x="590.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">उद्योग नगर</text>
-    <text x="590.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Udyog Nagar</text>
-  </g>
-  <circle cx="536.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 544.0 970.0)">
-    <text x="544.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">महाराजा सूरजमल स्टेडियम</text>
-    <text x="544.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Maharaja Surajmal Stadium</text>
+  <circle cx="528.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 534.3 994.0)">
+    <text x="534.3" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पीरागढ़ी</text>
+    <text x="534.3" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Peera Garhi</text>
   </g>
   <circle cx="490.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 498.0 970.0)">
-    <text x="498.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">नांगलोई</text>
-    <text x="498.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nangloi</text>
+  <g transform="rotate(-45 496.0 970.0)">
+    <text x="496.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">उद्योग नगर</text>
+    <text x="496.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Udyog Nagar</text>
   </g>
-  <circle cx="444.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 452.0 970.0)">
-    <text x="452.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">नांगलोई</text>
-    <text x="452.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nangloi</text>
+  <circle cx="451.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 457.7 994.0)">
+    <text x="457.7" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">महाराजा सूरजमल स्टेडियम</text>
+    <text x="457.7" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Maharaja Surajmal Stadium</text>
   </g>
-  <circle cx="398.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 406.0 970.0)">
-    <text x="406.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">राजधानी पार्क</text>
-    <text x="406.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Rajdhani Park</text>
+  <circle cx="413.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 419.3 970.0)">
+    <text x="419.3" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">नांगलोई</text>
+    <text x="419.3" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nangloi</text>
   </g>
-  <circle cx="352.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 360.0 970.0)">
-    <text x="360.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मुंडका</text>
-    <text x="360.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mundka</text>
+  <circle cx="375.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 381.0 994.0)">
+    <text x="381.0" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">नांगलोई</text>
+    <text x="381.0" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Nangloi</text>
   </g>
-  <circle cx="306.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 314.0 970.0)">
-    <text x="314.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मुंडका औद्योगिक क्षेत्र</text>
-    <text x="314.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mundka Industrial Area</text>
+  <circle cx="336.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 342.7 970.0)">
+    <text x="342.7" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">राजधानी पार्क</text>
+    <text x="342.7" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Rajdhani Park</text>
+  </g>
+  <circle cx="298.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 304.3 994.0)">
+    <text x="304.3" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मुंडका</text>
+    <text x="304.3" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mundka</text>
   </g>
   <circle cx="260.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 268.0 970.0)">
-    <text x="268.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">घेवरा</text>
-    <text x="268.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ghevra</text>
+  <g transform="rotate(-45 266.0 970.0)">
+    <text x="266.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">मुंडका औद्योगिक क्षेत्र</text>
+    <text x="266.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Mundka Industrial Area</text>
   </g>
-  <circle cx="214.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 222.0 970.0)">
-    <text x="222.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">टिकरी कलाँ</text>
-    <text x="222.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tikri Kalan</text>
+  <circle cx="221.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 227.7 994.0)">
+    <text x="227.7" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">घेवरा</text>
+    <text x="227.7" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Ghevra</text>
   </g>
-  <circle cx="168.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 176.0 970.0)">
-    <text x="176.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">टिकरी बॉर्डर</text>
-    <text x="176.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tikri Border</text>
+  <circle cx="183.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 189.3 970.0)">
+    <text x="189.3" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">टिकरी कलाँ</text>
+    <text x="189.3" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tikri Kalan</text>
   </g>
-  <circle cx="122.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 130.0 970.0)">
-    <text x="130.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पंडित श्री राम शर्मा</text>
-    <text x="130.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Pandit Shree Ram Sharma</text>
+  <circle cx="145.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 151.0 994.0)">
+    <text x="151.0" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">टिकरी बॉर्डर</text>
+    <text x="151.0" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Tikri Border</text>
   </g>
-  <circle cx="76.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 84.0 970.0)">
-    <text x="84.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बहादुरगढ़ सिटी</text>
-    <text x="84.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bahadurgarh City</text>
+  <circle cx="106.7" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(-45 112.7 970.0)">
+    <text x="112.7" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">पंडित श्री राम शर्मा</text>
+    <text x="112.7" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Pandit Shree Ram Sharma</text>
+  </g>
+  <circle cx="68.3" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <g transform="rotate(45 74.3 994.0)">
+    <text x="74.3" y="994.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">बहादुरगढ़ सिटी</text>
+    <text x="74.3" y="1005.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Bahadurgarh City</text>
   </g>
   <circle cx="30.0" cy="980.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
-  <g transform="rotate(-45 38.0 970.0)">
-    <text x="38.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ब्रिगेडियर होशियार सिंह</text>
-    <text x="38.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Brigadier Hoshiar Singh</text>
+  <g transform="rotate(-45 36.0 970.0)">
+    <text x="36.0" y="967.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ब्रिगेडियर होशियार सिंह</text>
+    <text x="36.0" y="978.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Brigadier Hoshiar Singh</text>
   </g>
   <circle cx="1530.0" cy="860.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
@@ -1134,15 +1134,15 @@
     <text x="1136.0" y="557.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शालीमार बाग़</text>
     <text x="1136.0" y="568.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shalimar Bagh</text>
   </g>
-  <circle cx="730.0" cy="930.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="720.0" cy="885.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="746.0" y="927.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शकूरपुर</text>
-    <text x="746.0" y="938.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shakurpur</text>
+    <text x="736.0" y="882.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">शकूरपुर</text>
+    <text x="736.0" y="893.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Shakurpur</text>
   </g>
-  <circle cx="700.0" cy="1240.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="600.0" cy="1210.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
-    <text x="716.0" y="1237.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ईएसआई बसईदारापुर</text>
-    <text x="716.0" y="1248.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">ESI Basaidarapur Hospital</text>
+    <text x="616.0" y="1207.0" text-anchor="start" font-family="sans-serif" font-size="8.8" font-weight="600" fill="#475569">ईएसआई बसईदारापुर</text>
+    <text x="616.0" y="1218.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">ESI Basaidarapur Hospital</text>
   </g>
   <circle cx="540.0" cy="1550.0" r="4.2" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
   <g>
