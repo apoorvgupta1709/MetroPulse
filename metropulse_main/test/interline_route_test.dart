@@ -13,6 +13,33 @@ void main() {
       graphService = TransitGraphService(stations: stations, lines: lines);
     });
 
+    test('Airport T3 to Anand Vihar ISBT trace', () {
+      final rFastest = graphService.calculateRoute(
+        originStationId: 'del_igi_airport_t3',
+        destinationStationId: 'del_anand_vihar_isbt',
+        mode: RouteMode.fastest,
+      );
+      print('=== AIRPORT TO ANAND VIHAR FASTEST ===');
+      if (rFastest != null) {
+        print('${rFastest.totalStationsCount} stations, ${rFastest.travelTimeMinutes} mins, ${rFastest.numberOfInterchanges} changes');
+        for (var s in rFastest.steps) {
+          print('${s.station.name} (${s.line.name}) ${s.isInterchangePoint ? "[INTERCHANGE]" : ""}');
+        }
+      }
+      final rFewest = graphService.calculateRoute(
+        originStationId: 'del_igi_airport_t3',
+        destinationStationId: 'del_anand_vihar_isbt',
+        mode: RouteMode.fewestChanges,
+      );
+      print('=== AIRPORT TO ANAND VIHAR FEWEST ===');
+      if (rFewest != null) {
+        print('${rFewest.totalStationsCount} stations, ${rFewest.travelTimeMinutes} mins, ${rFewest.numberOfInterchanges} changes');
+        for (var s in rFewest.steps) {
+          print('${s.station.name} (${s.line.name}) ${s.isInterchangePoint ? "[INTERCHANGE]" : ""}');
+        }
+      }
+    });
+
     test('Samaypur Badli to Anand Vihar ISBT trace', () {
       final rFastest = graphService.calculateRoute(
         originStationId: 'del_samaypur_badli',

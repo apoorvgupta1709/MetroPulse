@@ -49,8 +49,8 @@ class TransitGraphService {
         final s2 = stationMap[s2Id];
 
         if (s1 != null && s2 != null) {
-          // Average travel time between two adjacent metro stations: 2.2 minutes
-          const hopTime = 2.2;
+          final isExpress = line.id.toLowerCase().contains('airport');
+          final hopTime = isExpress ? 3.2 : 2.1;
 
           _adjacencyList.putIfAbsent(s1.id, () => []).add(
                 _GraphEdge(toStation: s2, line: line, weightMinutes: hopTime),
@@ -107,23 +107,59 @@ class TransitGraphService {
     final destination = stationMap[destinationStationId];
     if (origin == null || destination == null) return null;
 
-    final primary = _runRouting(
+    final fastest = _runRouting(
       origin: origin,
       destination: destination,
-      mode: mode,
+      mode: RouteMode.fastest,
       currencySymbol: currencySymbol,
     );
 
-    if (primary != null) return primary;
+    if (mode == RouteMode.fastest) {
+      return fastest ??
+          _runRouting(
+            origin: origin,
+            destination: destination,
+            mode: RouteMode.fewestChanges,
+            currencySymbol: currencySymbol,
+          );
+    }
 
-    // Graceful fallback to alternative routing mode if one found no path
-    final altMode = (mode == RouteMode.fastest) ? RouteMode.fewestChanges : RouteMode.fastest;
-    return _runRouting(
+    // Mode is RouteMode.fewestChanges:
+    final fewest = _runRouting(
       origin: origin,
       destination: destination,
-      mode: altMode,
+      mode: RouteMode.fewestChanges,
       currencySymbol: currencySymbol,
     );
+
+    if (fewest == null) return fastest;
+    if (fastest == null) return fewest;
+
+    // Guardrail: If fewest changes takes > 35% longer travel time or > 14 extra mins than fastest,
+    // it's an unreasonable detour (e.g. 80 mins vs 40 mins). Fall back to fastest route!
+    final maxAllowedMinutes = max(
+      (fastest.travelTimeMinutes * 1.35).round(),
+      fastest.travelTimeMinutes + 14,
+    );
+    if (fewest.travelTimeMinutes > maxAllowedMinutes) {
+      return fastest;
+    }
+
+    return fewest;
+  }
+
+  static double _haversineDistanceKm(double lat1, double lon1, double lat2, double lon2) {
+    if (lat1 == 0.0 || lon1 == 0.0 || lat2 == 0.0 || lon2 == 0.0) return 0.0;
+    const r = 6371.0; // Earth radius in km
+    final dLat = (lat2 - lat1) * pi / 180.0;
+    final dLon = (lon2 - lon1) * pi / 180.0;
+    final a = sin(dLat / 2) * sin(dLat / 2) +
+        cos(lat1 * pi / 180.0) *
+            cos(lat2 * pi / 180.0) *
+            sin(dLon / 2) *
+            sin(dLon / 2);
+    final c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    return r * c;
   }
 
   bool _isSameLineFamily(String? line1, String? line2) {
@@ -172,21 +208,58 @@ class TransitGraphService {
       }
 
       final neighbors = _adjacencyList[current.stationId] ?? [];
+      final fromStation = stationMap[current.stationId];
+
       for (final edge in neighbors) {
-        // Line transfer penalty
-        double penalty = 0.0;
-        if (current.lineId != null && current.lineId != edge.line.id) {
-          final isSameFamily = _isSameLineFamily(current.lineId, edge.line.id);
-          if (isSameFamily) {
-            penalty = (mode == RouteMode.fewestChanges) ? 1.0 : 1.5;
-          } else {
-            // Balanced penalty: ~18 hops equivalent for fewest changes
-            // Prioritizes fewer transfers while strictly preventing absurd 30-station detours
-            penalty = (mode == RouteMode.fewestChanges) ? 18.0 : 5.0;
+        final toStation = edge.toStation;
+
+        // Spatial progression / Anti-detour penalty
+        double backtrackPenalty = 0.0;
+        if (fromStation != null) {
+          final distFromToDest = _haversineDistanceKm(
+            fromStation.latitude,
+            fromStation.longitude,
+            destination.latitude,
+            destination.longitude,
+          );
+          final distToToDest = _haversineDistanceKm(
+            toStation.latitude,
+            toStation.longitude,
+            destination.latitude,
+            destination.longitude,
+          );
+
+          if (distFromToDest > 0.0 && distToToDest > 0.0) {
+            final delta = distToToDest - distFromToDest;
+            // When a transit hop moves substantially further away from destination
+            if (delta > 0.8) {
+              backtrackPenalty = (delta - 0.8) * 3.0;
+            }
           }
         }
 
-        final hopCost = (mode == RouteMode.fewestChanges) ? (1.0 + penalty) : (edge.weightMinutes + penalty);
+        // Line transfer penalty
+        double transferPenalty = 0.0;
+        bool isLineSwitch = false;
+        if (current.lineId != null && current.lineId != edge.line.id) {
+          final isSameFamily = _isSameLineFamily(current.lineId, edge.line.id);
+          if (isSameFamily) {
+            transferPenalty = 1.0;
+          } else {
+            isLineSwitch = true;
+            transferPenalty = 4.5;
+          }
+        }
+
+        final double hopCost;
+        if (mode == RouteMode.fastest) {
+          hopCost = edge.weightMinutes + transferPenalty + backtrackPenalty;
+        } else {
+          // Fewest Changes: value saving a line change at ~12 mins, with strong anti-detour weight
+          final changeWeight = isLineSwitch ? 12.0 : 0.0;
+          hopCost = edge.weightMinutes + changeWeight + (backtrackPenalty * 3.5);
+        }
+
         final newCost = current.cost + hopCost;
 
         final nextState = _RouteState(edge.toStation.id, newCost, edge.line.id);
