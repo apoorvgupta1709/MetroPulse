@@ -139,44 +139,65 @@ class TransitProvider extends ChangeNotifier {
     // 2. Real-time Stations synchronization
     _stationsSubscription = TransitSyncService.streamStations(cityId).listen((cloudStations) {
       if (cloudStations.isNotEmpty) {
+        bool changed = false;
         final Map<String, Station> map = {for (var s in _stations) s.id: s};
         for (var cs in cloudStations) {
+          final local = map[cs.id];
+          if (local != null && (cs.name.isEmpty || cs.latitude == 0.0)) {
+            continue;
+          }
           map[cs.id] = cs;
+          changed = true;
         }
-        _stations = map.values.toList();
-        _graphService = TransitGraphService(stations: _stations, lines: _lines);
+        if (changed) {
+          _stations = map.values.toList();
+          _graphService = TransitGraphService(stations: _stations, lines: _lines);
 
-        // Keep origin/destination intact or refresh if modified
-        if (_originStation != null) {
-          _originStation = _stations.firstWhere(
-            (s) => s.id == _originStation!.id,
-            orElse: () => _originStation!,
-          );
-        }
-        if (_destinationStation != null) {
-          _destinationStation = _stations.firstWhere(
-            (s) => s.id == _destinationStation!.id,
-            orElse: () => _destinationStation!,
-          );
-        }
+          // Keep origin/destination intact or refresh if modified
+          if (_originStation != null) {
+            _originStation = _stations.firstWhere(
+              (s) => s.id == _originStation!.id,
+              orElse: () => _originStation!,
+            );
+          }
+          if (_destinationStation != null) {
+            _destinationStation = _stations.firstWhere(
+              (s) => s.id == _destinationStation!.id,
+              orElse: () => _destinationStation!,
+            );
+          }
 
-        if (_originStation != null && _destinationStation != null) {
-          computeRoutes();
+          if (_originStation != null && _destinationStation != null) {
+            computeRoutes();
+          }
+          notifyListeners();
         }
-        notifyListeners();
       }
     }, onError: (e) => debugPrint('TransitProvider cloud stations sync notice: $e'));
 
     // 3. Real-time Lines synchronization
     _linesSubscription = TransitSyncService.streamLines(cityId).listen((cloudLines) {
       if (cloudLines.isNotEmpty) {
+        bool changed = false;
         final Map<String, MetroLine> map = {for (var l in _lines) l.id: l};
         for (var cl in cloudLines) {
+          final local = map[cl.id];
+          // Guardrail: Never let a truncated/degraded cloud document overwrite verified local data
+          if (local != null && cl.stationIds.length < local.stationIds.length) {
+            debugPrint('TransitProvider: Ignoring truncated cloud line ${cl.id} (${cl.stationIds.length} vs local ${local.stationIds.length})');
+            continue;
+          }
           map[cl.id] = cl;
+          changed = true;
         }
-        _lines = map.values.toList();
-        _graphService = TransitGraphService(stations: _stations, lines: _lines);
-        notifyListeners();
+        if (changed) {
+          _lines = map.values.toList();
+          _graphService = TransitGraphService(stations: _stations, lines: _lines);
+          if (_originStation != null && _destinationStation != null) {
+            computeRoutes();
+          }
+          notifyListeners();
+        }
       }
     }, onError: (e) => debugPrint('TransitProvider cloud lines sync notice: $e'));
 
