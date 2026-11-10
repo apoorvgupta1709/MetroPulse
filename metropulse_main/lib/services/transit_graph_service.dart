@@ -323,48 +323,42 @@ class TransitGraphService {
     final steps = <RouteStep>[];
     int cumulativeMinutes = 0;
     int interchanges = 0;
-    MetroLine? activeLine;
+    MetroLine activeLine = pathEdges.isNotEmpty ? pathEdges.first.line : lineMap.values.first;
 
     for (int i = 0; i < pathStations.length; i++) {
       final stn = pathStations[i];
-      MetroLine? lineForThisHop;
-      if (i < pathEdges.length) {
-        lineForThisHop = pathEdges[i].line;
-      } else if (pathEdges.isNotEmpty) {
-        lineForThisHop = pathEdges.last.line;
-      } else {
-        lineForThisHop = lineMap.values.first;
-      }
-
       bool isInterchange = false;
       MetroLine? nextLine;
-      if (activeLine != null && activeLine.id != lineForThisHop.id) {
-        final sameFamily = _isSameLineFamily(activeLine.id, lineForThisHop.id);
-        if (!sameFamily) {
-          isInterchange = true;
-          interchanges++;
-          cumulativeMinutes += 5; // 5 min transfer walking & train wait
-        } else {
-          cumulativeMinutes += 1; // 1 min cross-platform transfer
-        }
-      }
-
-      if (i < pathEdges.length - 1 && pathEdges[i].line.id != pathEdges[i + 1].line.id) {
-        final sameFamily = _isSameLineFamily(pathEdges[i].line.id, pathEdges[i + 1].line.id);
-        if (!sameFamily) {
-          isInterchange = true;
-          nextLine = pathEdges[i + 1].line;
-        }
-      }
 
       if (i > 0) {
-        cumulativeMinutes += 2; // 2 min station traversal
+        cumulativeMinutes += 2; // Standard traversal time to reach this station
       }
 
+      // Check if station i is an interchange point where lines switch
+      if (i > 0 && i < pathStations.length - 1) {
+        final incomingEdge = pathEdges[i - 1];
+        final outgoingEdge = pathEdges[i];
+
+        if (incomingEdge.line.id != outgoingEdge.line.id) {
+          final sameFamily = _isSameLineFamily(incomingEdge.line.id, outgoingEdge.line.id);
+          isInterchange = true;
+          nextLine = outgoingEdge.line;
+          if (!sameFamily) {
+            interchanges++;
+            cumulativeMinutes += 5; // 5 min transfer walking & train wait
+          } else {
+            cumulativeMinutes += 1; // 1 min cross-platform transfer
+          }
+          activeLine = outgoingEdge.line;
+        }
+      }
+
+      final lineForThisHop = activeLine;
+      final nextStation = (i < pathStations.length - 1) ? pathStations[i + 1] : null;
       final directionText = _computeDirection(
         stn,
         lineForThisHop,
-        i < pathStations.length - 1 ? pathStations[i + 1] : null,
+        nextStation,
       );
 
       steps.add(RouteStep(
@@ -376,8 +370,6 @@ class TransitGraphService {
         platformGuide: stn.platformDirections[lineForThisHop.id] ?? 'Check concourse signage',
         directionHeading: directionText,
       ));
-
-      activeLine = lineForThisHop;
     }
 
     final totalHops = max(1, pathStations.length - 1);
