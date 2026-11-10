@@ -23,7 +23,7 @@ class _InteractiveMapScreenState extends State<InteractiveMapScreen> {
   final GlobalKey<CrispVectorMapState> _mapKey = GlobalKey<CrispVectorMapState>();
 
   Station? _highlightedStation;
-  final bool _overlayActiveRoute = true;
+  bool _overlayActiveRoute = false;
   bool _isFullscreen = false;
   bool _is4KActive = true;
 
@@ -452,6 +452,78 @@ class _InteractiveMapScreenState extends State<InteractiveMapScreen> {
                           },
                         ),
                       ),
+                  ],
+                ),
+              ),
+
+            // Optional Route Overlay Control Banner
+            if (transit.fastestRoute != null && !_isFullscreen)
+              Container(
+                margin: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.05),
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    )
+                  ],
+                  border: Border.all(
+                    color: _overlayActiveRoute
+                        ? Theme.of(context).colorScheme.primary
+                        : Colors.grey.shade300,
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.alt_route,
+                      size: 16,
+                      color: _overlayActiveRoute
+                          ? Theme.of(context).colorScheme.primary
+                          : Colors.grey.shade600,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'Route: ${transit.originStation?.name ?? ""} ➔ ${transit.destinationStation?.name ?? ""}',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.plusJakartaSans(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          _overlayActiveRoute = !_overlayActiveRoute;
+                        });
+                      },
+                      borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: _overlayActiveRoute
+                              ? Theme.of(context).colorScheme.primary
+                              : Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          _overlayActiveRoute ? 'Hide Route' : 'Show Route',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w800,
+                            color: _overlayActiveRoute ? Colors.white : Colors.grey.shade800,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

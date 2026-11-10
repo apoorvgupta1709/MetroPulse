@@ -614,41 +614,136 @@ class _RouteOverlayPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     if (activeRoute.steps.isEmpty) return;
 
-    final glowPaint = Paint()
-      ..color = Colors.cyanAccent.withOpacity(0.5)
-      ..strokeWidth = 24.0
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round
-      ..style = PaintingStyle.stroke;
+    // 1. Draw segmented route with authentic line colors
+    for (int i = 0; i < activeRoute.steps.length - 1; i++) {
+      final step = activeRoute.steps[i];
+      final nextStep = activeRoute.steps[i + 1];
+      final pos1 = getStationOffset(step.station);
+      final pos2 = getStationOffset(nextStep.station);
 
-    final corePaint = Paint()
-      ..color = Colors.cyanAccent
-      ..strokeWidth = 12.0
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round
-      ..style = PaintingStyle.stroke;
+      // Determine segment color from the actual metro line
+      Color segmentColor = const Color(0xFF1976D2);
+      try {
+        final hex = step.line.colorHex.replaceAll('#', '');
+        segmentColor = Color(int.parse('FF$hex', radix: 16));
+      } catch (_) {}
 
-    final path = Path();
-    for (int i = 0; i < activeRoute.steps.length; i++) {
-      final pos = getStationOffset(activeRoute.steps[i].station);
-      if (i == 0) {
-        path.moveTo(pos.dx, pos.dy);
+      // If this is an interchange transition across lines or pedestrian walkway
+      final isTransferHop = step.isInterchangePoint || step.line.id != nextStep.line.id;
+
+      if (isTransferHop) {
+        // Dotted interchange transfer connector
+        final transferPaint = Paint()
+          ..color = const Color(0xFF475569)
+          ..strokeWidth = 3.5
+          ..strokeCap = StrokeCap.round
+          ..style = PaintingStyle.stroke;
+        _drawDottedLine(canvas, pos1, pos2, transferPaint);
       } else {
-        path.lineTo(pos.dx, pos.dy);
+        // Outer glow in line's own authentic color
+        final glowPaint = Paint()
+          ..color = segmentColor.withValues(alpha: 0.38)
+          ..strokeWidth = 18.0
+          ..strokeCap = StrokeCap.round
+          ..style = PaintingStyle.stroke;
+        canvas.drawLine(pos1, pos2, glowPaint);
+
+        // Core line stroke in line's authentic color
+        final corePaint = Paint()
+          ..color = segmentColor
+          ..strokeWidth = 8.0
+          ..strokeCap = StrokeCap.round
+          ..style = PaintingStyle.stroke;
+        canvas.drawLine(pos1, pos2, corePaint);
+
+        // Crisp white navigation guide spine
+        final guidePaint = Paint()
+          ..color = Colors.white.withValues(alpha: 0.85)
+          ..strokeWidth = 2.4
+          ..strokeCap = StrokeCap.round
+          ..style = PaintingStyle.stroke;
+        canvas.drawLine(pos1, pos2, guidePaint);
       }
     }
 
-    canvas.drawPath(path, glowPaint);
-    canvas.drawPath(path, corePaint);
+    // 2. Intermediate station nodes and interchange markers
+    for (int i = 1; i < activeRoute.steps.length - 1; i++) {
+      final step = activeRoute.steps[i];
+      final pos = getStationOffset(step.station);
 
+      if (step.isInterchangePoint) {
+        // Interchange badge
+        canvas.drawCircle(pos, 10, Paint()..color = Colors.white);
+        canvas.drawCircle(
+          pos,
+          10,
+          Paint()
+            ..color = const Color(0xFF0F172A)
+            ..strokeWidth = 2.5
+            ..style = PaintingStyle.stroke,
+        );
+        canvas.drawCircle(pos, 4, Paint()..color = const Color(0xFF0F172A));
+      } else {
+        // Station node along route
+        Color nodeColor = const Color(0xFF1976D2);
+        try {
+          final hex = step.line.colorHex.replaceAll('#', '');
+          nodeColor = Color(int.parse('FF$hex', radix: 16));
+        } catch (_) {}
+
+        canvas.drawCircle(pos, 5, Paint()..color = Colors.white);
+        canvas.drawCircle(
+          pos,
+          5,
+          Paint()
+            ..color = nodeColor
+            ..strokeWidth = 2.0
+            ..style = PaintingStyle.stroke,
+        );
+      }
+    }
+
+    // 3. Prominent Origin Marker (Emerald Green)
     final originPos = getStationOffset(activeRoute.steps.first.station);
+    canvas.drawCircle(
+      originPos,
+      20,
+      Paint()..color = const Color(0xFF10B981).withValues(alpha: 0.3),
+    );
+    canvas.drawCircle(originPos, 13, Paint()..color = const Color(0xFF10B981));
+    canvas.drawCircle(originPos, 5, Paint()..color = Colors.white);
+
+    // 4. Prominent Destination Marker (Crimson Red)
     final destPos = getStationOffset(activeRoute.steps.last.station);
+    canvas.drawCircle(
+      destPos,
+      20,
+      Paint()..color = const Color(0xFFEF4444).withValues(alpha: 0.3),
+    );
+    canvas.drawCircle(destPos, 13, Paint()..color = const Color(0xFFEF4444));
+    canvas.drawCircle(destPos, 5, Paint()..color = Colors.white);
+  }
 
-    final startPin = Paint()..color = Colors.greenAccent;
-    final endPin = Paint()..color = Colors.deepOrangeAccent;
+  void _drawDottedLine(Canvas canvas, Offset p1, Offset p2, Paint paint) {
+    const double dashWidth = 5.0;
+    const double dashSpace = 4.0;
+    final double dx = p2.dx - p1.dx;
+    final double dy = p2.dy - p1.dy;
+    final double distance = sqrt(dx * dx + dy * dy);
+    if (distance == 0) return;
+    final double unitX = dx / distance;
+    final double unitY = dy / distance;
 
-    canvas.drawCircle(originPos, 16, startPin);
-    canvas.drawCircle(destPos, 16, endPin);
+    double currentDist = 0.0;
+    while (currentDist < distance) {
+      final double nextDist = min(currentDist + dashWidth, distance);
+      canvas.drawLine(
+        Offset(p1.dx + unitX * currentDist, p1.dy + unitY * currentDist),
+        Offset(p1.dx + unitX * nextDist, p1.dy + unitY * nextDist),
+        paint,
+      );
+      currentDist += dashWidth + dashSpace;
+    }
   }
 
   @override
