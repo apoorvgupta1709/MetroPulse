@@ -407,52 +407,7 @@ class CrispVectorMapState extends State<CrispVectorMap> with SingleTickerProvide
           ),
         ),
 
-        // 2. Floating "4K" Ultra-Crisp Badge (Top Left matching screenshot)
-        Positioned(
-          top: 14,
-          left: 16,
-          child: GestureDetector(
-            onTap: widget.onToggle4K ?? () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('4K Ultra-Crisp Vector Engine Active • 0% Blur'),
-                  duration: Duration(seconds: 2),
-                ),
-              );
-            },
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-              decoration: BoxDecoration(
-                color: const Color(0xFF0F172A),
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.25),
-                    blurRadius: 8,
-                    offset: const Offset(0, 3),
-                  )
-                ],
-                border: Border.all(color: Colors.cyanAccent.withOpacity(0.4), width: 1.2),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.search, color: Colors.cyanAccent, size: 16),
-                  const SizedBox(width: 6),
-                  Text(
-                    '4K',
-                    style: GoogleFonts.plusJakartaSans(
-                      color: Colors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+
 
         // 3. Floating Control Buttons Stack (Right Column matching screenshot)
         Positioned(

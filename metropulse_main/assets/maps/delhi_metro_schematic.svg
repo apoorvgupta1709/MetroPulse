@@ -1477,46 +1477,67 @@
     <text x="3686.0" y="255.0" text-anchor="start" font-family="sans-serif" font-size="10.2" font-weight="bold" fill="#0F172A">Modipuram Depot</text>
   </g>
 </g>
-<!-- CLEAN LEGEND CARD -->
-<g transform="translate(2100, 40)">
-  <rect width="780" height="750" rx="14" ry="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.8"/>
-  <text x="26" y="36" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#0F172A" letter-spacing="1">DELHI NCR METRO NETWORK</text>
-  <line x1="26" y1="48" x2="754" y2="48" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="40" cy="74" r="6" fill="#D32F2F"/>
-  <text x="58" y="78" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Red Line: Shaheed Sthal - Rithala</text>
-  <circle cx="40" cy="108" r="6" fill="#FBC02D"/>
-  <text x="58" y="112" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Yellow Line: Samaypur Badli - Millennium City Centre</text>
-  <circle cx="40" cy="142" r="6" fill="#1976D2"/>
-  <text x="58" y="146" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Blue Line Main: Dwarka Sec 21 - Noida Electronic City</text>
-  <circle cx="40" cy="176" r="6" fill="#1565C0"/>
-  <text x="58" y="180" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Blue Line Branch: Yamuna Bank - Vaishali</text>
-  <circle cx="40" cy="210" r="6" fill="#388E3C"/>
-  <text x="58" y="214" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Green Line: Brigadier Hoshiar Singh - Inderlok / Kirti Nagar</text>
-  <circle cx="40" cy="244" r="6" fill="#7B1FA2"/>
-  <text x="58" y="248" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Violet Line: Kashmere Gate - Raja Nahar Singh (Ballabhgarh)</text>
-  <circle cx="40" cy="278" r="6" fill="#EC407A"/>
-  <text x="58" y="282" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Pink Line: Majlis Park - Shiv Vihar (Ring Loop)</text>
-  <circle cx="40" cy="312" r="6" fill="#C2185B"/>
-  <text x="58" y="316" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Magenta Line: Janakpuri West - Botanical Garden Noida</text>
-  <circle cx="40" cy="346" r="6" fill="#78909C"/>
-  <text x="58" y="350" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Grey Line: Dwarka - Dhansa Bus Stand</text>
-  <circle cx="40" cy="380" r="6" fill="#F57C00"/>
-  <text x="58" y="384" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Airport Express: New Delhi - Yashobhoomi Dwarka Sec 25</text>
-  <circle cx="40" cy="414" r="6" fill="#0288D1"/>
-  <text x="58" y="418" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Rapid Metro: Gurugram Sikanderpur Loop - Sec 55-56</text>
-  <circle cx="40" cy="448" r="6" fill="#00BCD4"/>
-  <text x="58" y="452" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Aqua Line (NMRC): Noida Sector 51 - Depot Station Greater Noida</text>
-  <circle cx="40" cy="482" r="6" fill="#0D47A1"/>
-  <text x="58" y="486" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Delhi-Meerut Namo Bharat (RRTS)</text>
-  <circle cx="40" cy="516" r="6" fill="#E65100"/>
-  <text x="58" y="520" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Meerut Metro: Meerut South - Modipuram</text>
-  <line x1="26" y1="554" x2="754" y2="554" stroke="#E2E8F0" stroke-width="1.5"/>
-  <circle cx="40" cy="574" r="7.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.2"/>
-  <circle cx="40" cy="574" r="3" fill="#0F172A"/>
-  <text x="58" y="578" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Interchange Station</text>
-  <circle cx="240" cy="574" r="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.8"/>
-  <text x="256" y="578" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Regular Station</text>
-  <line x1="420" y1="574" x2="460" y2="574" stroke="#00BCD4" stroke-width="2.5" stroke-dasharray="4,4"/>
-  <text x="472" y="578" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">External Transfer (300m)</text>
+<!-- CLEAN MODERN 2-COLUMN LEGEND CARD (COLLISION-FREE) -->
+<g transform="translate(60, 50)">
+  <rect width="780" height="340" rx="14" ry="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.8"/>
+  <text x="24" y="32" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0F172A" letter-spacing="1">DELHI NCR METRO NETWORK</text>
+  <line x1="24" y1="44" x2="756" y2="44" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Column 1 (Left) -->
+  <circle cx="36" cy="70" r="5.5" fill="#D32F2F"/>
+  <text x="50" y="74" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Red Line: Shaheed Sthal - Rithala</text>
+
+  <circle cx="36" cy="100" r="5.5" fill="#FBC02D"/>
+  <text x="50" y="104" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Yellow Line: Samaypur Badli - Millennium City</text>
+
+  <circle cx="36" cy="130" r="5.5" fill="#1976D2"/>
+  <text x="50" y="134" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Blue Line Main: Dwarka Sec 21 - Noida Elec City</text>
+
+  <circle cx="36" cy="160" r="5.5" fill="#1565C0"/>
+  <text x="50" y="164" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Blue Line Branch: Yamuna Bank - Vaishali</text>
+
+  <circle cx="36" cy="190" r="5.5" fill="#388E3C"/>
+  <text x="50" y="194" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Green Line: Brigadier Hoshiar Singh - Inderlok</text>
+
+  <circle cx="36" cy="220" r="5.5" fill="#7B1FA2"/>
+  <text x="50" y="224" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Violet Line: Kashmere Gate - Raja Nahar Singh</text>
+
+  <circle cx="36" cy="250" r="5.5" fill="#EC407A"/>
+  <text x="50" y="254" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Pink Line: Majlis Park - Shiv Vihar (Ring Loop)</text>
+
+  <!-- Column 2 (Right) -->
+  <circle cx="410" cy="70" r="5.5" fill="#C2185B"/>
+  <text x="424" y="74" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Magenta Line: Janakpuri West - Botanical Garden</text>
+
+  <circle cx="410" cy="100" r="5.5" fill="#78909C"/>
+  <text x="424" y="104" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Grey Line: Dwarka - Dhansa Bus Stand</text>
+
+  <circle cx="410" cy="130" r="5.5" fill="#F57C00"/>
+  <text x="424" y="134" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Airport Express: New Delhi - Yashobhoomi Dwarka</text>
+
+  <circle cx="410" cy="160" r="5.5" fill="#0288D1"/>
+  <text x="424" y="164" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Rapid Metro: Gurugram Sikanderpur Loop</text>
+
+  <circle cx="410" cy="190" r="5.5" fill="#00BCD4"/>
+  <text x="424" y="194" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Aqua Line (NMRC): Noida Sec 51 - Depot Station</text>
+
+  <circle cx="410" cy="220" r="5.5" fill="#0D47A1"/>
+  <text x="424" y="224" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Delhi-Meerut Namo Bharat (RRTS)</text>
+
+  <circle cx="410" cy="250" r="5.5" fill="#E65100"/>
+  <text x="424" y="254" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Meerut Metro: Meerut South - Modipuram</text>
+
+  <!-- Divider & Symbols -->
+  <line x1="24" y1="280" x2="756" y2="280" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <circle cx="36" cy="305" r="7.5" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+  <circle cx="36" cy="305" r="3" fill="#0F172A"/>
+  <text x="52" y="309" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Interchange Station</text>
+
+  <circle cx="230" cy="305" r="4" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.8"/>
+  <text x="244" y="309" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">Regular Station</text>
+
+  <line x1="410" y1="305" x2="450" y2="305" stroke="#00BCD4" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <text x="460" y="309" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#334155">External Transfer (300m Walkway)</text>
 </g>
 </svg>
