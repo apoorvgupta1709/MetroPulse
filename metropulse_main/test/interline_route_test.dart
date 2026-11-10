@@ -13,6 +13,31 @@ void main() {
       graphService = TransitGraphService(stations: stations, lines: lines);
     });
 
+    test('Samaypur Badli to Anand Vihar ISBT trace', () {
+      final rFastest = graphService.calculateRoute(
+        originStationId: 'del_samaypur_badli',
+        destinationStationId: 'del_anand_vihar_isbt',
+        mode: RouteMode.fastest,
+      );
+      print('=== FASTEST ===');
+      if (rFastest != null) {
+        for (var s in rFastest.steps) {
+          print('${s.station.name} (${s.line.name}) ${s.isInterchangePoint ? "[INTERCHANGE]" : ""}');
+        }
+      }
+      final rFewest = graphService.calculateRoute(
+        originStationId: 'del_samaypur_badli',
+        destinationStationId: 'del_anand_vihar_isbt',
+        mode: RouteMode.fewestChanges,
+      );
+      print('=== FEWEST CHANGES ===');
+      if (rFewest != null) {
+        for (var s in rFewest.steps) {
+          print('${s.station.name} (${s.line.name}) ${s.isInterchangePoint ? "[INTERCHANGE]" : ""}');
+        }
+      }
+    });
+
     test('Noida Sec 143 to Kashmere Gate (Fastest and Fewest Changes)', () {
       final rFastest = graphService.calculateRoute(
         originStationId: 'del_noida_sec_143',

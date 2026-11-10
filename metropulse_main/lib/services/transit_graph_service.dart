@@ -126,6 +126,16 @@ class TransitGraphService {
     );
   }
 
+  bool _isSameLineFamily(String? line1, String? line2) {
+    if (line1 == null || line2 == null) return false;
+    if (line1 == line2) return true;
+    final l1 = line1.toLowerCase();
+    final l2 = line2.toLowerCase();
+    if (l1.contains('blue') && l2.contains('blue')) return true;
+    if (l1.contains('green') && l2.contains('green')) return true;
+    return false;
+  }
+
   /// State-based (stationId, lineId) routing search
   RouteResult? _runRouting({
     required Station origin,
@@ -166,7 +176,14 @@ class TransitGraphService {
         // Line transfer penalty
         double penalty = 0.0;
         if (current.lineId != null && current.lineId != edge.line.id) {
-          penalty = (mode == RouteMode.fewestChanges) ? 1000.0 : 5.0;
+          final isSameFamily = _isSameLineFamily(current.lineId, edge.line.id);
+          if (isSameFamily) {
+            penalty = (mode == RouteMode.fewestChanges) ? 1.0 : 1.5;
+          } else {
+            // Balanced penalty: ~18 hops equivalent for fewest changes
+            // Prioritizes fewer transfers while strictly preventing absurd 30-station detours
+            penalty = (mode == RouteMode.fewestChanges) ? 18.0 : 5.0;
+          }
         }
 
         final hopCost = (mode == RouteMode.fewestChanges) ? (1.0 + penalty) : (edge.weightMinutes + penalty);
@@ -239,14 +256,22 @@ class TransitGraphService {
       bool isInterchange = false;
       MetroLine? nextLine;
       if (activeLine != null && activeLine.id != lineForThisHop.id) {
-        isInterchange = true;
-        interchanges++;
-        cumulativeMinutes += 5; // 5 min transfer walking & train wait
+        final sameFamily = _isSameLineFamily(activeLine.id, lineForThisHop.id);
+        if (!sameFamily) {
+          isInterchange = true;
+          interchanges++;
+          cumulativeMinutes += 5; // 5 min transfer walking & train wait
+        } else {
+          cumulativeMinutes += 1; // 1 min cross-platform transfer
+        }
       }
 
       if (i < pathEdges.length - 1 && pathEdges[i].line.id != pathEdges[i + 1].line.id) {
-        isInterchange = true;
-        nextLine = pathEdges[i + 1].line;
+        final sameFamily = _isSameLineFamily(pathEdges[i].line.id, pathEdges[i + 1].line.id);
+        if (!sameFamily) {
+          isInterchange = true;
+          nextLine = pathEdges[i + 1].line;
+        }
       }
 
       if (i > 0) {

@@ -41,7 +41,7 @@ class DelhiFullDataset {
       frequencyMinutes: 5,
       startStationName: 'Yamuna Bank',
       endStationName: 'Vaishali',
-      stationIds: ['del_yamuna_bank', 'del_laxmi_nagar', 'del_nirman_vihar', 'del_preet_vihar', 'del_karkarduma', 'del_anand_vihar_isbt', 'del_kaushambi', 'del_vaishali'],
+      stationIds: ['del_dwarka_sec_21', 'del_dwarka_sec_8', 'del_dwarka_sec_9', 'del_dwarka_sec_10', 'del_dwarka_sec_11', 'del_dwarka_sec_12', 'del_dwarka_sec_13', 'del_dwarka_sec_14', 'del_dwarka', 'del_dwarka_mor', 'del_nawada', 'del_uttam_nagar_west', 'del_uttam_nagar_east', 'del_janakpuri_west', 'del_janakpuri_east', 'del_tilak_nagar', 'del_subhash_nagar', 'del_tagore_garden', 'del_rajouri_garden', 'del_ramesh_nagar', 'del_moti_nagar', 'del_kirti_nagar', 'del_shadipur', 'del_patel_nagar', 'del_rajendra_place', 'del_karol_bagh', 'del_jhandewalan', 'del_rk_ashram_marg', 'del_rajiv_chowk', 'del_barakhamba_road', 'del_mandi_house', 'del_supreme_court', 'del_indraprastha', 'del_yamuna_bank', 'del_laxmi_nagar', 'del_nirman_vihar', 'del_preet_vihar', 'del_karkarduma', 'del_anand_vihar_isbt', 'del_kaushambi', 'del_vaishali'],
     ),
     const MetroLine(
       id: 'red',
