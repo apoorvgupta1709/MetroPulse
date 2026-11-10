@@ -12,7 +12,20 @@
           "package_name": "com.apoorv.metropulse"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "871519492758-4dkduqeq1sci2qt7rrvp544j56t3otqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apoorv.metropulse",
+            "certificate_hash": "bd130edab78975d146f16fb73e34d5cc46127a4e"
+          }
+        },
+        {
+          "client_id": "871519492758-akgg8cj7ue204pjg19hf0ehv2eino47f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB_ShaHv8EqDsPo-xMBLrDtmQSbgzz9VTw"
@@ -20,7 +33,55 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871519492758-akgg8cj7ue204pjg19hf0ehv2eino47f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871519492758-2onkpvpkra4chikp1i4bkctlg2dsfg5b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apoorv.metropulse.admin"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871519492758:android:2486f95503c7a936da00b7",
+        "android_client_info": {
+          "package_name": "com.apoorv.metropulse.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871519492758-akgg8cj7ue204pjg19hf0ehv2eino47f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_ShaHv8EqDsPo-xMBLrDtmQSbgzz9VTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871519492758-akgg8cj7ue204pjg19hf0ehv2eino47f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871519492758-2onkpvpkra4chikp1i4bkctlg2dsfg5b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apoorv.metropulse.admin"
+              }
+            }
+          ]
         }
       }
     }
