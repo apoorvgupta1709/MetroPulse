@@ -454,6 +454,62 @@
         "del_gnida_office",
         "del_depot_station"
       ]
+    },
+    {
+      "id": "delhi_meerut_rrts",
+      "cityId": "delhi_ncr",
+      "name": "Delhi-Meerut Namo Bharat (RRTS)",
+      "code": "RRTS",
+      "colorHex": "#0D47A1",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "11:00 PM",
+      "frequencyMinutes": 10,
+      "startStationName": "Sarai Kale Khan",
+      "endStationName": "Modipuram",
+      "stationIds": [
+        "del_sarai_kale_khan_hazrat_nizamuddin",
+        "del_new_ashok_nagar",
+        "del_anand_vihar_isbt",
+        "del_rrts_sahibabad",
+        "del_rrts_ghaziabad",
+        "del_rrts_guldhar",
+        "del_rrts_duhai",
+        "del_rrts_duhai_depot",
+        "del_rrts_muradnagar",
+        "del_rrts_modinagar_south",
+        "del_rrts_modinagar_north",
+        "del_meerut_south",
+        "del_meerut_shatabdi_nagar",
+        "del_meerut_begumpul",
+        "del_meerut_modipuram"
+      ]
+    },
+    {
+      "id": "meerut_metro",
+      "cityId": "delhi_ncr",
+      "name": "Meerut Metro (Meerut South - Modipuram)",
+      "code": "MM",
+      "colorHex": "#E65100",
+      "firstTrain": "06:00 AM",
+      "lastTrain": "10:30 PM",
+      "frequencyMinutes": 8,
+      "startStationName": "Meerut South",
+      "endStationName": "Modipuram Depot",
+      "stationIds": [
+        "del_meerut_south",
+        "del_meerut_partapur",
+        "del_meerut_rithani",
+        "del_meerut_shatabdi_nagar",
+        "del_meerut_brahmapuri",
+        "del_meerut_central",
+        "del_meerut_bhaisali",
+        "del_meerut_begumpul",
+        "del_meerut_mes_colony",
+        "del_meerut_daurli",
+        "del_meerut_north",
+        "del_meerut_modipuram",
+        "del_meerut_modipuram_depot"
+      ]
     }
   ],
   "stations": [
@@ -2979,9 +3035,10 @@
       "name": "New Ashok Nagar",
       "hindiName": "न्यू अशोक नगर",
       "lineIds": [
-        "blue"
+        "blue",
+        "delhi_meerut_rrts"
       ],
-      "isInterchange": false,
+      "isInterchange": true,
       "latitude": 28.5892,
       "longitude": 77.3117,
       "facilities": {
@@ -3562,7 +3619,8 @@
       "hindiName": "आनंद विहार",
       "lineIds": [
         "blue_vaishali",
-        "pink"
+        "pink",
+        "delhi_meerut_rrts"
       ],
       "isInterchange": true,
       "latitude": 28.6475,
@@ -5305,7 +5363,7 @@
       "lineIds": [
         "red"
       ],
-      "isInterchange": false,
+      "isInterchange": true,
       "latitude": 28.671,
       "longitude": 77.4227,
       "facilities": {
@@ -8265,9 +8323,10 @@
       "name": "Sarai Kale Khan - Hazrat Nizamuddin Railway",
       "hindiName": "हज़रत निज़ामुद्दीन",
       "lineIds": [
-        "pink"
+        "pink",
+        "delhi_meerut_rrts"
       ],
-      "isInterchange": false,
+      "isInterchange": true,
       "latitude": 28.5889,
       "longitude": 77.2575,
       "facilities": {
@@ -9380,6 +9439,745 @@
       "platformDirections": {
         "violet": "Towards Kashmere Gate / Raja Nahar Singh",
         "pink": "Towards Majlis Park / Shiv Vihar"
+      }
+    },
+    {
+      "id": "del_rrts_sahibabad",
+      "cityId": "delhi_ncr",
+      "name": "Sahibabad (Namo Bharat RRTS)",
+      "hindiName": "साहिबाबाद",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.673,
+      "longitude": 77.359,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_ghaziabad",
+      "cityId": "delhi_ncr",
+      "name": "Ghaziabad (Namo Bharat RRTS)",
+      "hindiName": "गाज़ियाबाद",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": true,
+      "latitude": 28.681,
+      "longitude": 77.424,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_guldhar",
+      "cityId": "delhi_ncr",
+      "name": "Guldhar (Namo Bharat RRTS)",
+      "hindiName": "गुलधर",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.718,
+      "longitude": 77.458,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_duhai",
+      "cityId": "delhi_ncr",
+      "name": "Duhai (Namo Bharat RRTS)",
+      "hindiName": "दुहाई",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.758,
+      "longitude": 77.491,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_duhai_depot",
+      "cityId": "delhi_ncr",
+      "name": "Duhai Depot",
+      "hindiName": "दुहाई डिपो",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.775,
+      "longitude": 77.495,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_muradnagar",
+      "cityId": "delhi_ncr",
+      "name": "Murad Nagar (Namo Bharat RRTS)",
+      "hindiName": "मुरादनगर",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.784,
+      "longitude": 77.508,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_modinagar_south",
+      "cityId": "delhi_ncr",
+      "name": "Modi Nagar South",
+      "hindiName": "मोदीनगर दक्षिण",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.824,
+      "longitude": 77.556,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_rrts_modinagar_north",
+      "cityId": "delhi_ncr",
+      "name": "Modi Nagar North",
+      "hindiName": "मोदीनगर उत्तर",
+      "lineIds": [
+        "delhi_meerut_rrts"
+      ],
+      "isInterchange": false,
+      "latitude": 28.854,
+      "longitude": 77.589,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_south",
+      "cityId": "delhi_ncr",
+      "name": "Meerut South (RRTS & Metro)",
+      "hindiName": "मेरठ दक्षिण",
+      "lineIds": [
+        "delhi_meerut_rrts",
+        "meerut_metro"
+      ],
+      "isInterchange": true,
+      "latitude": 28.892,
+      "longitude": 77.632,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_partapur",
+      "cityId": "delhi_ncr",
+      "name": "Partapur",
+      "hindiName": "परतापुर",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 28.918,
+      "longitude": 77.653,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_rithani",
+      "cityId": "delhi_ncr",
+      "name": "Rithani",
+      "hindiName": "रिठानी",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 28.939,
+      "longitude": 77.669,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_shatabdi_nagar",
+      "cityId": "delhi_ncr",
+      "name": "Shatabdi Nagar (RRTS & Metro)",
+      "hindiName": "शताब्दी नगर",
+      "lineIds": [
+        "delhi_meerut_rrts",
+        "meerut_metro"
+      ],
+      "isInterchange": true,
+      "latitude": 28.955,
+      "longitude": 77.682,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_brahmapuri",
+      "cityId": "delhi_ncr",
+      "name": "Brahmapuri",
+      "hindiName": "ब्रह्मपुरी",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 28.972,
+      "longitude": 77.695,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_central",
+      "cityId": "delhi_ncr",
+      "name": "Meerut Central (Football Chowk)",
+      "hindiName": "मेरठ सेंट्रल",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 28.981,
+      "longitude": 77.701,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_bhaisali",
+      "cityId": "delhi_ncr",
+      "name": "Bhaisali (Meerut Bus Stand)",
+      "hindiName": "भैसाली",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 28.99,
+      "longitude": 77.708,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_begumpul",
+      "cityId": "delhi_ncr",
+      "name": "Begumpul (RRTS & Metro Hub)",
+      "hindiName": "बेगमपुल",
+      "lineIds": [
+        "delhi_meerut_rrts",
+        "meerut_metro"
+      ],
+      "isInterchange": true,
+      "latitude": 28.998,
+      "longitude": 77.712,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_mes_colony",
+      "cityId": "delhi_ncr",
+      "name": "MES Colony",
+      "hindiName": "एमईएस कॉलोनी",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 29.018,
+      "longitude": 77.717,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_daurli",
+      "cityId": "delhi_ncr",
+      "name": "Daurli",
+      "hindiName": "डौरली",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 29.035,
+      "longitude": 77.72,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_north",
+      "cityId": "delhi_ncr",
+      "name": "Meerut North",
+      "hindiName": "मेरठ उत्तर",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 29.052,
+      "longitude": 77.723,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_modipuram",
+      "cityId": "delhi_ncr",
+      "name": "Modipuram (RRTS & Metro)",
+      "hindiName": "मोदीपुरम",
+      "lineIds": [
+        "delhi_meerut_rrts",
+        "meerut_metro"
+      ],
+      "isInterchange": true,
+      "latitude": 29.071,
+      "longitude": 77.726,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
+      }
+    },
+    {
+      "id": "del_meerut_modipuram_depot",
+      "cityId": "delhi_ncr",
+      "name": "Modipuram Depot",
+      "hindiName": "मोदीपुरम डिपो",
+      "lineIds": [
+        "meerut_metro"
+      ],
+      "isInterchange": false,
+      "latitude": 29.085,
+      "longitude": 77.728,
+      "facilities": {
+        "hasParking": true,
+        "hasEscalator": true,
+        "hasElevator": true,
+        "hasAtm": true,
+        "hasRestroom": true
+      },
+      "gates": [
+        {
+          "gateNumber": "Gate 1",
+          "landmark": "Main Concourse & NH58 Entry",
+          "hasWheelchairAccess": true
+        },
+        {
+          "gateNumber": "Gate 2",
+          "landmark": "Feeder Bus & Parking Bay",
+          "hasWheelchairAccess": true
+        }
+      ],
+      "platformDirections": {
+        "delhi_meerut_rrts": "Towards Sarai Kale Khan / Modipuram",
+        "meerut_metro": "Towards Meerut South / Modipuram Depot"
       }
     }
   ]

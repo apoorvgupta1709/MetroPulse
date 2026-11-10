@@ -172,5 +172,27 @@ void main() {
       expect(shortRoute, isNotNull);
       expect(shortRoute!.fareAmount, equals(10));
     });
+
+    test('Delhi/Noida to Meerut Metro & RRTS Interline Routing (Noida Sec 144 -> Begumpul Meerut)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_noida_sec_144',
+        destinationStationId: 'del_meerut_begumpul',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.steps.any((s) => s.line.id == 'delhi_meerut_rrts'), isTrue,
+          reason: 'Route to Meerut must utilize Namo Bharat RRTS corridor');
+      expect(route.fareAmount, greaterThanOrEqualTo(80));
+    });
+
+    test('Delhi to Meerut Metro Local Station (Kashmere Gate -> Modipuram Depot)', () {
+      final route = graphService.calculateRoute(
+        originStationId: 'del_kashmere_gate',
+        destinationStationId: 'del_meerut_modipuram_depot',
+        mode: RouteMode.fastest,
+      );
+      expect(route, isNotNull);
+      expect(route!.steps.last.station.id, equals('del_meerut_modipuram_depot'));
+    });
   });
 }

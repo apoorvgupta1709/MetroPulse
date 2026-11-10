@@ -49,8 +49,8 @@ class TransitGraphService {
         final s2 = stationMap[s2Id];
 
         if (s1 != null && s2 != null) {
-          final isExpress = line.id.toLowerCase().contains('airport');
-          final hopTime = isExpress ? 3.2 : 2.1;
+          final isExpress = line.id.toLowerCase().contains('airport') || line.id.toLowerCase().contains('rrts');
+          final hopTime = isExpress ? 3.5 : 2.1;
 
           _adjacencyList.putIfAbsent(s1.id, () => []).add(
                 _GraphEdge(toStation: s2, line: line, weightMinutes: hopTime),
@@ -92,6 +92,14 @@ class TransitGraphService {
         _adjacencyList.putIfAbsent(ap.id, () => []).add(_GraphEdge(toStation: kn, line: green, weightMinutes: 3.5));
         _adjacencyList.putIfAbsent(kn.id, () => []).add(_GraphEdge(toStation: ap, line: green, weightMinutes: 3.5));
       }
+    }
+
+    final ss = stationMap['del_shaheed_sthal'];
+    final gz = stationMap['del_rrts_ghaziabad'];
+    final rrts = lineMap['delhi_meerut_rrts'] ?? lineMap.values.first;
+    if (ss != null && gz != null) {
+      _adjacencyList.putIfAbsent(ss.id, () => []).add(_GraphEdge(toStation: gz, line: rrts, weightMinutes: 4.0));
+      _adjacencyList.putIfAbsent(gz.id, () => []).add(_GraphEdge(toStation: ss, line: rrts, weightMinutes: 4.0));
     }
   }
 
@@ -169,6 +177,8 @@ class TransitGraphService {
     final l2 = line2.toLowerCase();
     if (l1.contains('blue') && l2.contains('blue')) return true;
     if (l1.contains('green') && l2.contains('green')) return true;
+    if (l1.contains('rrts') && l2.contains('meerut')) return true;
+    if (l1.contains('meerut') && l2.contains('rrts')) return true;
     return false;
   }
 
@@ -414,6 +424,8 @@ class TransitGraphService {
     int aquaHops = 0;
     int rapidHops = 0;
     int airportHops = 0;
+    int rrtsHops = 0;
+    int meerutHops = 0;
 
     for (final e in edges) {
       final lineId = e.line.id.toLowerCase();
@@ -423,22 +435,32 @@ class TransitGraphService {
         rapidHops++;
       } else if (lineId.contains('airport') || lineId.contains('orange')) {
         airportHops++;
+      } else if (lineId.contains('rrts')) {
+        rrtsHops++;
+      } else if (lineId.contains('meerut')) {
+        meerutHops++;
       } else {
         dmrcHops++;
       }
     }
 
     // Pure single-operator routes
-    if (aquaHops > 0 && dmrcHops == 0 && rapidHops == 0 && airportHops == 0) {
+    if (aquaHops > 0 && dmrcHops == 0 && rapidHops == 0 && airportHops == 0 && rrtsHops == 0 && meerutHops == 0) {
       return _aquaFareForHops(aquaHops);
     }
-    if (rapidHops > 0 && dmrcHops == 0 && aquaHops == 0 && airportHops == 0) {
+    if (rapidHops > 0 && dmrcHops == 0 && aquaHops == 0 && airportHops == 0 && rrtsHops == 0 && meerutHops == 0) {
       return 20; // Gurugram Rapid Metro standalone flat rate
     }
-    if (airportHops > 0 && dmrcHops == 0 && aquaHops == 0 && rapidHops == 0) {
+    if (airportHops > 0 && dmrcHops == 0 && aquaHops == 0 && rapidHops == 0 && rrtsHops == 0 && meerutHops == 0) {
       return _airportFareForHops(airportHops);
     }
-    if (dmrcHops > 0 && aquaHops == 0 && rapidHops == 0 && airportHops == 0) {
+    if (rrtsHops > 0 && dmrcHops == 0 && aquaHops == 0 && rapidHops == 0 && airportHops == 0 && meerutHops == 0) {
+      return _rrtsFareForHops(rrtsHops);
+    }
+    if (meerutHops > 0 && dmrcHops == 0 && aquaHops == 0 && rapidHops == 0 && airportHops == 0 && rrtsHops == 0) {
+      return _meerutFareForHops(meerutHops);
+    }
+    if (dmrcHops > 0 && aquaHops == 0 && rapidHops == 0 && airportHops == 0 && rrtsHops == 0 && meerutHops == 0) {
       return _dmrcFareForHops(dmrcHops);
     }
 
@@ -448,6 +470,8 @@ class TransitGraphService {
     if (aquaHops > 0) totalFare += _aquaFareForHops(aquaHops);
     if (rapidHops > 0) totalFare += 20;
     if (airportHops > 0) totalFare += _airportFareForHops(airportHops);
+    if (rrtsHops > 0) totalFare += _rrtsFareForHops(rrtsHops);
+    if (meerutHops > 0) totalFare += _meerutFareForHops(meerutHops);
 
     return totalFare > 0 ? totalFare : _calculateFare(totalHops, currencySymbol);
   }
@@ -476,6 +500,21 @@ class TransitGraphService {
     if (hops <= 6) return 40;
     if (hops <= 8) return 50;
     return 60;
+  }
+
+  int _rrtsFareForHops(int hops) {
+    if (hops <= 2) return 20;
+    if (hops <= 4) return 40;
+    if (hops <= 7) return 60;
+    if (hops <= 10) return 90;
+    return 120;
+  }
+
+  int _meerutFareForHops(int hops) {
+    if (hops <= 2) return 10;
+    if (hops <= 5) return 20;
+    if (hops <= 9) return 30;
+    return 40;
   }
 
   int _calculateFare(int hops, String currencySymbol) {

@@ -17,7 +17,7 @@ stations = data['stations']
 stations_by_id = {s['id']: s for s in stations}
 
 # Balanced, compact mobile-optimized dimensions (matching benchmark app)
-WIDTH = 3400
+WIDTH = 3800
 HEIGHT = 3000
 
 coords = {}
@@ -529,6 +529,42 @@ for a_idx, sid in enumerate(aqua_stations):
         coords[sid] = (3150 + off * 56, 1720 + 14 * 44 + off * 34)
         label_rules[sid] = {'angle': -30, 'dx': 12, 'dy': -2, 'anchor': 'start'}
 
+# ------------------------------------------
+# 13. DELHI-MEERUT NAMO BHARAT (RRTS) & MEERUT METRO
+# ------------------------------------------
+coords['del_rrts_sahibabad'] = (2760, 800)
+coords['del_rrts_ghaziabad'] = (2880, 660) # Transfer to Shaheed Sthal
+coords['del_rrts_guldhar'] = (2960, 580)
+coords['del_rrts_duhai'] = (2960, 510)
+coords['del_rrts_duhai_depot'] = (3050, 510)
+coords['del_rrts_muradnagar'] = (2960, 440)
+coords['del_rrts_modinagar_south'] = (2960, 370)
+coords['del_rrts_modinagar_north'] = (2960, 300)
+
+coords['del_meerut_south'] = (2960, 230)
+coords['del_meerut_partapur'] = (3020, 230)
+coords['del_meerut_rithani'] = (3080, 230)
+coords['del_meerut_shatabdi_nagar'] = (3140, 230)
+coords['del_meerut_brahmapuri'] = (3200, 230)
+coords['del_meerut_central'] = (3260, 230)
+coords['del_meerut_bhaisali'] = (3320, 230)
+coords['del_meerut_begumpul'] = (3380, 230)
+coords['del_meerut_mes_colony'] = (3440, 230)
+coords['del_meerut_daurli'] = (3500, 230)
+coords['del_meerut_north'] = (3560, 230)
+coords['del_meerut_modipuram'] = (3620, 230)
+coords['del_meerut_modipuram_depot'] = (3680, 230)
+
+for sid in ['del_rrts_sahibabad', 'del_rrts_ghaziabad', 'del_rrts_guldhar', 'del_rrts_duhai', 'del_rrts_duhai_depot', 'del_rrts_muradnagar', 'del_rrts_modinagar_south', 'del_rrts_modinagar_north']:
+    label_rules[sid] = {'angle': 0, 'dx': 16, 'dy': 0, 'anchor': 'start'}
+
+label_rules['del_meerut_south'] = {'angle': 0, 'dx': -16, 'dy': 0, 'anchor': 'end'}
+for idx, sid in enumerate(lines_meta['meerut_metro']['stationIds'][1:]):
+    if idx % 2 == 0:
+        label_rules[sid] = {'angle': -45, 'dx': 6, 'dy': -10, 'anchor': 'start'}
+    else:
+        label_rules[sid] = {'angle': 45, 'dx': 6, 'dy': 14, 'anchor': 'start'}
+
 # Verify 100% of stations in dataset are mapped
 unmapped = [s['id'] for s in stations if s['id'] not in coords]
 if unmapped:
@@ -589,6 +625,8 @@ line_render_order = [
     ('red', '#D32F2F', 9.5, lines_meta['red']['stationIds']),
     ('airport_express', '#F57C00', 7.5, lines_meta['airport_express']['stationIds']),
     ('green_branch1', '#388E3C', 8.5, green_trunk),
+    ('delhi_meerut_rrts', '#0D47A1', 9.5, lines_meta['delhi_meerut_rrts']['stationIds']),
+    ('meerut_metro', '#E65100', 8.5, lines_meta['meerut_metro']['stationIds']),
 ]
 
 for lid, color, width, s_list in line_render_order:
@@ -610,6 +648,11 @@ sr = coords['del_satguru_ram_singh_marg']
 kn = coords['del_kirti_nagar']
 svg_parts.append(f'  <path d="M {ap[0]} {ap[1]} L {il[0]} {il[1]}" fill="none" stroke="#388E3C" stroke-width="8.5"/>')
 svg_parts.append(f'  <path d="M {ap[0]} {ap[1]} L {sr[0]} {sr[1]} L {kn[0]} {kn[1]}" fill="none" stroke="#388E3C" stroke-width="8.5"/>')
+
+# Shaheed Sthal to Ghaziabad RRTS walkway
+ss_pt = coords['del_shaheed_sthal']
+gz_pt = coords['del_rrts_ghaziabad']
+svg_parts.append(f'  <path d="M {ss_pt[0]} {ss_pt[1]} L {gz_pt[0]} {gz_pt[1]}" fill="none" stroke="#0D47A1" stroke-width="2.5" stroke-dasharray="4,4"/>')
 
 svg_parts.append('</g>')
 
@@ -693,11 +736,11 @@ for s in stations:
 
 svg_parts.append('</g>')
 
-# Clean Modern Legend Card (Top Right)
-leg_x = 2580
+# Clean Modern Legend Card (Top Center-East)
+leg_x = 2100
 leg_y = 40
 leg_w = 780
-leg_h = 670
+leg_h = 750
 
 svg_parts.append('<!-- CLEAN LEGEND CARD -->')
 svg_parts.append(f'<g transform="translate({leg_x}, {leg_y})">')
@@ -718,6 +761,8 @@ legend_items = [
     ('#F57C00', 'Airport Express: New Delhi - Yashobhoomi Dwarka Sec 25'),
     ('#0288D1', 'Rapid Metro: Gurugram Sikanderpur Loop - Sec 55-56'),
     ('#00BCD4', 'Aqua Line (NMRC): Noida Sector 51 - Depot Station Greater Noida'),
+    ('#0D47A1', 'Delhi-Meerut Namo Bharat (RRTS)'),
+    ('#E65100', 'Meerut Metro: Meerut South - Modipuram'),
 ]
 
 for idx, (lcolor, ltext) in enumerate(legend_items):
