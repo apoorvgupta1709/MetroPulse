@@ -580,17 +580,21 @@ class AdminControlProvider extends ChangeNotifier {
     }
   }
 
-  // Update Dynamic Prime Pricing
+  // Update Dynamic Prime Pricing & Razorpay Gateway Config
   Future<void> updatePrimePricing({
     required int price,
     required int originalPrice,
     required int discountPercent,
     required int countdownHours,
+    String? razorpayKeyId,
   }) async {
     _config.primePrice = price;
     _config.primeOriginalPrice = originalPrice;
     _config.primeDiscountPercent = discountPercent;
     _config.countdownHours = countdownHours;
+    if (razorpayKeyId != null && razorpayKeyId.trim().isNotEmpty) {
+      _config.razorpayKeyId = razorpayKeyId.trim();
+    }
     notifyListeners();
 
     try {

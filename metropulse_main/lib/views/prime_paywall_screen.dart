@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 import '../providers/auth_provider.dart';
 import '../providers/monetization_provider.dart';
 import 'login_screen.dart';
@@ -13,41 +14,36 @@ class PrimePaywallScreen extends StatefulWidget {
 }
 
 class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
+  late Razorpay _razorpay;
   bool _isProcessing = false;
 
-  Future<void> _handlePrimeCheckout() async {
+  @override
+  void initState() {
+    super.initState();
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    _razorpay.clear();
+    super.dispose();
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) async {
     final auth = Provider.of<AuthProvider>(context, listen: false);
     final monetization = Provider.of<MonetizationProvider>(context, listen: false);
 
-    // 1. Mandatory Login: Prime Commuter Pass cannot be purchased without an account
-    if (!auth.isLoggedIn) {
-      final signedIn = await Navigator.push<bool>(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const LoginScreen(
-            messagePrompt: 'Please sign in with Google or Email to unlock and bind your Prime Commuter Pass',
-          ),
-        ),
-      );
-      if (signedIn != true && !auth.isLoggedIn) {
-        return; // User canceled sign-in
-      }
-    }
-
-    // 2. Initiate Razorpay Checkout Flow
-    setState(() => _isProcessing = true);
-
-    await Future.delayed(const Duration(seconds: 2)); // Simulate Razorpay UPI / Card payment
-
     await monetization.upgradeToPrime(
-      paymentId: 'pay_rzp_${DateTime.now().millisecondsSinceEpoch}',
+      paymentId: response.paymentId ?? 'pay_${DateTime.now().millisecondsSinceEpoch}',
       email: auth.email,
       userId: auth.user?.uid,
     );
 
-    setState(() => _isProcessing = false);
-
     if (mounted) {
+      setState(() => _isProcessing = false);
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -64,7 +60,7 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
             ],
           ),
           content: Text(
-            'Your Prime Commuter Pass is now active and permanently bound to ${auth.email.isNotEmpty ? auth.email : "your account"}.\n\nAll ads have been removed and premium perks unlocked forever.',
+            'Your Prime Commuter Pass is now active and permanently bound to ${auth.email.isNotEmpty ? auth.email : "your account"}.\n\nPayment ID: ${response.paymentId ?? "Verified"}\n\nAll ads have been removed and premium perks unlocked forever.',
             style: GoogleFonts.plusJakartaSans(fontSize: 13),
           ),
           actions: [
@@ -73,11 +69,95 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
                 Navigator.pop(ctx);
                 Navigator.pop(context); // back to home
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0066CC),
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              ),
               child: const Text('Start Exploring'),
             ),
           ],
         ),
       );
+    }
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    if (mounted) {
+      setState(() => _isProcessing = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Payment cancelled or failed: ${response.message ?? "Error code ${response.code}"}'),
+          backgroundColor: Colors.red.shade700,
+          duration: const Duration(seconds: 4),
+        ),
+      );
+    }
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    if (mounted) {
+      setState(() => _isProcessing = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Redirecting to wallet: ${response.walletName ?? ""}'),
+          backgroundColor: Colors.blue.shade700,
+        ),
+      );
+    }
+  }
+
+  Future<void> _handlePrimeCheckout() async {
+    final auth = Provider.of<AuthProvider>(context, listen: false);
+    final monetization = Provider.of<MonetizationProvider>(context, listen: false);
+
+    // 1. Mandatory Sign In: Prime Commuter Pass must be bound to a real commuter account
+    if (!auth.isLoggedIn) {
+      final signedIn = await Navigator.push<bool>(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const LoginScreen(
+            messagePrompt: 'Please sign in with Google or Email to unlock and bind your Prime Commuter Pass',
+          ),
+        ),
+      );
+      if (signedIn != true && !auth.isLoggedIn) {
+        return; // User canceled sign-in
+      }
+    }
+
+    // 2. Open Native Razorpay Checkout Sheet
+    setState(() => _isProcessing = true);
+
+    try {
+      final options = {
+        'key': monetization.razorpayKeyId,
+        'amount': monetization.currentPrice * 100, // Price in paise (e.g. 4900 for ₹49)
+        'name': 'MetroPulse Prime Pass',
+        'description': 'Lifetime Ad-Free & 4K Overlays (${auth.email})',
+        'prefill': {
+          'email': auth.email,
+          'contact': '',
+        },
+        'external': {
+          'wallets': ['paytm']
+        },
+        'theme': {
+          'color': '#0066CC',
+        }
+      };
+
+      _razorpay.open(options);
+    } catch (e) {
+      setState(() => _isProcessing = false);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error launching payment gateway: $e'),
+            backgroundColor: Colors.red.shade700,
+          ),
+        );
+      }
     }
   }
 
@@ -389,17 +469,17 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
                 Text(
                   title,
                   style: GoogleFonts.plusJakartaSans(
-                    color: Colors.white,
                     fontWeight: FontWeight.w700,
                     fontSize: 14,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   subtitle,
                   style: GoogleFonts.plusJakartaSans(
-                    color: Colors.white60,
                     fontSize: 12,
+                    color: Colors.white60,
                   ),
                 ),
               ],

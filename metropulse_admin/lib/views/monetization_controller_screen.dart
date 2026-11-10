@@ -15,6 +15,7 @@ class _MonetizationControllerScreenState extends State<MonetizationControllerScr
   late TextEditingController _originalPriceCtrl;
   late TextEditingController _discountCtrl;
   late TextEditingController _hoursCtrl;
+  late TextEditingController _razorpayKeyCtrl;
 
   @override
   void initState() {
@@ -24,6 +25,7 @@ class _MonetizationControllerScreenState extends State<MonetizationControllerScr
     _originalPriceCtrl = TextEditingController(text: admin.config.primeOriginalPrice.toString());
     _discountCtrl = TextEditingController(text: admin.config.primeDiscountPercent.toString());
     _hoursCtrl = TextEditingController(text: admin.config.countdownHours.toString());
+    _razorpayKeyCtrl = TextEditingController(text: admin.config.razorpayKeyId);
   }
 
   @override
@@ -32,6 +34,7 @@ class _MonetizationControllerScreenState extends State<MonetizationControllerScr
     _originalPriceCtrl.dispose();
     _discountCtrl.dispose();
     _hoursCtrl.dispose();
+    _razorpayKeyCtrl.dispose();
     super.dispose();
   }
 
@@ -40,17 +43,19 @@ class _MonetizationControllerScreenState extends State<MonetizationControllerScr
     final original = int.tryParse(_originalPriceCtrl.text) ?? 149;
     final discount = int.tryParse(_discountCtrl.text) ?? 67;
     final hours = int.tryParse(_hoursCtrl.text) ?? 6;
+    final rzpKey = _razorpayKeyCtrl.text.trim();
 
     Provider.of<AdminControlProvider>(context, listen: false).updatePrimePricing(
       price: price,
       originalPrice: original,
       discountPercent: discount,
       countdownHours: hours,
+      razorpayKeyId: rzpKey.isNotEmpty ? rzpKey : 'rzp_test_1DP5mmOlF5G5ag',
     );
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('Prime Pass Pricing & Countdown synced to client paywalls!'),
+        content: Text('Prime Pass Pricing & Razorpay Gateway synced to client paywalls!'),
         backgroundColor: Colors.green,
       ),
     );
@@ -263,6 +268,16 @@ class _MonetizationControllerScreenState extends State<MonetizationControllerScr
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: _razorpayKeyCtrl,
+                  decoration: const InputDecoration(
+                    labelText: 'Razorpay Key ID (Test or Live)',
+                    hintText: 'rzp_test_... or rzp_live_...',
+                    prefixIcon: Icon(Icons.vpn_key),
+                    border: OutlineInputBorder(),
+                  ),
                 ),
                 const SizedBox(height: 16),
                 SizedBox(
