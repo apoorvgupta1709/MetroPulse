@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "871519492758-5c38p3b3ko4sd4vmb9akcprkcemnleu4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apoorv.metropulse",
+            "certificate_hash": "e16420daeb0285a5d65fea96cc77adc90855318d"
+          }
+        },
+        {
           "client_id": "871519492758-akgg8cj7ue204pjg19hf0ehv2eino47f.apps.googleusercontent.com",
           "client_type": 3
         }
