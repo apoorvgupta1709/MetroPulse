@@ -28,6 +28,7 @@ class MonetizationProvider extends ChangeNotifier {
   Timer? _countdownTimer;
   Duration _timeLeft = const Duration(hours: 4, minutes: 28, seconds: 15);
   StreamSubscription? _remoteConfigSub;
+  StreamSubscription? _globalPaymentSub;
   StreamSubscription? _authSub;
 
   bool get isPro => _isPro;
@@ -134,6 +135,18 @@ class MonetizationProvider extends ChangeNotifier {
         notifyListeners();
       }
     }, onError: (e) => debugPrint('MonetizationProvider cloud config notice: $e'));
+
+    // Listen to centralized universal payment config (shared across all suite apps)
+    _globalPaymentSub?.cancel();
+    _globalPaymentSub = TransitSyncService.streamGlobalPaymentConfig().listen((paymentConfig) {
+      if (paymentConfig != null && paymentConfig['razorpayKeyId'] != null) {
+        final key = (paymentConfig['razorpayKeyId'] as String).trim();
+        if (key.isNotEmpty) {
+          _razorpayKeyId = key;
+          notifyListeners();
+        }
+      }
+    }, onError: (e) => debugPrint('MonetizationProvider global payment config notice: $e'));
   }
 
   void _startCountdown() {
@@ -221,6 +234,7 @@ class MonetizationProvider extends ChangeNotifier {
   void dispose() {
     _countdownTimer?.cancel();
     _remoteConfigSub?.cancel();
+    _globalPaymentSub?.cancel();
     _authSub?.cancel();
     super.dispose();
   }

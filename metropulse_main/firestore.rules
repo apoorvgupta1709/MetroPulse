@@ -30,6 +30,11 @@ service cloud.firestore {
       allow read, write: if true;
     }
 
+    // Global shared configs across all suite applications (payment gateways, shared credentials)
+    match /global_config/{configId} {
+      allow read, write: if true;
+    }
+
     // User entitlements & profiles
     match /users/{userId} {
       allow read, write: if true;

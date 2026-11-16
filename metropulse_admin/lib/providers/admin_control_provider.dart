@@ -374,9 +374,21 @@ class AdminControlProvider extends ChangeNotifier {
           if (data['primeOriginalPrice'] != null) _config.primeOriginalPrice = data['primeOriginalPrice'];
           if (data['primeDiscountPercent'] != null) _config.primeDiscountPercent = data['primeDiscountPercent'];
           if (data['countdownHours'] != null) _config.countdownHours = data['countdownHours'];
+          if (data['razorpayKeyId'] != null) _config.razorpayKeyId = data['razorpayKeyId'];
           notifyListeners();
         }
       }, onError: (e) => debugPrint('Admin monetization config notice: $e'));
+
+      // Listen to universal global payments config (shared across all apps)
+      db.collection('global_config').doc('payments').snapshots().listen((doc) {
+        if (doc.exists && doc.data() != null) {
+          final data = doc.data()!;
+          if (data['razorpayKeyId'] != null && (data['razorpayKeyId'] as String).isNotEmpty) {
+            _config.razorpayKeyId = (data['razorpayKeyId'] as String).trim();
+            notifyListeners();
+          }
+        }
+      }, onError: (e) => debugPrint('Admin global payments config notice: $e'));
     } catch (e) {
       debugPrint('AdminControlProvider init notice: $e');
     }
@@ -604,6 +616,19 @@ class AdminControlProvider extends ChangeNotifier {
             .collection('app_config')
             .doc('monetization')
             .set(_config.toMap(), SetOptions(merge: true));
+
+        // Centralized global payment config for all current and future suite apps
+        if (razorpayKeyId != null && razorpayKeyId.trim().isNotEmpty) {
+          await db
+              .collection('global_config')
+              .doc('payments')
+              .set({
+                'razorpayKeyId': razorpayKeyId.trim(),
+                'currency': 'INR',
+                'gateway': 'razorpay',
+                'updatedAt': DateTime.now().toIso8601String(),
+              }, SetOptions(merge: true));
+        }
       }
     } catch (e) {
       debugPrint('Error updating dynamic pricing: $e');

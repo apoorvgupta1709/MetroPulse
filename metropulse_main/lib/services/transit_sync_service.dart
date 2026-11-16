@@ -122,6 +122,22 @@ class TransitSyncService {
     });
   }
 
+  /// Listen to centralized global payment config shared across all applications
+  static Stream<Map<String, dynamic>?> streamGlobalPaymentConfig() {
+    final db = _firestore;
+    if (db == null) return const Stream.empty();
+
+    return db
+        .collection('global_config')
+        .doc('payments')
+        .snapshots()
+        .map((doc) => doc.data())
+        .handleError((error) {
+      debugPrint('Firestore streamGlobalPaymentConfig error: $error');
+      return null;
+    });
+  }
+
   /// Listen to dynamic cities added from Admin
   static Stream<List<City>> streamCities() {
     final db = _firestore;
