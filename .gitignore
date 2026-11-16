@@ -44,3 +44,5 @@ migrate_working_dir/
 metropulse_main/publish/builds/*.apk
 metropulse_main/publish/builds/*.aab
 !metropulse_main/publish/builds/.gitkeep
+
+.firebase/
