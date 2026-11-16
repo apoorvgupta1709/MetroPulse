@@ -126,6 +126,15 @@ class MonetizationProvider extends ChangeNotifier {
         if (config['razorpayKeyId'] != null && (config['razorpayKeyId'] as String).isNotEmpty) {
           _razorpayKeyId = (config['razorpayKeyId'] as String).trim();
         }
+        if (config['bannerAdUnitId'] != null && (config['bannerAdUnitId'] as String).isNotEmpty) {
+          AdMobService.customBannerAdUnitId = (config['bannerAdUnitId'] as String).trim();
+        }
+        if (config['interstitialAdUnitId'] != null && (config['interstitialAdUnitId'] as String).isNotEmpty) {
+          AdMobService.customInterstitialAdUnitId = (config['interstitialAdUnitId'] as String).trim();
+        }
+        if (config['rewardedAdUnitId'] != null && (config['rewardedAdUnitId'] as String).isNotEmpty) {
+          AdMobService.customRewardedAdUnitId = (config['rewardedAdUnitId'] as String).trim();
+        }
         if (config['adsEnabled'] != null) {
           final adsEnabled = config['adsEnabled'] as bool;
           if (!_isPro) {

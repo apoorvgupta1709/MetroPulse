@@ -7,11 +7,19 @@ class AdMobService {
   static int interstitialFrequencyThreshold = 3;
   static int _routeCalculationsCount = 0;
 
-  // Official Google Sample AdMob Test Unit IDs
+  // Dynamic remote overrides from Firestore
+  static String? customBannerAdUnitId;
+  static String? customInterstitialAdUnitId;
+  static String? customRewardedAdUnitId;
+
+  // Real Production AdMob Unit IDs (defaults)
   static String get bannerAdUnitId {
     if (kIsWeb) return '';
+    if (customBannerAdUnitId != null && customBannerAdUnitId!.isNotEmpty) {
+      return customBannerAdUnitId!;
+    }
     if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/6300978111';
+      return 'ca-app-pub-2281923791402266/6690061571';
     } else if (Platform.isIOS) {
       return 'ca-app-pub-3940256099942544/2934735716';
     }
@@ -20,8 +28,11 @@ class AdMobService {
 
   static String get interstitialAdUnitId {
     if (kIsWeb) return '';
+    if (customInterstitialAdUnitId != null && customInterstitialAdUnitId!.isNotEmpty) {
+      return customInterstitialAdUnitId!;
+    }
     if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/1033173712';
+      return 'ca-app-pub-2281923791402266/8142744044';
     } else if (Platform.isIOS) {
       return 'ca-app-pub-3940256099942544/4411468910';
     }
@@ -30,8 +41,11 @@ class AdMobService {
 
   static String get rewardedAdUnitId {
     if (kIsWeb) return '';
+    if (customRewardedAdUnitId != null && customRewardedAdUnitId!.isNotEmpty) {
+      return customRewardedAdUnitId!;
+    }
     if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/5224354917';
+      return 'ca-app-pub-2281923791402266/5937438449';
     } else if (Platform.isIOS) {
       return 'ca-app-pub-3940256099942544/1712485313';
     }
