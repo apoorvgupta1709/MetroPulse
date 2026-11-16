@@ -14,7 +14,7 @@ class MonetizationConfig {
     this.primeOriginalPrice = 149,
     this.primeDiscountPercent = 67,
     this.countdownHours = 6,
-    this.razorpayKeyId = 'rzp_test_1DP5mmOlF5G5ag',
+    this.razorpayKeyId = 'rzp_test_RcJ3Hn90o4s7mp',
   });
 
   Map<String, dynamic> toMap() {
@@ -37,7 +37,7 @@ class MonetizationConfig {
       primeOriginalPrice: map['primeOriginalPrice'] ?? 149,
       primeDiscountPercent: map['primeDiscountPercent'] ?? 67,
       countdownHours: map['countdownHours'] ?? 6,
-      razorpayKeyId: map['razorpayKeyId'] ?? 'rzp_test_1DP5mmOlF5G5ag',
+      razorpayKeyId: map['razorpayKeyId'] ?? 'rzp_test_RcJ3Hn90o4s7mp',
     );
   }
 }

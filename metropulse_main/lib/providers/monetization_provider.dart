@@ -17,8 +17,8 @@ class MonetizationProvider extends ChangeNotifier {
   String? _userEmail;
   String? _userId;
 
-  // Razorpay Gateway Key (defaults to official test key, overridable from Firestore)
-  String _razorpayKeyId = 'rzp_test_1DP5mmOlF5G5ag';
+  // Razorpay Gateway Key (defaults to user's test key, overridable from Firestore)
+  String _razorpayKeyId = 'rzp_test_RcJ3Hn90o4s7mp';
 
   // Dynamic Remote Pricing configuration
   int _currentPrice = 49;
