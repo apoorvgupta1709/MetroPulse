@@ -133,14 +133,11 @@ class _PrimePaywallScreenState extends State<PrimePaywallScreen> {
       final options = {
         'key': monetization.razorpayKeyId,
         'amount': monetization.currentPrice * 100, // Price in paise (e.g. 4900 for ₹49)
+        'currency': 'INR',
         'name': 'MetroPulse Prime Pass',
         'description': 'Lifetime Ad-Free & 4K Overlays (${auth.email})',
         'prefill': {
           'email': auth.email,
-          'contact': '',
-        },
-        'external': {
-          'wallets': ['paytm']
         },
         'theme': {
           'color': '#0066CC',
