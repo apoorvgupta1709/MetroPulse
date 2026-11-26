@@ -45,6 +45,7 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
             }
           },
           onAdFailedToLoad: (ad, err) {
+            debugPrint('MetroPulse BannerAd failed to load: [Code ${err.code}] ${err.message}');
             ad.dispose();
             _bannerAd = null;
             if (mounted) {

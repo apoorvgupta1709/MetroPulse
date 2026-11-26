@@ -79,6 +79,7 @@ class AdMobService {
           _isInterstitialLoading = false;
         },
         onAdFailedToLoad: (error) {
+          debugPrint('MetroPulse InterstitialAd failed to load: [Code ${error.code}] ${error.message}');
           _interstitialAd = null;
           _isInterstitialLoading = false;
         },
@@ -152,6 +153,7 @@ class AdMobService {
           });
         },
         onAdFailedToLoad: (err) {
+          debugPrint('MetroPulse RewardedAd failed to load: [Code ${err.code}] ${err.message}');
           // If ad network fails, gracefully grant reward to preserve UX
           onRewardUnlocked();
         },

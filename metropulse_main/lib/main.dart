@@ -40,8 +40,9 @@ void main() {
         await Firebase.initializeApp();
       }
       TransitSyncService.init();
+      await AdMobService.initialize();
     } catch (e) {
-      debugPrint('Firebase startup notice: $e');
+      debugPrint('Firebase/AdMob startup notice: $e');
     }
 
     // Custom ErrorWidget builder to prevent red unhandled exception screens
@@ -74,15 +75,8 @@ void main() {
       );
     };
 
-    // Immediately launch UI so user never experiences launch freeze
+    // Launch application UI
     runApp(const MetroPulseApp());
-
-    // Safely initialize AdMob asynchronously without blocking app launch
-    try {
-      unawaited(AdMobService.initialize());
-    } catch (e) {
-      debugPrint('AdMob startup notice: $e');
-    }
   }, (error, stack) {
     debugPrint('MetroPulse Zone Error: $error\n$stack');
   });
